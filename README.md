@@ -1,4 +1,4 @@
-This is a simple desktop base on Fvwm3. 
+This is a simple desktop based on Fvwm3. 
 It includes a complex Fvwm3 configuration and several scripts for configuration and miscellaneous purposes.
 
 External software needed by Ydesk:
