@@ -1,0 +1,19 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk tbar.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"Taskbar applet" --window-icon="application-x-addon" \
+    --width=300 --image=window-new \
+    --text=$"Taskbar applet configuration" --separator=" " --form \
+    --field=$"Taskbar width::NUN" "$(gsettings get ydesk.applets tb_sz)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets tb_sz ${r[0]}
+fi

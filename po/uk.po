@@ -1,0 +1,1430 @@
+# Ukrainian translation for Ixdesktop
+# Copyright (C) 2010-2017
+# This file is distributed under the same license as the Ixdesktop package.
+# Victor Ananjevsky <ananasik@gmail.com>, 2015
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ixdesktop 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-07 07:48+0300\n"
+"PO-Revision-Date: 2014-11-23 22:37+0200\n"
+"Last-Translator: Victor Ananjevsky <ananasik@gmail.com>\n"
+"Language-Team: \n"
+"Language: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../fvwm/scripts/clipman.sh:95
+msgid "Clear clipboard history"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:24
+msgid "New mail"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:32
+msgid "Server:"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:32
+msgid "Account:"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:32
+msgid "Password::h"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:33
+msgid "Mail account"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:33
+msgid "Add new mail account"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:35
+msgid "Ydesk mail checker"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:45
+msgid "Mail configuration"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:46
+msgid "List of mail acconts to check"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:49
+msgid "Server"
+msgstr ""
+
+#: ../fvwm/scripts/mail.sh:49
+msgid "User"
+msgstr ""
+
+#: ../fvwm/scripts/shot.sh:15
+msgid "Save screenshot"
+msgstr ""
+
+#: ../fvwm/scripts/shot.sh:34 ../fvwm/config/menus.fvwm.h:21
+msgid "Screenshot"
+msgstr ""
+
+#: ../fvwm/scripts/shot.sh:36
+msgid "Clipboard!yad-paste:bash -c copy_file"
+msgstr ""
+
+#: ../fvwm/cpu.c:137
+#, c-format
+msgid ""
+"\n"
+"Memory usage: %s / %s"
+msgstr ""
+
+#: ../fvwm/cpu.c:143
+#, c-format
+msgid ""
+"\n"
+"Swap usage: %s / %s"
+msgstr ""
+
+#: ../fvwm/cpu.c:218
+#, c-format
+msgid "CPU Load - %d%%"
+msgstr ""
+
+#: ../fvwm/cpu.c:220
+#, c-format
+msgid "CPU%d Load - %d%%"
+msgstr ""
+
+#: ../fvwm/cpu.c:285
+msgid "Set window width"
+msgstr ""
+
+#: ../fvwm/cpu.c:285
+msgid "WIDTH"
+msgstr ""
+
+#: ../fvwm/cpu.c:286
+msgid "Set CPU number"
+msgstr ""
+
+#: ../fvwm/cpu.c:286
+msgid "NUM"
+msgstr ""
+
+#: ../fvwm/cpu.c:296
+msgid "- CPU load monitor"
+msgstr ""
+
+#: ../settings/ysettings.sh:18
+msgid ""
+"<span size='x-large' weight='bold'>Ydesktop settings manager</span>\\nSelect "
+"applet for configure corresponding settings\\n\\n"
+msgstr ""
+
+#: ../settings/ysettings.sh:21
+msgid "Ydesktop settings"
+msgstr ""
+
+#: ../settings/desktop.sh.in:27
+msgid "Quicklaunch item"
+msgstr ""
+
+#: ../settings/desktop.sh.in:27
+msgid "Quicklaunch item editor"
+msgstr ""
+
+#: ../settings/desktop.sh.in:29
+msgid "Icon:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:30 ../settings/session.sh.in:29
+msgid "Name:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:31 ../settings/session.sh.in:30
+msgid "Description:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:32 ../settings/session.sh.in:31
+msgid "Command:"
+msgstr ""
+
+#. first tab (common)
+#: ../settings/desktop.sh.in:39
+msgid "Common settings"
+msgstr ""
+
+#: ../settings/desktop.sh.in:41
+msgid "Number of desktops::NUM"
+msgstr ""
+
+#: ../settings/desktop.sh.in:42
+msgid "Clipboard history size::NUM"
+msgstr ""
+
+#: ../settings/desktop.sh.in:43
+msgid "<i>0 will disable clipboard management</i>:LBL"
+msgstr ""
+
+#. second tab (fonts)
+#: ../settings/desktop.sh.in:46
+msgid "Fonts settings"
+msgstr ""
+
+#: ../settings/desktop.sh.in:48
+msgid "Default font::FN"
+msgstr ""
+
+#: ../settings/desktop.sh.in:49
+msgid "Menu title font::FN"
+msgstr ""
+
+#: ../settings/desktop.sh.in:50
+msgid "Tooltips font::FN"
+msgstr ""
+
+#: ../settings/desktop.sh.in:51
+msgid "Window title font::FN"
+msgstr ""
+
+#. third tab (apps)
+#: ../settings/desktop.sh.in:54
+msgid "Application settings"
+msgstr ""
+
+#: ../settings/desktop.sh.in:56
+msgid "Terminal command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:57
+msgid "Filemanager command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:58
+msgid "Editor command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:59
+msgid "Web browser command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:60
+msgid "E-mail client command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:61
+msgid "Lock screen command:"
+msgstr ""
+
+#: ../settings/desktop.sh.in:71
+msgid "Add/remove quicklaunch items"
+msgstr ""
+
+#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../utils/ydentry.sh:13 ../utils/yfind.sh:55 ../utils/yfind.sh:60
+#: ../utils/ysysinfo.sh:49
+msgid "Name"
+msgstr ""
+
+#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+msgid "Description:TIP"
+msgstr ""
+
+#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+msgid "Command"
+msgstr ""
+
+#. main dialog
+#: ../settings/desktop.sh.in:76
+msgid "Desktop settings"
+msgstr ""
+
+#: ../settings/desktop.sh.in:78
+msgid ""
+"\\n<b>Edit settings of Ydesk</b>\\n<i>Changes will be applied on the next "
+"startup</i>\\n\\n"
+msgstr ""
+
+#: ../settings/desktop.sh.in:79 ../settings/session.sh.in:64
+msgid "Common"
+msgstr ""
+
+#: ../settings/desktop.sh.in:79
+msgid "Fonts"
+msgstr ""
+
+#: ../settings/desktop.sh.in:79 ../fvwm/config/applets/menu.fvwm.h:1
+msgid "Applications"
+msgstr ""
+
+#: ../settings/desktop.sh.in:79
+msgid "Quick launch"
+msgstr ""
+
+#: ../settings/interface.sh.in:10
+msgid "Interface settings"
+msgstr ""
+
+#: ../settings/interface.sh.in:11
+msgid "GTK+ interface settings"
+msgstr ""
+
+#: ../settings/interface.sh.in:12
+msgid "Theme name:"
+msgstr ""
+
+#: ../settings/interface.sh.in:13
+msgid "Icon theme name:"
+msgstr ""
+
+#: ../settings/interface.sh.in:14
+msgid "Cursor theme name:"
+msgstr ""
+
+#: ../settings/interface.sh.in:15
+msgid "Cursor theme size::NUM"
+msgstr ""
+
+#: ../settings/interface.sh.in:16
+msgid "Font name::FN"
+msgstr ""
+
+#: ../settings/mime.sh.in:18
+msgid "MIME types editor"
+msgstr ""
+
+#: ../settings/panel.sh.in:21
+msgid "Add applet"
+msgstr ""
+
+#: ../settings/panel.sh.in:21
+msgid "Select panel applet"
+msgstr ""
+
+#: ../settings/panel.sh.in:27
+msgid "Separator"
+msgstr ""
+
+#: ../settings/panel.sh.in:28
+msgid "Add size after sep in applet name to set separator width"
+msgstr ""
+
+#: ../settings/panel.sh.in:30
+msgid "Warning"
+msgstr ""
+
+#: ../settings/panel.sh.in:31
+msgid "There is no additional configuration for applet '$2'"
+msgstr ""
+
+#: ../settings/panel.sh.in:43
+msgid "Panel main settings"
+msgstr ""
+
+#: ../settings/panel.sh.in:44
+msgid "Enable panel:CHK"
+msgstr ""
+
+#: ../settings/panel.sh.in:45
+msgid "Panel position::CB"
+msgstr ""
+
+#: ../settings/panel.sh.in:46
+msgid "Panel icons size::NUM"
+msgstr ""
+
+#: ../settings/panel.sh.in:47
+msgid "<i>You must restart FVWM for changes will take effect</i>"
+msgstr ""
+
+#: ../settings/panel.sh.in:50
+msgid "Panel applets settings"
+msgstr ""
+
+#: ../settings/panel.sh.in:51
+msgid "Module"
+msgstr ""
+
+#. main dialog
+#: ../settings/panel.sh.in:54
+msgid "Panel settings"
+msgstr ""
+
+#: ../settings/panel.sh.in:54
+msgid "Ydesk panel settings"
+msgstr ""
+
+#: ../settings/panel.sh.in:56 ../settings/session.sh.in:63
+msgid ""
+"\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
+"next startup</i>\\n\\n"
+msgstr ""
+
+#. main dialog
+#: ../settings/panel.sh.in:57 ../settings/term.sh.in:104
+msgid "Main"
+msgstr ""
+
+#: ../settings/panel.sh.in:57
+msgid "Applets"
+msgstr ""
+
+#: ../settings/printer.sh.in:18 ../utils/ymedia.sh:33
+msgid "Error"
+msgstr ""
+
+#: ../settings/printer.sh.in:19
+#, sh-format
+msgid "CUPS server at <b>$SRV</b> not available"
+msgstr ""
+
+#: ../settings/printer.sh.in:21
+msgid "Printer settings"
+msgstr ""
+
+#: ../settings/session.sh.in:27
+msgid "Autostart item"
+msgstr ""
+
+#: ../settings/session.sh.in:27
+msgid "Autostart item editor"
+msgstr ""
+
+#. first tab
+#: ../settings/session.sh.in:39
+msgid "<b><i>Base Configuration</i></b>:LBL"
+msgstr ""
+
+#: ../settings/session.sh.in:40
+msgid "Update XDG users directories at startup:CHK"
+msgstr ""
+
+#: ../settings/session.sh.in:41
+msgid "Run URXVT server at startup:CHK"
+msgstr ""
+
+#: ../settings/session.sh.in:42
+msgid "Run EMACS server at startup:CHK"
+msgstr ""
+
+#: ../settings/session.sh.in:43
+msgid "<b><i>Background settings</i></b>:LBL"
+msgstr ""
+
+#: ../settings/session.sh.in:44
+msgid "Background::CLR"
+msgstr ""
+
+#: ../settings/session.sh.in:45
+msgid "Wallpaper::MFL"
+msgstr ""
+
+#: ../settings/session.sh.in:46
+msgid "<b><i>Other settings</i></b>:LBL"
+msgstr ""
+
+#: ../settings/session.sh.in:47
+msgid "Enable compositing:CHK"
+msgstr ""
+
+#: ../settings/session.sh.in:57
+msgid ""
+"Add/remove autostart items\\n(<i>only users autostart directory proceeded</"
+"i>)"
+msgstr ""
+
+#. main dialog
+#: ../settings/session.sh.in:61 ../data/settings/session.desktop.in.h:1
+msgid "Session settings"
+msgstr ""
+
+#: ../settings/session.sh.in:64
+msgid "Autostart"
+msgstr ""
+
+#. main page
+#: ../settings/term.sh.in:66
+msgid "Title:"
+msgstr ""
+
+#: ../settings/term.sh.in:67
+msgid "Width::num"
+msgstr ""
+
+#: ../settings/term.sh.in:68
+msgid "Height::num"
+msgstr ""
+
+#: ../settings/term.sh.in:69
+msgid "Font::fn"
+msgstr ""
+
+#: ../settings/term.sh.in:70
+msgid "Term:"
+msgstr ""
+
+#: ../settings/term.sh.in:71
+msgid "Enable login shell:chk"
+msgstr ""
+
+#: ../settings/term.sh.in:72
+msgid "Enable scrollbars:chk"
+msgstr ""
+
+#: ../settings/term.sh.in:73
+msgid "Use bold font:chk"
+msgstr ""
+
+#: ../settings/term.sh.in:75
+msgid "Foreground::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:76
+msgid "Background::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:77
+msgid "Highlight::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:78
+msgid "Highlight text::clr"
+msgstr ""
+
+#. palette page
+#: ../settings/term.sh.in:82
+msgid "Black::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:83
+msgid "Red::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:84
+msgid "Green::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:85
+msgid "Brown::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:86
+msgid "Blue::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:87
+msgid "Magenta::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:88
+msgid "Cyan::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:89
+msgid "Light gray::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:90
+msgid "Gray::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:91
+msgid "Light red::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:92
+msgid "Light green::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:93
+msgid "Yellow::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:94
+msgid "Light blue::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:95
+msgid "Light magenta::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:96
+msgid "Light cyan::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:97
+msgid "White::clr"
+msgstr ""
+
+#: ../settings/term.sh.in:104
+msgid "Palette"
+msgstr ""
+
+#: ../settings/term.sh.in:104
+msgid "Misc"
+msgstr ""
+
+#: ../settings/term.sh.in:105
+msgid "Terminal settings"
+msgstr ""
+
+#: ../settings/term.sh.in:106
+msgid "Terminal settings (URxvt)"
+msgstr ""
+
+#: ../settings/panel/bat.sh.in:10
+msgid "Battery applet"
+msgstr ""
+
+#: ../settings/panel/bat.sh.in:11
+msgid "Battery applet configuration"
+msgstr ""
+
+#: ../settings/panel/bat.sh.in:12
+msgid "Battery name:"
+msgstr ""
+
+#: ../settings/panel/bat.sh.in:13
+msgid "AC adapter name:"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:10
+msgid "Clock applet"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:12
+msgid "Clock applet configuration"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:13
+msgid "Time format:"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:14
+msgid "Clock foreground color::CLR"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:15
+msgid "Clock font::FN"
+msgstr ""
+
+#: ../settings/panel/clock.sh.in:16
+msgid "Clock width::NUM"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:10
+msgid "CPU applet"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:12
+msgid "CPU load applet configuration"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:13
+msgid "Indicator foregroung color::CLR"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:14
+msgid "Indicator backgroung color::CLR"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:15
+msgid "Show memory usage:CHK"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:16 ../settings/panel/weather.sh.in:19
+msgid "Update interval::NUM"
+msgstr ""
+
+#: ../settings/panel/cpu.sh.in:17
+msgid "Indicator width::NUM"
+msgstr ""
+
+#: ../settings/panel/mail.sh.in:10 ../settings/panel/wifi.sh.in:10
+msgid "Mail applet"
+msgstr ""
+
+#: ../settings/panel/mail.sh.in:11 ../settings/panel/wifi.sh.in:11
+msgid "Mail applet configuration"
+msgstr ""
+
+#: ../settings/panel/mail.sh.in:12
+msgid "Mail check time::NUM"
+msgstr ""
+
+#: ../settings/panel/menu.sh.in:10
+msgid "Menubar applet"
+msgstr ""
+
+#: ../settings/panel/menu.sh.in:12
+msgid "Menubar applet configuration"
+msgstr ""
+
+#: ../settings/panel/menu.sh.in:13
+msgid "Menubar font::FN"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:10
+msgid "Run applet"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:12
+msgid "Run applet configuration"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:13
+msgid "Foreground color::CLR"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:14
+msgid "Background color::CLR"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:15
+msgid "Run applet font::FN"
+msgstr ""
+
+#: ../settings/panel/run.sh.in:16
+msgid "Run applet width::NUM"
+msgstr ""
+
+#: ../settings/panel/shot.sh.in:13
+msgid "Screenshot applet"
+msgstr ""
+
+#: ../settings/panel/shot.sh.in:15
+msgid "Screenshot applet configuration"
+msgstr ""
+
+#: ../settings/panel/shot.sh.in:16
+msgid "Default action::CB"
+msgstr ""
+
+#: ../settings/panel/sysinfo.sh.in:10
+msgid "Sysinfo applet"
+msgstr ""
+
+#: ../settings/panel/sysinfo.sh.in:12
+msgid "Sysinfo applet configuration"
+msgstr ""
+
+#: ../settings/panel/sysinfo.sh.in:13
+msgid "Sysinfo width::NUN"
+msgstr ""
+
+#: ../settings/panel/taskbar.sh.in:10
+msgid "Taskbar applet"
+msgstr ""
+
+#: ../settings/panel/taskbar.sh.in:12
+msgid "Taskbar applet configuration"
+msgstr ""
+
+#: ../settings/panel/taskbar.sh.in:13
+msgid "Taskbar width::NUN"
+msgstr ""
+
+#: ../settings/panel/volume.sh.in:16
+msgid "Volume applet"
+msgstr ""
+
+#: ../settings/panel/volume.sh.in:18
+msgid "Volume applet configuration"
+msgstr ""
+
+#: ../settings/panel/volume.sh.in:19
+msgid "Default control device::CB"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:12
+msgid "Weather applet"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:14
+msgid "Weather applet configuration"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:15
+msgid "City name:"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:16
+msgid "Country code:"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:17
+msgid "Measure units:"
+msgstr ""
+
+#: ../settings/panel/weather.sh.in:18
+msgid "APi key:"
+msgstr ""
+
+#: ../settings/panel/wifi.sh.in:12
+msgid "Wifi interface name:"
+msgstr ""
+
+#: ../utils/ydentry.sh:10
+msgid "Desktop entry editor"
+msgstr ""
+
+#: ../utils/ydentry.sh:10
+msgid "Edit desktop entry ${1%%*/}"
+msgstr ""
+
+#: ../utils/ydentry.sh:12
+msgid "Type:CB"
+msgstr ""
+
+#: ../utils/ydentry.sh:14
+msgid "Generic name"
+msgstr ""
+
+#: ../utils/ydentry.sh:15
+msgid "Comment"
+msgstr ""
+
+#: ../utils/ydentry.sh:16
+msgid "Command:FL"
+msgstr ""
+
+#: ../utils/ydentry.sh:17
+msgid "Icon"
+msgstr ""
+
+#: ../utils/ydentry.sh:18
+msgid "In terminal:CHK"
+msgstr ""
+
+#: ../utils/ydentry.sh:19
+msgid "Startup notify:CHK"
+msgstr ""
+
+#: ../utils/yfind.sh:55
+msgid "Use regex:chk"
+msgstr ""
+
+#: ../utils/yfind.sh:56
+msgid "Directory:dir"
+msgstr ""
+
+#: ../utils/yfind.sh:56
+msgid "Newer than:dt"
+msgstr ""
+
+#: ../utils/yfind.sh:57
+msgid "Content"
+msgstr ""
+
+#: ../utils/yfind.sh:60
+msgid "Search results:"
+msgstr ""
+
+#: ../utils/yfind.sh:60
+msgid "Size:sz"
+msgstr ""
+
+#: ../utils/yfind.sh:60
+msgid "Perms"
+msgstr ""
+
+#: ../utils/yfind.sh:61
+msgid "Date"
+msgstr ""
+
+#: ../utils/yfind.sh:61
+msgid "Owner"
+msgstr ""
+
+#: ../utils/yfind.sh:64
+msgid "Find files"
+msgstr ""
+
+#: ../utils/yimage.sh:12
+msgid "Select image"
+msgstr ""
+
+#: ../utils/yimage.sh:12
+msgid "Images"
+msgstr ""
+
+#: ../utils/yimage.sh:18
+#, sh-format
+msgid "No such file - $filename"
+msgstr ""
+
+#: ../utils/yimage.sh:25
+msgid "Exif data"
+msgstr ""
+
+#: ../utils/yimage.sh:26
+#, sh-format
+msgid "Show EXIF data for file:\\n<b>$fn</b>"
+msgstr ""
+
+#: ../utils/yimage.sh:27
+msgid "Field"
+msgstr ""
+
+#: ../utils/yimage.sh:27
+msgid "Data"
+msgstr ""
+
+#: ../utils/yimage.sh:32
+msgid ""
+"\\t<b>File</b>: <i>%f</i>\\n\\t<b>Size</b>: %b\\n\\t<b>Geometry</b>: %G\\n"
+"\\t<b>Type</b>: %m\\n\\t%c"
+msgstr ""
+
+#: ../utils/yimage.sh:36 ../data/utils/yimage.desktop.in.h:1
+msgid "Image viewer"
+msgstr ""
+
+#: ../utils/yimage.sh:37
+msgid "EXIF Info!info:bash -c 'show_info \\"
+msgstr ""
+
+#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:14
+msgid "Power Off"
+msgstr ""
+
+#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:15
+msgid "Reboot"
+msgstr ""
+
+#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:16
+msgid "Suspend"
+msgstr ""
+
+#: ../utils/ylogout.sh:11 ../utils/ylogout.sh:26 ../fvwm/config/menus.fvwm.h:17
+msgid "Logout"
+msgstr ""
+
+#: ../utils/ylogout.sh:26
+msgid "\\nChoose logout action:\\n"
+msgstr ""
+
+#: ../utils/ylogout.sh:27
+msgid "Action:cb"
+msgstr ""
+
+#: ../utils/ylogout.sh:27
+msgid "Save last choise:chk"
+msgstr ""
+
+#: ../utils/ymedia.sh:24
+msgid "$mp\\n${vendor:-Unknown} $model ($dev)"
+msgstr ""
+
+#: ../utils/ymedia.sh:34
+msgid "<b>Error</b>\\nUnable to unplug $2"
+msgstr ""
+
+#: ../utils/ymedia.sh:42
+msgid "Removable media"
+msgstr ""
+
+#: ../utils/ymedia.sh:45
+msgid "Manage removable media\\nDouble click on media for unplug it"
+msgstr ""
+
+#: ../utils/ymedia.sh:46 ../utils/ysysinfo.sh:35
+msgid "Mountpoint"
+msgstr ""
+
+#: ../utils/ymedia.sh:46 ../utils/ysysinfo.sh:35 ../utils/ysysinfo.sh:42
+#: ../utils/ysysinfo.sh:54
+msgid "Device"
+msgstr ""
+
+#: ../utils/ymixer.sh:9
+msgid "ALSA Mixer"
+msgstr ""
+
+#: ../utils/ynotes.sh:14
+msgid "Notes"
+msgstr ""
+
+#: ../utils/ynotes.sh:39
+msgid "Text notes"
+msgstr ""
+
+#: ../utils/ypass.sh:11
+msgid "Password authentication is required\\n$1\\n"
+msgstr ""
+
+#: ../utils/ypass.sh:13
+msgid "Password prompt"
+msgstr ""
+
+#: ../utils/yps.sh:6 ../fvwm/config/menus.fvwm.h:20
+msgid "Process viewer"
+msgstr ""
+
+#. create and run dialog
+#: ../utils/yrun.sh:25
+msgid "Run command"
+msgstr ""
+
+#: ../utils/yrun.sh:25
+msgid "\\nEnter command or uri to execute:\\n"
+msgstr ""
+
+#: ../utils/yrun.sh:27
+msgid "Command:cbe"
+msgstr ""
+
+#: ../utils/yrun.sh:27
+msgid "Run in terminal:chk"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:17
+msgid "Module information"
+msgstr ""
+
+#. CPU tab
+#: ../utils/ysysinfo.sh:24
+msgid "CPU information"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
+msgid "Parameter"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30 ../utils/ysysinfo.sh:71
+msgid "Value"
+msgstr ""
+
+#. Memory tab
+#: ../utils/ysysinfo.sh:29
+msgid "Memory usage information"
+msgstr ""
+
+#. Harddrive tab
+#: ../utils/ysysinfo.sh:34
+msgid "Disk space usage"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:35
+msgid "Type"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:36
+msgid "Total:sz"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:36
+msgid "Free:sz"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:36
+msgid "Usage:bar"
+msgstr ""
+
+#. PCI tab
+#: ../utils/ysysinfo.sh:40
+msgid "PCI bus devices"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:41
+msgid "ID"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:41
+msgid "Class"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:42
+msgid "Vendor"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:42
+msgid "Rev"
+msgstr ""
+
+#. Modules tab
+#: ../utils/ysysinfo.sh:46
+msgid "Loaded kernel modules"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:49
+msgid "Used"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:49
+msgid "Depends"
+msgstr ""
+
+#. Battery tab
+#: ../utils/ysysinfo.sh:53
+msgid "Battery state"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:54
+msgid "Details"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:70
+msgid "Temperature sensors information"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:71
+msgid "Sensor"
+msgstr ""
+
+#. main dialog
+#: ../utils/ysysinfo.sh:74
+msgid "<b>Hardware system information</b>\\\\n\\\\n"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:75
+msgid "\\\\tOS: $(lsb_release -ds) on <b>$(hostname)</b>\\\\n"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:76
+msgid "\\\\tKernel: $(uname -sr)\\\\n\\\\n"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:79 ../data/utils/ysysinfo.desktop.in.h:1
+msgid "System info"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:80
+msgid "Processes!system-run:yps"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:81
+msgid "CPU"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:81
+msgid "Memory"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:81
+msgid "Disks"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:81
+msgid "PCI"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:81
+msgid "Modules"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:82
+msgid "Battery"
+msgstr ""
+
+#: ../utils/ysysinfo.sh:82
+msgid "Sensors"
+msgstr ""
+
+#: ../utils/yterm.sh:20
+msgid "Yterm error"
+msgstr ""
+
+#: ../utils/yterm.sh:21
+msgid "No suitable terminal emulator found"
+msgstr ""
+
+#: ../utils/ywget.sh:13
+msgid "Select file name"
+msgstr ""
+
+#: ../utils/ywget.sh:19
+#, sh-format
+msgid "Download $url"
+msgstr ""
+
+#: ../utils/ywget.sh:24
+#, sh-format
+msgid "URI '$url' is not supported"
+msgstr ""
+
+#: ../data/menu/desktop-directories/AudioVideo.directory.in.h:1
+msgid "Sound & Video"
+msgstr ""
+
+#: ../data/menu/desktop-directories/AudioVideo.directory.in.h:2
+msgid "Multimedia menu"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Development.directory.in.h:1
+msgid "Programming"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Development.directory.in.h:2
+msgid "Tools for software development"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Education.directory.in.h:1
+msgid "Education"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Game.directory.in.h:1
+msgid "Games"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Game.directory.in.h:2
+msgid "Games and amusements"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Graphics.directory.in.h:1
+msgid "Graphics"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Graphics.directory.in.h:2
+msgid "Graphics applications"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Network.directory.in.h:1
+msgid "Internet"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Network.directory.in.h:2
+msgid "Programs for Internet access such as web and email"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Office.directory.in.h:1
+msgid "Office"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Office.directory.in.h:2
+msgid "Office Applications"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Settings.directory.in.h:1
+#: ../fvwm/config/menus.fvwm.h:18
+msgid "Settings"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Settings.directory.in.h:2
+msgid "System settings"
+msgstr ""
+
+#: ../data/menu/desktop-directories/System-Tools.directory.in.h:1
+msgid "System Tools"
+msgstr ""
+
+#: ../data/menu/desktop-directories/System-Tools.directory.in.h:2
+msgid "System configuration and monitoring"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Utility.directory.in.h:1
+msgid "Accessories"
+msgstr ""
+
+#: ../data/menu/desktop-directories/Utility.directory.in.h:2
+msgid "Desktop accessories"
+msgstr ""
+
+#: ../data/settings/ysettings.desktop.in.h:1
+msgid "Control center"
+msgstr ""
+
+#: ../data/settings/ysettings.desktop.in.h:2
+msgid "Ydesk control center"
+msgstr ""
+
+#: ../data/settings/desk.desktop.in.h:1
+msgid "Desktop Settings"
+msgstr ""
+
+#: ../data/settings/desk.desktop.in.h:2
+msgid "Common ydesk settions"
+msgstr ""
+
+#: ../data/settings/interface.desktop.in.h:1
+msgid "Interace Settings"
+msgstr ""
+
+#: ../data/settings/interface.desktop.in.h:2
+msgid "Configure ixdesktop GTK+ settings"
+msgstr ""
+
+#: ../data/settings/mime.desktop.in.h:1
+msgid "MIME Types Editor"
+msgstr ""
+
+#: ../data/settings/mime.desktop.in.h:2
+msgid "Edit MIME types"
+msgstr ""
+
+#: ../data/settings/panel.desktop.in.h:1
+msgid "Panels Settings"
+msgstr ""
+
+#: ../data/settings/panel.desktop.in.h:2
+msgid "Configure desktop panels"
+msgstr ""
+
+#: ../data/settings/printer.desktop.in.h:1
+msgid "Printer Settings"
+msgstr ""
+
+#: ../data/settings/printer.desktop.in.h:2
+msgid "Configure printers"
+msgstr ""
+
+#: ../data/settings/session.desktop.in.h:2
+msgid "Edit Ydesk session settings"
+msgstr ""
+
+#: ../data/settings/sound.desktop.in.h:1
+msgid "Sound Settings"
+msgstr ""
+
+#: ../data/settings/sound.desktop.in.h:2
+msgid "Configure ALSA sound volumes"
+msgstr ""
+
+#: ../data/settings/term.desktop.in.h:1
+msgid "Terminal Settings"
+msgstr ""
+
+#: ../data/settings/term.desktop.in.h:2
+msgid "Configure terminal (urxvt) settings"
+msgstr ""
+
+#: ../data/utils/yfind.desktop.in.h:1
+msgid "File search"
+msgstr ""
+
+#: ../data/utils/yfind.desktop.in.h:2
+msgid "Search for Files or Folders on disk"
+msgstr ""
+
+#: ../data/utils/yimage.desktop.in.h:2
+msgid "Simple image viewer"
+msgstr ""
+
+#: ../data/utils/ynotes.desktop.in.h:1
+msgid "Quick Notes"
+msgstr ""
+
+#: ../data/utils/ynotes.desktop.in.h:2
+msgid "Keep small pieces of text"
+msgstr ""
+
+#: ../data/utils/ysession.desktop.in.h:1
+msgid "Y desktop"
+msgstr ""
+
+#: ../data/utils/ysession.desktop.in.h:2
+msgid "Default session for Y desktop"
+msgstr ""
+
+#: ../data/utils/ysysinfo.desktop.in.h:2
+msgid "Show information about system"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:1
+msgid "Iconify"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:2
+msgid "Maximize"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:3
+msgid "Move"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:4
+msgid "Resize"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:5
+msgid "Shade"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:6
+msgid "Stick"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:7
+msgid "Close"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:8
+msgid "Indent"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:9
+msgid "Main menu"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:10
+msgid "Recent"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:11
+msgid "Search"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:12
+msgid "Run"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:13
+msgid "Shutdown"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:19
+msgid "Media"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:22
+msgid "FVWM console"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:23
+msgid "Update icons"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:24
+msgid "Lock screen"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:25
+msgid "Restart FVWM"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:26
+msgid "Whole screen"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:27
+msgid "Window/Region"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:28
+msgid "Check mail"
+msgstr ""
+
+#: ../fvwm/config/menus.fvwm.h:29
+msgid "Configuration"
+msgstr ""
+
+#: ../fvwm/config/applets/menu.fvwm.h:2
+msgid "Actions"
+msgstr ""
+
+#: ../fvwm/config/applets/shot.fvwm.h:1
+msgid "Make a screenshot"
+msgstr ""
+
+#: ../fvwm/config/applets/volume.fvwm.h:1
+msgid "Sound volume"
+msgstr ""
+
+#: ../fvwm/config/applets/media.fvwm.h:1
+msgid "Manage removable media"
+msgstr ""

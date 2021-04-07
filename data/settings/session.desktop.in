@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Session
+_GenericName=Session settings
+_Comment=Edit Ydesk session settings
+Categories=Plugin
+Exec=session.sh
+Icon=system-run
+Terminal=false
+Type=Application
+StartupNotify=false

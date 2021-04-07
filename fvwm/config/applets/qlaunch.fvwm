@@ -1,0 +1,1 @@
+PipeRead "$[FVWM_LIBDIR]/qlaunch.sh"

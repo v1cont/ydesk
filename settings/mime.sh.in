@@ -1,0 +1,31 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Mime type editor
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2020
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+pipe=$(mktemp -uq --tmpdir=/tmp/ydesk mime.XXXXXXXX)
+
+trap "rm -f $pipe" EXIT
+
+mkfifo $pipe
+exec 3<> $pipe
+
+cat $pipe | yad --image=system-run --text=$"MIME types editor" \
+                --list --column=":img" --column="Mime type" --column="Application" &
+PID=$!
+
+while read ln; do
+    if [[ -e /usr/share/mime/$ln.xml ]]; then
+        icon=$(sed -nr 's/.*generic-icon name="(.*)".*/\1/p' "/usr/share/mime/$ln.xml" 2> /dev/null)
+    fi
+    app=$(xdg-mime query default "$ln" 2> /dev/null)
+    printf "%s\n%s\n%s\n"  "$icon" "$ln" "$app" >&3
+    unset icon app
+done < /usr/share/mime/types
+
+wait $PID

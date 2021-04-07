@@ -1,0 +1,111 @@
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmIconMan/FvwmIconMan.h fvwm3-1.0.2/modules/FvwmIconMan/FvwmIconMan.h
+--- fvwm3-1.0.2-orig/modules/FvwmIconMan/FvwmIconMan.h	2020-12-12 02:37:08.000000000 +0200
++++ fvwm3-1.0.2/modules/FvwmIconMan/FvwmIconMan.h	2021-03-13 11:12:38.576614657 +0200
+@@ -314,6 +314,8 @@ typedef struct win_manager {
+ 	char *tips_fontname;
+ 	char *tips_formatstring;
+ 	ftips_config *tips_conf;
++    Uchar roundedcorners;
++    int padding;
+ 
+ 	/* X11 state */
+ 	Window theWindow, theFrame;
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmIconMan/readconfig.c fvwm3-1.0.2/modules/FvwmIconMan/readconfig.c
+--- fvwm3-1.0.2-orig/modules/FvwmIconMan/readconfig.c	2020-08-17 01:59:05.000000000 +0300
++++ fvwm3-1.0.2/modules/FvwmIconMan/readconfig.c	2021-03-13 11:11:00.673607878 +0200
+@@ -2027,6 +2027,40 @@ void read_in_resources(void)
+ 	}
+ 	SET_MANAGER(manager, relief_thickness, n);
+       }
++      else if (!strcasecmp(option1, "padding")) {
++        p = read_next_cmd(READ_ARG);
++        if (!p) {
++	  ConsoleMessage("Bad line: %s\n", current_line);
++	  continue;
++        }
++	if (extract_int(p, &n) == 0) {
++	  ConsoleMessage("This is not a number: %s\n", p);
++	  ConsoleMessage("Bad line: %s\n", current_line);
++	  continue;
++	}
++	SET_MANAGER(manager, padding, n);
++      }
++      else if (!strcasecmp(option1, "roundedcorners")) {
++       p = read_next_cmd(READ_ARG);
++       if (!p) {
++	 ConsoleMessage("Bad line: %s\n", current_line);
++	 ConsoleMessage("Need argument to roundedcorners\n");
++	 continue;
++       }
++       if (!strcasecmp(p, "true")) {
++	 i = 1;
++       }
++       else if (!strcasecmp(p, "false")) {
++	 i = 0;
++       }
++       else {
++	 ConsoleMessage("Bad line: %s\n", current_line);
++	 ConsoleMessage("What is this: %s?\n", p);
++	 continue;
++       }
++       ConsoleDebug(CONFIG, "Setting roundedcorners to: %d\n", i);
++       SET_MANAGER(manager, roundedcorners, i);
++      }
+       else if (!strcasecmp(option1, "tips")) {
+ 	      p = read_next_cmd(READ_ARG);
+ 	      if (!p) {
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmIconMan/xmanager.c fvwm3-1.0.2/modules/FvwmIconMan/xmanager.c
+--- fvwm3-1.0.2-orig/modules/FvwmIconMan/xmanager.c	2020-12-12 02:37:08.000000000 +0200
++++ fvwm3-1.0.2/modules/FvwmIconMan/xmanager.c	2021-03-13 11:11:00.673607878 +0200
+@@ -1413,6 +1413,8 @@ static void get_button_geometry(WinManag
+ 
+   g->text_y = g->button_y + text_pad;
+   g->text_base = g->text_y + man->FButtonFont->ascent;
++
++  g->button_w -= man->padding;
+ }
+ 
+ static void draw_button_background(
+@@ -1685,6 +1687,33 @@ static void draw_relief(WinManager *man,
+   }
+ }
+ 
++static void __draw_rounded_corner(WinManager *man, ButtonGeometry *g,
++    int x, int y, int width, int height, GC gc)
++{
++    int x1 = g->button_x + x;
++    int x2 = g->button_x + g->button_w - x - width;
++    int y1 = g->button_y + y;
++    int y2 = g->button_y + g->button_h - y - height;
++
++    XFillRectangle(theDisplay, man->theWindow, gc, x1, y1, width, height);
++    XFillRectangle(theDisplay, man->theWindow, gc, x2, y1, width, height);
++    XFillRectangle(theDisplay, man->theWindow, gc, x1, y2, width, height);
++    XFillRectangle(theDisplay, man->theWindow, gc, x2, y2, width, height);
++}
++
++static void draw_rounded_corners(WinManager *man, ButtonGeometry *g, GC gc)
++{
++    if (man->roundedcorners)
++    {
++	__draw_rounded_corner(man, g, 0, 0, 2, 1, man->backContext[TITLE_CONTEXT]);
++	__draw_rounded_corner(man, g, 0, 1, 1, 1, man->backContext[TITLE_CONTEXT]);
++	__draw_rounded_corner(man, g, 1, 1, 1, 1, gc);
++    }
++
++    XFillRectangle(theDisplay, man->theWindow, man->backContext[TITLE_CONTEXT],
++	    g->button_x + g->button_w, g->button_y, man->padding, g->button_h);
++}
++
+ static void draw_button(WinManager *man, int button, int force)
+ {
+ 	Button *b;
+@@ -1873,6 +1902,8 @@ static void draw_button(WinManager *man,
+ 				draw_relief(
+ 					man, button_state, &g, context1,
+ 					context2);
++
++                draw_rounded_corners(man, &g, context1);
+ 			}
+ 			else if (button_state == SELECT_CONTEXT ||
+ 				 button_state == FOCUS_SELECT_CONTEXT ||

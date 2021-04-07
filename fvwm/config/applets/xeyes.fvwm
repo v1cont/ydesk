@@ -1,0 +1,1 @@
+*FvwmPanel: (Id eyes, 50x1, Padding 3 5, Swallow(UseOld,NoKill) "XEyes" 'Exec exec xeyes')

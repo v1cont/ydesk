@@ -1,0 +1,1 @@
+*FvwmPanel: (Id leds, 30x1, Padding 2 2, Swallow(UseOld,NoKill) "XkbLEDPanel" 'Exec exec xkbvleds -watch 3')

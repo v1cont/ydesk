@@ -1,0 +1,1 @@
+*FvwmPanel: (Id tray, $[infostore.tray_sz]x1, Padding 5 1, Right, Swallow(UseOld,NoKill) "stalonetray" 'Exec exec stalonetray -c $[FVWM_DATADIR]/misc/trayrc')

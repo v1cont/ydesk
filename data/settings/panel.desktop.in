@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=panels
+_GenericName=Panels Settings
+_Comment=Configure desktop panels
+Categories=Plugin
+Exec=panel.sh
+Icon=ypanel
+Terminal=false
+Type=Application
+StartupNotify=false

@@ -1,0 +1,27 @@
+--- fvwm3-1.0.2/fvwm/read.c.orig	2021-03-13 09:33:08.622201282 +0200
++++ fvwm3-1.0.2/fvwm/read.c	2021-03-13 09:38:32.757223726 +0200
+@@ -195,6 +195,7 @@
+ 	char *filename, const exec_context_t *exc)
+ {
+ 	char *full_filename;
++	char *ddir;
+ 	FILE *f = NULL;
+ 
+ 	/* We attempt to open the filename by doing the following:
+@@ -231,6 +232,16 @@
+ 
+ 		if((f = fopen(full_filename, "r")) == NULL)
+ 		{
++			free(full_filename);
++			ddir = getenv ("FVWM_DATADIR");
++			if (ddir)
++			{
++				xasprintf(&full_filename, "%s/%s", ddir, filename);
++			}
++		}
++
++		if((f = fopen(full_filename, "r")) == NULL)
++		{
+ 			free(full_filename);
+ 			xasprintf(&full_filename, "%s/%s", FVWM_DATADIR, filename);
+ 			f = fopen(full_filename, "r");

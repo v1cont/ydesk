@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Ywifi
+_GenericName=Wireless manager
+_Comment=Manager of wireless networks
+Categories=Application;Network;Internet;
+Exec=ywifi
+Icon=network-wireless
+Type=Application
+Terminal=false

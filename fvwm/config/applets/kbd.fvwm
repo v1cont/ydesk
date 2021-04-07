@@ -1,0 +1,1 @@
+*FvwmPanel: (Id kbd, $[infostore.kbd_sz]x1, Padding 2 2, Swallow(UseOld,NoKill) "XXkb" 'Exec exec xxkb')

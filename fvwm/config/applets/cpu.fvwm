@@ -1,0 +1,1 @@
+*FvwmPanel: (Id cpu, $[infostore.cpu_sz]x1, Padding 2 2, Action (Mouse 1) 'Exec exec yps', Swallow(UseOld,NoKill) "YCPU" 'Exec exec $[FVWM_LIBDIR]/ycpu -w $[infostore.cpu_sz]')

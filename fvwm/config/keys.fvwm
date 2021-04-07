@@ -1,0 +1,93 @@
+## menus
+Mouse 1 R A Menu MainMenu mouse -1p -1p
+Mouse 3 R A WindowList mouse -1p -1p NoGeometry
+Mouse 3 R C WindowList mouse -1p -1p NoGeometry OnlyListSkip
+Mouse 2 R A Menu Window mouse -1p -1p
+
+## window frame and side
+Mouse 1 F A Function ResizeOrRaiseOrLowerFunc
+Mouse 3 F A RaiseLower
+
+Mouse 1 S A Function ResizeOrRaiseOrLowerFunc
+Mouse 3 S A RaiseLower
+
+## title bar + 2 decoration buttons
+Mouse 1 T A Function MoveOrRaiseOrLowerFunc
+Mouse 2 T A RaiseLower
+Mouse 3 T A WindowShade
+
+## window title buttons
+Mouse 1 1 A Popup WindowOptionsMenu
+Mouse 1 1 C Module FvwmIdent
+Mouse 3 1 A Stick
+
+Mouse 1 6 A Iconify on
+Mouse 1 4 A Maximize
+Mouse 1 4 C Maximize 100 0
+Mouse 1 4 M Maximize 0 100
+Mouse 1 2 A Close
+Mouse 3 2 A Exec exec xkill -id $[w.id]
+
+## Move or resize windows
+Mouse 1 W M Move
+Mouse 3 W M Resize
+
+# Scroll pages on mouse wheel
+Mouse   4   R   A   GotoPage wrapx wrapy +1p  +0p
+Mouse   5   R   A   GotoPage wrapx wrapy -1p  -0p
+
+## Keys defs
+Key Tab     A   M   WindowList Root c c CurrentDesk, NoGeometry, CurrentAtEnd, IconifiedAtEnd
+
+Key Left    A   CM  GotoPage wrapx wrapy -1p  -0p
+Key Right   A   CM  GotoPage wrapx wrapy +1p  +0p
+
+Key Left    WTSF  CS    Move w-1 keep
+Key Right   WTSF  CS    Move w+1 keep
+Key Up      WTSF  CS    Move keep w-1
+Key Down    WTSF  CS    Move keep w+1
+
+Key Left    WTSF  MS    Resize w-1c keep
+Key Right   WTSF  MS    Resize w+1c keep
+Key Up      WTSF  MS    Resize keep w-1c
+Key Down    WTSF  MS    Resize keep w+1c
+
+Key F4		WTSF  M     Close
+Key F4		WTSF  C     ToggleMaximized
+Key F4		WTSF  CS    Minimize
+
+Key F11     WTSF  C     ToggleFullscreen
+
+Key 1       WTSF  CM    MoveToPage 0 0
+Key 2       WTSF  CM    MoveToPage 1 0
+Key 3       WTSF  CM    MoveToPage 2 0
+Key 4       WTSF  CM    MoveToPage 3 0
+Key 5       WTSF  CM    MoveToPage 4 0
+
+Key XF86MonBrightnessUp    A   A   Exec exec xbacklight +10
+Key XF86MonBrightnessDown  A   A   Exec exec xbacklight -10
+
+Key XF86AudioLowerVolume   A   A   Exec exec $[FVWM_LIBDIR]/volume.sh dec
+Key XF86AudioRaiseVolume   A   A   Exec exec $[FVWM_LIBDIR]/volume.sh inc
+Key XF86AudioMute          A   A   Exec exec $[FVWM_LIBDIR]/volume.sh mute
+ 
+Key Print                  A   A   Exec exec $[FVWM_LIBDIR]/shot.sh root
+
+Key Super_L A     A     Menu MainMenu Root c c
+Key H       A     CM    Menu ClipboardMenu Root c c
+
+Key D       A     CM    Exec exec $[FVWM_LIBDIR]/clipman.sh trans
+Key L       A     CM    Exec exec $[infostore.lock]
+
+Key Delete  A     CM    Menu ExitMenu Root c c
+Key Escape  A     CM    Exec exec xkill
+
+Key F2      A     M     Exec exec xdotool search --classname YRun windowfocus
+Key R       A     CM    Exec exec xdotool search --classname YRun windowfocus
+
+Key T       A     CM    Exec exec $[infostore.term]
+Key F       A     CM    Exec exec $[infostore.fm]
+Key E       A     CM    Exec exec $[infostore.editor]
+Key B       A     CM    Exec exec $[infostore.browser]
+Key M       A     CM    Exec exec $[FVWM_LIBDIR]/mail.sh $[infostore.mailer]
+Key P       A     CM    Exec exec yps

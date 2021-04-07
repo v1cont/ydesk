@@ -1,0 +1,6 @@
+[Desktop Entry]
+_Name=Y desktop
+_Comment=Default session for Y desktop
+Exec=ysession
+Icon=ydesk
+Type=XSession

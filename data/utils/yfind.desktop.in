@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Yfind
+_GenericName=File search
+_Comment=Search for Files or Folders on disk
+Categories=Application;System;
+Exec=yfind
+Icon=system-search
+Type=Application
+Terminal=false

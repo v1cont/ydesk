@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=sound
+_GenericName=Sound Settings
+_Comment=Configure ALSA sound volumes
+Categories=Plugin
+Exec=ymixer
+Icon=audio-card
+Terminal=false
+Type=Application
+StartupNotify=false

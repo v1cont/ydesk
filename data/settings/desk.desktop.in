@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=desktop
+_GenericName=Desktop Settings
+_Comment=Common ydesk settions
+Categories=Plugin
+Exec=desktop.sh
+Icon=desktop
+Terminal=false
+Type=Application
+StartupNotify=false

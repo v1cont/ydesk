@@ -1,0 +1,1 @@
+*FvwmPanel: (Id pager, 200x1, Padding 2 2, Swallow(UseOld,NoKill) "FvwmPager" 'Module FvwmPager')

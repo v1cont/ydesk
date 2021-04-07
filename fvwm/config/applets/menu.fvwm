@@ -1,0 +1,2 @@
+*FvwmPanel: (Id menu1, 120x1, Padding 2 2, ActiveColorset 3, PressColorset 3, Font $[infostore.mb_fn], Icon "y.png", Center, Title (Side) " $[gt.Applications] ", ActionOnPress, Action (Mouse 1) `Menu Applications rectangle 1x1+$left+$bottom +0 +0`)
+*FvwmPanel: (Id menu2, 80x1, Padding 2 2, ActiveColorset 3, PressColorset 3, Font $[infostore.mb_fn], Left, Title " $[gt.Actions] ", ActionOnPress, Action (Mouse 1) `Menu ActionMenu rectangle 1x1+$left+$bottom +0 +0`)

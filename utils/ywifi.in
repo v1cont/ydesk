@@ -1,0 +1,10 @@
+#! @BASH@
+# -*- mode: sh -*-
+#
+# Manage wireless networks
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2015-2021
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+

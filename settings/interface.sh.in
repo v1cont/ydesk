@@ -1,0 +1,121 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2013
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk iface.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+# create list of gtk themes
+eval GTKTHEME=$(gtk-query-settings gtk-theme-name | sed "s/.*: //")
+eval KEYTHEME=$(gtk-query-settings gtk-key-theme-name | sed "s/.*: //")
+themelist=$"None"
+keythemelist=$"Default"
+for d in /usr/share/themes/*; do
+    theme=${d##*/}
+    if [[ -e $d/gtk-3.0/gtk.css ]]; then
+        if [[ $theme == $GTKTHEME ]]; then
+            themelist+="!^$theme"
+        else
+            themelist+="!$theme"
+        fi
+    fi
+    if [[ -e $d/gtk-3.0/gtk-keys.css ]]; then
+        if [[ $theme == $KEYTHEME ]]; then
+            keythemelist+="!^$theme"
+        else
+            keythemelist+="!$theme"
+        fi
+    fi
+done
+
+# create list of icon themes
+eval ICONTHEME=$(gtk-query-settings gtk-icon-theme-name | sed "s/.*: //")
+eval CURSORTHEME=$(gtk-query-settings gtk-cursor-theme-name | sed "s/.*: //")
+iconthemelist=$"Default"
+cursorthemelist=$"Default"
+for d in /usr/share/icons/*; do
+    theme=${d##*/}
+    if [[ -e $d/index.theme ]]; then
+        if [[ $theme == $ICONTHEME ]]; then
+            iconthemelist+="!^$theme"
+        else
+            iconthemelist+="!$theme"
+        fi
+    fi
+    if [[ -e $d/cursors ]]; then
+        if [[ $theme == $CURSORTHEME ]]; then
+            cursorthemelist+="!^$theme"
+        else
+            cursorthemelist+="!$theme"
+        fi
+    fi
+done
+
+CSIZE=$(gtk-query-settings gtk-cursor-theme-size | sed "s/.*: //")
+
+FONT=$(gtk-query-settings gtk-font-name | sed "s/.*: //")
+AALIAS=$(gtk-query-settings gtk-xft-antialias | sed "s/.*: //")
+HINTING=$(gtk-query-settings gtk-xft-hinting | sed "s/.*: //")
+eval HINTSTYLE=$(gtk-query-settings gtk-xft-hintstyle | sed "s/.*: //")
+eval RGBA=$(gtk-query-settings gtk-xft-rgba | sed "s/.*: //")
+
+DHDR=$(gtk-query-settings gtk-dialogs-use-header | sed "s/.*: //")
+SCROLL=$(gtk-query-settings gtk-overlay-scrolling | sed "s/.*: //")
+ANIM=$(gtk-query-settings gtk-enable-animations | sed "s/.*: //")
+MNEMONIC=$(gtk-query-settings gtk-enable-mnemonics | sed "s/.*: //")
+ACCEL=$(gtk-query-settings gtk-enable-accels | sed "s/.*: //")
+eval MBACCEL=$(gtk-query-settings gtk-menu-bar-accel | sed "s/.*: //")
+
+yad --title=$"Interface settings" --width=450 --bool-fmt=1 \
+    --quoted-output --separator=" " \
+    --image=preferences-desktop-theme \
+    --text=$"<b>GTK+ interface settings</b>" --form \
+    --field=$"Theme name::CB" "$themelist" \
+    --field=$"Key theme name::CB" "$keythemelist" \
+    --field=$"Icon theme name::CB" "$iconthemelist" \
+    --field=$"Cursor theme name::CB" "$cursorthemelist" \
+    --field=$"Cursor theme size::NUM" "$CSIZE" \
+    --field=":LBL" "" \
+    --field=$"Font name::FN" "$FONT" \
+    --field=$"Enable xft antialiasing:CHK" "$AALIAS" \
+    --field=$"Enable xft hinting:CHK" "$HINTING" \
+    --field=$"Xft hint style:" "$HINTSTYLE" \
+    --field=$"Xft RGBA:" "$RGBA" \
+    --field=":LBL" "" \
+    --field=$"Use dialog headers:CHK" "$DHDR" \
+    --field=$"Enable owerlay scrolling:CHK" "$SCROLL" \
+    --field=$"Enable animation:CHK" "$ANIM" \
+    --field=$"Enable mnemonics:CHK" "$MNEMONIC" \
+    --field=$"Enable acceleration:CHK" "$ACCEL" \
+    --field=$"Menubar accelerator:" "$MBACCEL" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    sfile="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
+    mkdir -p $(dirname $sfile)
+    cat > $sfile <<EOF
+[Settings]
+gtk-theme-name = ${r[0]}
+gtk-key-theme-name = ${r[1]}
+gtk-icon-theme-name = ${r[2]}
+gtk-cursor-theme-name = ${r[3]}
+gtk-cursor-theme-size = ${r[4]}
+gtk-font-name = ${r[6]}
+gtk-xft-antialias = ${r[7]}
+gtk-xft-hinting = ${r[8]}
+gtk-xft-hintstyle = ${r[9]}
+gtk-xft-rgba = ${r[10]}
+gtk-dialogs-use-header = ${r[12]}
+gtk-overlay-scrolling = ${r[13]}
+gtk-enable-animations = ${r[14]}
+gtk-enable-mnemonics = ${r[15]}
+gtk-enable-accels = ${r[16]}
+gtk-menu-bar-accel = ${r[17]}
+EOF
+fi

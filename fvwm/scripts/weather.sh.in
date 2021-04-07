@@ -1,0 +1,41 @@
+#! /bin/bash
+# Weather applet engine
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+wfile=${XDG_CACHE_HOME:-$HOME/.cache}/ydesk/weather.json
+
+declare -A icons=([01d]=weather-clear [01n]=weather-clear-night [02d]=weather-few-clouds [02n]=weather-few-clouds-night
+                  [03d]=weather-overcast [03n]=weather-overcast [04d]=weather-severe-alert [04n]=weather-severe-alert
+                  [09d]=weather-showers [09n]=weather-showers [10d]=weather-showers-scattered [10n]=weather-showers-scattered
+                  [11d]=weather-storm [11n]=weather-storm [13d]=weather-snow [13n]=weather-snow [50d]=weather-fog [50n]=weather-fog)
+
+function wthr_update {
+    APIKEY=$(< ${XDG_DATA_HOME:-$HOME/.share}/ydesk/weather.key)
+    if [[ -z $APIKEY ]]; then
+        echo "API key missing" > /dev/stderr
+        exit 1
+    fi
+    eval CITY=$(gsettings get ydesk.weather city)
+    eval COUNTRY=$(gsettings get ydesk.weather country)
+    eval UNITS=$(gsettings get ydesk.weather units)
+    
+    mkdir -p $(dirname $wfile)
+    curl -s -o $wfile "http://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}&APPID=${APIKEY}&units=${UNITS}" 
+    
+    printf -v temp "%.f°C" "$(jq '.main.temp' $wfile)"
+    eval i="$(jq '.weather[0].icon' $wfile)"
+
+    isize=$(gsettings get ydesk.panel isize)
+    echo "SendToModule FvwmPanel Silent ChangeButton wthr Title (Side) '$temp', Icon '$(yad-tools --icon --size=$isize ${icons[$i]})'"
+}
+
+function wthr_show {
+    yad
+}
+
+case $1 in
+    update|upd) wthr_update ;;
+    show) wthr_show ;;
+esac

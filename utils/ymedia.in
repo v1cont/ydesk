@@ -1,0 +1,52 @@
+#! /bin/bash
+# Manage removable media
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+[[ -e /etc/conf.d/automount ]] && source /etc/conf.d/automount
+export BASEDIR=${MOUNT_BASE:-/media}
+
+PERIOD=${1:-10}
+
+export fpipe=$(mktemp -u --tmpdir=/tmp/ydesk media.XXXXXXXX)
+mkfifo "$fpipe"
+
+trap "rm -f $fpipe" EXIT
+
+function update_list {
+    echo -e '\f' >> $fpipe
+    for mp in $BASEDIR/*; do
+        mountpoint -q $mp || continue
+        dev=$(findmnt -n -o SOURCE $mp)
+        vendor=$(< /sys/block/${dev:5:3}/device/vendor)
+        model=$(< /sys/block/${dev:5:3}/device/model)
+        echo -e $"$mp\n${vendor:-Unknown} $model ($dev)" >> $fpipe
+        unset dev vendor model
+    done
+}
+export -f update_list
+
+function unplug_dev {
+    eject "$1" &> /dev/null
+    if [[ $? -ne 0 ]]; then
+        yad --image=dialog-error --title=$"Error" --button=yad-close \
+            --text=$"<b>Error</b>\nUnable to unplug $2"
+    fi
+    update_list
+}
+export -f unplug_dev
+
+exec 3<> $fpipe
+
+yad --title=$"Removable media" --window-icon=media-removable --image=media-removable \
+    --width=600 --height=500 --center --kill-parent  --listen \
+    --button="yad-refresh:bash -c update_list" --button="yad-close:0" \
+    --text=$"Manage removable media\nDouble click on media for unplug it" \
+    --list --column=$"Mountpoint" --column $"Device" --expand-column=2 \
+    --dclick-action='bash -c "unplug_dev %s"' <&3 &
+
+while : ; do
+    update_list
+    sleep $PERIOD
+done

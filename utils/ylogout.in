@@ -1,0 +1,43 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Logout script
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2009-2014
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+acts=("" $"Power Off" $"Reboot" $"Suspend" $"Logout")
+
+histdir=${XDG_CACHE_HOME:-$HOME/.cache}/ixdesktop
+histfile=$histdir/logout
+[[ -e $histfile ]] && LASTACT=$(< $histfile)
+
+ACTIONS=${acts[1]}
+for (( i=2 ; i<5; i++ )); do
+    ACTIONS+="!"
+    [[ $i -eq ${LASTACT:-0} ]] && ACTIONS+="^"
+    ACTIONS+="${acts[$i]}"
+done
+
+eval $(yad --width=350 --center --sticky --on-top --class="${0##*/}" \
+        --window-icon="system-log-out" --image="system-log-out" --num-output \
+        --title=$"Logout" --text=$"\nChoose logout action:\n" \
+        --form --field=$"Action:cb" "$ACTIONS" --field=$"Save last choise:chk" FALSE |\
+              awk -F'|' '{printf "act=%s\nsave=%s\n", $1, $2}')
+[[ -z $act ]] && exit 0
+
+if [[ $save == "TRUE" ]]; then
+    mkdir -p $histdir
+    echo "$act" > $histfile
+fi
+
+case $act in
+    1) cmd="/sbin/poweroff" ;;
+    2) cmd="/sbin/reboot" ;;
+    3) cmd="/sbin/hibernate disk" ;;
+    4) cmd="FvwmCommand Quit" ;;
+esac
+
+eval exec $cmd

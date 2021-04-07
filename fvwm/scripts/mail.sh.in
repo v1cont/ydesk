@@ -1,0 +1,71 @@
+#! /bin/bash
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+sfile=${XDG_DATA_HOME:-$HOME/.local}/ydesk/mail.conf
+touch $sfile
+
+export isize=$(gsettings get ydesk.panel isize)
+
+function mail_check {
+    icon="nomail"
+    txt=
+    while IFS=';' read srv acc; do
+        pass=$(secret-tool lookup server "${srv#*://}" user "$acc")
+        if [[ -n $pass ]]; then
+            nm=$(curl -s -u "$acc:$pass" $srv -X 'STATUS INBOX (UNSEEN)' | sed -r 's/.* ([0-9]+)\).*/\1/')
+            [[ $nm -gt 0 ]] && new_mail="y"
+            txt+="${srv#*://} - $nm\n"
+        fi
+    done < $sfile
+    if [[ $new_mail == y ]]; then
+        icon="newmail"
+        ynotify -i mail-new $"New mail" "$txt"
+    fi
+    
+    echo "SendToModule FvwmPanel Silent ChangeButton mail Icon $(yad-tools --icon --size=$isize $icon)"
+}
+
+function add_mail_acc {
+    [[ $1 != add ]] && return
+    ACC=($(yad --form --field=$"Server:" --field=$"Account:" --field=$"Password::h" \
+            --separator="\n" --title $"Mail account" --image=user-info --text=$"Add new mail account"))
+    if [[ -n ${ACC[0]} ]]; then
+        echo -n "${ACC[2]}" | secret-tool store --label $"Ydesk mail checker" server "${ACC[0]#*://}" user "${ACC[1]}"
+        echo -e "${ACC[0]}\n${ACC[1]}"
+    else
+        return 1    
+    fi
+}
+export -f add_mail_acc
+
+function mail_cfg {
+    rfile=$(mktemp --tmpdir=/tmp/ydesk mails-XXXXXXXX)
+    sed "s/;/\n/g" $sfile | yad --title $"Mail configuration" \
+        --text $"List of mail acconts to check" --image="mail-unread" \
+        --list --print-all --separator=";" --use-interp --editable \
+        --expand-column=0 --row-action="add_mail_acc" \
+        --column=$"Server" --column=$"User" | sed "s/;$//" > $rfile
+    if [[ ${PIPESTATUS[1]} -eq 0 ]]; then
+        mv -f $rfile $sfile
+    else
+        rm -f $rfile
+    fi
+}
+
+function mail_open {
+    FvwmCommand "SendToModule FvwmPanel Silent ChangeButton mail Icon  $(yad-tools --icon --size=$isize nomail)"
+    if [[ -z $1 ]]; then
+        eval mexec=$(gsettings get ydesk.apps mailer)
+    else
+        mexec="$1"
+    fi
+    exec $mexec
+}
+
+case $1 in
+    check) ( mail_check ) & ;;
+    cfg) mail_cfg ;;
+    *) mail_open "$1" ;;
+esac

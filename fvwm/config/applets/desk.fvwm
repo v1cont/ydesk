@@ -1,0 +1,1 @@
+*FvwmPanel: (Id desk, 25x1, Padding 2 2, Icon "desk.png", ActionOnPress, Action (Mouse 1) All (CurrentPage, !Iconic) Iconify, Action (Mouse 3) `WindowList rectangle 1x1+$left+$bottom +0 +0 NoGeometry, NoCurrentDeskTitle, SelectOnRelease`, Action (Mouse 2) 'All (CurrentPage) Iconify')

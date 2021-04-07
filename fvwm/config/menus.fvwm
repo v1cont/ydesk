@@ -1,0 +1,89 @@
+#  -*- mode: fvwm -*-
+
+#-------------------------------------------------------------------------------
+#- menus
+#-------------------------------------------------------------------------------
+
+Style fvwm_menu NoButton 1, NoButton 3, NoButton 4, NoButton 6, !Borders, Sticky, WindowListSkip
+
+MenuStyle * Win, TitleUnderlines2, SeparatorsShort, Animation, TrianglesUseFore
+MenuStyle * BorderWidth 1, FlatSeparators
+MenuStyle * Font $[infostore.fn], TitleFont $[infostore.tfn]
+MenuStyle * MenuColorset 1, ActiveColorset 3, TitleColorset 4
+MenuStyle * ItemFormat "%.4s%.1| %.5i%.5l %.5l %.5r %.5i %2.3> %.1|"
+MenuStyle * VerticalItemSpacing 4 4, VerticalTitleSpacing 5 5
+
+CopyMenuStyle * WindowMenu
+
+PipeRead "$[FVWM_LIBDIR]/ymenu.py applications"
+
+PipeRead "$[FVWM_LIBDIR]/ymenu.py settings"
+
+DestroyMenu WindowOptionsMenu
+AddToMenu WindowOptionsMenu
++ "%min.png%$[gt.Iconify]"  Iconify
++ "%max.png%$[gt.Maximize]" Maximize 100 100
++ "$[gt.Move]"              Move
++ "$[gt.Resize]"            Resize
++ "$[gt.Shade]"             WindowShade
++ "$[gt.Stick]"             Stick
++ ""                        Nop
++ "%close.png%$[gt.Close]"  Close
++ ""                        Nop
++ "%info.png%$[gt.Indent]"  Module FvwmIdent
+
+DestroyMenu  MainMenu
+AddToMenu    MainMenu@side.png@^#0F5983^
++ "$[gt.Main menu]"			Title
+PipeRead "$[FVWM_LIBDIR]/ymenu.py qlaunch"
++ ""						         Nop	
+PipeRead "$[FVWM_LIBDIR]/ymenu.py -t applications"
++ ""						         Nop	
++ "$[gt.Recent]%recent.png%"	     Popup RecentMenu
++ "$[gt.Search]...%search.png%"		 Exec exec yfind
++ "$[gt.Run]...%run.png%"			 Exec exec yrun
++ ""						         Nop	
++ "$[gt.Shutdown]...%shutdown.png%"	 Popup ExitMenu
+
+DestroyMenu ExitMenu
+AddToMenu ExitMenu
++ "$[gt.Power Off]"       Exec exec /sbin/poweroff
++ "$[gt.Reboot]"          Exec exec /sbin/reboot
++ "$[gt.Suspend]"         Exec exec /sbin/hibernate disk
++ "$[gt.Logout]"          Quit
+
+DestroyMenu ActionMenu
+AddToMenu ActionMenu
++ "$[gt.Settings]%settings.png%"	 Popup SettingsMenu
++ "$[gt.Recent]%recent.png%"	     Popup RecentMenu
++ "$[gt.Media]%media.png%"	         Popup MediaMenu
++ ""                                 Nop
++ "$[gt.Process viewer]%sysmon.png%" Exec exec $[FVWM_LIBDIR]/ps.sh
++ ""                                 Nop
++ "$[gt.Screenshot]%shot.png%"       Popup ShotMenu
++ ""					             Nop
++ "$[gt.Search]...%search.png%"		 Exec exec yfind
++ "$[gt.Run]...%run.png%"  			 Exec exec yrun
++ ""					             Nop
++ "$[gt.FVWM console]...%term.png%"  Module FvwmConsole -bg #3b003b
++ "$[gt.Update icons]"               Exec exec $[FVWM_LIBDIR]/icons.sh -f
++ ""					             Nop	
++ "$[gt.Lock screen]%lock.png%"      Exec exec $[infostore.lock]
++ "$[gt.Restart FVWM]%restart.png%"  Restart
++ "$[gt.Shutdown]%shutdown.png%"	 Popup ExitMenu
+
+AddToMenu RecentMenu DynamicPopupAction PipeRead "$[FVWM_LIBDIR]/ymenu.py recent"
+
+AddToMenu ClipboardMenu DynamicPopupAction PipeRead "$[FVWM_LIBDIR]/clipman.sh menu"
+
+AddToMenu MediaMenu DynamicPopupAction PipeRead "$[FVWM_LIBDIR]/media.sh menu"
+
+DestroyMenu ShotMenu
+AddToMenu ShotMenu
++ "$[gt.Whole screen]"     Exec exec $[FVWM_LIBDIR]/shot.sh root
++ "$[gt.Window/Region]"    Exec exec $[FVWM_LIBDIR]/shot.sh reg
+
+DestroyMenu MailMenu
+AddToMenu MailMenu
++ "$[gt.Check mail]"       Exec exec $[FVWM_LIBDIR]/mail.sh check
++ "$[gt.Configuration]"    Exec exec $[FVWM_LIBDIR]/mail.sh cfg

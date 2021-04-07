@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Ysysinfo
+_GenericName=System info
+_Comment=Show information about system
+Categories=Application;System;
+Exec=ysysinfo
+Icon=dialog-information
+Type=Application
+Terminal=false

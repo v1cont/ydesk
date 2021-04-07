@@ -1,0 +1,46 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+XTERM="urxvt"
+
+# cleanup
+resfile=$(mktemp --tmpfile=/tmp/ydesk yrun-$$)
+trap "rm -f $resfile" EXIT
+
+# create history file
+CACHEDIR="${XDG_CACHE_HOME:-$HOME/.cache}/ydesk"
+mkdir -p "$CACHEDIR"
+HISTFILE="$CACHEDIR/run.history"
+touch $HISTFILE
+
+while read ln; do
+    HIST+="${ln}!"
+done < $HISTFILE
+
+# create and run dialog
+yad --width=550 --center --fixed --window-icon="system-run" --class="YRun" \
+    --title=$"Run command" --text=$"\nEnter command or uri to execute:\n" \
+    --image="system-run" --separator="\n" --button="yad-execute:0" --button="yad-cancel:1" \
+    --form --field=$"Command:cbe" "${HIST/%!}" --field=$"Run in terminal:chk" FALSE > $resfile
+[[ $? -ne 0 ]] && exit 1
+
+# read form output
+exec 3< $resfile
+read -u 3 cmd
+read -u 3 in_term
+exec 3<&-
+
+# add command to history
+grep -q -F "$cmd" $HISTFILE || echo "$cmd" >> $HISTFILE
+
+# run command
+case $cmd in
+    http://*|https://*|ftp://*|file://*) exec xdg-open $cmd ;;
+    mailto://*) exec xdg-email $cmd ;;
+    man://*) exec $XTERM -e man ${cmd#man://} ;;
+    telnet*|ssh*) exec $XTERM -e $cmd ;;
+    *) [[ $in_term == TRUE ]] && exec $XTERM -e $cmd || exec $cmd ;;
+esac

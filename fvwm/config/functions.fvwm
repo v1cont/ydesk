@@ -1,0 +1,85 @@
+DestroyFunc ResizeOrRaiseOrLowerFunc
+AddToFunc ResizeOrRaiseOrLowerFunc
++ C Raise
++ M Resize
++ D Lower
+
+DestroyFunc MoveOrRaiseOrLowerFunc
+AddToFunc MoveOrRaiseOrLowerFunc
++ I Raise
++ I Current (!Raised) Raise
++ M Move
++ D Maximize 100 100
+
+DestroyFunc RaiseFocus
+AddToFunc RaiseFocus
++ I Focus
++ I Raise
+
+# don't intercept focus
+DestroyFunc UrgencyFunc
+AddToFunc UrgencyFunc
++ I Nop
+
+# maximize window without title
+DestroyFunc MaximizeNoTitle
+AddToFunc MaximizeNoTitle
++ I WindowStyle !Title
++ I UpdateStyles
++ I Maximize screen c 100 100
++ I Move screen c 50-50w 50-50w
+
+DestroyFunc RestoreWithTitle
+AddToFunc RestoreWithTitle
++ I WindowStyle Title
++ I UpdateStyles
++ I Maximize off
+
+DestroyFunc ToggleMaximized
+AddToFunc ToggleMaximized
++ I ThisWindow (!Maximized) MaximizeNoTitle
++ I TestRc (NoMatch) RestoreWithTitle
+
+# make window fullscreen
+DestroyFunc MaximizeFullscreen
+AddToFunc MaximizeFullscreen
++ I WindowStyle StaysOnTop
++ I UpdateStyles
++ I Maximize fullscreen
++ I Exec exec xset s off s noblank -dpms
+
+DestroyFunc RestoreFullscreen
+AddToFunc RestoreFullscreen
++ I WindowStyle StaysPut
++ I UpdateStyles
++ I Maximize off
++ I Raise
++ I Exec exec xset s default +dpms
+
+DestroyFunc ToggleFullscreen
+AddToFunc ToggleFullscreen
++ I ThisWindow (!Maximized) MaximizeFullscreen
++ I TestRc (NoMatch) RestoreFullscreen
+
+DestroyFunc CurrentPageFocusFunc
+AddToFunc CurrentPageFocusFunc
++ I Next (CurrentPage, State 2) Focus
++ I None (CurrentPage, Focused) Prev (CurrentPage, !Iconified, !Sticky) Focus
+
+DestroyFunc MarkWindowAsActiveFunc
+AddToFunc MarkWindowAsActiveFunc
++ I Current (!Iconified) All (CurrentPage, !Focused) State 2 False
++ I Current (!Iconified) State 2 True
+
+DestroyFunc StartFunction
+AddToFunc StartFunction
++ I Exec exec $[FVWM_LIBDIR]/icons.sh
++ I Module FvwmMFL
++ I Module FvwmAnimate
++ I Module FvwmEvent
++ I Module FvwmButtons FvwmPanel
++ I Schedule Periodic 500 Exec exec $[FVWM_LIBDIR]/clipman.sh update
+
+DestroyFunc InitFunction
+AddToFunc InitFunction
+PipeRead "$[FVWM_LIBDIR]/ymenu.py autostart"

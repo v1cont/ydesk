@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=interface
+_GenericName=Interace Settings
+_Comment=Configure ixdesktop GTK+ settings
+Categories=Plugin
+Exec=interface.sh
+Icon=preferences-desktop-theme
+Terminal=false
+Type=Application
+StartupNotify=false

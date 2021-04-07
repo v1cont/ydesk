@@ -1,0 +1,96 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2011-2021
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+confdir=${XDG_CONFIG_HOME:-$HOME/.config}
+datadir=${XDG_CONFIG_HOME:-$HOME/.share}
+
+res1=$(mktemp --tmpdir=/tmp/ydesk sess-tab1.XXXXXXXX)
+res2=$(mktemp --tmpdir=/tmp/ydesk sess-tab2.XXXXXXXX)
+trap "rm -f $res1 $res2" EXIT
+
+function as_edit {
+    case $1 in
+        add|edit)
+            NAME="$2"
+            DESCR="$3"
+            CMD="$4"
+            ;;
+        del) return 0 ;;
+        *) return 1 ;;
+    esac
+    yad --title=$"Autostart item" --text=$"Autostart item editor" \
+        --width=300 --separator="\n" --form \
+        --field=$"Name:" "$NAME" \
+        --field=$"Description:" "$DESCR" \
+        --field=$"Command:" "$CMD"
+}
+export -f as_edit
+
+KEY=$RANDOM
+
+# first tab
+yad --plug=$KEY --tabnum=1 --bool-fmt=t --form --scroll \
+    --field=$"<b><i>Base Configuration</i></b>:LBL" "" \
+    --field=$"Update XDG users directories at startup:CHK" $(gsettings get ydesk.session userdirs) \
+    --field=$"Run URXVT server at startup:CHK" $(gsettings get ydesk.session run-urxvt) \
+    --field=$"Run EMACS server at startup:CHK" $(gsettings get ydesk.session run-emacs) \
+    --field=$"<b><i>Background settings</i></b>:LBL" "" \
+    --field=$"Background::CLR" "$(eval echo $(gsettings get ydesk.session bg))" \
+    --field=$"Wallpaper::MFL" "$(eval echo $(gsettings get ydesk.session wallpaper))" \
+    --field=$"<b><i>Other settings</i></b>:LBL" "" \
+    --field=$"Enable compositing:CHK" $(gsettings get ydesk.session compose) > $res1 &
+
+# second tab
+for f in $confdir/autostart/*.desktop; do
+    [[ -e $f ]] || continue
+    # FIXME: use only awk here
+    eval $(grep -E '^[[:blank:]]*(Name|Comment|Exec)=' "$f" | sed -r 's/=(.*)$/="\1"/')
+    echo -e "${Name}\n${Comment}\n${Exec}"
+    unset Name Comment Exec
+done | yad --plug=$KEY --tabnum=2 --editable --print-all --use-interp --row-action="as_edit" \
+           --text=$"Add/remove autostart items\n(<i>only users autostart directory proceeded</i>)" \
+           --list --column=$"Name" --column=$"Description:TIP" --column=$"Command" > $res2 &
+
+# main dialog
+yad --title=$"Session settings" --window-icon=system-run --image=system-run \
+    --button="yad-save:0" --button="yad-close:1" --width=400 --height=500 \
+    --text=$"\n<b>Edit settings of Ydesk session</b>\n<i>Changes will be applied on the next startup</i>\n\n" \
+    --notebook --key=$KEY --tab=$"Common" --tab=$"Autostart"
+
+if [[ $? -eq 0 ]]; then
+    eval r1=($(< $res1))
+
+    # session settings
+    gsettings set ydesk.session userdirs ${r1[1]}
+    gsettings set ydesk.session run-urxvt ${r1[2]}
+    gsettings set ydesk.session run-emacs ${r1[3]}
+    gsettings set ydesk.session bg "${r1[5]}"
+    gsettings set ydesk.session wallpaper "${r1[6]}"
+    gsettings set ydesk.session compose ${r1[8]}
+
+    # autostart items
+    rm -f $confdir/autostart/*.desktop
+    i=0
+    cat $res2 | while read line; do
+    	eval $(echo $line | awk -F'|' '{printf "NAME=\"%s\" COMMENT=\"%s\" COMMAND=\"%s\"\n", $1, $2, $3}')
+        printf -v filename "$confdir/autostart/%03d-%s.desktop" $i ${NAME// /_}
+    	cat > $filename << EOF
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=$NAME
+Comment=$COMMENT
+Exec=$COMMAND
+StartupNotify=true
+Terminal=false
+EOF
+        unset NAME COMMENT COMMAND
+	    ((i++))
+    done
+fi

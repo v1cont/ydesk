@@ -1,0 +1,47 @@
+--- fvwm3-1.0.2/modules/FvwmPager/x_pager.c.orig	2021-03-13 09:25:36.386169968 +0200
++++ fvwm3-1.0.2/modules/FvwmPager/x_pager.c	2021-03-13 09:32:35.409198982 +0200
+@@ -1079,7 +1079,7 @@
+       do_ignore_next_button_release = False;
+       break;
+     }
+-    if (Event->xbutton.button == 3)
++    if (Event->xbutton.button == 2)
+     {
+       for(i=0;i<ndesks;i++)
+       {
+@@ -1106,7 +1106,7 @@
+       do_scroll(0, 0, True, False);
+     }
+     else if((Event->xbutton.button == 1)||
+-	    (Event->xbutton.button == 2))
++	    (Event->xbutton.button == 3))
+     {
+       for(i=0;i<ndesks;i++)
+       {
+@@ -1130,14 +1130,14 @@
+     do_ignore_next_button_release = False;
+     if ( ShowBalloons )
+       UnmapBalloonWindow();
+-    if (((Event->xbutton.button == 2)||
+-	 ((Event->xbutton.button == 3)&&
++    if (((Event->xbutton.button == 3)||
++	 ((Event->xbutton.button == 2)&&
+ 	  (Event->xbutton.state & Mod1Mask)))&&
+ 	(Event->xbutton.subwindow != None))
+     {
+       MoveWindow(Event);
+     }
+-    else if (Event->xbutton.button == 3)
++    else if (Event->xbutton.button == 2)
+     {
+       /* save initial virtual desk position for drag */
+       MyVx=mon->virtual_scr.Vx;
+@@ -1176,7 +1176,7 @@
+     while(FCheckMaskEvent(dpy, PointerMotionMask | ButtonMotionMask,Event))
+       ;
+ 
+-    if(Event->xmotion.state & Button3MotionMask)
++    if(Event->xmotion.state & Button2MotionMask)
+     {
+       for(i=0;i<ndesks;i++)
+       {

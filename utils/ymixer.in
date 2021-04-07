@@ -1,0 +1,12 @@
+#! /bin/bash
+#
+# Author: Victor Ananjevsky <victor@sanana.kiev.ua>, 2011-2021
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+${XTERM:-xterm} -T $"ALSA Mixer" +sb -e alsamixer
+
+# update panel applet
+exec $FVWM_LIBDIR/volume.sh

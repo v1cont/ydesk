@@ -1,0 +1,1 @@
+*FvwmPanel: (Id shot, 25x1, Padding 2 2, Icon "shot.png", TipsLabel "$[gt.Make a screenshot]", Action (Mouse 1) Exec exec $[FVWM_LIBDIR]/shot.sh $[infostore.shot_act], Action (Mouse 3) `Menu ShotMenu rectangle 1x1+$left+$bottom +0 +0`)

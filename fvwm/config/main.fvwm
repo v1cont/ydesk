@@ -1,0 +1,40 @@
+ImagePath +:$[FVWM_CACHEDIR]/icons:$[FVWM_DATADIR]/images:$[XDG_DATA_HOME]/ydesk/images:/usr/share/pixmaps
+LocalePath ;ydesk:+
+
+PipeRead $[FVWM_LIBDIR]/infostore.sh
+
+HideGeometryWindow
+
+Emulate Win
+
+SetAnimation 10
+
+OpaqueMoveSize 0
+
+EdgeScroll 0 0
+EdgeResistance 500
+EdgeThickness 1
+
+IgnoreModifiers L25
+
+DesktopSize $[infostore.ndesk]x1
+DesktopName 0 "Y Desktop"
+EwmhNumberOfDesktops 1
+
+CursorStyle ROOT         left_ptr
+CursorStyle TITLE        left_ptr
+CursorStyle DEFAULT      left_ptr
+CursorStyle SYS          left_ptr
+CursorStyle MENU         left_ptr
+
+BusyCursor DynamicMenu True, Read True
+
+Style * EdgeMoveDelay 500
+Style * EdgeMoveResistance 15
+Style * ResizeOutline
+Style * WindowShadeSteps 10
+Style * ClickToFocus, MouseFocusClickRaises, GrabFocus
+Style * MwmDecor, MwmFunctions
+Style * CascadePlacement, UsePPosition
+Style * HintOverride, !Icon, DecorateTransient
+Style * MiniIcon default.png

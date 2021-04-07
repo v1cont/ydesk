@@ -1,0 +1,21 @@
+#! /bin/bash
+#
+# Simple desktop entry editor
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2015-2021
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+yad --title=$"Desktop entry editor" --text=$"Edit desktop entry ${1%%*/}" \
+    --image=system-run --form \
+    --field=$"Type:CB" "Application!URI" \
+    --field=$"Name" "" \
+    --field=$"Generic name" "" \
+    --field=$"Comment" "" \
+    --field=$"Command:FL" "" \
+    --field=$"Icon" "" \
+    --field=$"In terminal:CHK" FALSE \
+    --field=$"Startup notify:CHK" FALSE > $res
+
+

@@ -1,0 +1,25 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk run.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"Run applet" --window-icon="application-x-addon" \
+    --width=300 --separator=" " --image=system-run \
+    --text=$"Run applet configuration" --form \
+    --field=$"Foreground color::CLR" "$(gsettings get ydesk.applets run_fg)" \
+    --field=$"Background color::CLR" "$(gsettings get ydesk.applets run_bg)" \
+    --field=$"Run applet font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.applets run_fn))" \
+    --field=$"Run applet width::NUM" "$(gsettings get ydesk.applets run_sz)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets run_fg "${r[0]}"
+    gsettings set ydesk.applets run_bg "${r[1]}"
+    gsettings set ydesk.applets run_fn $(yad-tools -f -x "${r[2]}")
+    gsettings set ydesk.applets run_sz "${r[3]}"
+fi

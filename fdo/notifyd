@@ -1,0 +1,40 @@
+#! /usr/bin/python
+
+from typing import Any, List, Dict, Tuple
+
+from gi.repository import GLib
+from dbus.mainloop.glib import DBusGMainLoop
+
+import dbus.service
+import dbus
+import os
+import sys
+
+os.environ["YAD_OPTIONS"] = "--sticky --fixed --on-top --skip-taskbar --undecorated --no-focus --no-buttons --borders=15 --width=250 --name=Popup --image-on-top --posx=-15 --posy=-15"
+
+class Notifications(dbus.service.Object):
+    def __init__(self, bus_name: str, object_path: str):
+        dbus.service.Object.__init__(self, bus_name, object_path)
+
+    @dbus.service.method(dbus_interface='org.freedesktop.Notifications', out_signature='as')
+    def GetCapabilities(self) -> List[str]:
+        return ['body', 'persistent', 'body-hyperlinks', 'body-markup', 'icon-static']
+
+    @dbus.service.method(dbus_interface='org.freedesktop.Notifications', in_signature='susssasa{sv}i', out_signature='u')
+    def Notify(self, app_name: str, replaces_id: int, app_icon: str, summary: str, body: str, actions: List[str], hints: Dict[str, Any], expire_timeout: int) -> int:
+        txt = '<span size="large" weight="bold">%s</span>\n%s' % (summary, body)
+        cmd = "yad --text='%s' --image='%s' --timeout=%d" % (txt, app_icon, expire_timeout / 100)
+        GLib.spawn_command_line_async(cmd)
+        return replaces_id
+
+    @dbus.service.method(dbus_interface='org.freedesktop.Notifications', out_signature='ssss')
+    def GetServerInformation(self) -> Tuple[str, str, str, str]:
+        return ('notifyd', 'ydesk', '1.0', '1.2')
+
+DBusGMainLoop(set_as_default=True)
+
+loop = GLib.MainLoop()
+bus = dbus.SessionBus()
+bus_name = dbus.service.BusName('org.freedesktop.Notifications', bus=bus)
+Notifications(bus_name, '/org/freedesktop/Notifications')
+loop.run()

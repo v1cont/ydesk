@@ -1,0 +1,1 @@
+*FvwmPanel: (Id taskbar, $[infostore.tb_sz]x1, Padding 2 0, Left, Swallow(UseOld,NoKill) "FvwmIconMan" 'Module FvwmIconMan')

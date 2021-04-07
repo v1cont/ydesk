@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Ynotes
+_GenericName=Quick Notes
+_Comment=Keep small pieces of text
+Categories=GTK;Utility;
+Exec=ynotes
+Icon=ynotes
+Terminal=false
+Type=Application

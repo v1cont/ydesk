@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=term
+_GenericName=Terminal Settings
+_Comment=Configure terminal (urxvt) settings
+Categories=Plugin
+Exec=term.sh
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+StartupNotify=false

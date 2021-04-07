@@ -1,0 +1,18 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk wifi.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"Mail applet" --window-icon="application-x-addon" --width=300 \
+    --image=network-wireless --text=$"Mail applet configuration" --separator=" " --form \
+    --field=$"Wifi interface name:" "$(gsettings get ydesk.applets wifi_iface)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets wifi_iface "${r[0]}"
+fi

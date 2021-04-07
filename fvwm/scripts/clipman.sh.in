@@ -1,0 +1,108 @@
+#! /bin/bash
+# -*- mode: sh -*-
+# manage clipboards
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+prog="$0"
+
+LOCKFILE="/var/lock/fvwm-clipman.lock"
+
+# supress errors output
+exec 2> /dev/null
+
+# single instance
+[[ -f $LOCKFILE && $1 != menu && $1 != trans ]] && exit 0
+touch $LOCKFILE
+trap "rm -f $LOCKFILE" EXIT
+
+CLIPDIR="${XDG_CACHE_HOME:-$HOME/.cache}/clipboard"
+CLIPS="primary secondary clipboard"
+SIZE=25
+LENGTH=50
+
+function clip_update
+{
+    [[ -d $CLIPDIR ]] || mkdir -p $CLIPDIR
+    for c in $CLIPS; do
+        tmpfile=$(mktemp -q --tmpdir=/tmp/ydesk clip.XXXXXXXX)
+        xclip -selection "$c" -o > $tmpfile
+        if [[ -s $tmpfile ]]; then
+            md5=$(md5sum $tmpfile | cut -f1 -d' ')
+            [[ -e $CLIPDIR/$md5 ]] && touch $CLIPDIR/$md5 || mv -f $tmpfile $CLIPDIR/$md5
+        fi
+        rm -f $tmpfile
+    done
+
+    # remove oldest
+    pushd $CLIPDIR &> /dev/null
+    OLD=$(ls -1tr | head -n -$SIZE)
+    [[ -n $OLD ]] && rm -rf $OLD
+    popd &> /dev/null
+}
+
+function clip_set
+{
+    for c in $CLIPS; do
+        xclip -selection "$c" -i "$CLIPDIR/$1"
+    done
+}
+
+function clip_cleanup
+{
+    [[ -d $CLIPDIR ]] || mkdir -p $CLIPDIR
+    rm -rf $CLIPDIR/*
+    for c in $CLIPS; do
+        echo -n '' | xclip -selection "$c" -i
+    done
+}
+
+function clip_trans
+{
+    for c in $CLIPS; do
+        txt=$(xclip -o -selection $c)
+        [[ -n $txt ]] && break
+    done
+
+    if [[ -n $txt ]]; then
+        sdcv -n "$txt" | yad --mouse --on-top --undecorated --skip-taskbar --text-info \
+                             --width=400 --height=200 --no-buttons --close-on-unfocus
+    fi
+}
+
+function clip_menu
+{
+    current=$(xclip -o | md5sum | cut -f1 -d' ')
+
+    isize=$(gsettings get ydesk.panel isize)
+    icon=$(yad-tools --icon --size=$isize edit-clear-all)
+
+    echo "DestroyMenu recreate ClipboardMenu"
+    echo "AddToMenu ClipboardMenu Clipboard Title"
+    for f in $(ls -1t $CLIPDIR); do
+        line="$(head -n 1 $CLIPDIR/$f)"
+        lsize=${#line}
+        fsize=$(stat --printf='%s' $CLIPDIR/$f)
+        [[ $f == $current ]] && mline="*" || mline=" "
+        if [[ $lsize -lt $fsize || $lsize -ge $LENGTH ]]; then
+            mline+=$(printf '%q' "${line:0:$LENGTH}")
+            mline+="..."
+        else
+            mline+=$(printf '%q' "$line")
+        fi
+        echo "AddToMenu ClipboardMenu \"$mline\" Exec exec $prog set $f"
+    done
+    cleanup=$"Clear clipboard history"
+    echo "AddToMenu ClipboardMenu \"\" Nop"
+    echo "AddToMenu ClipboardMenu \"&${cleanup}%$icon%\" Exec exec $prog clear"
+}
+
+case $1 in
+    update) clip_update ;;
+    set) clip_set $2 ;;
+    clear) clip_cleanup ;;
+    menu) clip_menu ;;
+    trans) clip_trans ;;
+    *) exit 1 ;;
+esac

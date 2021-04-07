@@ -1,0 +1,24 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+datadir=@datadir@
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+spath=$datadir/settings
+
+# add path for ydesk specific settings
+epath=$libdir/ydesk/settings
+export PATH="$epath:$PATH"
+
+txt=$"<span size='x-large' weight='bold'>Ydesktop settings manager</span>\nSelect applet for configure corresponding settings\n\n"
+
+exec yad --class=Ysettings --window-icon=preferences-desktop \
+     --title=$"Ydesktop settings" --width=700 --height=500 \
+     --image=preferences-desktop --image-on-top --no-buttons \
+     --text="$txt" --icons --generic --read-dir="$spath" \
+     --item-width=100 --sort-by-name

@@ -1,0 +1,127 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+
+  <Name>Applications</Name>
+
+  <!-- Read standard .directory and .desktop file locations -->
+  <DefaultAppDirs/>
+  <DefaultDirectoryDirs/>
+
+  <!-- Read in overrides and child menus from applications-merged/ -->
+  <DefaultMergeDirs/>
+
+  <!-- Accessories submenu -->
+  <Menu>
+    <Name>Accessories</Name>
+    <Directory>Utility.directory</Directory>
+    <Include>
+      <And>
+        <Category>Utility</Category>
+        <Not><Category>System</Category></Not>
+      </And>
+    </Include>
+  </Menu> <!-- End Accessories -->
+
+  <!-- Development Tools -->
+  <Menu>
+    <Name>Development</Name>
+    <Directory>Development.directory</Directory>
+    <Include>
+      <And>
+        <Category>Development</Category>
+      </And>
+      <Filename>emacs.desktop</Filename>
+    </Include>
+  </Menu> <!-- End Development Tools -->
+
+  <!-- Education -->
+  <Menu>
+    <Name>Education</Name>
+    <Directory>Education.directory</Directory>
+    <Include>
+      <And>
+        <Category>Education</Category>
+      </And>
+    </Include>
+  </Menu> <!-- End Education -->
+
+  <!-- Games -->
+  <Menu>
+    <Name>Games</Name>
+    <Directory>Game.directory</Directory>
+    <Include>
+      <And>
+        <Category>Game</Category>
+      </And>
+    </Include>
+  </Menu> <!-- End Games -->
+
+  <!-- Graphics -->
+  <Menu>
+    <Name>Graphics</Name>
+    <Directory>Graphics.directory</Directory>
+    <Include>
+      <And>
+        <Category>Graphics</Category>
+      </And>
+    </Include>
+  </Menu> <!-- End Graphics -->
+
+  <!-- Internet -->
+  <Menu>
+    <Name>Internet</Name>
+    <Directory>Network.directory</Directory>
+    <Include>
+      <And>
+        <Category>Network</Category>
+      </And>
+    </Include>
+  </Menu>   <!-- End Internet -->
+
+  <!-- Multimedia -->
+  <Menu>
+    <Name>Multimedia</Name>
+    <Directory>AudioVideo.directory</Directory>
+    <Include>
+      <And>
+        <Category>AudioVideo</Category>
+      </And>
+    </Include>
+  </Menu>   <!-- End Multimedia -->
+
+  <!-- Office -->
+  <Menu>
+    <Name>Office</Name>
+    <Directory>Office.directory</Directory>
+    <Include>
+      <And>
+        <Category>Office</Category>
+      </And>
+    </Include>
+  </Menu> <!-- End Office -->
+
+  <!-- System Tools-->
+  <Menu>
+    <Name>System</Name>
+    <Directory>System-Tools.directory</Directory>
+    <Include>
+      <And>
+        <Category>System</Category>
+      </And>
+    </Include>
+  </Menu>   <!-- End System Tools -->
+
+  <!-- Settings -->
+  <Menu>
+    <Name>Settings</Name>
+    <Directory>Settings.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+      </And>
+    </Include>
+  </Menu>   <!-- End Settings -->
+
+</Menu> <!-- End Applications -->

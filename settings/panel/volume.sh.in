@@ -1,0 +1,25 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk volume.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+eval ctl=$(gsettings get ydesk.applets vol_ctl)
+CTRL="Master"
+for d in PCM Headphone Speaker; do
+    [[ $ctl == $d ]] && CTRL+="!^$d" || CTRL="!$d"
+done
+
+yad --title=$"Volume applet" --window-icon="application-x-addon" \
+    --width=300 --image=volume-knob \
+    --text=$"Volume applet configuration" --separator=" " --form \
+    --field=$"Default control device::CB" "$CTRL" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets vol_ctl "${r[0]}"
+fi

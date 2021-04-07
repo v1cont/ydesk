@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Yimage
+_GenericName=Image viewer
+_Comment=Simple image viewer
+Categories=GTK;Graphics;
+Exec=yimage %F
+Icon=image
+Terminal=false
+Type=Application
+NoDisplay=true
+MimeType=image/png;image/gif;image/jpeg;image/tiff
+

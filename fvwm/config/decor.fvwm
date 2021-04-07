@@ -1,0 +1,34 @@
+#  -*- mode: fvwm -*-
+
+AddToDecor SimpleDecor
++ TitleStyle LeftJustified Height 16
++ TitleStyle ActiveUp   VGradient 128 #658748 #5d6e43 -- Flat
++ TitleStyle ActiveDown VGradient 128 #5d6e43 #658748 -- Flat
++ TitleStyle Inactive   VGradient 128 #606060 #404040 -- Flat
++ ButtonStyle 1 Vector 6 35x25@3 65x25@3 35x45@4 65x45@3 35x65@4 65x65@3 -- Flat UseTitleStyle
++ ButtonStyle 2 Vector 4 35x35@3 65x65@3 65x35@4 35x65@3 -- Flat UseTitleStyle
++ ButtonStyle 4 Vector 3 35x60@3 50x40@3 70x60@3 -- Flat UseTitleStyle
++ ButtonStyle 6 Vector 3 35x40@3 50x60@3 70x40@3 -- Flat UseTitleStyle
++ ButtonStyle 1 - Clear MwmDecorMenu
++ ButtonStyle 2 - Clear
++ ButtonStyle 4 - Clear MwmDecorMax
++ ButtonStyle 6 - Clear MwmDecorMin
++ BorderStyle Inactive Solid #606060 -- HiddenHandles NoInset
++ BorderStyle Active   Solid #788661 -- HiddenHandles NoInset
+
+Style SimpleStyle \
+    UseDecor SimpleDecor, \
+    BorderWidth 4, HandleWidth 4, BorderUnderTitle, \
+    Font $[infostore.wfn], \
+    ForeColor "#f0f0f0", BackColor "#707070", \
+    HilightFore "#f0f0f0", HilightBack "#90a96a"
+
+Style * UseStyle SimpleStyle
+
+Style yrun !Button 3, !Button 4
+Style ylogout !Button 3, !Button 4
+Style FvwmIdent !Button 3, !Button 4, MiniIcon info.png
+Style xdemineur MiniIcon xdemineur.png
+Style URxvt MiniIcon term.png
+Style YPs MiniIcon sysmon.png
+Style YMixer MiniIcon mixer.png

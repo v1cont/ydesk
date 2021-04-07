@@ -1,0 +1,96 @@
+
+### Events
+DestroyModuleConfig FvwmEvent: *
+
+*FvwmEvent: new_page CurrentPageFocusFunc
+*FvwmEvent: destroy_window CurrentPageFocusFunc
+*FvwmEvent: focus_change MarkWindowAsActiveFunc
+
+#*FvwmEvent: Cmd Function
+
+### Ident
+DestroyModuleConfig FvwmIdent: *
+
+*FvwmIdent: Colorset 11
+*FvwmIdent: Font $[infostore.fn]
+
+Style FvwmIdent	NoButton 3, NoButton 4
+
+### Pager
+DestroyModuleConfig FvwmPager: *
+
+*FvwmPager: Label * "Pager"
+*FvwmPager: Geometry 64x25
+*FvwmPager: Font none
+*FvwmPager: SolidSeparators
+*FvwmPager: UseSkipList
+*FvwmPager: MiniIcons
+
+*FvwmPager: Colorset * 7
+*FvwmPager: HilightColorset * 8
+*FvwmPager: WindowColorsets 9 10
+
+*FvwmPager: Balloons All
+*FvwmPager: BalloonFont $[infostore.bfn]
+*FvwmPager: BallonStringFormat "%i"
+*FvwmPager: BalloonYOffset +2
+*FvwmPager: BalloonBorderWidth 0
+*FvwmPager: BalloonColorset * 6
+
+### Taskbar
+DestroyModuleConfig FvwmIconMan: *
+
+*FvwmIconMan: DrawIcons always
+*FvwmIconMan: ManagerGeometry 0x1
+*FvwmIconMan: ButtonGeometry 150x23
+*FvwmIconMan: Font $[infostore.fn]
+*FvwmIconMan: Format "%i"
+*FvwmIconMan: ReliefThickness 1
+*FvwmIconMan: UseWinList true
+*FvwmIconMan: Padding 1
+*FvwmIconMan: RoundedCorners true
+*FvwmIconMan: Title ""
+
+*FvwmIconMan: SelectButton up
+*FvwmIconMan: FocusAndSelectButton up
+*FvwmIconMan: IconButton up
+*FvwmIconMan: TitleButton flat
+
+*FvwmIconMan: Colorset 1
+*FvwmIconMan: TitleColorset 1
+*FvwmIconMan: IconColorset 2
+*FvwmIconMan: FocusColorset 5
+*FvwmIconMan: FocusAndSelectColorset 5
+*FvwmIconMan: SelectColorset 2
+
+*FvwmIconMan: Tips always
+*FvwmIconMan: TipsFont $[infostore.bfn]
+*FvwmIconMan: TipsFormat "%i"
+*FvwmIconMan: TipsBorderWidth 0
+*FvwmIconMan: TipsColorset 6
+
+*FvwmIconMan: Action Mouse 1 N sendcommand "RaiseFocus"
+*FvwmIconMan: Action Mouse 2 N sendcommand "Iconify"
+*FvwmIconMan: Action Mouse 3 N sendcommand "Popup WindowOptionsMenu"
+
+### Panel
+DestroyModuleConfig FvwmPanel: *
+
+*FvwmPanel: Colorset 1
+*FvwmPanel: Font $[infostore.fn]
+*FvwmPanel: Frame 0
+*FvwmPanel: Rows 1
+*FvwmPanel: Columns $[vp.width]
+*FvwmPanel: Geometry $[vp.width]x27+0+0
+
+*FvwmPanel: UseTips
+*FvwmPanel: TipsFont $[infostore.bfn]
+*FvwmPanel: TipsColorset 6
+*FvwmPanel: TipsBorderWidth 0
+*FvwmPanel: TipsDelay 1
+
+Style FvwmPanel* NoTitle, !Borders, NoHandles, Sticky, WindowListSkip, NeverFocus, !Closable, !Iconifiable, !Maximizable
+
+*FvwmPanel: (2x1)
+PipeRead $[FVWM_LIBDIR]/panel.sh
+*FvwmPanel: (2x1)

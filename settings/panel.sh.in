@@ -1,0 +1,68 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2011
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res1=$(mktemp --tmpdir=/tmp/ydesk panel-tab1.XXXXXXXX)
+res2=$(mktemp --tmpdir=/tmp/ydesk panel-tab2.XXXXXXXX)
+trap "rm -f $res1 $res2" EXIT
+
+function set_mod {
+    case $1 in
+        add)
+            LIST=
+            for a in $FVWM_DATADIR/applets/*.fvwm; do
+                LIST+="$(basename a .fvwm) "
+            done
+            yad --title=$"Add applet" --text=$"Select panel applet" --entry $LIST
+            ;;
+        edit)
+            if [[ -e @prefix@/lib/ydesk/settings/panel/$2.sh ]]; then
+                @prefix@/lib/ydesk/settings/panel/$2.sh &> /dev/null &
+            elif [[ $2 == sep* ]]; then
+                yad --title=$"Separator" --image=dialog-info --button=yad-close \
+                    --text=$"Add size after sep in applet name to set separator width"
+            else
+                yad --title=$"Warning" --image=dialog-warning --button=yad-close \
+                    --text=$"There is no additional configuration for applet '$2'"
+            fi
+            ;;
+    esac
+}
+export -f set_mod
+
+KEY=$RANDOM
+
+eval pos=$(gsettings get ydesk.panel pos)
+[[ $pos == top ]] && PANEL_POS="^top!bottom" || PANEL_POS="top!^bottom"
+
+yad --plug=$KEY --tabnum=1 --text=$"Panel main settings" --form \
+    --field=$"Enable panel:CHK" $(gsettings get ydesk.panel enable) \
+    --field=$"Panel position::CB" $PANEL_POS \
+    --field=$"Panel icons size::NUM" $(gsettings get ydesk.panel izise) \
+    --field=":LBL" --field=$"<i>You must restart FVWM for changes will take effect</i>:LBL" > $res1 &
+
+eval APPLETS=($(gsettings get ydesk.panel applets | sed "s/,/ /g"))
+for a in ${APPLETS[@]}; do echo $a; done | yad --plug=$KEY --tabnum=2 --text=$"Panel applets settings" \
+    --image="application-x-addon" --separator="," --use-interp --list --editable --row-action="set_mod" \
+    --column=$"Module" > $res2 &
+
+# main dialog
+yad --title=$"Panel settings" --window-icon=system-run --text=$"Ydesk panel settings" \
+    --image=ypanel --button="yad-save:0" --button="yad-close:1" --width=400 --height=500 \
+    --text=$"\n<b>Edit settings of Ydesk panel</b>\n\n<i>Changes will be applied on the next startup</i>\n\n" \
+    --notebook --key=$KEY --tab=$"Main" --tab=$"Applets"
+
+if [[ $? -eq 0 ]]; then
+    eval r1=($(< $res1))
+
+    gsettings set ydesk.panel enable ${r[0]}
+    gsettings set ydesk.panel pos ${r[1]}
+    gsettings set ydesk.panel isize ${r[2]}
+
+    gsettings set ydesk.panel applets "$(< $res2)"
+fi

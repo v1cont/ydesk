@@ -1,0 +1,310 @@
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmButtons/FvwmButtons.c fvwm3-1.0.2/modules/FvwmButtons/FvwmButtons.c
+--- fvwm3-1.0.2-orig/modules/FvwmButtons/FvwmButtons.c	2020-12-12 02:37:08.000000000 +0200
++++ fvwm3-1.0.2/modules/FvwmButtons/FvwmButtons.c	2021-03-16 12:00:54.627961060 +0200
+@@ -47,6 +47,7 @@
+ #include "libs/Colorset.h"
+ #include "libs/vpacket.h"
+ #include "libs/FRender.h"
++#include "libs/FTips.h"
+ #include "libs/fsm.h"
+ #include "libs/ColorUtils.h"
+ #include "libs/Graphics.h"
+@@ -1034,6 +1035,9 @@ void Loop(void)
+ 
+ 	tmp.name = NULL;
+ 	tmp.name_list = NULL;
++
++	FTipsInit(Dpy);
++
+ 	while ( !isTerminated )
+ 	{
+ 		if (My_FNextEvent(Dpy, &Event))
+@@ -1160,6 +1164,10 @@ void Loop(void)
+ 	  if (!event.xconfigure.send_event &&
+ 	      Event.xconfigure.window != MyWindow)
+ 	    continue;
++
++	  if(FTipsHandleEvents(Dpy, &event))
++		  continue;
++
+ 	  fev_sanitise_configure_notify(&event.xconfigure);
+ 	  Event.xconfigure.x = event.xconfigure.x;
+ 	  Event.xconfigure.y = event.xconfigure.y;
+@@ -1203,10 +1211,33 @@ void Loop(void)
+ 	case EnterNotify:
+ 		b = handle_new_position(
+ 			b, Event.xcrossing.x, Event.xcrossing.y);
++
++		if(Event.xcrossing.mode == NotifyNormal)
++		{
++			b = handle_new_position(
++			b, Event.xcrossing.x, Event.xcrossing.y);
++			FTipsOn(Dpy,MyWindow,UberButton->c->tips_config,
++			    (void *)UberButton, b->tipslabel,
++			    b->x, b->y, Width,Height);
++			FTipsUpdateLabel(Dpy, b->tipslabel);
++		}
+ 		break;
+ 
+ 	case MotionNotify:
++
+ 		b = handle_new_position(b, Event.xmotion.x, Event.xmotion.y);
++
++		x = Event.xbutton.x;
++		y = Event.xbutton.y;
++
++		if(b->tipslabel != NULL)
++		{
++			FTipsOn(Dpy,MyWindow,UberButton->c->tips_config, (void *)UberButton, b->tipslabel, x, y, w, h);
++			FTipsUpdateLabel(Dpy, b->tipslabel);
++		} else {
++			 FTipsCancel(Dpy);
++		}
++
+ 		break;
+ 
+ 	case LeaveNotify:
+@@ -1229,11 +1260,13 @@ void Loop(void)
+ 				b = ActiveButton;
+ 				ActiveButton = NULL;
+ 				RedrawButton(b, DRAW_FORCE, NULL);
++
+ 			}
+ 			if (CurrentButton)
+ 			{
+ 				RedrawButton(b, DRAW_FORCE, NULL);
+ 			}
++			FTipsCancel(Dpy);
+ 		}
+ 		break;
+ 
+@@ -1255,8 +1288,8 @@ void Loop(void)
+ 	  Window dummy;
+ 
+ 	  XTranslateCoordinates(
+-	    Dpy, Event.xbutton.window, MyWindow, Event.xbutton.x,
+-	    Event.xbutton.y, &x, &y, &dummy);
++			  Dpy, Event.xbutton.window, MyWindow, Event.xbutton.x,
++			  Event.xbutton.y, &x, &y, &dummy);
+ 	}
+ 	if (CurrentButton)
+ 	{
+@@ -1298,7 +1331,10 @@ void Loop(void)
+ 	  RedrawButton(tmp, DRAW_FORCE, NULL);
+ 	}
+ 	else
++	{
+ 	  RedrawButton(b, DRAW_FORCE, NULL);
++	}
++
+ 	if (!act)
+ 	{
+ 	  break;
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmButtons/FvwmButtons.h fvwm3-1.0.2/modules/FvwmButtons/FvwmButtons.h
+--- fvwm3-1.0.2-orig/modules/FvwmButtons/FvwmButtons.h	2020-12-12 02:37:08.000000000 +0200
++++ fvwm3-1.0.2/modules/FvwmButtons/FvwmButtons.h	2021-03-16 12:02:02.657961052 +0200
+@@ -36,6 +36,9 @@
+ #include "libs/Picture.h"
+ #include "libs/Flocale.h"
+ #include "libs/FScreen.h"
++#include "libs/FTips.h"
++
++#define FONT_STRING "-*-fixed-medium-r-normal--13-*"
+ 
+ /* ------------------------------- structs --------------------------------- */
+ 
+@@ -80,6 +83,7 @@ typedef struct
+ 	unsigned b_PressIcon      : 1; /* Use alternate Icon on press */
+ 	unsigned b_PressColorset  : 1; /* Use alternate Colorset on press */
+ 	unsigned b_PressTitle     : 1; /* Use alternate Title text on press */
++    unsigned b_UseTips        : 1; /* Whether to use tips or not. */
+ 	unsigned b_WindowName     : 1; /* Use alternate Window and Icon name */
+ } flags_type;
+ 
+@@ -130,6 +134,9 @@ struct container_info_struct
+ 	int colorset;              /* b_Colorset */
+ 	int activeColorset;        /* b_ActiveColorset */
+ 	int pressColorset;         /* b_PressColorset */
++	char *tipsfont;		   /* b_TipsFont*/
++	ftips_config *tips_config; /* Struct that holds tips info.*/
++
+ 	Pixel fc;                  /* b_Fore */
+ 	Pixel bc, hc, sc;          /* b_Back && !b_IconBack */
+ 	FvwmPicture *backicon;     /* b_Back && b_IconBack */
+@@ -186,6 +193,7 @@ struct button_info_struct
+ 	FvwmPicture *pressicon;  /* b_PressIcon */
+ 	int activeColorset;      /* b_ActiveColorset */
+ 	int pressColorset;       /* b_PressColorset */
++	char *tipslabel;	 /* b_TipsLabel */
+ 	Window IconWin;          /* b_Swallow */
+ 	Window PanelWin;         /* b_Panel */
+ 	Window BackIconWin;      /* b_Back && b_IconBack */
+diff -urNp fvwm3-1.0.2-orig/modules/FvwmButtons/parse.c fvwm3-1.0.2/modules/FvwmButtons/parse.c
+--- fvwm3-1.0.2-orig/modules/FvwmButtons/parse.c	2020-12-12 02:37:08.000000000 +0200
++++ fvwm3-1.0.2/modules/FvwmButtons/parse.c	2021-03-16 12:20:18.874960921 +0200
+@@ -912,6 +912,7 @@ static void ParseButton(button_info **ub
+ 			"presstitle",
+ 			"activecolorset",
+ 			"presscolorset",
++			"tipslabel",
+ 			"top",
+ 			NULL
+ 		};
+@@ -1642,7 +1643,6 @@ static void ParseButton(button_info **ub
+ 					b->flags.b_ActiveColorset = 0;
+ 				}
+ 				break;
+-
+ 			/* --------------- --------------- */
+ 			case 26: /* PressColorset */
+ 				i = strtol(s, &t, 10);
+@@ -1658,8 +1658,31 @@ static void ParseButton(button_info **ub
+ 					b->flags.b_PressColorset = 0;
+ 				}
+ 				break;
+-
+-			case 27: /* top */
++			/* --------------- --------------- */
++			case 27: /* TipsLabel */
++				s = trimleft(s);
++				t = seekright(&s);
++				if(b->flags.b_UseTips)
++				{
++					if (*s == '(')
++					{
++						fprintf(stderr,
++						"%s: justification not allowed "
++						"for TipsLabel.\n", MyName);
++					}
++					if (t && *t && (t[0] != '-' || t[1] != 0))
++					{
++						if (b->tipslabel != NULL)
++						{
++							free(b->tipslabel);
++						} else {
++							b->tipslabel = t;
++						}
++					}
++				}
++				break;
++			/* --------------- --------------- */
++			case 28: /* top */
+ 				b->flags.b_Top = 1;
+ 				break;
+ 			/* --------------- --------------- */
+@@ -1815,6 +1838,14 @@ static void ParseConfigLine(button_info
+ 		"activecolorset",
+ 		"presscolorset",
+ 		"windowname",
++        "usetips",
++	    "tipsfont",
++	    "tipsdelay",
++	    "tipscolorset",
++	    "tipsborderwidth",
++	    "tipsplacement",
++	    "tipsjustification",
++	    "tipsoffset",
+ 		NULL
+ 	};
+ 	int i, j, k;
+@@ -1980,6 +2011,100 @@ static void ParseConfigLine(button_info
+ 		break;
+ 	}
+ 
++	case 16: /* UseTips */
++        /* We're using tips.*/
++        ub->c->flags.b_UseTips = 1;
++
++        /* Set the defaults up. */
++	    ub->c->tips_config = FTipsNewConfig();
++
++        /* Include fonts. */
++        CopyStringWithQuotes(&ub->c->tipsfont,FONT_STRING);
++        ub->c->tips_config->Ffont = FlocaleLoadFont(Dpy,
++									                ub->c->tipsfont, MyName);
++        break;
++
++    case 17: /* TipsFont */
++        if(ub->c->flags.b_UseTips)
++        {
++            CopyStringWithQuotes(&ub->c->tipsfont,s);
++
++	        ub->c->tips_config->Ffont = FlocaleLoadFont(Dpy, ub->c->tipsfont,
++       											        MyName);
++        }
++        break;
++
++    case 18: /*TipsDelay */
++        if(ub->c->flags.b_UseTips)
++        {
++            i = sscanf(s, "%d %d", &j, &k);
++            if( i > 0)
++            {
++                /* Then only one value was given.  Set the
++                 * mapped_delay option to this given value
++                 * also since it's optional.
++                 */
++   		        ub->c->tips_config->delay = ub->c->tips_config->mapped_delay = j;
++            }
++            if( i > 1)
++   		 	{
++                /* Two values passed in.  We only need to
++   		         * change the value for mapped_delay here.
++                 */
++                ub->c->tips_config->mapped_delay = k;
++            }
++        }
++        break;
++
++    case 19: /* TipsColorset */
++        if (ub->c->flags.b_UseTips)
++        {
++            i = sscanf(s, "%d", &j);
++            if (i > 0)
++            {
++                ub->c->tips_config->colorset = j;
++                AllocColorset(j);
++            }
++        }
++        break;
++
++   case 20: /* TipsBorderWidth */
++        if (ub->c->flags.b_UseTips)
++        {
++            i = sscanf(s, "%d", &j);
++
++            if(i > 0)
++            {
++                ub->c->tips_config->border_width = j;
++            }
++        }
++        break;
++
++    case 21: /* TipsPlacement */
++        if(ub->c->flags.b_UseTips)
++        {
++            s = trimleft(s);
++
++            /* Options ... */
++            if(!strcasecmp(s, "up"))
++            {
++                i = FTIPS_PLACEMENT_UP;
++            } else if(!strcasecmp(s, "down")) {
++                i = FTIPS_PLACEMENT_DOWN;
++            } else if(!strcasecmp(s, "left")) {
++                i = FTIPS_PLACEMENT_LEFT;
++            } else if(!strcasecmp(s, "right")) {
++                i = FTIPS_PLACEMENT_RIGHT;
++            } else if(!strcasecmp(s, "updown")) {
++                i = FTIPS_PLACEMENT_AUTO_UPDOWN;
++            } else if(!strcasecmp(s, "leftright")) {
++                i = FTIPS_PLACEMENT_AUTO_LEFTRIGHT;
++ 	        }
++
++            ub->c->tips_config->placement = i;
++        }
++	    break;
++
+ 	default:
+ 		s = trimleft(s);
+ 		ParseButton(ubb, s);

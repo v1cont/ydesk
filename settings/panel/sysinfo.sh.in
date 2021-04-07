@@ -1,0 +1,19 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk si.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"Sysinfo applet" --window-icon="application-x-addon" \
+    --width=300 --image=utilities-system-monitor \
+    --text=$"Sysinfo applet configuration" --separator=" " --form \
+    --field=$"Sysinfo width::NUN" "$(gsettings get ydesk.applets si_sz)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets si_sz ${r[0]}
+fi

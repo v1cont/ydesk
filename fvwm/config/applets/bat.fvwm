@@ -1,0 +1,4 @@
+*FvwmPanel: (Id bat, 25x1, Padding 2 2, Icon "$[infostore.p_battery]", Action (Mouse 1) Exec exec ysysinfo 6)
+
+Schedule Periodic 60000 PipeRead "$[FVWM_LIBDIR]/battery.sh"
+PipeRead "$[FVWM_LIBDIR]/battery.sh"

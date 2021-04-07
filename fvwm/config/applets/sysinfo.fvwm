@@ -1,0 +1,1 @@
+*FvwmPanel: (Id sysinfo, $[infostore.si_sz]x1, Padding 2 2, Action (Mouse 1) `Exec ysysinfo`, Swallow(UseOld,NoKill) "Conky" 'Exec exec conky -d -q -c $[FVWM_DATADIR]/misc/conky.conf')

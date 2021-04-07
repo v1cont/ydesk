@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=printer
+_GenericName=Printer Settings
+_Comment=Configure printers
+Categories=Plugin
+Exec=printer.sh
+Icon=printer
+Terminal=false
+Type=Application
+StartupNotify=false

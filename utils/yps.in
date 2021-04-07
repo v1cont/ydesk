@@ -1,0 +1,18 @@
+#! /bin/bash
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+TITLE=$"Process viewer"
+
+# FIXME: add more process managers
+if [[ -x $(command -v lxtask) ]]; then
+    exec lxtask
+elif [[ -x $(command -v htop) ]]; then
+    exec ${XTERM:-xterm} -T "$TITLE" -name YPs +sb -e htop
+else
+    exec ${XTERM:-xterm} -T "$TITLE" -name YPs +sb -e top
+fi
+
+# must not be reached
+exit 1

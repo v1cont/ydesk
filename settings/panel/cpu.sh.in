@@ -1,0 +1,27 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk cpu.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"CPU applet" --window-icon="application-x-addon" \
+    --width=300 --separator=" " --image=cpu --bool-fmt=t \
+    --text=$"CPU load applet configuration" --form \
+    --field=$"Indicator foregroung color::CLR" "$(gsettings get ydesk.cpu fg)" \
+    --field=$"Indicator backgroung color::CLR" "$(gsettings get ydesk.cpu fg)" \
+    --field=$"Show memory usage:CHK" "$(gsettings get ydesk.cpu mem)" \
+    --field=$"Update interval::NUM" "$(gsettings get ydesk.cpu period)" \
+    --field=$"Indicator width::NUM" "$(gsettings get ydesk.applets cpu_sz)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.cpu fg "${r[0]}"
+    gsettings set ydesk.cpu bg "${r[1]}"
+    gsettings set ydesk.cpu mem "${r[2]}"
+    gsettings set ydesk.cpu period "${r[3]}"
+    gsettings set ydesk.applets cpu_sz "${r[4]}"
+fi

@@ -1,0 +1,6 @@
+decorations none
+icon_size 16
+slot_size 19
+kludges force_icons_size
+parent_bg true
+icon_gravity SE

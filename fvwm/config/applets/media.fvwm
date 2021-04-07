@@ -1,0 +1,1 @@
+*FvwmPanel: (Id media, 25x1, Padding 2 2, Icon $[infostore.p_media], TipsLabel "$[gt.Manage removable media]", Action (Mouse 1) Exec exec xdg-open /mnt/usb, Action (Mouse 3) `Menu MediaMenu rectangle 1x1+$left+$bottom +0 +0`)

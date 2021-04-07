@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=mime
+_GenericName=MIME Types Editor
+_Comment=Edit MIME types
+Categories=Plugin
+Exec=mime.sh
+Icon=application-executable
+Terminal=false
+Type=Application
+StartupNotify=false

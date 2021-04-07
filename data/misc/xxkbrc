@@ -1,0 +1,46 @@
+XXkb.image.path: /usr/share/icons/xxkb
+
+XXkb.group.base: 1
+XXkb.group.alt: 2
+
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.geometry: 30x19
+XXkb.mainwindow.image.1: us.svg
+XXkb.mainwindow.image.2: ru.svg
+XXkb.mainwindow.image.3: ua.svg
+XXkb.mainwindow.image.4:
+
+XXkb.*.border.color: black
+XXkb.*.border.width: 1
+
+XXkb.*.label.enable: no
+
+XXkb.mainwindow.type: normal
+! possible values - normal, top, tray, wmaker
+
+XXkb.button.enable: no
+
+XXkb.controls.add_when_start: yes
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: no
+XXkb.controls.focusout: no
+XXkb.controls.two_state: yes
+XXkb.controls.button_delete: yes
+XXkb.controls.button_delete_and_forget: yes
+XXkb.controls.mainwindow_delete: yes
+
+XXkb.mousebutton.1.reverse: no
+XXkb.mousebutton.3.reverse: no
+
+XXkb.bell.enable: no
+
+XXkb.ignore.reverse: no
+
+! XXkb.app_list.<match>.<action>: <list>
+! <match> is one of "wm_class_class", "wm_class_name", "wm_name", "property"
+! <action> is one of "ignore", "start_alt", "alt_groupM" (M - 1..4) 
+! For example:
+XXkb.app_list.wm_class_class.ignore: *clock Fvwm*
+!
+!  ignore windows in KDE tray
+!  XXkb.app_list.property.ignore: _KDE_NET_WM_SYSTEM_TRAY_WINDOW_FOR

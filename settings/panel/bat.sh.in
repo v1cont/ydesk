@@ -1,0 +1,20 @@
+#! /bin/bash
+# -*- mode: sh -*-
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk battery.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+yad --title=$"Battery applet" --window-icon="application-x-addon" --width=300 \
+    --image=battery --text=$"Battery applet configuration" --separator=" " --form \
+    --field=$"Battery name:" "$(gsettings get ydesk.applets bat_dev)" \
+    --field=$"AC adapter name:" "$(gsettings get ydesk.applets bat_ac)" > $res
+
+if [[ $? -eq 0 ]]; then
+    eval r=($(< $res))
+
+    gsettings set ydesk.applets bat_dev "${r[0]}"
+    gsettings set ydesk.applets bat_ac "${r[1]}"
+fi

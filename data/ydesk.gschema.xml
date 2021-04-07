@@ -1,0 +1,236 @@
+<schemalist>
+  <enum id="ydesk.panel.pos">
+    <value nick="top" value="0"/>
+    <value nick="bottom" value="1"/>
+  </enum>
+
+  <enum id="ydesk.shot.act">
+    <value nick="root" value="0"/>
+    <value nick="reg" value="1"/>
+  </enum>
+
+  <schema id="ydesk.common" path="/ydesk/common/">
+    <key name="ndesk" type="i">
+      <default>5</default>
+      <summary>Number of desktops</summary>
+    </key>
+    <key name="clip" type="i">
+      <default>25</default>
+      <summary>Clipboard history size</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.session" path="/ydesk/session/">
+    <key name="userdirs" type="b">
+      <default>true</default>
+      <summary>Update user directories</summary>
+    </key>
+    <key name="run-emacs" type="b">
+      <default>false</default>
+      <summary>Run EMACS server</summary>
+    </key>
+    <key name="run-rxvt" type="b">
+      <default>true</default>
+      <summary>Run URXVT server</summary>
+    </key>
+    <key name="compose" type="b">
+      <default>false</default>
+      <summary>Enable compositing manager</summary>
+    </key>
+    <key name="bg" type="s">
+      <default>"#071a30"</default>
+      <summary>Default background color</summary>
+    </key>
+    <key name="wallpaper" type="s">
+      <default>''</default>
+      <summary>Default wallpaper</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.fonts" path="/ydesk/fonts/">
+    <key name="fn" type="s">
+      <default>'xft:Sans:pixelsize=12'</default>
+      <summary>Default font</summary>
+    </key>
+    <key name="tfn" type="s">
+      <default>'xft:Sans:Bold:Italic:pixelsize=13'</default>
+      <summary>Menu title font</summary>
+    </key>
+    <key name="bfn" type="s">
+      <default>'xft:Sans:pixelsize=12'</default>
+      <summary>Popup tips font</summary>
+    </key>
+    <key name="wfn" type="s">
+      <default>'xft:Sans:pixelsize=11'</default>
+      <summary>Window title font</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.apps" path="/ydesk/apps/">
+    <key name="term" type="s">
+      <default>'yterm'</default>
+      <summary>Terminal command</summary>
+    </key>
+    <key name="fm" type="s">
+      <default>'spacefm'</default>
+      <summary>File manager command</summary>
+    </key>
+    <key name="editor" type="s">
+      <default>'emacs'</default>
+      <summary>Editor command</summary>
+    </key>
+    <key name="browser" type="s">
+      <default>'firefox'</default>
+      <summary>Web browser command</summary>
+    </key>
+    <key name="mailer" type="s">
+      <default>'claws-mail'</default>
+      <summary>Mail client command</summary>
+    </key>
+    <key name="lock" type="s">
+      <default>'xtrlock'</default>
+      <summary>Lock screen command</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.panel" path="/ydesk/panel/">
+    <key name="enable" type="b">
+      <default>true</default>
+      <summary>Enable Ydesk panel</summary>
+    </key>
+    <key name="pos" enum="ydesk.panel.pos">
+      <default>'top'</default>
+      <summary>Ydesk panel position</summary>
+    </key>
+    <key name="isize" type="i">
+      <default>16</default>
+      <summary>Panel icons size</summary>
+    </key>
+    <key name="applets" type="s">
+      <default>'menu,qlaunch,run,taskbar,tray,pager,cpu,shot,media,wifi,bat,volume,kbd,clock,wact'</default>
+      <summary>List of panel applets</summary>
+    </key>  
+  </schema>
+
+  <schema id="ydesk.applets" path="/ydesk/applets/">
+    <key name="mb_fn" type="s">
+      <default>'xft:Sans:Bold:pixelsize=12'</default>
+      <summary>Font for panel menubar</summary>
+    </key>
+    <key name="shot_act" enum="ydesk.shot.act">
+      <default>'root'</default>
+      <summary>Default action for screenshot</summary>
+    </key>
+    <key name="clock_fmt" type="s">
+      <default>'%R'</default>
+      <summary>Time format of panel clock</summary>
+    </key>
+    <key name="clock_sz" type="i">
+      <default>50</default>
+      <summary>Size of panel clock</summary>
+    </key>
+    <key name="clock_fn" type="s">
+      <default>'xft:Monospace:Bold:pixelsize=13'</default>
+      <summary>Font for panel clock</summary>
+    </key>
+    <key name="clock_fg" type="s">
+      <default>'#00a000'</default>
+      <summary>Foreground color for panel clock</summary>
+    </key>
+    <key name="tb_sz" type="i">
+      <default>800</default>
+      <summary>Size of panel taskbar</summary>
+    </key>
+    <key name="run_sz" type="i">
+      <default>200</default>
+      <summary>Size of panel run applet</summary>
+    </key>
+    <key name="run_fg" type="s">
+      <default>'#e0e0e0'</default>
+      <summary>Foreground color for panel run applet</summary>
+    </key>
+    <key name="run_bg" type="s">
+      <default>'#081C12'</default>
+      <summary>Background color for panel run applet</summary>
+    </key>
+    <key name="run_fn" type="s">
+      <default>'xft:Monospace:pixelsize=12'</default>
+      <summary>Font for panel run applet</summary>
+    </key>
+    <key name="cpu_sz" type="i">
+      <default>50</default>
+      <summary>Size of CPU load applet</summary>
+    </key>
+    <key name="kbd_sz" type="i">
+      <default>40</default>
+      <summary>Size of keyboard indicator applet</summary>
+    </key>
+    <key name="si_sz" type="i">
+      <default>600</default>
+      <summary>Size of sysinfo applet</summary>
+    </key>
+    <key name="tray_sz" type="i">
+      <default>120</default>
+      <summary>Size of system tray applet</summary>
+    </key>
+    <key name="mail_time" type="i">
+      <default>600000</default>
+      <summary>Period for mail check (milliseconds)</summary>
+    </key>
+    <key name="bat_dev" type="s">
+      <default>'BAT0'</default>
+      <summary>Default battery name</summary>
+    </key>
+    <key name="bat_ac" type="s">
+      <default>'ADP0'</default>
+      <summary>AC power adapter name</summary>
+    </key>
+    <key name="vol_ctl" type="s">
+      <default>'Master'</default>
+      <summary>Mixer control for changing volume</summary>
+    </key>
+    <key name="wifi_iface" type="s">
+      <default>'wlan0'</default>
+      <summary>Wifi network interface name</summary>
+    </key>
+    <key name="wthr_time" type="i">
+      <default>1200000</default>
+      <summary>Period for weather check (milliseconds)</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.cpu" path="/ydesk/cpu/">
+    <key name="fg" type="s">
+      <default>'#00a000'</default>
+      <summary>Foreground color for ycpu</summary>
+    </key>
+    <key name="bg" type="s">
+      <default>'#000000'</default>
+      <summary>Background color for ycpu</summary>
+    </key>
+    <key name="mem" type="b">
+      <default>true</default>
+      <summary>Show memory statistic</summary>
+    </key>
+    <key name="period" type="i">
+      <default>1500</default>
+      <summary>Update period in miliseconds</summary>
+    </key>
+  </schema>
+
+  <schema id="ydesk.weather" path="/ydesk/weather/">
+    <key name="city" type="s">
+      <default>'Kiev'</default>
+      <summary>City name for weather forecast</summary>
+    </key>
+    <key name="country" type="s">
+      <default>'UA'</default>
+      <summary>Country code for weather forecast</summary>
+    </key>
+    <key name="units" type="s">
+      <default>'metric'</default>
+      <summary>Measure units for weather forecast</summary>
+    </key>
+  </schema>
+
+</schemalist>

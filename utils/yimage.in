@@ -1,0 +1,41 @@
+#! /bin/bash
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+# try geeqie first
+if [[ -n $(command -v geeqie) ]]; then
+    exec geeqie -t $@
+fi
+
+if [[ -z "$1" ]]; then
+    filename=$(yad --file --title=$"Select image" --width=600 --height=400 --image-filter=$"Images")
+else
+    filename="$1"
+fi
+
+if [[ ! -e "$filename" ]]; then
+    echo $"No such file - $filename" > /dev/stderr
+    exit 1
+fi
+
+function show_info {
+    fn=$1
+    exiv2 -q "$fn" | sed "s/:/\n/" | sed -r "s/^\s*(.*)\s*$/\1/" |\
+        yad --title=$"Exif data" --window-icon=gtk-index --image="image" --button="yad-close:0" \
+            --width=450 --height=500 --text=$"Show EXIF data for file:\n<b>$fn</b>" \
+            --list --column=$"Field" --column=$"Data"
+    unset fn
+}
+export -f show_info
+
+FMT=$"\t<b>File</b>: <i>%f</i>\n\t<b>Size</b>: %b\n\t<b>Geometry</b>: %G\n\t<b>Type</b>: %m\n\t%c"
+
+descr=$(gm identify -format "$FMT" "$filename" 2> /dev/null)
+
+yad --picture --title=$"Image viewer" --text="$descr" \
+    --button=$"EXIF Info!info:bash -c 'show_info \"$filename\"'" \
+    --button="yad-close:0" --width=800 --height=600 --filename="$filename" --size=fit
+
+# always return 0, doesn't matter how yad was closed
+exit 0

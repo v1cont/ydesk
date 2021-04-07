@@ -1,0 +1,17 @@
+/*
+# name: Y
+# author: Victor Ananjevsky <victor@sanana.kiev.ua>
+# description: based on Darkilouche by Maxime Doyen
+*/
+
+#ypanel {
+    background-image: linear-gradient(to bottom,
+                                      shade (@bg_color, 0.8),
+                                      shade (@bg_color, 0.6));
+}
+
+.atril-window scrolledwindow.frame > widget:active,
+.atril-window scrolledwindow.frame > widget:selected {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+}

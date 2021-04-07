@@ -1,0 +1,48 @@
+#! /bin/bash
+# -*- mode: sh -*-
+# Media applet engine
+
+[[ -e /etc/conf.d/automount ]] && source /etc/conf.d/automount
+
+export MEDIADIR="${MOUNT_BASE:-/media}"
+
+function dm_update {
+    icon="drive-removable-media"
+    for d in $(find $MEDIADIR -mindepth 1 -maxdepth 1 -type d); do
+        if mountpoint -q $d; then
+            icon="media-flash"
+            break
+        fi
+    done
+
+    isize=$(gsettings get ydesk.panel isize)
+    FvwmCommand "SendToModule FvwmPanel Silent ChangeButton media Icon $(yad-tools --icon --size=${isize:-16} $icon)"
+}
+
+function dm_eject {
+    eject $1 || umount -nf $1
+    dm_update
+}
+
+function dm_menu {
+    echo -e 'DestroyMenu recreate MediaMenu\nAddToMenu MediaMenu'
+    for d in $MEDIADIR/*; do
+        mountpoint -q $d || continue
+
+        dev=$(findmnt -n -o SOURCE $d)
+        vendor=$(echo $(< /sys/block/${dev:5:3}/device/vendor))
+        model=$(echo $(< /sys/block/${dev:5:3}/device/model))
+
+        echo "+ \"${vendor:-Unknown} $model ($d)\" Exec exec \$[FVWM_LIBDIR]/media.sh eject $d"
+
+        unset dev rd vendor model
+    done
+    echo '+ "" Nop'
+    echo '+ "$[gt.Media manager]" Exec exec @prefix@/lib/ydesk/misc/ymedia'
+}
+
+case $1 in
+    eject) dm_eject $2 ;;
+    menu) dm_menu ;;
+    *) dm_update ;;
+esac

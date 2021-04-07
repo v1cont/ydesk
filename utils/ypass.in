@@ -1,0 +1,14 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Passowrd helper
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2013-2018
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+text=$"Password authentication is required\n$1\n"
+
+exec yad --class="YPass" --title=$"Password prompt" \
+    --image=dialog-password --entry --hide-text --text="$text"

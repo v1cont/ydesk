@@ -1,0 +1,3 @@
+*FvwmPanel: (Id wthr, 50x1, Padding 2 2, Icon "$[infostore.p_wthr]", Title (Side) "N/A", Action (Mouse 1) Exec exec $[FVWM_LIBDIR]/weather.sh show)
+
+Schedule Periodic $[infostore.wthr_time] PipeRead "$[FVWM_LIBDIR]/weather.sh upd"

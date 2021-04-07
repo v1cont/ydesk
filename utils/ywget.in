@@ -1,0 +1,28 @@
+#! /bin/bash
+# FlashGot arguments are: [URL] [REFERER] [POST]
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+dir="$(xdg-user-dir DOWNLOAD)"
+url="$1"
+
+case $url in
+    http*|ftp*)
+        filename=$(yad --width 500 --height 450 --file --save --confirm-overwrite \
+            --title="Ywget" --text=$"Select file name" \
+            --filename $dir/$(basename $URL))
+        if [[ $? -eq 0 ]]; then
+            id=$(wget -c -b -o /tmp/wget-$$.log --referer="$2" --post-data="$3" -O "$filename" "$URL" | egrep -o "[0-9]+")
+            tail -f --pid="$id" /tmp/wget-$$.log \
+                | sed -u -n 's/.*\.[ ]*\([[:print:]]*\)%[ ]*\([[:graph:]]*\) \([[:graph:]]*\)$/#\1% [\2] (\3)\n\1/p' \
+                | yad --title="Ywget" --no-markup --text $"Download $url" --button=yad-close --progress --auto-close
+            rm -f /tmp/wget-$$.log
+        fi
+        ;;
+    *)
+        yad --title="Ywget" --image=dialog-error --text=$"URI '$url' is not supported"
+        exit 1
+        ;;
+esac
+ 

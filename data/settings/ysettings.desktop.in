@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ysettings
+_GenericName=Control center
+_Comment=Ydesk control center
+Categories=GTK;Settings;
+Exec=ysettings
+Icon=preferences-other
+Terminal=false
+Type=Application
+StartupNotify=false

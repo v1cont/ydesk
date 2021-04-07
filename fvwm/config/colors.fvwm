@@ -1,0 +1,25 @@
+# Main colorsets (1 - base, 2 - light, 3 - select)
+Colorset 1 fg #c0c0c0, bg #000000, hi #000000, sh #000000, VGradient 128 1 #44484a 50 #303030
+Colorset 2 fg #c0c0c0, bg #000000, hi #000000, sh #000000, VGradient 128 1 #707070 50 #404040
+Colorset 3 fg #f0f0f0, bg #000000, hi #000000, sh #000000, VGradient 128 1 #07215b 50 #0e224d
+
+# Menu title
+Colorset 4 fg #a0a0e0, VGradient 128 1 #44484a 50 #303030
+
+# Highlight taskbar
+Colorset 5 fg #c0c0c0, bg #000000, hi #000000, VGradient 128 1 #808080 50 #696969
+
+# Tooltip
+Colorset 6 fg #000000, bg #9d9c43, VGradient 128 1 #9d9c43 50 #9d9a41
+
+# Pager colorsets
+Colorset 7 fg #808080, bg #606060
+Colorset 8 fg #ffffff, bg #30536f
+Colorset 9 fg #000000, bg #a0a0a0
+Colorset 10 fg #ffffe0, bg #628cb2
+
+# Ident colorset
+Colorset 11 fg #dbdbdb, bg #07536d
+
+# Clock applet colorset
+Colorset 12 fg $[infostore.clock_fg], VGradient 128 1 #44484a 50 #303030

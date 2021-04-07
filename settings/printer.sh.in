@@ -1,0 +1,23 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2011-2019
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+SRV=${CUPS_SERVER:-localhost}
+
+# check if server is up
+exec 6<>/dev/tcp/$SRV/631 || IS_DOWN=1
+exec 6>&- # close output connection
+exec 6<&- # close input connection
+
+if [[ $IS_DOWN -eq 1 ]]; then
+    exec yad --image="information-error" --title=$"Error" --button="yad-close:0" \
+             --text=$"CUPS server at <b>$SRV</b> not available"
+else
+    exec yad --width=900 --height=650 --title=$"Printer settings" --no-buttons \
+             --html --browser --uri="http://${CUPS_SERVER:-localhost}:631"
+fi

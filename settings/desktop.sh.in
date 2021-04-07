@@ -1,0 +1,125 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2017-2021
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res1=$(mktemp --tmpdir=/tmp/ydesk desk-tab1.XXXXXXXX)
+res2=$(mktemp --tmpdir=/tmp/ydesk desk-tab2.XXXXXXXX)
+res3=$(mktemp --tmpdir=/tmp/ydesk desk-tab3.XXXXXXXX)
+res4=$(mktemp --tmpdir=/tmp/ydesk desk-tab4.XXXXXXXX)
+trap "rm -f $res1 $res2 $res3 $res4" EXIT
+
+function ql_edit {
+    case $1 in
+        add|edit)
+            ICON="$2"
+            NAME="$3"
+            DESCR="$4"
+            CMD="$5"
+            ;;
+        del) return 0 ;;
+        *) return 1 ;;
+    esac
+    eval flds=($(yad --title=$"Quicklaunch item" --text=$"Quicklaunch item editor" \
+                     --width=300 --quoted-output --separator=" " --form \
+                     --field=$"Icon:" "$ICON" \
+                     --field=$"Name:" "$NAME" \
+                     --field=$"Description:" "$DESCR" \
+                     --field=$"Command:" "$CMD"))
+    echo -e "${flds[0]}\n${flds[1]}\n${flds[2]}\n${flds[3]}\n${flds[0]}"
+}
+export -f ql_edit
+
+KEY=$RANDOM
+
+# first tab (common)
+yad --plug=$KEY --tabnum=1 --bool-fmt=t --text=$"Common settings" \
+    --image=desktop --form --quoted-output --separator=" " \
+    --field=$"Number of desktops::NUM" $(gsettings get ydesk.common ndesk) \
+    --field=$"Clipboard history size::NUM"  $(gsettings get ydesk.common clip) \
+    --field=$"<i>0 will disable clipboard management</i>:LBL" > $res1 &
+
+# second tab (fonts)
+yad --plug=$KEY --tabnum=2 --quoted-output --text=$"Fonts settings" \
+    --image=preferences-desktop-font --form --separator=" " \
+    --field=$"Default font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.fonts fn))" \
+    --field=$"Menu title font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.fonts tfn))" \
+    --field=$"Tooltips font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.fonts bfn))" \
+    --field=$"Window title font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.fonts wfn))" > $res2 &
+
+# third tab (apps)
+yad --plug=$KEY --tabnum=3 --quoted-output --text=$"Application settings" \
+    --image=preferences-desktop-default-applications --form --separator=" " \
+    --field=$"Terminal command:" "$(eval echo $(gsettings get ydesk.apps term))" \
+    --field=$"Filemanager command:" "$(eval echo $(gsettings get ydesk.apps fm))" \
+    --field=$"Editor command:" "$(eval echo $(gsettings get ydesk.apps editor))" \
+    --field=$"Web browser command:" "$(eval echo $(gsettings get ydesk.apps browser))" \
+    --field=$"E-mail client command:" "$(eval echo $(gsettings get ydesk.apps mailer))" \
+    --field=$"Lock screen command:" "$(eval echo $(gsettings get ydesk.apps lock))" > $res3 &
+
+# fourth tab (quick launch)
+qldir="${XDG_DATA_HOME:-$HOME/.share}/ydesk/qlaunch"
+for f in $qldir/*.desktop; do
+    [[ -e $f ]] || continue
+    # FIXME: use only awk here
+    eval $(grep -E '^[[:blank:]]*(Icon|Name|Exec)=' "$f" | sed -r 's/=(.*)$/="\1"/')   
+    echo -e "${Icon}\n$(basename $f .desktop | sed -r 's/^[0-9]+\-//')\n${Name}\n${Exec}\n${Icon}"
+    unset Icon Name Comment Exec
+done | yad --plug=$KEY --tabnum=4 --editable --print-all --text=$"Add/remove quicklaunch items" \
+           --image=emblem-symbolic-link --use-interp --row-action="ql_edit" \
+           --list --column=":IMG" --column=$"Name" --column=$"Description:TIP" \
+           --column=$"Command" --column="Icon:HD" > $res4 &
+
+# main dialog
+yad --title=$"Desktop settings" --window-icon=desktop \
+    --button="yad-save:0" --button="yad-close:1" --width=440 --height=540 \
+    --text=$"\n<b>Edit settings of Ydesk</b>\n<i>Changes will be applied on the next startup</i>\n\n" \
+    --notebook --key=$KEY --tab=$"Common" --tab=$"Fonts" --tab=$"Applications" --tab=$"Quick launch"
+
+if [[ $? -eq 0 ]]; then
+    eval r1=($(< $res1))
+    eval r2=($(< $res2))
+    eval r3=($(< $res3))
+
+    # update common settings
+    gsettings set ydesk.common ndesk ${r1[0]}
+    gsettings set ydesk.common clip ${r1[1]}
+
+    # update fonts settings
+    gsettings set ydesk.fonts fn $(yad-tools -f -x "${r2[0]}")
+    gsettings set ydesk.fonts tfn $(yad-tools -f -x "${r2[1]}")
+    gsettings set ydesk.fonts bfn $(yad-tools -f -x "${r2[2]}")
+    gsettings set ydesk.fonts wfn $(yad-tools -f -x "${r2[3]}")
+
+    # update apps settings
+    gsettings set ydesk.apps term "${r3[0]}"
+    gsettings set ydesk.apps fm "${r3[1]}"
+    gsettings set ydesk.apps editor "${r3[2]}"
+    gsettings set ydesk.apps browser "${r3[3]}"
+    gsettings set ydesk.apps mailer "${r3[4]}"
+    gsettings set ydesk.apps lock "${r3[5]}"
+
+    # create qlaunch items
+    rm -f $qldir/*.desktop
+    i=0
+    cat $res4 | while read line; do
+    	eval $(echo $line | awk -F'|' '{printf "ICON=\"%s\" NAME=\"%s\" DESCR=\"%s\" CMD=\"%s\"\n", $5, $2, $3, $4}')
+        printf -v filename "$qldir/%03d-%s.desktop" $i ${NAME// /_}
+    	cat > $filename << EOF
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=$DESCR
+Icon=$ICON
+Exec=$CMD
+StartupNotify=true
+Terminal=false
+EOF
+        unset ICON NAME DESCR CMD
+	    ((i++))
+    done
+fi
