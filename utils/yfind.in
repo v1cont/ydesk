@@ -19,7 +19,7 @@ mkfifo "$fpipe"
 
 trap "rm -f $fpipe" EXIT
 
-fkey=$(($RANDOM * $$))
+KEY=$RANDOM
 
 function run_find {
     echo "6:@disable@"
@@ -52,15 +52,15 @@ export -f open_file
 
 exec 3<> $fpipe
 
-yad --plug="$fkey" --tabnum=1 --form --field=$"Name" '*' --field=$"Use regex:chk" '' \
+yad --plug=$KEY --tabnum=1 --form --field=$"Name" '*' --field=$"Use regex:chk" '' \
     --field=$"Directory:dir" '' --field=$"Newer than:dt" '' \
     --field=$"Content" '' --field="yad-search:fbtn" "$find_cmd" &
 
-yad --plug="$fkey" --tabnum=2 --list --no-markup --dclick-action='bash -c "open_file %s"' \
+yad --plug=$KEY --tabnum=2 --list --no-markup --dclick-action='bash -c "open_file %s"' \
     --text $"Search results:" --column=$"Name" --column=$"Size:sz" --column=$"Perms" \
     --column=$"Date" --column=$"Owner" --search-column=1 --expand-column=1 <&3 &
 
-yad --paned --key="$fkey" --button="yad-close:1" --width=700 --height=500 \
+yad --paned --key=$KEY --button="yad-close:1" --width=700 --height=500 \
     --title=$"Find files" --window-icon="find"
 
 exec 3>&-
