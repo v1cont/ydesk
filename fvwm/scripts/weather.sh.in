@@ -36,6 +36,6 @@ function wthr_show {
 }
 
 case $1 in
-    update|upd) wthr_update ;;
+    update|upd) ( wthr_update ) & ;;
     show) wthr_show ;;
 esac
