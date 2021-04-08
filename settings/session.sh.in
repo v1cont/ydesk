@@ -35,14 +35,16 @@ export -f as_edit
 KEY=$RANDOM
 
 # first tab
+eval BG=$(gsettings get ydesk.session bg)
+eval WP=$(gsettings get ydesk.session wallpaper)
 yad --plug=$KEY --tabnum=1 --bool-fmt=t --form --scroll \
     --field=$"<b><i>Base Configuration</i></b>:LBL" "" \
     --field=$"Update XDG users directories at startup:CHK" $(gsettings get ydesk.session userdirs) \
-    --field=$"Run URXVT server at startup:CHK" $(gsettings get ydesk.session run-urxvt) \
+    --field=$"Run URXVT server at startup:CHK" $(gsettings get ydesk.session run-rxvt) \
     --field=$"Run EMACS server at startup:CHK" $(gsettings get ydesk.session run-emacs) \
     --field=$"<b><i>Background settings</i></b>:LBL" "" \
-    --field=$"Background::CLR" "$(eval echo $(gsettings get ydesk.session bg))" \
-    --field=$"Wallpaper::MFL" "$(eval echo $(gsettings get ydesk.session wallpaper))" \
+    --field=$"Background::CLR" "$(eval echo $(gsettings get ydesk.session bg))" "$BG" \
+    --field=$"Wallpaper::MFL" "$(eval echo $(gsettings get ydesk.session wallpaper))" "$WP" \
     --field=$"<b><i>Other settings</i></b>:LBL" "" \
     --field=$"Enable compositing:CHK" $(gsettings get ydesk.session compose) > $res1 &
 
