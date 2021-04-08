@@ -8,6 +8,8 @@ External software needed by Ydesk:
 - *stalonetray* - used in system tra panel applet
 - *xxkb* - used as keyboard indicator and switcher
 - *conky* - used in sysinfo applet
+- *GraphicsMagick* - used in screenshot applet
+- *jq* - used for parsing weather forecast
 - *wpa_supplicant* - used in wifi applet
 - *mate-icon-theme* is strongly recommended
 
