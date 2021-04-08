@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=desktop
 _GenericName=Desktop Settings
-_Comment=Common ydesk settions
+_Comment=Common ydesk settings
 Categories=Plugin
 Exec=desktop.sh
 Icon=desktop

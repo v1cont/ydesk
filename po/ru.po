@@ -1,4 +1,4 @@
-# Russian translation for ydesk
+# Russian translation for Ydesk
 # Copyright (C) 2010-2021 Victor Ananjevsky
 # This file is distributed under the same license as the Ydesk package.
 # Victor Ananjevsky <victor@sanana.kiev.ua>, 2010-2021
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 07:48+0300\n"
+"POT-Creation-Date: 2021-04-08 13:15+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -16,63 +16,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../fvwm/scripts/clipman.sh:95
+#: ../fvwm/scripts/clipman.sh.in:96
 msgid "Clear clipboard history"
 msgstr "Очистить историю"
 
-#: ../fvwm/scripts/mail.sh:24
+#: ../fvwm/scripts/mail.sh.in:24
 msgid "New mail"
 msgstr "Новая почта"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Server:"
 msgstr "Сервер:"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Account:"
 msgstr "Учетная запись:"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Password::h"
 msgstr "Пароль::h"
 
-#: ../fvwm/scripts/mail.sh:33
+#: ../fvwm/scripts/mail.sh.in:33
 msgid "Mail account"
 msgstr "Почта"
 
-#: ../fvwm/scripts/mail.sh:33
+#: ../fvwm/scripts/mail.sh.in:33
 msgid "Add new mail account"
 msgstr "Добавление новой почтовой учетной записи"
 
-#: ../fvwm/scripts/mail.sh:35
+#: ../fvwm/scripts/mail.sh.in:35
 msgid "Ydesk mail checker"
 msgstr "Проверка почты Ydesk"
 
-#: ../fvwm/scripts/mail.sh:45
+#: ../fvwm/scripts/mail.sh.in:45
 msgid "Mail configuration"
 msgstr "Настройки почты"
 
-#: ../fvwm/scripts/mail.sh:46
+#: ../fvwm/scripts/mail.sh.in:46
 msgid "List of mail acconts to check"
 msgstr "Список проверяемых почтовых учетных записей"
 
-#: ../fvwm/scripts/mail.sh:49
+#: ../fvwm/scripts/mail.sh.in:49
 msgid "Server"
 msgstr "Сервер"
 
-#: ../fvwm/scripts/mail.sh:49
+#: ../fvwm/scripts/mail.sh.in:49
 msgid "User"
 msgstr "Пользователь"
 
-#: ../fvwm/scripts/shot.sh:15
+#: ../fvwm/scripts/shot.sh.in:15
 msgid "Save screenshot"
 msgstr "Сохранить снимок"
 
-#: ../fvwm/scripts/shot.sh:34 ../fvwm/config/menus.fvwm.h:21
+#: ../fvwm/scripts/shot.sh.in:34 ../fvwm/config/menus.fvwm.h:21
 msgid "Screenshot"
 msgstr "Снимок экрана"
 
-#: ../fvwm/scripts/shot.sh:36
+#: ../fvwm/scripts/shot.sh.in:36
 msgid "Clipboard!yad-paste:bash -c copy_file"
 msgstr "Буфер обмена!yad-paste:bash -c copy_file"
 
@@ -161,96 +161,96 @@ msgid "Command:"
 msgstr "Команда:"
 
 #. first tab (common)
-#: ../settings/desktop.sh.in:39
+#: ../settings/desktop.sh.in:40
 msgid "Common settings"
 msgstr "Общие настройки"
 
-#: ../settings/desktop.sh.in:41
+#: ../settings/desktop.sh.in:42
 msgid "Number of desktops::NUM"
 msgstr "Количество рабочих столов::NUM"
 
-#: ../settings/desktop.sh.in:42
+#: ../settings/desktop.sh.in:43
 msgid "Clipboard history size::NUM"
 msgstr "Размер истории буфера обмена::NUM"
 
-#: ../settings/desktop.sh.in:43
+#: ../settings/desktop.sh.in:44
 msgid "<i>0 will disable clipboard management</i>:LBL"
 msgstr "<i>0 запрещает управление буфером обмена</i>:LBL"
 
 #. second tab (fonts)
-#: ../settings/desktop.sh.in:46
+#: ../settings/desktop.sh.in:47
 msgid "Fonts settings"
 msgstr "Настройки шрифтов"
 
-#: ../settings/desktop.sh.in:48
+#: ../settings/desktop.sh.in:49
 msgid "Default font::FN"
 msgstr "Шрифт по-умолчанию::FN"
 
-#: ../settings/desktop.sh.in:49
+#: ../settings/desktop.sh.in:50
 msgid "Menu title font::FN"
 msgstr "Шрифт заголовка меню::FN"
 
-#: ../settings/desktop.sh.in:50
+#: ../settings/desktop.sh.in:51
 msgid "Tooltips font::FN"
 msgstr "Шрифт всплывающих подсказок::FN"
 
-#: ../settings/desktop.sh.in:51
+#: ../settings/desktop.sh.in:52
 msgid "Window title font::FN"
 msgstr "Шрифт заголовка окна::FN"
 
 #. third tab (apps)
-#: ../settings/desktop.sh.in:54
+#: ../settings/desktop.sh.in:55
 msgid "Application settings"
 msgstr "Настройки приложений"
 
-#: ../settings/desktop.sh.in:56
+#: ../settings/desktop.sh.in:57
 msgid "Terminal command:"
 msgstr "Команда терминала:"
 
-#: ../settings/desktop.sh.in:57
+#: ../settings/desktop.sh.in:58
 msgid "Filemanager command:"
 msgstr "Команда менеджера файлов:"
 
-#: ../settings/desktop.sh.in:58
+#: ../settings/desktop.sh.in:59
 msgid "Editor command:"
 msgstr "Команда редактора:"
 
-#: ../settings/desktop.sh.in:59
+#: ../settings/desktop.sh.in:60
 msgid "Web browser command:"
 msgstr "Команда веб-броузера:"
 
-#: ../settings/desktop.sh.in:60
+#: ../settings/desktop.sh.in:61
 msgid "E-mail client command:"
 msgstr "Команда клиента e-mail:"
 
-#: ../settings/desktop.sh.in:61
+#: ../settings/desktop.sh.in:62
 msgid "Lock screen command:"
 msgstr "Команда блокировки экрана:"
 
-#: ../settings/desktop.sh.in:71
+#: ../settings/desktop.sh.in:72
 msgid "Add/remove quicklaunch items"
 msgstr "Добавление/удаление элементов быстрого доступа"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
 #: ../utils/ydentry.sh:13 ../utils/yfind.sh:55 ../utils/yfind.sh:60
 #: ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Имя"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
 msgid "Description:TIP"
 msgstr "Описание:TIP"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:60
 msgid "Command"
 msgstr "Команда"
 
 #. main dialog
-#: ../settings/desktop.sh.in:76
+#: ../settings/desktop.sh.in:78
 msgid "Desktop settings"
 msgstr "Общие настройки рабочего стола"
 
-#: ../settings/desktop.sh.in:78
+#: ../settings/desktop.sh.in:80
 msgid ""
 "\\n<b>Edit settings of Ydesk</b>\\n<i>Changes will be applied on the next "
 "startup</i>\\n\\n"
@@ -258,49 +258,102 @@ msgstr ""
 "\\n<b>Редактирование настроек рабочего стола Ydesk</b>\\n<i>Изменения будут "
 "применены при следующем старте</i>\\n\\n"
 
-#: ../settings/desktop.sh.in:79 ../settings/session.sh.in:64
+#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:66
 msgid "Common"
 msgstr "Общие"
 
-#: ../settings/desktop.sh.in:79
+#: ../settings/desktop.sh.in:81
 msgid "Fonts"
 msgstr "Шрифты"
 
-#: ../settings/desktop.sh.in:79 ../fvwm/config/applets/menu.fvwm.h:1
+#: ../settings/desktop.sh.in:81 ../fvwm/config/applets/menu.fvwm.h:1
 msgid "Applications"
 msgstr "Приложения"
 
-#: ../settings/desktop.sh.in:79
+#: ../settings/desktop.sh.in:81
 msgid "Quick launch"
 msgstr "Быстрый доступ"
 
-#: ../settings/interface.sh.in:10
+#: ../settings/interface.sh.in:16
+msgid "None"
+msgstr "Нет"
+
+#: ../settings/interface.sh.in:17 ../settings/interface.sh.in:39
+#: ../settings/interface.sh.in:40
+msgid "Default"
+msgstr "По умолчанию"
+
+#: ../settings/interface.sh.in:74
 msgid "Interface settings"
 msgstr "Настройки интерфейса"
 
-#: ../settings/interface.sh.in:11
-msgid "GTK+ interface settings"
-msgstr "Настройки интерфейса GTK+"
+#: ../settings/interface.sh.in:77
+msgid "<b>GTK+ interface settings</b>"
+msgstr "<b>Настройки интерфейса GTK+</b>"
 
-#: ../settings/interface.sh.in:12
-msgid "Theme name:"
-msgstr "Имя темы:"
+#: ../settings/interface.sh.in:78
+msgid "Theme name::CB"
+msgstr "Имя темы::CB"
 
-#: ../settings/interface.sh.in:13
-msgid "Icon theme name:"
-msgstr "Тема иконок:"
+#: ../settings/interface.sh.in:79
+msgid "Key theme name::CB"
+msgstr "Тема клавиш::CB"
 
-#: ../settings/interface.sh.in:14
-msgid "Cursor theme name:"
-msgstr "Тема курсора:"
+#: ../settings/interface.sh.in:80
+msgid "Icon theme name::CB"
+msgstr "Тема иконок::CB"
 
-#: ../settings/interface.sh.in:15
+#: ../settings/interface.sh.in:81
+msgid "Cursor theme name::CB"
+msgstr "Тема курсора::CB"
+
+#: ../settings/interface.sh.in:82
 msgid "Cursor theme size::NUM"
 msgstr "Размер курсора::NUM"
 
-#: ../settings/interface.sh.in:16
+#: ../settings/interface.sh.in:84
 msgid "Font name::FN"
 msgstr "Имя шрифта::FN"
+
+#: ../settings/interface.sh.in:85
+msgid "Enable xft antialiasing:CHK"
+msgstr "Разрешить антиалиасинг:CHK"
+
+#: ../settings/interface.sh.in:86
+msgid "Enable xft hinting:CHK"
+msgstr "Разрешить хинтинг:CHK"
+
+#: ../settings/interface.sh.in:87
+msgid "Xft hint style:"
+msgstr "Стиль хинтинга:"
+
+#: ../settings/interface.sh.in:88
+msgid "Xft RGBA:"
+msgstr "Xft RGBA:"
+
+#: ../settings/interface.sh.in:90
+msgid "Use dialog headers:CHK"
+msgstr "Использовать заголовки диалога:CHK"
+
+#: ../settings/interface.sh.in:91
+msgid "Enable owerlay scrolling:CHK"
+msgstr "Разрешить перекрытие полосы прокрутки:CHK"
+
+#: ../settings/interface.sh.in:92
+msgid "Enable animation:CHK"
+msgstr "Разрешить анимацию:CHK"
+
+#: ../settings/interface.sh.in:93
+msgid "Enable mnemonics:CHK"
+msgstr "Разрешить подчеркивание меток:CHK"
+
+#: ../settings/interface.sh.in:94
+msgid "Enable acceleration:CHK"
+msgstr "Разрешить клавиши быстрого доступа:CHK"
+
+#: ../settings/interface.sh.in:95
+msgid "Menubar accelerator:"
+msgstr "Быстрый доступ к меню:"
 
 #: ../settings/mime.sh.in:18
 msgid "MIME types editor"
@@ -348,42 +401,43 @@ msgid "Panel icons size::NUM"
 msgstr "Размер иконок на панели::NUM"
 
 #: ../settings/panel.sh.in:47
-msgid "<i>You must restart FVWM for changes will take effect</i>"
-msgstr "<i>Вы должны перезапустить FVWM, чтобы изменения вступили в силу</i>"
+msgid "<i>You must restart FVWM for changes will take effect</i>:LBL"
+msgstr ""
+"<i>Вы должны перезапустить FVWM, чтобы изменения вступили в силу</i>:LBL"
 
 #: ../settings/panel.sh.in:50
 msgid "Panel applets settings"
 msgstr "Настройки апплетов панели"
 
-#: ../settings/panel.sh.in:51
+#: ../settings/panel.sh.in:52
 msgid "Module"
 msgstr "Модуль"
 
 #. main dialog
-#: ../settings/panel.sh.in:54
+#: ../settings/panel.sh.in:55
 msgid "Panel settings"
 msgstr "Настройки панели"
 
-#: ../settings/panel.sh.in:54
+#: ../settings/panel.sh.in:55
 msgid "Ydesk panel settings"
 msgstr "Настройки панели Ydesk"
 
-#: ../settings/panel.sh.in:56 ../settings/session.sh.in:63
+#: ../settings/panel.sh.in:57
 msgid ""
-"\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
-"next startup</i>\\n\\n"
+"\\n<b>Edit settings of Ydesk panel</b>\\n\\n<i>Changes will be applied on "
+"the next startup</i>\\n\\n"
 msgstr ""
-"\\n<b>Редактирование настроек сессии Ydesk</b>\\n<i>Изменения будут "
+"\\n<b>Редактирование настроек панели Ydesk</b>\\n<i>Изменения будут "
 "применены при следующем старте</i>\\n\\n"
 
 #. main dialog
-#: ../settings/panel.sh.in:57 ../settings/term.sh.in:104
+#: ../settings/panel.sh.in:58 ../settings/term.sh.in:104
 msgid "Main"
 msgstr "Основные"
 
-#: ../settings/panel.sh.in:57
+#: ../settings/panel.sh.in:58
 msgid "Applets"
-msgstr "апплеты"
+msgstr "Апплеты"
 
 #: ../settings/printer.sh.in:18 ../utils/ymedia.sh:33
 msgid "Error"
@@ -406,44 +460,43 @@ msgstr "Автостарт"
 msgid "Autostart item editor"
 msgstr "Редактор элемента автостарта"
 
-#. first tab
-#: ../settings/session.sh.in:39
+#: ../settings/session.sh.in:41
 msgid "<b><i>Base Configuration</i></b>:LBL"
 msgstr "<b><i>Базовая конфигурация</i></b>:LBL"
 
-#: ../settings/session.sh.in:40
+#: ../settings/session.sh.in:42
 msgid "Update XDG users directories at startup:CHK"
 msgstr "Создавать/обновлять каталоги XDG при старте:CHK"
 
-#: ../settings/session.sh.in:41
+#: ../settings/session.sh.in:43
 msgid "Run URXVT server at startup:CHK"
 msgstr "Запускать сервер URXVT при старте:CHK"
 
-#: ../settings/session.sh.in:42
+#: ../settings/session.sh.in:44
 msgid "Run EMACS server at startup:CHK"
 msgstr "Запускать сервер EMACS при старте:CHK"
 
-#: ../settings/session.sh.in:43
+#: ../settings/session.sh.in:45
 msgid "<b><i>Background settings</i></b>:LBL"
 msgstr "<b><i>Настройки фона</i></b>:LBL"
 
-#: ../settings/session.sh.in:44
+#: ../settings/session.sh.in:46
 msgid "Background::CLR"
 msgstr "Цвет фона::CLR"
 
-#: ../settings/session.sh.in:45
+#: ../settings/session.sh.in:47
 msgid "Wallpaper::MFL"
 msgstr "Обои::MFL"
 
-#: ../settings/session.sh.in:46
+#: ../settings/session.sh.in:48
 msgid "<b><i>Other settings</i></b>:LBL"
 msgstr "<b><i>Другие настройки</i></b>:LBL"
 
-#: ../settings/session.sh.in:47
+#: ../settings/session.sh.in:49
 msgid "Enable compositing:CHK"
 msgstr "Разрешить композитинг:CHK"
 
-#: ../settings/session.sh.in:57
+#: ../settings/session.sh.in:59
 msgid ""
 "Add/remove autostart items\\n(<i>only users autostart directory proceeded</"
 "i>)"
@@ -452,11 +505,19 @@ msgstr ""
 "пользователем</i>)"
 
 #. main dialog
-#: ../settings/session.sh.in:61 ../data/settings/session.desktop.in.h:1
+#: ../settings/session.sh.in:63 ../data/settings/session.desktop.in.h:1
 msgid "Session settings"
 msgstr "Настройки сессии"
 
-#: ../settings/session.sh.in:64
+#: ../settings/session.sh.in:65
+msgid ""
+"\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
+"next startup</i>\\n\\n"
+msgstr ""
+"\\n<b>Редактирование настроек сессии Ydesk</b>\\n<i>Изменения будут "
+"применены при следующем старте</i>\\n\\n"
+
+#: ../settings/session.sh.in:66
 msgid "Autostart"
 msgstr "Автостарт"
 
@@ -590,218 +651,205 @@ msgstr "Настройки терминала"
 msgid "Terminal settings (URxvt)"
 msgstr "Настройки терминала (URxvt)"
 
-#: ../settings/panel/bat.sh.in:10
+#: ../settings/panel/bat.sh.in:7
 msgid "Battery applet"
 msgstr "Апплет батареи"
 
-#: ../settings/panel/bat.sh.in:11
-msgid "Battery applet configuration"
-msgstr "Настройки апплета батареи"
+#: ../settings/panel/bat.sh.in:9
+msgid "<b>Battery applet configuration</b>"
+msgstr "<b>Настройки апплета батареи</b>"
 
-#: ../settings/panel/bat.sh.in:12
+#: ../settings/panel/bat.sh.in:10
 msgid "Battery name:"
 msgstr "Название батареи:"
 
-#: ../settings/panel/bat.sh.in:13
+#: ../settings/panel/bat.sh.in:11
 msgid "AC adapter name:"
 msgstr "Название адаптера:"
 
-#: ../settings/panel/clock.sh.in:10
+#: ../settings/panel/clock.sh.in:7
 msgid "Clock applet"
 msgstr "Апплет часов"
 
-#: ../settings/panel/clock.sh.in:12
-msgid "Clock applet configuration"
-msgstr "Настройки апплета часов"
+#: ../settings/panel/clock.sh.in:9
+msgid "<b>Clock applet configuration</b>"
+msgstr "<b>Настройки апплета часов</b>"
 
-#: ../settings/panel/clock.sh.in:13
+#: ../settings/panel/clock.sh.in:10
 msgid "Time format:"
 msgstr "Формат времени:"
 
-#: ../settings/panel/clock.sh.in:14
+#: ../settings/panel/clock.sh.in:11
 msgid "Clock foreground color::CLR"
 msgstr "Цвет символов часов::CLR"
 
-#: ../settings/panel/clock.sh.in:15
+#: ../settings/panel/clock.sh.in:12
 msgid "Clock font::FN"
 msgstr "Шрифт часов::FN"
 
-#: ../settings/panel/clock.sh.in:16
+#: ../settings/panel/clock.sh.in:13
 msgid "Clock width::NUM"
 msgstr "Ширина часов::NUM"
 
-#: ../settings/panel/cpu.sh.in:10
+#: ../settings/panel/cpu.sh.in:7
 msgid "CPU applet"
 msgstr "Апплет ЦПУ"
 
-#: ../settings/panel/cpu.sh.in:12
-msgid "CPU load applet configuration"
-msgstr "Настройки апплета загрузки ЦПУ"
+#: ../settings/panel/cpu.sh.in:9
+msgid "<b>CPU load applet configuration</b>"
+msgstr "<b>Настройки апплета загрузки ЦПУ</b>"
 
-#: ../settings/panel/cpu.sh.in:13
+#: ../settings/panel/cpu.sh.in:10
 msgid "Indicator foregroung color::CLR"
 msgstr "Цвет индикатора::CLR"
 
-#: ../settings/panel/cpu.sh.in:14
+#: ../settings/panel/cpu.sh.in:11
 msgid "Indicator backgroung color::CLR"
 msgstr "Цвет фона индикатора::CLR"
 
-#: ../settings/panel/cpu.sh.in:15
+#: ../settings/panel/cpu.sh.in:12
 msgid "Show memory usage:CHK"
 msgstr "Показывать использование памяти:CHK"
 
-#: ../settings/panel/cpu.sh.in:16 ../settings/panel/weather.sh.in:19
+#: ../settings/panel/cpu.sh.in:13 ../settings/panel/weather.sh.in:16
 msgid "Update interval::NUM"
 msgstr "Интервал обновления::NUM"
 
-#: ../settings/panel/cpu.sh.in:17
+#: ../settings/panel/cpu.sh.in:14
 msgid "Indicator width::NUM"
 msgstr "Ширина индикатора::NUM"
 
-#: ../settings/panel/mail.sh.in:10 ../settings/panel/wifi.sh.in:10
+#: ../settings/panel/mail.sh.in:7
 msgid "Mail applet"
 msgstr "Апплет почты"
 
-#: ../settings/panel/mail.sh.in:11 ../settings/panel/wifi.sh.in:11
-#, fuzzy
-msgid "Mail applet configuration"
-msgstr "Настройки почты"
+#: ../settings/panel/mail.sh.in:9
+msgid "<b>Mail applet configuration</b>"
+msgstr "<b>Настройки апплета почты</b>"
 
-#: ../settings/panel/mail.sh.in:12
+#: ../settings/panel/mail.sh.in:10
 msgid "Mail check time::NUM"
-msgstr ""
+msgstr "Период проверки почты::NUM"
+
+#: ../settings/panel/menu.sh.in:7
+msgid "Menubar applet"
+msgstr "Апплет меню"
+
+#: ../settings/panel/menu.sh.in:9
+msgid "<b>Menubar applet configuration</b>"
+msgstr "<b>Настройки апплета меню</b>"
 
 #: ../settings/panel/menu.sh.in:10
-msgid "Menubar applet"
-msgstr ""
-
-#: ../settings/panel/menu.sh.in:12
-#, fuzzy
-msgid "Menubar applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/menu.sh.in:13
-#, fuzzy
 msgid "Menubar font::FN"
-msgstr "Шрифт заголовка меню::FN"
+msgstr "Шрифт апплета меню::FN"
+
+#: ../settings/panel/run.sh.in:7
+msgid "Run applet"
+msgstr "Апплет запуска"
+
+#: ../settings/panel/run.sh.in:9
+msgid "<b>Run applet configuration</b>"
+msgstr "<b>Настройки апплета запуска команды</b>"
 
 #: ../settings/panel/run.sh.in:10
-#, fuzzy
-msgid "Run applet"
-msgstr "Добавление апплета"
-
-#: ../settings/panel/run.sh.in:12
-#, fuzzy
-msgid "Run applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/run.sh.in:13
-#, fuzzy
 msgid "Foreground color::CLR"
-msgstr "Цвет символов::clr"
+msgstr "Цвет символов::CLR"
 
-#: ../settings/panel/run.sh.in:14
-#, fuzzy
+#: ../settings/panel/run.sh.in:11
 msgid "Background color::CLR"
 msgstr "Цвет фона::CLR"
 
-#: ../settings/panel/run.sh.in:15
-#, fuzzy
+#: ../settings/panel/run.sh.in:12
 msgid "Run applet font::FN"
-msgstr "Шрифт по-умолчанию::FN"
+msgstr "Шрифт апплета::FN"
 
-#: ../settings/panel/run.sh.in:16
+#: ../settings/panel/run.sh.in:13
 msgid "Run applet width::NUM"
-msgstr ""
+msgstr "Ширина апплета::NUM"
+
+#: ../settings/panel/shot.sh.in:10
+msgid "Screenshot applet"
+msgstr "Апплет снимка экрана"
+
+#: ../settings/panel/shot.sh.in:12
+msgid "<b>Screenshot applet configuration</b>"
+msgstr "<b>Настройки апплета снимка экрана</b>"
 
 #: ../settings/panel/shot.sh.in:13
-#, fuzzy
-msgid "Screenshot applet"
-msgstr "Снимок экрана"
-
-#: ../settings/panel/shot.sh.in:15
-#, fuzzy
-msgid "Screenshot applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/shot.sh.in:16
-#, fuzzy
 msgid "Default action::CB"
-msgstr "Шрифт по-умолчанию::FN"
+msgstr "Действие по-умолчанию::CB"
+
+#: ../settings/panel/sysinfo.sh.in:7
+msgid "Sysinfo applet"
+msgstr "Апплет системной информации"
+
+#: ../settings/panel/sysinfo.sh.in:9
+msgid "<b>Sysinfo applet configuration</b>"
+msgstr "<b>Настройки апплета системной информации</b>"
 
 #: ../settings/panel/sysinfo.sh.in:10
-#, fuzzy
-msgid "Sysinfo applet"
-msgstr "Добавление апплета"
-
-#: ../settings/panel/sysinfo.sh.in:12
-#, fuzzy
-msgid "Sysinfo applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/sysinfo.sh.in:13
-#, fuzzy
 msgid "Sysinfo width::NUN"
-msgstr "Ширина часов::NUM"
+msgstr "Ширина апплета::NUM"
+
+#: ../settings/panel/taskbar.sh.in:7
+msgid "Taskbar applet"
+msgstr "Апплет списка задач"
+
+#: ../settings/panel/taskbar.sh.in:9
+msgid "<b>Taskbar applet configuration</b>"
+msgstr "<b>Настройки апплета списка задач</b>"
 
 #: ../settings/panel/taskbar.sh.in:10
-msgid "Taskbar applet"
-msgstr ""
-
-#: ../settings/panel/taskbar.sh.in:12
-#, fuzzy
-msgid "Taskbar applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/taskbar.sh.in:13
 msgid "Taskbar width::NUN"
-msgstr ""
+msgstr "Ширина апплета::NUM"
+
+#: ../settings/panel/volume.sh.in:13
+msgid "Volume applet"
+msgstr "Апплет громкости"
+
+#: ../settings/panel/volume.sh.in:15
+msgid "<b>Volume applet configuration</b>"
+msgstr "<b>Настройки апплета громкости звука</b>"
 
 #: ../settings/panel/volume.sh.in:16
-#, fuzzy
-msgid "Volume applet"
-msgstr "Добавление апплета"
-
-#: ../settings/panel/volume.sh.in:18
-#, fuzzy
-msgid "Volume applet configuration"
-msgstr "Настройки почты"
-
-#: ../settings/panel/volume.sh.in:19
-#, fuzzy
 msgid "Default control device::CB"
-msgstr "Шрифт по-умолчанию::FN"
+msgstr "Устройство по-умолчанию::CB"
+
+#: ../settings/panel/weather.sh.in:9
+msgid "Weather applet"
+msgstr "Апплет погоды"
+
+#: ../settings/panel/weather.sh.in:11
+msgid "<b>Weather applet configuration</b>"
+msgstr "<b>Настройки апплета погоды</b>"
 
 #: ../settings/panel/weather.sh.in:12
-#, fuzzy
-msgid "Weather applet"
-msgstr "Выбрать апплет панели"
+msgid "City name:"
+msgstr "Город:"
+
+#: ../settings/panel/weather.sh.in:13
+msgid "Country code:"
+msgstr "Код страны:"
 
 #: ../settings/panel/weather.sh.in:14
-#, fuzzy
-msgid "Weather applet configuration"
-msgstr "Настройки почты"
+msgid "Measure units:"
+msgstr "Единицы измерения:"
 
 #: ../settings/panel/weather.sh.in:15
-#, fuzzy
-msgid "City name:"
-msgstr "Имя шрифта::FN"
-
-#: ../settings/panel/weather.sh.in:16
-msgid "Country code:"
-msgstr ""
-
-#: ../settings/panel/weather.sh.in:17
-msgid "Measure units:"
-msgstr ""
-
-#: ../settings/panel/weather.sh.in:18
 msgid "APi key:"
-msgstr ""
+msgstr "Ключ API:"
 
-#: ../settings/panel/wifi.sh.in:12
+#: ../settings/panel/wifi.sh.in:7
+msgid "Wifi applet"
+msgstr "Апплет wifi"
+
+#: ../settings/panel/wifi.sh.in:9
+msgid "<b>Wifi applet configuration</b>"
+msgstr "<b>Настройки апплета Wifi</b>"
+
+#: ../settings/panel/wifi.sh.in:10
 msgid "Wifi interface name:"
-msgstr ""
+msgstr "Имя интерфейса:"
 
 #: ../utils/ydentry.sh:10
 msgid "Desktop entry editor"
@@ -1235,7 +1283,7 @@ msgstr "Офис"
 
 #: ../data/menu/desktop-directories/Office.directory.in.h:2
 msgid "Office Applications"
-msgstr "Оыисные приложения"
+msgstr "Офисные приложения"
 
 #: ../data/menu/desktop-directories/Settings.directory.in.h:1
 #: ../fvwm/config/menus.fvwm.h:18
@@ -1275,7 +1323,7 @@ msgid "Desktop Settings"
 msgstr "Настройки рабочего стола"
 
 #: ../data/settings/desk.desktop.in.h:2
-msgid "Common ydesk settions"
+msgid "Common ydesk settings"
 msgstr "Настройки рабочего стола Ydesk"
 
 #: ../data/settings/interface.desktop.in.h:1
@@ -1283,8 +1331,8 @@ msgid "Interace Settings"
 msgstr "Настройки интерфейса"
 
 #: ../data/settings/interface.desktop.in.h:2
-msgid "Configure ixdesktop GTK+ settings"
-msgstr "Настройки внешнего вида GTK+ для ixdesktop"
+msgid "Configure GTK+ interface settings"
+msgstr "Настройки интерфейса GTK+"
 
 #: ../data/settings/mime.desktop.in.h:1
 msgid "MIME Types Editor"
@@ -1465,152 +1513,3 @@ msgstr "Громкость звука"
 #: ../fvwm/config/applets/media.fvwm.h:1
 msgid "Manage removable media"
 msgstr "Управление сменными носителями"
-
-#~ msgid "Root!Region"
-#~ msgstr "Весь экран!Окно/Область"
-
-#~ msgid "Include window frames:chk"
-#~ msgstr "Включать обрамление окон:chk"
-
-#~ msgid "Delay::scl"
-#~ msgstr "Задержка::scl"
-
-#~ msgid "Enable clipboard management?:NUM"
-#~ msgstr "Разрешить управление буфером обмена?:NUM"
-
-#~ msgid "Default"
-#~ msgstr "По умолчанию"
-
-#~ msgid "Icons only"
-#~ msgstr "Иконки"
-
-#~ msgid "Text only"
-#~ msgstr "Текст"
-
-#~ msgid "Text below icons"
-#~ msgstr "Текст под иконкой"
-
-#~ msgid "Text beside icons"
-#~ msgstr "Текст слева от иконки"
-
-#~ msgid "Menu"
-#~ msgstr "Меню"
-
-#~ msgid "Small toolbar"
-#~ msgstr "Маленькая панель"
-
-#~ msgid "Large toolbar"
-#~ msgstr "Большая панель"
-
-#~ msgid "Buttons"
-#~ msgstr "Кнопки"
-
-#~ msgid "DND"
-#~ msgstr "DND"
-
-#~ msgid "Dialog"
-#~ msgstr "Диалог"
-
-#~ msgid "GTK+ theme::cb"
-#~ msgstr "Тема GTK+::cb"
-
-#~ msgid "GTK+ key theme::cb"
-#~ msgstr "Тема клавиш GTK+::cb"
-
-#, sh-format
-#~ msgid "$keythemelist"
-#~ msgstr "$keythemelist"
-
-#, sh-format
-#~ msgid "$iconthemelist"
-#~ msgstr "$iconthemelist"
-
-#, sh-format
-#~ msgid "$cursorthemelist"
-#~ msgstr "$cursorthemelist"
-
-#~ msgid "Toolbar style::cb"
-#~ msgstr "Стиль панели инструментов::cb"
-
-#, sh-format
-#~ msgid "$tbstylelist"
-#~ msgstr "$tbstylelist"
-
-#, sh-format
-#~ msgid "$tbiconsizelist"
-#~ msgstr "$tbiconsizelist"
-
-#~ msgid "Button images:chk"
-#~ msgstr "Иконки на кнопках:chk"
-
-#~ msgid "Menu images:chk"
-#~ msgstr "Иконки в меню:chk"
-
-#~ msgid "None"
-#~ msgstr "Нет"
-
-#~ msgid "Slight"
-#~ msgstr "Легкий"
-
-#~ msgid "Medium"
-#~ msgstr "Средний"
-
-#~ msgid "Full"
-#~ msgstr "Полный"
-
-#~ msgid "Use antialiasing:chk"
-#~ msgstr "Использовать антиалиасинг:chk"
-
-#~ msgid "Use hinting:chk"
-#~ msgstr "Использовать хинтинг:chk"
-
-#~ msgid "Hinting style::cb"
-#~ msgstr "Стиль хинтинга::cb"
-
-#, sh-format
-#~ msgid "$hintstylelist"
-#~ msgstr "$hintstylelist"
-
-#~ msgid "RGBA type::cb"
-#~ msgstr "Тип RGBA::cb"
-
-#, sh-format
-#~ msgid "$rgbalist"
-#~ msgstr "$rgbalist"
-
-#~ msgid "Text::clr"
-#~ msgstr "Цвет текста::clr"
-
-#~ msgid "Base::clr"
-#~ msgstr "Цвет фона текста::clr"
-
-#~ msgid "Selected fore::clr"
-#~ msgstr "Цвет текста выделения::clr"
-
-#~ msgid "Selected back::clr"
-#~ msgstr "Фон выделения::clr"
-
-#~ msgid "Tooltip back::clr"
-#~ msgstr "Фон подсказок::clr"
-
-#~ msgid "Colors"
-#~ msgstr "Цвета"
-
-#~ msgid "Common interface settings"
-#~ msgstr "Общие настройки интерфейса"
-
-#~ msgid ""
-#~ "\\n<b>Choose panel configuration</b>\\n<i><b>default</b> is for edit "
-#~ "default config</i>\\n\\n"
-#~ msgstr ""
-#~ "\\n<b>Выберите конфигурацию панели</b>\\n<i><b>default</b> - для "
-#~ "конфигурации по-умолчанию</i>\\n\\n"
-
-#~ msgid "Simple desktop entry editor"
-#~ msgstr "Простой редактор desctop файлов"
-
-#~ msgid "WiFi manager"
-#~ msgstr "WiFi менеджер"
-
-#~ msgid "Manage WiFi connections"
-#~ msgstr "Управление WiFi соединениями"

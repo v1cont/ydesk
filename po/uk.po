@@ -1,80 +1,80 @@
-# Ukrainian translation for Ixdesktop
-# Copyright (C) 2010-2017
-# This file is distributed under the same license as the Ixdesktop package.
-# Victor Ananjevsky <ananasik@gmail.com>, 2015
+# Ukrainian translation for Ydesk
+# Copyright (C) 2010-2021 Victor Ananjevsky
+# This file is distributed under the same license as the Ydesk package.
+# Victor Ananjevsky <victor@sanana.kiev.ua>, 2010-2021
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Ixdesktop 1.0\n"
+"Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 07:48+0300\n"
-"PO-Revision-Date: 2014-11-23 22:37+0200\n"
-"Last-Translator: Victor Ananjevsky <ananasik@gmail.com>\n"
+"POT-Creation-Date: 2021-04-08 13:15+0300\n"
+"PO-Revision-Date: 2009-09-01 17:42+0300\n"
+"Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
-"Language: Ukrainian\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../fvwm/scripts/clipman.sh:95
+#: ../fvwm/scripts/clipman.sh.in:96
 msgid "Clear clipboard history"
-msgstr ""
+msgstr "Очистити історию"
 
-#: ../fvwm/scripts/mail.sh:24
+#: ../fvwm/scripts/mail.sh.in:24
 msgid "New mail"
-msgstr ""
+msgstr "Нова пошта"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Server:"
-msgstr ""
+msgstr "Сервер:"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Account:"
-msgstr ""
+msgstr "Обліковий запис:"
 
-#: ../fvwm/scripts/mail.sh:32
+#: ../fvwm/scripts/mail.sh.in:32
 msgid "Password::h"
-msgstr ""
+msgstr "Пароль::h"
 
-#: ../fvwm/scripts/mail.sh:33
+#: ../fvwm/scripts/mail.sh.in:33
 msgid "Mail account"
-msgstr ""
+msgstr "Пошта"
 
-#: ../fvwm/scripts/mail.sh:33
+#: ../fvwm/scripts/mail.sh.in:33
 msgid "Add new mail account"
-msgstr ""
+msgstr "Додавання нового облікового запису пошти"
 
-#: ../fvwm/scripts/mail.sh:35
+#: ../fvwm/scripts/mail.sh.in:35
 msgid "Ydesk mail checker"
-msgstr ""
+msgstr "Перевірка пошти Ydesk"
 
-#: ../fvwm/scripts/mail.sh:45
+#: ../fvwm/scripts/mail.sh.in:45
 msgid "Mail configuration"
-msgstr ""
+msgstr "Налаштування пошти"
 
-#: ../fvwm/scripts/mail.sh:46
+#: ../fvwm/scripts/mail.sh.in:46
 msgid "List of mail acconts to check"
-msgstr ""
+msgstr "Список перевіряемих поштових записів"
 
-#: ../fvwm/scripts/mail.sh:49
+#: ../fvwm/scripts/mail.sh.in:49
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
-#: ../fvwm/scripts/mail.sh:49
+#: ../fvwm/scripts/mail.sh.in:49
 msgid "User"
-msgstr ""
+msgstr "Користувач"
 
-#: ../fvwm/scripts/shot.sh:15
+#: ../fvwm/scripts/shot.sh.in:15
 msgid "Save screenshot"
-msgstr ""
+msgstr "Зберегти знімок"
 
-#: ../fvwm/scripts/shot.sh:34 ../fvwm/config/menus.fvwm.h:21
+#: ../fvwm/scripts/shot.sh.in:34 ../fvwm/config/menus.fvwm.h:21
 msgid "Screenshot"
-msgstr ""
+msgstr "Знимок экрану"
 
-#: ../fvwm/scripts/shot.sh:36
+#: ../fvwm/scripts/shot.sh.in:36
 msgid "Clipboard!yad-paste:bash -c copy_file"
-msgstr ""
+msgstr "Буфер обміну!yad-paste:bash -c copy_file"
 
 #: ../fvwm/cpu.c:137
 #, c-format
@@ -82,6 +82,8 @@ msgid ""
 "\n"
 "Memory usage: %s / %s"
 msgstr ""
+"\n"
+"Використання пам'яти: %s / %s"
 
 #: ../fvwm/cpu.c:143
 #, c-format
@@ -89,1342 +91,1423 @@ msgid ""
 "\n"
 "Swap usage: %s / %s"
 msgstr ""
+"\n"
+"Використання свапу: %s / %s"
 
 #: ../fvwm/cpu.c:218
 #, c-format
 msgid "CPU Load - %d%%"
-msgstr ""
+msgstr "Завантаження ЦПУ - %d%%"
 
 #: ../fvwm/cpu.c:220
 #, c-format
 msgid "CPU%d Load - %d%%"
-msgstr ""
+msgstr "Завантаженния ЦПУ%d - %d%%"
 
 #: ../fvwm/cpu.c:285
 msgid "Set window width"
-msgstr ""
+msgstr "Задати ширину вікна"
 
 #: ../fvwm/cpu.c:285
 msgid "WIDTH"
-msgstr ""
+msgstr "ШИРИНА"
 
 #: ../fvwm/cpu.c:286
 msgid "Set CPU number"
-msgstr ""
+msgstr "Задати номер ЦПУ"
 
 #: ../fvwm/cpu.c:286
 msgid "NUM"
-msgstr ""
+msgstr "НОМЕР"
 
 #: ../fvwm/cpu.c:296
 msgid "- CPU load monitor"
-msgstr ""
+msgstr "- Монітор завантаження ЦПУ"
 
 #: ../settings/ysettings.sh:18
 msgid ""
 "<span size='x-large' weight='bold'>Ydesktop settings manager</span>\\nSelect "
 "applet for configure corresponding settings\\n\\n"
 msgstr ""
+"<span size='x-large' weight='bold'>Менеджер налаштувань Ydesk</span>"
+"\\nОберіть відповідний аплет для запуску діалога налаштувань\\n\\n"
 
 #: ../settings/ysettings.sh:21
 msgid "Ydesktop settings"
-msgstr ""
+msgstr "Налаштування Ydesk"
 
 #: ../settings/desktop.sh.in:27
 msgid "Quicklaunch item"
-msgstr ""
+msgstr "Елемент швидкого доступу"
 
 #: ../settings/desktop.sh.in:27
 msgid "Quicklaunch item editor"
-msgstr ""
+msgstr "Редактор елементу швидкого доступу"
 
 #: ../settings/desktop.sh.in:29
 msgid "Icon:"
-msgstr ""
+msgstr "Іконка:"
 
 #: ../settings/desktop.sh.in:30 ../settings/session.sh.in:29
 msgid "Name:"
-msgstr ""
+msgstr "Ім'я:"
 
 #: ../settings/desktop.sh.in:31 ../settings/session.sh.in:30
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 #: ../settings/desktop.sh.in:32 ../settings/session.sh.in:31
 msgid "Command:"
-msgstr ""
+msgstr "Команда:"
 
 #. first tab (common)
-#: ../settings/desktop.sh.in:39
+#: ../settings/desktop.sh.in:40
 msgid "Common settings"
-msgstr ""
-
-#: ../settings/desktop.sh.in:41
-msgid "Number of desktops::NUM"
-msgstr ""
+msgstr "Загальні налаштування"
 
 #: ../settings/desktop.sh.in:42
-msgid "Clipboard history size::NUM"
-msgstr ""
+msgid "Number of desktops::NUM"
+msgstr "Кількість робочих столів::NUM"
 
 #: ../settings/desktop.sh.in:43
+msgid "Clipboard history size::NUM"
+msgstr "Розмір історії буферу обміну::NUM"
+
+#: ../settings/desktop.sh.in:44
 msgid "<i>0 will disable clipboard management</i>:LBL"
-msgstr ""
+msgstr "<i>0 забороняє керування буфером обміну</i>:LBL"
 
 #. second tab (fonts)
-#: ../settings/desktop.sh.in:46
+#: ../settings/desktop.sh.in:47
 msgid "Fonts settings"
-msgstr ""
-
-#: ../settings/desktop.sh.in:48
-msgid "Default font::FN"
-msgstr ""
+msgstr "Налаштування шрифтів"
 
 #: ../settings/desktop.sh.in:49
-msgid "Menu title font::FN"
-msgstr ""
+msgid "Default font::FN"
+msgstr "Шрифт за умовчанням::FN"
 
 #: ../settings/desktop.sh.in:50
-msgid "Tooltips font::FN"
-msgstr ""
+msgid "Menu title font::FN"
+msgstr "Шрифт заголовку меню::FN"
 
 #: ../settings/desktop.sh.in:51
+msgid "Tooltips font::FN"
+msgstr "Шрифт спливаючіх підказок::FN"
+
+#: ../settings/desktop.sh.in:52
 msgid "Window title font::FN"
-msgstr ""
+msgstr "Шрифт заголовку вікна::FN"
 
 #. third tab (apps)
-#: ../settings/desktop.sh.in:54
+#: ../settings/desktop.sh.in:55
 msgid "Application settings"
-msgstr ""
-
-#: ../settings/desktop.sh.in:56
-msgid "Terminal command:"
-msgstr ""
+msgstr "Налаштування додатків"
 
 #: ../settings/desktop.sh.in:57
-msgid "Filemanager command:"
-msgstr ""
+msgid "Terminal command:"
+msgstr "Команда терминалу:"
 
 #: ../settings/desktop.sh.in:58
-msgid "Editor command:"
-msgstr ""
+msgid "Filemanager command:"
+msgstr "Команда менеджера файлів:"
 
 #: ../settings/desktop.sh.in:59
-msgid "Web browser command:"
-msgstr ""
+msgid "Editor command:"
+msgstr "Команда редактора:"
 
 #: ../settings/desktop.sh.in:60
-msgid "E-mail client command:"
-msgstr ""
+msgid "Web browser command:"
+msgstr "Команда веб-броузера:"
 
 #: ../settings/desktop.sh.in:61
+msgid "E-mail client command:"
+msgstr "Команда клієнта e-mail:"
+
+#: ../settings/desktop.sh.in:62
 msgid "Lock screen command:"
-msgstr ""
+msgstr "Команда блокування екрану:"
 
-#: ../settings/desktop.sh.in:71
+#: ../settings/desktop.sh.in:72
 msgid "Add/remove quicklaunch items"
-msgstr ""
+msgstr "Додавання/видалення елементів швидкого доступу"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
 #: ../utils/ydentry.sh:13 ../utils/yfind.sh:55 ../utils/yfind.sh:60
 #: ../utils/ysysinfo.sh:49
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
 msgid "Description:TIP"
-msgstr ""
+msgstr "Опис:TIP"
 
-#: ../settings/desktop.sh.in:73 ../settings/session.sh.in:58
+#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:60
 msgid "Command"
-msgstr ""
+msgstr "Команда"
 
 #. main dialog
-#: ../settings/desktop.sh.in:76
-msgid "Desktop settings"
-msgstr ""
-
 #: ../settings/desktop.sh.in:78
+msgid "Desktop settings"
+msgstr "Налаштування робочого столу"
+
+#: ../settings/desktop.sh.in:80
 msgid ""
 "\\n<b>Edit settings of Ydesk</b>\\n<i>Changes will be applied on the next "
 "startup</i>\\n\\n"
 msgstr ""
+"\\n<b>Редагування налаштувань робочого столу Ydesk</b>\\n<i>Зміни будуть "
+"залучені при наступному старті</i>\\n\\n"
 
-#: ../settings/desktop.sh.in:79 ../settings/session.sh.in:64
+#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:66
 msgid "Common"
-msgstr ""
+msgstr "Загальні"
 
-#: ../settings/desktop.sh.in:79
+#: ../settings/desktop.sh.in:81
 msgid "Fonts"
-msgstr ""
+msgstr "Шрифти"
 
-#: ../settings/desktop.sh.in:79 ../fvwm/config/applets/menu.fvwm.h:1
+#: ../settings/desktop.sh.in:81 ../fvwm/config/applets/menu.fvwm.h:1
 msgid "Applications"
-msgstr ""
+msgstr "Додатки"
 
-#: ../settings/desktop.sh.in:79
+#: ../settings/desktop.sh.in:81
 msgid "Quick launch"
-msgstr ""
-
-#: ../settings/interface.sh.in:10
-msgid "Interface settings"
-msgstr ""
-
-#: ../settings/interface.sh.in:11
-msgid "GTK+ interface settings"
-msgstr ""
-
-#: ../settings/interface.sh.in:12
-msgid "Theme name:"
-msgstr ""
-
-#: ../settings/interface.sh.in:13
-msgid "Icon theme name:"
-msgstr ""
-
-#: ../settings/interface.sh.in:14
-msgid "Cursor theme name:"
-msgstr ""
-
-#: ../settings/interface.sh.in:15
-msgid "Cursor theme size::NUM"
-msgstr ""
+msgstr "Швидкий доступ"
 
 #: ../settings/interface.sh.in:16
+msgid "None"
+msgstr "Немає"
+
+#: ../settings/interface.sh.in:17 ../settings/interface.sh.in:39
+#: ../settings/interface.sh.in:40
+msgid "Default"
+msgstr "За умовчанням"
+
+#: ../settings/interface.sh.in:74
+msgid "Interface settings"
+msgstr "Налаштування інтерфейсу"
+
+#: ../settings/interface.sh.in:77
+msgid "<b>GTK+ interface settings</b>"
+msgstr "<b>Налаштування інтерфейсу GTK+</b>"
+
+#: ../settings/interface.sh.in:78
+msgid "Theme name::CB"
+msgstr "Імєя теми::CB"
+
+#: ../settings/interface.sh.in:79
+msgid "Key theme name::CB"
+msgstr "Тема клавіш::CB"
+
+#: ../settings/interface.sh.in:80
+msgid "Icon theme name::CB"
+msgstr "Тема іконок::CB"
+
+#: ../settings/interface.sh.in:81
+msgid "Cursor theme name::CB"
+msgstr "Тема курсору::CB"
+
+#: ../settings/interface.sh.in:82
+msgid "Cursor theme size::NUM"
+msgstr "Розмір курсору::NUM"
+
+#: ../settings/interface.sh.in:84
 msgid "Font name::FN"
-msgstr ""
+msgstr "Ім'я шрифту::FN"
+
+#: ../settings/interface.sh.in:85
+msgid "Enable xft antialiasing:CHK"
+msgstr "Дозволити антиаліасінг:CHK"
+
+#: ../settings/interface.sh.in:86
+msgid "Enable xft hinting:CHK"
+msgstr "Дозволити хінтінг:CHK"
+
+#: ../settings/interface.sh.in:87
+msgid "Xft hint style:"
+msgstr "Стиль хінтінгу:"
+
+#: ../settings/interface.sh.in:88
+msgid "Xft RGBA:"
+msgstr "Xft RGBA:"
+
+#: ../settings/interface.sh.in:90
+msgid "Use dialog headers:CHK"
+msgstr "Використовувати заголовки діалогу:CHK"
+
+#: ../settings/interface.sh.in:91
+msgid "Enable owerlay scrolling:CHK"
+msgstr "Дозволити перекриття стрічки скроллінга:CHK"
+
+#: ../settings/interface.sh.in:92
+msgid "Enable animation:CHK"
+msgstr "Дозволитиь анімацію:CHK"
+
+#: ../settings/interface.sh.in:93
+msgid "Enable mnemonics:CHK"
+msgstr "Дозволити підкреслення поміток:CHK"
+
+#: ../settings/interface.sh.in:94
+msgid "Enable acceleration:CHK"
+msgstr "Дозволити клавіші швидкого доступу:CHK"
+
+#: ../settings/interface.sh.in:95
+msgid "Menubar accelerator:"
+msgstr "Швидкий доступ до меню:"
 
 #: ../settings/mime.sh.in:18
 msgid "MIME types editor"
-msgstr ""
+msgstr "Редактор типів MIME"
 
 #: ../settings/panel.sh.in:21
 msgid "Add applet"
-msgstr ""
+msgstr "Додавання аплета"
 
 #: ../settings/panel.sh.in:21
 msgid "Select panel applet"
-msgstr ""
+msgstr "Обрати аплет панелі"
 
 #: ../settings/panel.sh.in:27
 msgid "Separator"
-msgstr ""
+msgstr "Розподілювач"
 
 #: ../settings/panel.sh.in:28
 msgid "Add size after sep in applet name to set separator width"
 msgstr ""
+"Додайте розмір після sep у імені аплета для задання ширини розполілювача"
 
 #: ../settings/panel.sh.in:30
 msgid "Warning"
-msgstr ""
+msgstr "Попередження"
 
 #: ../settings/panel.sh.in:31
 msgid "There is no additional configuration for applet '$2'"
-msgstr ""
+msgstr "Для аплета '$2' не існує додаткових налаштувань"
 
 #: ../settings/panel.sh.in:43
 msgid "Panel main settings"
-msgstr ""
+msgstr "Основні налаштування панелі"
 
 #: ../settings/panel.sh.in:44
 msgid "Enable panel:CHK"
-msgstr ""
+msgstr "Дозволити панель:CHK"
 
 #: ../settings/panel.sh.in:45
 msgid "Panel position::CB"
-msgstr ""
+msgstr "Розташування панелі::CB"
 
 #: ../settings/panel.sh.in:46
 msgid "Panel icons size::NUM"
-msgstr ""
+msgstr "Розмір іконок на панелі::NUM"
 
 #: ../settings/panel.sh.in:47
-msgid "<i>You must restart FVWM for changes will take effect</i>"
-msgstr ""
+msgid "<i>You must restart FVWM for changes will take effect</i>:LBL"
+msgstr "<i>Ви повинні перезапустити FVWM, щоб зміни набули силу</i>:LBL"
 
 #: ../settings/panel.sh.in:50
 msgid "Panel applets settings"
-msgstr ""
+msgstr "Налаштування аплетів панелі"
 
-#: ../settings/panel.sh.in:51
+#: ../settings/panel.sh.in:52
 msgid "Module"
-msgstr ""
+msgstr "Модуль"
 
 #. main dialog
-#: ../settings/panel.sh.in:54
+#: ../settings/panel.sh.in:55
 msgid "Panel settings"
-msgstr ""
+msgstr "Налаштування панелі"
 
-#: ../settings/panel.sh.in:54
+#: ../settings/panel.sh.in:55
 msgid "Ydesk panel settings"
-msgstr ""
-
-#: ../settings/panel.sh.in:56 ../settings/session.sh.in:63
-msgid ""
-"\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
-"next startup</i>\\n\\n"
-msgstr ""
-
-#. main dialog
-#: ../settings/panel.sh.in:57 ../settings/term.sh.in:104
-msgid "Main"
-msgstr ""
+msgstr "Налаштування панелі Ydesk"
 
 #: ../settings/panel.sh.in:57
-msgid "Applets"
+msgid ""
+"\\n<b>Edit settings of Ydesk panel</b>\\n\\n<i>Changes will be applied on "
+"the next startup</i>\\n\\n"
 msgstr ""
+"\\n<b>Редагування налаштувань панелі Ydesk</b>\\n<i>Зміни будуть залучані "
+"при наступному старті</i>\\n\\n"
+
+#. main dialog
+#: ../settings/panel.sh.in:58 ../settings/term.sh.in:104
+msgid "Main"
+msgstr "Головні"
+
+#: ../settings/panel.sh.in:58
+msgid "Applets"
+msgstr "Аплеты"
 
 #: ../settings/printer.sh.in:18 ../utils/ymedia.sh:33
 msgid "Error"
-msgstr ""
+msgstr "Помилка"
 
 #: ../settings/printer.sh.in:19
 #, sh-format
 msgid "CUPS server at <b>$SRV</b> not available"
-msgstr ""
+msgstr "Сервер CUPS на <b>$SRV</b> недоступний"
 
 #: ../settings/printer.sh.in:21
 msgid "Printer settings"
-msgstr ""
+msgstr "Налаштування принтеру"
 
 #: ../settings/session.sh.in:27
 msgid "Autostart item"
-msgstr ""
+msgstr "Автостарт"
 
 #: ../settings/session.sh.in:27
 msgid "Autostart item editor"
-msgstr ""
-
-#. first tab
-#: ../settings/session.sh.in:39
-msgid "<b><i>Base Configuration</i></b>:LBL"
-msgstr ""
-
-#: ../settings/session.sh.in:40
-msgid "Update XDG users directories at startup:CHK"
-msgstr ""
+msgstr "Редактор елементу автостарту"
 
 #: ../settings/session.sh.in:41
-msgid "Run URXVT server at startup:CHK"
-msgstr ""
+msgid "<b><i>Base Configuration</i></b>:LBL"
+msgstr "<b><i>Базова конфігурація</i></b>:LBL"
 
 #: ../settings/session.sh.in:42
-msgid "Run EMACS server at startup:CHK"
-msgstr ""
+msgid "Update XDG users directories at startup:CHK"
+msgstr "Створювати/відновляти каталоги XDG при старті:CHK"
 
 #: ../settings/session.sh.in:43
-msgid "<b><i>Background settings</i></b>:LBL"
-msgstr ""
+msgid "Run URXVT server at startup:CHK"
+msgstr "Запускати сервер URXVT при старті:CHK"
 
 #: ../settings/session.sh.in:44
-msgid "Background::CLR"
-msgstr ""
+msgid "Run EMACS server at startup:CHK"
+msgstr "Запускати сервер EMACS при старті:CHK"
 
 #: ../settings/session.sh.in:45
-msgid "Wallpaper::MFL"
-msgstr ""
+msgid "<b><i>Background settings</i></b>:LBL"
+msgstr "<b><i>Налаштування фону</i></b>:LBL"
 
 #: ../settings/session.sh.in:46
-msgid "<b><i>Other settings</i></b>:LBL"
-msgstr ""
+msgid "Background::CLR"
+msgstr "Колір фону::CLR"
 
 #: ../settings/session.sh.in:47
-msgid "Enable compositing:CHK"
-msgstr ""
+msgid "Wallpaper::MFL"
+msgstr "Шпалери::MFL"
 
-#: ../settings/session.sh.in:57
+#: ../settings/session.sh.in:48
+msgid "<b><i>Other settings</i></b>:LBL"
+msgstr "<b><i>Інші налашатування</i></b>:LBL"
+
+#: ../settings/session.sh.in:49
+msgid "Enable compositing:CHK"
+msgstr "Дозволити композітінг:CHK"
+
+#: ../settings/session.sh.in:59
 msgid ""
 "Add/remove autostart items\\n(<i>only users autostart directory proceeded</"
 "i>)"
 msgstr ""
+"Команди що стартують автоматично\\n(<i>Оброблюються тільки задані "
+"користувачєм</i>)"
 
 #. main dialog
-#: ../settings/session.sh.in:61 ../data/settings/session.desktop.in.h:1
+#: ../settings/session.sh.in:63 ../data/settings/session.desktop.in.h:1
 msgid "Session settings"
-msgstr ""
+msgstr "Налаштування сесії"
 
-#: ../settings/session.sh.in:64
-msgid "Autostart"
+#: ../settings/session.sh.in:65
+msgid ""
+"\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
+"next startup</i>\\n\\n"
 msgstr ""
+"\\n<b>Редагування налаштувань сесії Ydesk</b>\\n<i>Зміни будуть застосовані "
+"при наступному старті</i>\\n\\n"
+
+#: ../settings/session.sh.in:66
+msgid "Autostart"
+msgstr "Автостарт"
 
 #. main page
 #: ../settings/term.sh.in:66
 msgid "Title:"
-msgstr ""
+msgstr "Заголовок:"
 
 #: ../settings/term.sh.in:67
 msgid "Width::num"
-msgstr ""
+msgstr "Ширина::num"
 
 #: ../settings/term.sh.in:68
 msgid "Height::num"
-msgstr ""
+msgstr "Висота::num"
 
 #: ../settings/term.sh.in:69
 msgid "Font::fn"
-msgstr ""
+msgstr "Шрифт::fn"
 
 #: ../settings/term.sh.in:70
 msgid "Term:"
-msgstr ""
+msgstr "Термінал:"
 
 #: ../settings/term.sh.in:71
 msgid "Enable login shell:chk"
-msgstr ""
+msgstr "Використати регістраційну оболонку:chk"
 
 #: ../settings/term.sh.in:72
 msgid "Enable scrollbars:chk"
-msgstr ""
+msgstr "Використовувати стрічку скроллінгу:chk"
 
 #: ../settings/term.sh.in:73
 msgid "Use bold font:chk"
-msgstr ""
+msgstr "Використовувати жирний шрифт:chk"
 
 #: ../settings/term.sh.in:75
 msgid "Foreground::clr"
-msgstr ""
+msgstr "Колір символів::clr"
 
 #: ../settings/term.sh.in:76
 msgid "Background::clr"
-msgstr ""
+msgstr "Колір фону::clr"
 
 #: ../settings/term.sh.in:77
 msgid "Highlight::clr"
-msgstr ""
+msgstr "Колір виділення::clr"
 
 #: ../settings/term.sh.in:78
 msgid "Highlight text::clr"
-msgstr ""
+msgstr "Колір тексту виділення::clr"
 
 #. palette page
 #: ../settings/term.sh.in:82
 msgid "Black::clr"
-msgstr ""
+msgstr "Чорний::clr"
 
 #: ../settings/term.sh.in:83
 msgid "Red::clr"
-msgstr ""
+msgstr "Червоний::clr"
 
 #: ../settings/term.sh.in:84
 msgid "Green::clr"
-msgstr ""
+msgstr "Зелений::clr"
 
 #: ../settings/term.sh.in:85
 msgid "Brown::clr"
-msgstr ""
+msgstr "Коричневий::clr"
 
 #: ../settings/term.sh.in:86
 msgid "Blue::clr"
-msgstr ""
+msgstr "Синій::clr"
 
 #: ../settings/term.sh.in:87
 msgid "Magenta::clr"
-msgstr ""
+msgstr "Пурпуровий::clr"
 
 #: ../settings/term.sh.in:88
 msgid "Cyan::clr"
-msgstr ""
+msgstr "Блакитний::clr"
 
 #: ../settings/term.sh.in:89
 msgid "Light gray::clr"
-msgstr ""
+msgstr "Світло-сірий::clr"
 
 #: ../settings/term.sh.in:90
 msgid "Gray::clr"
-msgstr ""
+msgstr "Сірий::clr"
 
 #: ../settings/term.sh.in:91
 msgid "Light red::clr"
-msgstr ""
+msgstr "Світло-червоний::clr"
 
 #: ../settings/term.sh.in:92
 msgid "Light green::clr"
-msgstr ""
+msgstr "Світло-зелений::clr"
 
 #: ../settings/term.sh.in:93
 msgid "Yellow::clr"
-msgstr ""
+msgstr "Жовтый::clr"
 
 #: ../settings/term.sh.in:94
 msgid "Light blue::clr"
-msgstr ""
+msgstr "Світло-синій::clr"
 
 #: ../settings/term.sh.in:95
 msgid "Light magenta::clr"
-msgstr ""
+msgstr "Рожевий::clr"
 
 #: ../settings/term.sh.in:96
 msgid "Light cyan::clr"
-msgstr ""
+msgstr "Світло-блакитний::clr"
 
 #: ../settings/term.sh.in:97
 msgid "White::clr"
-msgstr ""
+msgstr "Білий::clr"
 
 #: ../settings/term.sh.in:104
 msgid "Palette"
-msgstr ""
+msgstr "Палітра"
 
 #: ../settings/term.sh.in:104
 msgid "Misc"
-msgstr ""
+msgstr "Різне"
 
 #: ../settings/term.sh.in:105
 msgid "Terminal settings"
-msgstr ""
+msgstr "Налаштуння терминалу"
 
 #: ../settings/term.sh.in:106
 msgid "Terminal settings (URxvt)"
-msgstr ""
+msgstr "Налаштування терминалу (URxvt)"
+
+#: ../settings/panel/bat.sh.in:7
+msgid "Battery applet"
+msgstr "Аплет батареї"
+
+#: ../settings/panel/bat.sh.in:9
+msgid "<b>Battery applet configuration</b>"
+msgstr "<b>Налаштування аплету батареї</b>"
 
 #: ../settings/panel/bat.sh.in:10
-msgid "Battery applet"
-msgstr ""
+msgid "Battery name:"
+msgstr "Назва батареї:"
 
 #: ../settings/panel/bat.sh.in:11
-msgid "Battery applet configuration"
-msgstr ""
-
-#: ../settings/panel/bat.sh.in:12
-msgid "Battery name:"
-msgstr ""
-
-#: ../settings/panel/bat.sh.in:13
 msgid "AC adapter name:"
-msgstr ""
+msgstr "Назва адаптера:"
+
+#: ../settings/panel/clock.sh.in:7
+msgid "Clock applet"
+msgstr "Аплет годинника"
+
+#: ../settings/panel/clock.sh.in:9
+msgid "<b>Clock applet configuration</b>"
+msgstr "<b>Налаштування аплету годинника</b>"
 
 #: ../settings/panel/clock.sh.in:10
-msgid "Clock applet"
-msgstr ""
+msgid "Time format:"
+msgstr "Формат часу:"
+
+#: ../settings/panel/clock.sh.in:11
+msgid "Clock foreground color::CLR"
+msgstr "Колір символів::CLR"
 
 #: ../settings/panel/clock.sh.in:12
-msgid "Clock applet configuration"
-msgstr ""
+msgid "Clock font::FN"
+msgstr "Шрифт годинника::FN"
 
 #: ../settings/panel/clock.sh.in:13
-msgid "Time format:"
-msgstr ""
-
-#: ../settings/panel/clock.sh.in:14
-msgid "Clock foreground color::CLR"
-msgstr ""
-
-#: ../settings/panel/clock.sh.in:15
-msgid "Clock font::FN"
-msgstr ""
-
-#: ../settings/panel/clock.sh.in:16
 msgid "Clock width::NUM"
-msgstr ""
+msgstr "Ширина годинника::NUM"
+
+#: ../settings/panel/cpu.sh.in:7
+msgid "CPU applet"
+msgstr "Аплет ЦПУ"
+
+#: ../settings/panel/cpu.sh.in:9
+msgid "<b>CPU load applet configuration</b>"
+msgstr "<b>Налаштування аплету завантаження ЦПУ</b>"
 
 #: ../settings/panel/cpu.sh.in:10
-msgid "CPU applet"
-msgstr ""
+msgid "Indicator foregroung color::CLR"
+msgstr "Колір індикатора::CLR"
+
+#: ../settings/panel/cpu.sh.in:11
+msgid "Indicator backgroung color::CLR"
+msgstr "Колір фону індикатора::CLR"
 
 #: ../settings/panel/cpu.sh.in:12
-msgid "CPU load applet configuration"
-msgstr ""
+msgid "Show memory usage:CHK"
+msgstr "Відображати використання пам'яти:CHK"
 
-#: ../settings/panel/cpu.sh.in:13
-msgid "Indicator foregroung color::CLR"
-msgstr ""
+#: ../settings/panel/cpu.sh.in:13 ../settings/panel/weather.sh.in:16
+msgid "Update interval::NUM"
+msgstr "Інтервал оновлення::NUM"
 
 #: ../settings/panel/cpu.sh.in:14
-msgid "Indicator backgroung color::CLR"
-msgstr ""
-
-#: ../settings/panel/cpu.sh.in:15
-msgid "Show memory usage:CHK"
-msgstr ""
-
-#: ../settings/panel/cpu.sh.in:16 ../settings/panel/weather.sh.in:19
-msgid "Update interval::NUM"
-msgstr ""
-
-#: ../settings/panel/cpu.sh.in:17
 msgid "Indicator width::NUM"
-msgstr ""
+msgstr "Ширина індикатора::NUM"
 
-#: ../settings/panel/mail.sh.in:10 ../settings/panel/wifi.sh.in:10
+#: ../settings/panel/mail.sh.in:7
 msgid "Mail applet"
-msgstr ""
+msgstr "Аплет пошти"
 
-#: ../settings/panel/mail.sh.in:11 ../settings/panel/wifi.sh.in:11
-msgid "Mail applet configuration"
-msgstr ""
+#: ../settings/panel/mail.sh.in:9
+msgid "<b>Mail applet configuration</b>"
+msgstr "<b>Налаштування аплету пошти</b>"
 
-#: ../settings/panel/mail.sh.in:12
+#: ../settings/panel/mail.sh.in:10
 msgid "Mail check time::NUM"
-msgstr ""
+msgstr "Період перевірки пошти::NUM"
+
+#: ../settings/panel/menu.sh.in:7
+msgid "Menubar applet"
+msgstr "Аплет меню"
+
+#: ../settings/panel/menu.sh.in:9
+msgid "<b>Menubar applet configuration</b>"
+msgstr "<b>Налаштуванняи аплету меню</b>"
 
 #: ../settings/panel/menu.sh.in:10
-msgid "Menubar applet"
-msgstr ""
-
-#: ../settings/panel/menu.sh.in:12
-msgid "Menubar applet configuration"
-msgstr ""
-
-#: ../settings/panel/menu.sh.in:13
 msgid "Menubar font::FN"
-msgstr ""
+msgstr "Шрифт аплету меню::FN"
+
+#: ../settings/panel/run.sh.in:7
+msgid "Run applet"
+msgstr "Аплет запуска"
+
+#: ../settings/panel/run.sh.in:9
+msgid "<b>Run applet configuration</b>"
+msgstr "<b>Налаштування аплету запуска команди</b>"
 
 #: ../settings/panel/run.sh.in:10
-msgid "Run applet"
-msgstr ""
+msgid "Foreground color::CLR"
+msgstr "Колір символів::CLR"
+
+#: ../settings/panel/run.sh.in:11
+msgid "Background color::CLR"
+msgstr "Колір фону::CLR"
 
 #: ../settings/panel/run.sh.in:12
-msgid "Run applet configuration"
-msgstr ""
+msgid "Run applet font::FN"
+msgstr "Шрифт аплета::FN"
 
 #: ../settings/panel/run.sh.in:13
-msgid "Foreground color::CLR"
-msgstr ""
-
-#: ../settings/panel/run.sh.in:14
-msgid "Background color::CLR"
-msgstr ""
-
-#: ../settings/panel/run.sh.in:15
-msgid "Run applet font::FN"
-msgstr ""
-
-#: ../settings/panel/run.sh.in:16
 msgid "Run applet width::NUM"
-msgstr ""
+msgstr "Ширина аплета::NUM"
+
+#: ../settings/panel/shot.sh.in:10
+msgid "Screenshot applet"
+msgstr "Аплет знімку екрана"
+
+#: ../settings/panel/shot.sh.in:12
+msgid "<b>Screenshot applet configuration</b>"
+msgstr "<b>Налаштування аплета знімку екрана</b>"
 
 #: ../settings/panel/shot.sh.in:13
-msgid "Screenshot applet"
-msgstr ""
-
-#: ../settings/panel/shot.sh.in:15
-msgid "Screenshot applet configuration"
-msgstr ""
-
-#: ../settings/panel/shot.sh.in:16
 msgid "Default action::CB"
-msgstr ""
+msgstr "Дія за замовчанням::CB"
+
+#: ../settings/panel/sysinfo.sh.in:7
+msgid "Sysinfo applet"
+msgstr "Аплет системної інформації"
+
+#: ../settings/panel/sysinfo.sh.in:9
+msgid "<b>Sysinfo applet configuration</b>"
+msgstr "<b>Налаштування аплета системної інформації</b>"
 
 #: ../settings/panel/sysinfo.sh.in:10
-msgid "Sysinfo applet"
-msgstr ""
-
-#: ../settings/panel/sysinfo.sh.in:12
-msgid "Sysinfo applet configuration"
-msgstr ""
-
-#: ../settings/panel/sysinfo.sh.in:13
 msgid "Sysinfo width::NUN"
-msgstr ""
+msgstr "Ширина аплета::NUM"
+
+#: ../settings/panel/taskbar.sh.in:7
+msgid "Taskbar applet"
+msgstr "Аплет списку задач"
+
+#: ../settings/panel/taskbar.sh.in:9
+msgid "<b>Taskbar applet configuration</b>"
+msgstr "<b>Налаштування аплета списку задач</b>"
 
 #: ../settings/panel/taskbar.sh.in:10
-msgid "Taskbar applet"
-msgstr ""
-
-#: ../settings/panel/taskbar.sh.in:12
-msgid "Taskbar applet configuration"
-msgstr ""
-
-#: ../settings/panel/taskbar.sh.in:13
 msgid "Taskbar width::NUN"
-msgstr ""
+msgstr "Ширина аплета::NUM"
+
+#: ../settings/panel/volume.sh.in:13
+msgid "Volume applet"
+msgstr "Аплет гучності"
+
+#: ../settings/panel/volume.sh.in:15
+msgid "<b>Volume applet configuration</b>"
+msgstr "<b>Налаштування аплета гучності звуку</b>"
 
 #: ../settings/panel/volume.sh.in:16
-msgid "Volume applet"
-msgstr ""
-
-#: ../settings/panel/volume.sh.in:18
-msgid "Volume applet configuration"
-msgstr ""
-
-#: ../settings/panel/volume.sh.in:19
 msgid "Default control device::CB"
-msgstr ""
+msgstr "Пристрій за замовчанням::CB"
+
+#: ../settings/panel/weather.sh.in:9
+msgid "Weather applet"
+msgstr "Аплет погоди"
+
+#: ../settings/panel/weather.sh.in:11
+msgid "<b>Weather applet configuration</b>"
+msgstr "<b>Налаштування аплета погоди</b>"
 
 #: ../settings/panel/weather.sh.in:12
-msgid "Weather applet"
-msgstr ""
+msgid "City name:"
+msgstr "Місто:"
+
+#: ../settings/panel/weather.sh.in:13
+msgid "Country code:"
+msgstr "Код країни:"
 
 #: ../settings/panel/weather.sh.in:14
-msgid "Weather applet configuration"
-msgstr ""
+msgid "Measure units:"
+msgstr "Одиниці виміру:"
 
 #: ../settings/panel/weather.sh.in:15
-msgid "City name:"
-msgstr ""
-
-#: ../settings/panel/weather.sh.in:16
-msgid "Country code:"
-msgstr ""
-
-#: ../settings/panel/weather.sh.in:17
-msgid "Measure units:"
-msgstr ""
-
-#: ../settings/panel/weather.sh.in:18
 msgid "APi key:"
-msgstr ""
+msgstr "Ключ API:"
 
-#: ../settings/panel/wifi.sh.in:12
+#: ../settings/panel/wifi.sh.in:7
+msgid "Wifi applet"
+msgstr "Аплет wifi"
+
+#: ../settings/panel/wifi.sh.in:9
+msgid "<b>Wifi applet configuration</b>"
+msgstr "<b>Налаштування аплета Wifi</b>"
+
+#: ../settings/panel/wifi.sh.in:10
 msgid "Wifi interface name:"
-msgstr ""
+msgstr "Ім'я інтерфейсу:"
 
 #: ../utils/ydentry.sh:10
 msgid "Desktop entry editor"
-msgstr ""
+msgstr "Редактор desktop файлів"
 
 #: ../utils/ydentry.sh:10
 msgid "Edit desktop entry ${1%%*/}"
-msgstr ""
+msgstr "Редагування опису ${1%%*/}"
 
 #: ../utils/ydentry.sh:12
 msgid "Type:CB"
-msgstr ""
+msgstr "Тип:CB"
 
 #: ../utils/ydentry.sh:14
 msgid "Generic name"
-msgstr ""
+msgstr "Загальне ім'я"
 
 #: ../utils/ydentry.sh:15
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 #: ../utils/ydentry.sh:16
 msgid "Command:FL"
-msgstr ""
+msgstr "Команда:FL"
 
 #: ../utils/ydentry.sh:17
 msgid "Icon"
-msgstr ""
+msgstr "Іконка"
 
 #: ../utils/ydentry.sh:18
 msgid "In terminal:CHK"
-msgstr ""
+msgstr "Запускати в терміналі:chk"
 
 #: ../utils/ydentry.sh:19
 msgid "Startup notify:CHK"
-msgstr ""
+msgstr "Повідомлення про запуск:CHK"
 
 #: ../utils/yfind.sh:55
 msgid "Use regex:chk"
-msgstr ""
+msgstr "Використовувати регулярні вирази:chk"
 
 #: ../utils/yfind.sh:56
 msgid "Directory:dir"
-msgstr ""
+msgstr "Каталог:dir"
 
 #: ../utils/yfind.sh:56
 msgid "Newer than:dt"
-msgstr ""
+msgstr "Новіше ніж:dt"
 
 #: ../utils/yfind.sh:57
 msgid "Content"
-msgstr ""
+msgstr "Зміст"
 
 #: ../utils/yfind.sh:60
 msgid "Search results:"
-msgstr ""
+msgstr "Результати пошуку:"
 
 #: ../utils/yfind.sh:60
 msgid "Size:sz"
-msgstr ""
+msgstr "Розмір:sz"
 
 #: ../utils/yfind.sh:60
 msgid "Perms"
-msgstr ""
+msgstr "Дозвіл"
 
 #: ../utils/yfind.sh:61
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #: ../utils/yfind.sh:61
 msgid "Owner"
-msgstr ""
+msgstr "Володар"
 
 #: ../utils/yfind.sh:64
 msgid "Find files"
-msgstr ""
+msgstr "Знайти файли"
 
 #: ../utils/yimage.sh:12
 msgid "Select image"
-msgstr ""
+msgstr "Обрати зображення"
 
 #: ../utils/yimage.sh:12
 msgid "Images"
-msgstr ""
+msgstr "Зображення"
 
 #: ../utils/yimage.sh:18
 #, sh-format
 msgid "No such file - $filename"
-msgstr ""
+msgstr "Немає такого файлу - $filename"
 
 #: ../utils/yimage.sh:25
 msgid "Exif data"
-msgstr ""
+msgstr "Данні Exif"
 
 #: ../utils/yimage.sh:26
 #, sh-format
 msgid "Show EXIF data for file:\\n<b>$fn</b>"
-msgstr ""
+msgstr "Відображення даних EXIF для файлу:\\n<b>$fn</b>"
 
 #: ../utils/yimage.sh:27
 msgid "Field"
-msgstr ""
+msgstr "Поле"
 
 #: ../utils/yimage.sh:27
 msgid "Data"
-msgstr ""
+msgstr "Данні"
 
 #: ../utils/yimage.sh:32
 msgid ""
 "\\t<b>File</b>: <i>%f</i>\\n\\t<b>Size</b>: %b\\n\\t<b>Geometry</b>: %G\\n"
 "\\t<b>Type</b>: %m\\n\\t%c"
 msgstr ""
+"\\t<b>Файл</b>: <i>%f</i>\\n\\t<b>Розмір</b>: %b\\n\\t<b>Геометрія</b>: %G\\n"
+"\\t<b>Тип</b>: %m\\n\\t%c"
 
 #: ../utils/yimage.sh:36 ../data/utils/yimage.desktop.in.h:1
 msgid "Image viewer"
-msgstr ""
+msgstr "Перегляд зображень"
 
 #: ../utils/yimage.sh:37
 msgid "EXIF Info!info:bash -c 'show_info \\"
-msgstr ""
+msgstr "Данні EXIF!info:bash -c 'show_info \\"
 
 #: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:14
 msgid "Power Off"
-msgstr ""
+msgstr "Вимкнути"
 
 #: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:15
 msgid "Reboot"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:16
 msgid "Suspend"
-msgstr ""
+msgstr "Сплячий режим"
 
 #: ../utils/ylogout.sh:11 ../utils/ylogout.sh:26 ../fvwm/config/menus.fvwm.h:17
 msgid "Logout"
-msgstr ""
+msgstr "Вихід"
 
 #: ../utils/ylogout.sh:26
 msgid "\\nChoose logout action:\\n"
-msgstr ""
+msgstr "\\nОберіть дію:\\n"
 
 #: ../utils/ylogout.sh:27
 msgid "Action:cb"
-msgstr ""
+msgstr "Дія:cb"
 
 #: ../utils/ylogout.sh:27
 msgid "Save last choise:chk"
-msgstr ""
+msgstr "Зберегти обрану дію:chk"
 
 #: ../utils/ymedia.sh:24
 msgid "$mp\\n${vendor:-Unknown} $model ($dev)"
-msgstr ""
+msgstr "$mp\\n${vendor:-Невідомо} $model ($dev)"
 
 #: ../utils/ymedia.sh:34
 msgid "<b>Error</b>\\nUnable to unplug $2"
-msgstr ""
+msgstr "<b>Помилка</b>\\nНеможливо відключити $2"
 
 #: ../utils/ymedia.sh:42
 msgid "Removable media"
-msgstr ""
+msgstr "Зменні носії"
 
 #: ../utils/ymedia.sh:45
 msgid "Manage removable media\\nDouble click on media for unplug it"
-msgstr ""
+msgstr "Керування зовнішніми носіями\\nПодвійний клік по носію відключє його"
 
 #: ../utils/ymedia.sh:46 ../utils/ysysinfo.sh:35
 msgid "Mountpoint"
-msgstr ""
+msgstr "Змонтовано"
 
 #: ../utils/ymedia.sh:46 ../utils/ysysinfo.sh:35 ../utils/ysysinfo.sh:42
 #: ../utils/ysysinfo.sh:54
 msgid "Device"
-msgstr ""
+msgstr "Пристрій"
 
 #: ../utils/ymixer.sh:9
 msgid "ALSA Mixer"
-msgstr ""
+msgstr "ALSA Міксер"
 
 #: ../utils/ynotes.sh:14
 msgid "Notes"
-msgstr ""
+msgstr "Нотатки"
 
 #: ../utils/ynotes.sh:39
 msgid "Text notes"
-msgstr ""
+msgstr "Текстові нотатки"
 
 #: ../utils/ypass.sh:11
 msgid "Password authentication is required\\n$1\\n"
-msgstr ""
+msgstr "Потрібна авторизація за паролем\\n$1\\n"
 
 #: ../utils/ypass.sh:13
 msgid "Password prompt"
-msgstr ""
+msgstr "Запит паролю"
 
 #: ../utils/yps.sh:6 ../fvwm/config/menus.fvwm.h:20
 msgid "Process viewer"
-msgstr ""
+msgstr "Список процесів"
 
 #. create and run dialog
 #: ../utils/yrun.sh:25
 msgid "Run command"
-msgstr ""
+msgstr "Запустити команду"
 
 #: ../utils/yrun.sh:25
 msgid "\\nEnter command or uri to execute:\\n"
-msgstr ""
+msgstr "\\nВведіть команду або адрес для запуска:\\n"
 
 #: ../utils/yrun.sh:27
 msgid "Command:cbe"
-msgstr ""
+msgstr "Команда:cbe"
 
 #: ../utils/yrun.sh:27
 msgid "Run in terminal:chk"
-msgstr ""
+msgstr "Запустити у терміналі:chk"
 
 #: ../utils/ysysinfo.sh:17
 msgid "Module information"
-msgstr ""
+msgstr "Інформація про модуль"
 
 #. CPU tab
 #: ../utils/ysysinfo.sh:24
 msgid "CPU information"
-msgstr ""
+msgstr "Інформація про процесор"
 
 #: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
 msgid "Parameter"
-msgstr ""
+msgstr "Параметр"
 
 #: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30 ../utils/ysysinfo.sh:71
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #. Memory tab
 #: ../utils/ysysinfo.sh:29
 msgid "Memory usage information"
-msgstr ""
+msgstr "Використання памяти"
 
 #. Harddrive tab
 #: ../utils/ysysinfo.sh:34
 msgid "Disk space usage"
-msgstr ""
+msgstr "Використання дискового простіру"
 
 #: ../utils/ysysinfo.sh:35
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: ../utils/ysysinfo.sh:36
 msgid "Total:sz"
-msgstr ""
+msgstr "Усього:sz"
 
 #: ../utils/ysysinfo.sh:36
 msgid "Free:sz"
-msgstr ""
+msgstr "Вільно:sz"
 
 #: ../utils/ysysinfo.sh:36
 msgid "Usage:bar"
-msgstr ""
+msgstr "Використано:bar"
 
 #. PCI tab
 #: ../utils/ysysinfo.sh:40
 msgid "PCI bus devices"
-msgstr ""
+msgstr "Пристрої на шині PCI"
 
 #: ../utils/ysysinfo.sh:41
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../utils/ysysinfo.sh:41
 msgid "Class"
-msgstr ""
+msgstr "Клас"
 
 #: ../utils/ysysinfo.sh:42
 msgid "Vendor"
-msgstr ""
+msgstr "Виробник"
 
 #: ../utils/ysysinfo.sh:42
 msgid "Rev"
-msgstr ""
+msgstr "Ревізія"
 
 #. Modules tab
 #: ../utils/ysysinfo.sh:46
 msgid "Loaded kernel modules"
-msgstr ""
+msgstr "Завантажені модулі ядра"
 
 #: ../utils/ysysinfo.sh:49
 msgid "Used"
-msgstr ""
+msgstr "Використовується"
 
 #: ../utils/ysysinfo.sh:49
 msgid "Depends"
-msgstr ""
+msgstr "Залежності"
 
 #. Battery tab
 #: ../utils/ysysinfo.sh:53
 msgid "Battery state"
-msgstr ""
+msgstr "Стан батареї"
 
 #: ../utils/ysysinfo.sh:54
 msgid "Details"
-msgstr ""
+msgstr "Деталі"
 
 #: ../utils/ysysinfo.sh:70
 msgid "Temperature sensors information"
-msgstr ""
+msgstr "Інформація температурних сенсорів"
 
 #: ../utils/ysysinfo.sh:71
 msgid "Sensor"
-msgstr ""
+msgstr "Сенсор"
 
 #. main dialog
 #: ../utils/ysysinfo.sh:74
 msgid "<b>Hardware system information</b>\\\\n\\\\n"
-msgstr ""
+msgstr "<b>Інформація про обладнання</b>\\\\n\\\\n"
 
 #: ../utils/ysysinfo.sh:75
 msgid "\\\\tOS: $(lsb_release -ds) on <b>$(hostname)</b>\\\\n"
-msgstr ""
+msgstr "\\\\tОС: $(lsb_release -ds) на <b>$(hostname)</b>\\\\n"
 
 #: ../utils/ysysinfo.sh:76
 msgid "\\\\tKernel: $(uname -sr)\\\\n\\\\n"
-msgstr ""
+msgstr "\\\\tЯдро: $(uname -sr)\\\\n\\\\n"
 
 #: ../utils/ysysinfo.sh:79 ../data/utils/ysysinfo.desktop.in.h:1
 msgid "System info"
-msgstr ""
+msgstr "Інформація про систему"
 
 #: ../utils/ysysinfo.sh:80
 msgid "Processes!system-run:yps"
-msgstr ""
+msgstr "Процеси!system-run:yps"
 
 #: ../utils/ysysinfo.sh:81
 msgid "CPU"
-msgstr ""
+msgstr "ЦПУ"
 
 #: ../utils/ysysinfo.sh:81
 msgid "Memory"
-msgstr ""
+msgstr "Пам'ять"
 
 #: ../utils/ysysinfo.sh:81
 msgid "Disks"
-msgstr ""
+msgstr "Диски"
 
 #: ../utils/ysysinfo.sh:81
 msgid "PCI"
-msgstr ""
+msgstr "Шина PCI"
 
 #: ../utils/ysysinfo.sh:81
 msgid "Modules"
-msgstr ""
+msgstr "Модулі"
 
 #: ../utils/ysysinfo.sh:82
 msgid "Battery"
-msgstr ""
+msgstr "Батарея"
 
 #: ../utils/ysysinfo.sh:82
 msgid "Sensors"
-msgstr ""
+msgstr "Сенсори"
 
 #: ../utils/yterm.sh:20
 msgid "Yterm error"
-msgstr ""
+msgstr "Помилка Yterm"
 
 #: ../utils/yterm.sh:21
 msgid "No suitable terminal emulator found"
-msgstr ""
+msgstr "Не знайден відповідний емулятор терміналу"
 
 #: ../utils/ywget.sh:13
 msgid "Select file name"
-msgstr ""
+msgstr "Обрати файл"
 
 #: ../utils/ywget.sh:19
 #, sh-format
 msgid "Download $url"
-msgstr ""
+msgstr "Завантаження $url"
 
 #: ../utils/ywget.sh:24
 #, sh-format
 msgid "URI '$url' is not supported"
-msgstr ""
+msgstr "Адрес '$url' не подтримується"
 
 #: ../data/menu/desktop-directories/AudioVideo.directory.in.h:1
 msgid "Sound & Video"
-msgstr ""
+msgstr "Аудіо/Відео"
 
 #: ../data/menu/desktop-directories/AudioVideo.directory.in.h:2
 msgid "Multimedia menu"
-msgstr ""
+msgstr "Меню мультімедіа"
 
 #: ../data/menu/desktop-directories/Development.directory.in.h:1
 msgid "Programming"
-msgstr ""
+msgstr "Розробка"
 
 #: ../data/menu/desktop-directories/Development.directory.in.h:2
 msgid "Tools for software development"
-msgstr ""
+msgstr "Засоби розробки"
 
 #: ../data/menu/desktop-directories/Education.directory.in.h:1
 msgid "Education"
-msgstr ""
+msgstr "Освіта"
 
 #: ../data/menu/desktop-directories/Game.directory.in.h:1
 msgid "Games"
-msgstr ""
+msgstr "Ігри"
 
 #: ../data/menu/desktop-directories/Game.directory.in.h:2
 msgid "Games and amusements"
-msgstr ""
+msgstr "Ігры та розваги"
 
 #: ../data/menu/desktop-directories/Graphics.directory.in.h:1
 msgid "Graphics"
-msgstr ""
+msgstr "Графіка"
 
 #: ../data/menu/desktop-directories/Graphics.directory.in.h:2
 msgid "Graphics applications"
-msgstr ""
+msgstr "Графічні додатки"
 
 #: ../data/menu/desktop-directories/Network.directory.in.h:1
 msgid "Internet"
-msgstr ""
+msgstr "Інтернет"
 
 #: ../data/menu/desktop-directories/Network.directory.in.h:2
 msgid "Programs for Internet access such as web and email"
-msgstr ""
+msgstr "Програми для доступу до мережі Інтернет"
 
 #: ../data/menu/desktop-directories/Office.directory.in.h:1
 msgid "Office"
-msgstr ""
+msgstr "Офіс"
 
 #: ../data/menu/desktop-directories/Office.directory.in.h:2
 msgid "Office Applications"
-msgstr ""
+msgstr "Офісні додатки"
 
 #: ../data/menu/desktop-directories/Settings.directory.in.h:1
 #: ../fvwm/config/menus.fvwm.h:18
 msgid "Settings"
-msgstr ""
+msgstr "Налаштування"
 
 #: ../data/menu/desktop-directories/Settings.directory.in.h:2
 msgid "System settings"
-msgstr ""
+msgstr "Системні налаштування"
 
 #: ../data/menu/desktop-directories/System-Tools.directory.in.h:1
 msgid "System Tools"
-msgstr ""
+msgstr "Системні"
 
 #: ../data/menu/desktop-directories/System-Tools.directory.in.h:2
 msgid "System configuration and monitoring"
-msgstr ""
+msgstr "Керування системою"
 
 #: ../data/menu/desktop-directories/Utility.directory.in.h:1
 msgid "Accessories"
-msgstr ""
+msgstr "Стандартні"
 
 #: ../data/menu/desktop-directories/Utility.directory.in.h:2
 msgid "Desktop accessories"
-msgstr ""
+msgstr "Стандартні додатки"
 
 #: ../data/settings/ysettings.desktop.in.h:1
 msgid "Control center"
-msgstr ""
+msgstr "Центр керування"
 
 #: ../data/settings/ysettings.desktop.in.h:2
 msgid "Ydesk control center"
-msgstr ""
+msgstr "Центр керування Ydesk"
 
 #: ../data/settings/desk.desktop.in.h:1
 msgid "Desktop Settings"
-msgstr ""
+msgstr "Налаштування робочого столу"
 
 #: ../data/settings/desk.desktop.in.h:2
-msgid "Common ydesk settions"
-msgstr ""
+msgid "Common ydesk settings"
+msgstr "Налаштування робочого столу Ydesk"
 
 #: ../data/settings/interface.desktop.in.h:1
 msgid "Interace Settings"
-msgstr ""
+msgstr "Налаштування інтерфейсу"
 
 #: ../data/settings/interface.desktop.in.h:2
-msgid "Configure ixdesktop GTK+ settings"
-msgstr ""
+msgid "Configure GTK+ interface settings"
+msgstr "Налаштування інтерфейсу GTK+"
 
 #: ../data/settings/mime.desktop.in.h:1
 msgid "MIME Types Editor"
-msgstr ""
+msgstr "Редактор типів MIME"
 
 #: ../data/settings/mime.desktop.in.h:2
 msgid "Edit MIME types"
-msgstr ""
+msgstr "Редагування типів MIME"
 
 #: ../data/settings/panel.desktop.in.h:1
 msgid "Panels Settings"
-msgstr ""
+msgstr "Налаштування панелей"
 
 #: ../data/settings/panel.desktop.in.h:2
 msgid "Configure desktop panels"
-msgstr ""
+msgstr "Зміна налаштувань панелей"
 
 #: ../data/settings/printer.desktop.in.h:1
 msgid "Printer Settings"
-msgstr ""
+msgstr "Налаштування принтера"
 
 #: ../data/settings/printer.desktop.in.h:2
 msgid "Configure printers"
-msgstr ""
+msgstr "Налаштування принтера"
 
 #: ../data/settings/session.desktop.in.h:2
 msgid "Edit Ydesk session settings"
-msgstr ""
+msgstr "Редагування налаштувань сесії Ydesk"
 
 #: ../data/settings/sound.desktop.in.h:1
 msgid "Sound Settings"
-msgstr ""
+msgstr "Налаштування звуку"
 
 #: ../data/settings/sound.desktop.in.h:2
 msgid "Configure ALSA sound volumes"
-msgstr ""
+msgstr "Налаштування звукової системи ALSA"
 
 #: ../data/settings/term.desktop.in.h:1
 msgid "Terminal Settings"
-msgstr ""
+msgstr "Налаштування терміналу"
 
 #: ../data/settings/term.desktop.in.h:2
 msgid "Configure terminal (urxvt) settings"
-msgstr ""
+msgstr "Налаштування терміналу (urxvt)"
 
 #: ../data/utils/yfind.desktop.in.h:1
 msgid "File search"
-msgstr ""
+msgstr "Пошук файлів"
 
 #: ../data/utils/yfind.desktop.in.h:2
 msgid "Search for Files or Folders on disk"
-msgstr ""
+msgstr "Пошук файлів або каталогів на диску"
 
 #: ../data/utils/yimage.desktop.in.h:2
 msgid "Simple image viewer"
-msgstr ""
+msgstr "Перегляд зображень"
 
 #: ../data/utils/ynotes.desktop.in.h:1
 msgid "Quick Notes"
-msgstr ""
+msgstr "Нотатки"
 
 #: ../data/utils/ynotes.desktop.in.h:2
 msgid "Keep small pieces of text"
-msgstr ""
+msgstr "Зберігання текстових нотаток"
 
 #: ../data/utils/ysession.desktop.in.h:1
 msgid "Y desktop"
-msgstr ""
+msgstr "Y desktop"
 
 #: ../data/utils/ysession.desktop.in.h:2
 msgid "Default session for Y desktop"
-msgstr ""
+msgstr "Основна сесія для Y desktop"
 
 #: ../data/utils/ysysinfo.desktop.in.h:2
 msgid "Show information about system"
-msgstr ""
+msgstr "Відобразити інформацію про систему"
 
 #: ../fvwm/config/menus.fvwm.h:1
 msgid "Iconify"
-msgstr ""
+msgstr "Згорнути"
 
 #: ../fvwm/config/menus.fvwm.h:2
 msgid "Maximize"
-msgstr ""
+msgstr "Разгорнути"
 
 #: ../fvwm/config/menus.fvwm.h:3
 msgid "Move"
-msgstr ""
+msgstr "Перемістити"
 
 #: ../fvwm/config/menus.fvwm.h:4
 msgid "Resize"
-msgstr ""
+msgstr "Зменити розмір"
 
 #: ../fvwm/config/menus.fvwm.h:5
 msgid "Shade"
-msgstr ""
+msgstr "У заголовок"
 
 #: ../fvwm/config/menus.fvwm.h:6
 msgid "Stick"
-msgstr ""
+msgstr "Приклеїти"
 
 #: ../fvwm/config/menus.fvwm.h:7
 msgid "Close"
-msgstr ""
+msgstr "Закрити"
 
 #: ../fvwm/config/menus.fvwm.h:8
 msgid "Indent"
-msgstr ""
+msgstr "Інформація"
 
 #: ../fvwm/config/menus.fvwm.h:9
 msgid "Main menu"
-msgstr ""
+msgstr "Головне меню"
 
 #: ../fvwm/config/menus.fvwm.h:10
 msgid "Recent"
-msgstr ""
+msgstr "Нещодавно відкриті"
 
 #: ../fvwm/config/menus.fvwm.h:11
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: ../fvwm/config/menus.fvwm.h:12
 msgid "Run"
-msgstr ""
+msgstr "Запустити"
 
 #: ../fvwm/config/menus.fvwm.h:13
 msgid "Shutdown"
-msgstr ""
+msgstr "Остановити"
 
 #: ../fvwm/config/menus.fvwm.h:19
 msgid "Media"
-msgstr ""
+msgstr "Зовнешні носії"
 
 #: ../fvwm/config/menus.fvwm.h:22
 msgid "FVWM console"
-msgstr ""
+msgstr "Консоль FVWM"
 
 #: ../fvwm/config/menus.fvwm.h:23
 msgid "Update icons"
-msgstr ""
+msgstr "Оновити іконки"
 
 #: ../fvwm/config/menus.fvwm.h:24
 msgid "Lock screen"
-msgstr ""
+msgstr "Заблокувати екран"
 
 #: ../fvwm/config/menus.fvwm.h:25
 msgid "Restart FVWM"
-msgstr ""
+msgstr "Перезапустити FVWM"
 
 #: ../fvwm/config/menus.fvwm.h:26
 msgid "Whole screen"
-msgstr ""
+msgstr "Увесь екран"
 
 #: ../fvwm/config/menus.fvwm.h:27
 msgid "Window/Region"
-msgstr ""
+msgstr "Вікно/Область"
 
 #: ../fvwm/config/menus.fvwm.h:28
 msgid "Check mail"
-msgstr ""
+msgstr "Перевірка пошти"
 
 #: ../fvwm/config/menus.fvwm.h:29
 msgid "Configuration"
-msgstr ""
+msgstr "Налаштування"
 
 #: ../fvwm/config/applets/menu.fvwm.h:2
 msgid "Actions"
-msgstr ""
+msgstr "Дії"
 
 #: ../fvwm/config/applets/shot.fvwm.h:1
 msgid "Make a screenshot"
-msgstr ""
+msgstr "Знімок екрану"
 
 #: ../fvwm/config/applets/volume.fvwm.h:1
 msgid "Sound volume"
-msgstr ""
+msgstr "Гучність звуку"
 
 #: ../fvwm/config/applets/media.fvwm.h:1
 msgid "Manage removable media"
-msgstr ""
+msgstr "Керування змінними носіями"
