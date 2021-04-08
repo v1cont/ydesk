@@ -4,17 +4,13 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk battery.XXXXXXXX)
-trap "rm -f $res" EXIT
+eval res=($(yad --title=$"Battery applet" --window-icon="application-x-addon" --width=300 \
+                --image=battery --quoted-output --separator=" " \
+                --text=$"<b>Battery applet configuration</b>" --form \
+                --field=$"Battery name:" $(eval echo $(gsettings get ydesk.applets bat_dev)) \
+                --field=$"AC adapter name:" $(eval echo $(gsettings get ydesk.applets bat_ac))))
 
-yad --title=$"Battery applet" --window-icon="application-x-addon" --width=300 \
-    --image=battery --text=$"Battery applet configuration" --separator=" " --form \
-    --field=$"Battery name:" "$(gsettings get ydesk.applets bat_dev)" \
-    --field=$"AC adapter name:" "$(gsettings get ydesk.applets bat_ac)" > $res
-
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets bat_dev "${r[0]}"
-    gsettings set ydesk.applets bat_ac "${r[1]}"
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets bat_dev "${res[0]}"
+    gsettings set ydesk.applets bat_ac "${res[1]}"
 fi

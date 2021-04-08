@@ -4,15 +4,11 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk mail.XXXXXXXX)
-trap "rm -f $res" EXIT
+eval res=($(yad --title=$"Mail applet" --window-icon="application-x-addon" --width=300 \
+                --image=mail-send --quoted-output --separator=" " \
+                --text=$"<b>Mail applet configuration</b>"  --form \
+                --field=$"Mail check time::NUM" $(gsettings get ydesk.applets mail_time)))
 
-yad --title=$"Mail applet" --window-icon="application-x-addon" --width=300 \
-    --image=mail-send --text=$"Mail applet configuration" --separator=" " --form \
-    --field=$"Mail check time::NUM" "$(gsettings get ydesk.applets mail_time)" > $res
-
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets mail_tine "${r[0]}"
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets mail_tine ${res[0]}
 fi

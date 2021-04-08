@@ -4,19 +4,14 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk shot.XXXXXXXX)
-trap "rm -f $res" EXIT
-
 eval act=$(gsettings get ydesk.applets shot_act)
 [[ $act == root ]] && ACTS="^root!reg" || ACTS="root!^reg"
 
-yad --title=$"Screenshot applet" --window-icon="application-x-addon" \
-    --width=300 --image=applets-screenshooter \
-    --text=$"Screenshot applet configuration" --separator=" " --form \
-    --field=$"Default action::CB" "$(gsettings get ydesk.applets tb_sz)" > $res
+eval res=($(yad --title=$"Screenshot applet" --window-icon="application-x-addon" \
+                --width=300 --image=applets-screenshooter --quoted-output --separator=" " \
+                --text=$"<b>Screenshot applet configuration</b>" --form \
+                --field=$"Default action::CB" "$act"))
 
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets shot_act ${r[0]}
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets shot_act ${res[0]}
 fi

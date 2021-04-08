@@ -4,16 +4,11 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk tbar.XXXXXXXX)
-trap "rm -f $res" EXIT
+eval res=($(yad --title=$"Taskbar applet" --window-icon="application-x-addon" \
+                --width=300 --image=window-new --quoted-output --separator=" " \
+                --text=$"<b>Taskbar applet configuration</b>" --form \
+                --field=$"Taskbar width::NUN" "$(gsettings get ydesk.applets tb_sz)"))
 
-yad --title=$"Taskbar applet" --window-icon="application-x-addon" \
-    --width=300 --image=window-new \
-    --text=$"Taskbar applet configuration" --separator=" " --form \
-    --field=$"Taskbar width::NUN" "$(gsettings get ydesk.applets tb_sz)" > $res
-
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets tb_sz ${r[0]}
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets tb_sz ${res[0]}
 fi

@@ -4,27 +4,21 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk wthr.XXXXXXXX)
-trap "rm -f $res" EXIT
-
 apikey=$(< ${XDG_DATA_HOME:-$HOME/.share}/ydesk/weather.key)
 
-yad --title=$"Weather applet" --window-icon="application-x-addon" \
-    --width=300 --separator=" " --image=weather-clear --bool-fmt=t \
-    --text=$"Weather applet configuration" --form \
-    --field=$"City name:" $(gsettings get ydesk.weather city) \
-    --field=$"Country code:" $(gsettings get ydesk.weather country) \
-    --field=$"Measure units:" $(gsettings get ydesk.weather units) \
-    --field=$"APi key:" "$(< $apikey)" \
-    --field=$"Update interval::NUM" $(gsettings get ydesk.applets wthr_time) > $res
+eval res=($(yad --title=$"Weather applet" --window-icon="application-x-addon" \
+                --width=300 --separator=" " --quoted-output --image=weather-clear --bool-fmt=t \
+                --text=$"<b>Weather applet configuration</b>" --form \
+                --field=$"City name:" $(eval echo $(gsettings get ydesk.weather city)) \
+                --field=$"Country code:" $(eval echo $(gsettings get ydesk.weather country)) \
+                --field=$"Measure units:" $(eval echo $(gsettings get ydesk.weather units)) \
+                --field=$"APi key:" "$(< $apikey)" \
+                --field=$"Update interval::NUM" $(gsettings get ydesk.applets wthr_time)))
 
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.weather city "${r[0]}"
-    gsettings set ydesk.weather country "${r[1]}"
-    gsettings set ydesk.weather measure "${r[2]}"
-    gsettings set ydesk.applets cpu_sz "${r[4]}"
-
-    echo "${r[3]}" > $apikey
+if [[ -n $res ]]; then
+    gsettings set ydesk.weather city "${res[0]}"
+    gsettings set ydesk.weather country "${res[1]}"
+    gsettings set ydesk.weather measure "${res[2]}"
+    gsettings set ydesk.applets cpu_sz "${res[4]}"
+    echo "${res[3]}" > $apikey
 fi

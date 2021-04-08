@@ -4,15 +4,11 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk wifi.XXXXXXXX)
-trap "rm -f $res" EXIT
+eval res=($(yad --title=$"Wifi applet" --window-icon="application-x-addon" \
+                --width=300 --quoted-output --separator=" " \
+                --image=network-wireless --text=$"<b>Wifi applet configuration</b>" --form \
+                --field=$"Wifi interface name:" $(eval echo $(gsettings get ydesk.applets wifi_iface))))
 
-yad --title=$"Mail applet" --window-icon="application-x-addon" --width=300 \
-    --image=network-wireless --text=$"Mail applet configuration" --separator=" " --form \
-    --field=$"Wifi interface name:" "$(gsettings get ydesk.applets wifi_iface)" > $res
-
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets wifi_iface "${r[0]}"
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets wifi_iface "${res[0]}"
 fi

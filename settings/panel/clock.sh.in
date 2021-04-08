@@ -4,22 +4,17 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-res=$(mktemp --tmpdir=/tmp/ydesk clock.XXXXXXXX)
-trap "rm -f $res" EXIT
+eval res=($(yad --title=$"Clock applet" --window-icon="application-x-addon" \
+                --width=300 --quoted-output --separator=" " --image=preferences-system-time \
+                --text=$"<b>Clock applet configuration</b>" --form \
+                --field=$"Time format:" $(eval echo $(gsettings get ydesk.applets clock_fmt)) \
+                --field=$"Clock foreground color::CLR" $(eval echo $(gsettings get ydesk.applets clock_fg)) \
+                --field=$"Clock font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.applets clock_fn))" \
+                --field=$"Clock width::NUM" $(gsettings get ydesk.applets clock_sz)))
 
-yad --title=$"Clock applet" --window-icon="application-x-addon" \
-    --width=300 --separator=" " --image=preferences-system-time \
-    --text=$"Clock applet configuration" --form \
-    --field=$"Time format:" "$(gsettings get ydesk.applets clock_fmt)" \
-    --field=$"Clock foreground color::CLR" "$(gsettings get ydesk.applets clock_fg)" \
-    --field=$"Clock font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.applets clock_fn))" \
-    --field=$"Clock width::NUM" "$(gsettings get ydesk.applets clock_sz)" > $res
-
-if [[ $? -eq 0 ]]; then
-    eval r=($(< $res))
-
-    gsettings set ydesk.applets clock_fmt "${r[0]}"
-    gsettings set ydesk.applets clock_fg "${r[1]}"
-    gsettings set ydesk.applets clock_fn $(yad-tools -f -x "${r[2]}")
-    gsettings set ydesk.applets clock_sz "${r[3]}"
+if [[ -n $res ]]; then
+    gsettings set ydesk.applets clock_fmt "${res[0]}"
+    gsettings set ydesk.applets clock_fg "${res[1]}"
+    gsettings set ydesk.applets clock_fn $(yad-tools -f -x "${res[2]}")
+    gsettings set ydesk.applets clock_sz "${res[3]}"
 fi

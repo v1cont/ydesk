@@ -2,4 +2,4 @@
 - add wifi manager
 - add detailed weather forecast
 - autostart editor must consider system-wide autostart entries
-- don't use temporary files in panel applets configurations
+- don't use temporary files in panel applets configurations (done)
