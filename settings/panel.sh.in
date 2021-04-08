@@ -16,7 +16,7 @@ function set_mod {
         add)
             LIST=
             for a in $FVWM_DATADIR/applets/*.fvwm; do
-                LIST+="$(basename a .fvwm) "
+                LIST+="$(basename $a .fvwm) "
             done
             yad --title=$"Add applet" --text=$"Select panel applet" --entry $LIST
             ;;
@@ -43,10 +43,11 @@ eval pos=$(gsettings get ydesk.panel pos)
 yad --plug=$KEY --tabnum=1 --text=$"Panel main settings" --form \
     --field=$"Enable panel:CHK" $(gsettings get ydesk.panel enable) \
     --field=$"Panel position::CB" $PANEL_POS \
-    --field=$"Panel icons size::NUM" $(gsettings get ydesk.panel izise) \
+    --field=$"Panel icons size::NUM" $(gsettings get ydesk.panel isize) \
     --field=":LBL" --field=$"<i>You must restart FVWM for changes will take effect</i>:LBL" > $res1 &
 
 eval APPLETS=($(gsettings get ydesk.panel applets | sed "s/,/ /g"))
+echo ${APPLETS[@]}
 for a in ${APPLETS[@]}; do echo $a; done | yad --plug=$KEY --tabnum=2 --text=$"Panel applets settings" \
     --image="application-x-addon" --separator="," --use-interp --list --editable --row-action="set_mod" \
     --column=$"Module" > $res2 &
