@@ -77,6 +77,6 @@ TXT+=$"\\tKernel: $(uname -sr)\\n\\n"
 TXT+="\\t<i>$(uptime)</i>"
 
 yad --notebook --width=600 --height=450 --title=$"System info" --text="$TXT" \
-    --button="yad-close" --button=$"Processes!system-run:yps" \
+    --button=$"Processes!system-run:yps" --button="yad-close" \
     --key=$KEY --tab=$"CPU" --tab=$"Memory" --tab=$"Disks" --tab=$"PCI" --tab=$"Modules" \
     --tab=$"Battery" --tab=$"Sensors" --active-tab=${1:-1}
