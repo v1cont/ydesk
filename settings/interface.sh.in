@@ -58,7 +58,7 @@ done
 
 CSIZE=$(gtk-query-settings gtk-cursor-theme-size | sed "s/.*: //")
 
-FONT=$(gtk-query-settings gtk-font-name | sed "s/.*: //")
+eval FONT=$(gtk-query-settings gtk-font-name | sed "s/.*: //")
 AALIAS=$(gtk-query-settings gtk-xft-antialias | sed "s/.*: //")
 HINTING=$(gtk-query-settings gtk-xft-hinting | sed "s/.*: //")
 eval HINTSTYLE=$(gtk-query-settings gtk-xft-hintstyle | sed "s/.*: //")
