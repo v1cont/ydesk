@@ -107,7 +107,7 @@
       <summary>Panel icons size</summary>
     </key>
     <key name="applets" type="s">
-      <default>'menu,qlaunch,run,taskbar,tray,pager,cpu,shot,media,wifi,bat,volume,kbd,clock,wact'</default>
+      <default>'menu,qlaunch,run,taskbar,tray,pager,cpu,weather,shot,media,wifi,bat,volume,kbd,clock,wact'</default>
       <summary>List of panel applets</summary>
     </key>  
   </schema>
@@ -138,7 +138,7 @@
       <summary>Foreground color for panel clock</summary>
     </key>
     <key name="tb_sz" type="i">
-      <default>800</default>
+      <default>758</default>
       <summary>Size of panel taskbar</summary>
     </key>
     <key name="run_sz" type="i">
