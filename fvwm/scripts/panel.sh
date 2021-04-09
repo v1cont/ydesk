@@ -13,7 +13,7 @@ fi
 
 isize=$(gsettings get ydesk.panel isize)
 echo "InfoStoreAdd p_clock '$(date +%R)'"
-echo "InfoStoreAdd p_bat $(yad-tools --icon --size=$isize battery-missing)"
+echo "InfoStoreAdd p_battery $(yad-tools --icon --size=$isize battery-missing)"
 echo "InfoStoreAdd p_media $(yad-tools --icon --size=$isize drive-removable-media)"
 echo "InfoStoreAdd p_mail $(yad-tools --icon --size=$isize nomail)"
 echo "InfoStoreAdd p_vol $(yad-tools --icon --size=$isize audio-volume-muted)"
