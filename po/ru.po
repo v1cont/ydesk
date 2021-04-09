@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 13:15+0300\n"
+"POT-Creation-Date: 2021-04-09 11:35+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -75,6 +75,19 @@ msgstr "Снимок экрана"
 #: ../fvwm/scripts/shot.sh.in:36
 msgid "Clipboard!yad-paste:bash -c copy_file"
 msgstr "Буфер обмена!yad-paste:bash -c copy_file"
+
+#: ../fvwm/scripts/weather.sh.in:80
+#, sh-format
+msgid ""
+"Weather in <b>$city</b>\\n\\n$temp (<i>feels like</i> $fl_temp), $state\\n"
+"\\nWind: $wspeed m/s ($wdir $warrow)"
+msgstr ""
+"Погода в <b>$city</b>\\n\\n$temp (<i>ощущается как</i> $fl_temp), $state\\n"
+"\\nВетер: $wspeed м/с ($wdir $warrow)"
+
+#: ../fvwm/scripts/weather.sh.in:82
+msgid "Weather"
+msgstr "Погода"
 
 #: ../fvwm/cpu.c:137
 #, c-format
@@ -405,24 +418,24 @@ msgid "<i>You must restart FVWM for changes will take effect</i>:LBL"
 msgstr ""
 "<i>Вы должны перезапустить FVWM, чтобы изменения вступили в силу</i>:LBL"
 
-#: ../settings/panel.sh.in:50
+#: ../settings/panel.sh.in:51
 msgid "Panel applets settings"
 msgstr "Настройки апплетов панели"
 
-#: ../settings/panel.sh.in:52
+#: ../settings/panel.sh.in:53
 msgid "Module"
 msgstr "Модуль"
 
 #. main dialog
-#: ../settings/panel.sh.in:55
+#: ../settings/panel.sh.in:56
 msgid "Panel settings"
 msgstr "Настройки панели"
 
-#: ../settings/panel.sh.in:55
+#: ../settings/panel.sh.in:56
 msgid "Ydesk panel settings"
 msgstr "Настройки панели Ydesk"
 
-#: ../settings/panel.sh.in:57
+#: ../settings/panel.sh.in:58
 msgid ""
 "\\n<b>Edit settings of Ydesk panel</b>\\n\\n<i>Changes will be applied on "
 "the next startup</i>\\n\\n"
@@ -431,11 +444,11 @@ msgstr ""
 "применены при следующем старте</i>\\n\\n"
 
 #. main dialog
-#: ../settings/panel.sh.in:58 ../settings/term.sh.in:104
+#: ../settings/panel.sh.in:59 ../settings/term.sh.in:104
 msgid "Main"
 msgstr "Основные"
 
-#: ../settings/panel.sh.in:58
+#: ../settings/panel.sh.in:59
 msgid "Applets"
 msgstr "Апплеты"
 
