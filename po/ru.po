@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-09 11:35+0300\n"
+"POT-Creation-Date: 2021-04-11 21:28+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -161,15 +161,15 @@ msgstr "Редактор элемента быстрого доступа"
 msgid "Icon:"
 msgstr "Иконка:"
 
-#: ../settings/desktop.sh.in:30 ../settings/session.sh.in:29
+#: ../settings/desktop.sh.in:30 ../settings/session.sh.in:30
 msgid "Name:"
 msgstr "Имя:"
 
-#: ../settings/desktop.sh.in:31 ../settings/session.sh.in:30
+#: ../settings/desktop.sh.in:31 ../settings/session.sh.in:31
 msgid "Description:"
 msgstr "Описание:"
 
-#: ../settings/desktop.sh.in:32 ../settings/session.sh.in:31
+#: ../settings/desktop.sh.in:32 ../settings/session.sh.in:32
 msgid "Command:"
 msgstr "Команда:"
 
@@ -244,17 +244,17 @@ msgstr "Команда блокировки экрана:"
 msgid "Add/remove quicklaunch items"
 msgstr "Добавление/удаление элементов быстрого доступа"
 
-#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
-#: ../utils/ydentry.sh:13 ../utils/yfind.sh:55 ../utils/yfind.sh:60
-#: ../utils/ysysinfo.sh:49
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:61
+#: ../settings/session.sh.in:68 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
+#: ../utils/yfind.sh:60 ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Имя"
 
-#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:60
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:61
 msgid "Description:TIP"
 msgstr "Описание:TIP"
 
-#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:60
+#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:61
 msgid "Command"
 msgstr "Команда"
 
@@ -271,7 +271,7 @@ msgstr ""
 "\\n<b>Редактирование настроек рабочего стола Ydesk</b>\\n<i>Изменения будут "
 "применены при следующем старте</i>\\n\\n"
 
-#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:66
+#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:74
 msgid "Common"
 msgstr "Общие"
 
@@ -465,51 +465,51 @@ msgstr "Сервер CUPS на <b>$SRV</b> недоступен"
 msgid "Printer settings"
 msgstr "Настройки принтера"
 
-#: ../settings/session.sh.in:27
+#: ../settings/session.sh.in:28
 msgid "Autostart item"
 msgstr "Автостарт"
 
-#: ../settings/session.sh.in:27
+#: ../settings/session.sh.in:28
 msgid "Autostart item editor"
 msgstr "Редактор элемента автостарта"
 
-#: ../settings/session.sh.in:41
+#: ../settings/session.sh.in:42
 msgid "<b><i>Base Configuration</i></b>:LBL"
 msgstr "<b><i>Базовая конфигурация</i></b>:LBL"
 
-#: ../settings/session.sh.in:42
+#: ../settings/session.sh.in:43
 msgid "Update XDG users directories at startup:CHK"
 msgstr "Создавать/обновлять каталоги XDG при старте:CHK"
 
-#: ../settings/session.sh.in:43
+#: ../settings/session.sh.in:44
 msgid "Run URXVT server at startup:CHK"
 msgstr "Запускать сервер URXVT при старте:CHK"
 
-#: ../settings/session.sh.in:44
+#: ../settings/session.sh.in:45
 msgid "Run EMACS server at startup:CHK"
 msgstr "Запускать сервер EMACS при старте:CHK"
 
-#: ../settings/session.sh.in:45
+#: ../settings/session.sh.in:46
 msgid "<b><i>Background settings</i></b>:LBL"
 msgstr "<b><i>Настройки фона</i></b>:LBL"
 
-#: ../settings/session.sh.in:46
+#: ../settings/session.sh.in:47
 msgid "Background::CLR"
 msgstr "Цвет фона::CLR"
 
-#: ../settings/session.sh.in:47
+#: ../settings/session.sh.in:48
 msgid "Wallpaper::MFL"
 msgstr "Обои::MFL"
 
-#: ../settings/session.sh.in:48
+#: ../settings/session.sh.in:49
 msgid "<b><i>Other settings</i></b>:LBL"
 msgstr "<b><i>Другие настройки</i></b>:LBL"
 
-#: ../settings/session.sh.in:49
+#: ../settings/session.sh.in:50
 msgid "Enable compositing:CHK"
 msgstr "Разрешить композитинг:CHK"
 
-#: ../settings/session.sh.in:59
+#: ../settings/session.sh.in:60
 msgid ""
 "Add/remove autostart items\\n(<i>only users autostart directory proceeded</"
 "i>)"
@@ -517,12 +517,21 @@ msgstr ""
 "Автозапускаемые команды\\n(<i>Обрабатываются только определенные "
 "пользователем</i>)"
 
+#: ../settings/session.sh.in:67
+msgid "Add/remove user environment variables"
+msgstr "Добавление/удалдение переменных окружения"
+
+#: ../settings/session.sh.in:68 ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
+#: ../utils/ysysinfo.sh:71
+msgid "Value"
+msgstr "Значение"
+
 #. main dialog
-#: ../settings/session.sh.in:63 ../data/settings/session.desktop.in.h:1
+#: ../settings/session.sh.in:71 ../data/settings/session.desktop.in.h:1
 msgid "Session settings"
 msgstr "Настройки сессии"
 
-#: ../settings/session.sh.in:65
+#: ../settings/session.sh.in:73
 msgid ""
 "\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
 "next startup</i>\\n\\n"
@@ -530,9 +539,13 @@ msgstr ""
 "\\n<b>Редактирование настроек сессии Ydesk</b>\\n<i>Изменения будут "
 "применены при следующем старте</i>\\n\\n"
 
-#: ../settings/session.sh.in:66
+#: ../settings/session.sh.in:74
 msgid "Autostart"
 msgstr "Автостарт"
+
+#: ../settings/session.sh.in:74
+msgid "Environment"
+msgstr "Окружение"
 
 #. main page
 #: ../settings/term.sh.in:66
@@ -1044,11 +1057,11 @@ msgstr "Устройство"
 msgid "ALSA Mixer"
 msgstr "ALSA Миксер"
 
-#: ../utils/ynotes.sh:14
+#: ../utils/ynotes.sh:15
 msgid "Notes"
 msgstr "Заметки"
 
-#: ../utils/ynotes.sh:39
+#: ../utils/ynotes.sh:41
 msgid "Text notes"
 msgstr "Текстовые заметки"
 
@@ -1093,10 +1106,6 @@ msgstr "Информация о процессоре"
 #: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
 msgid "Parameter"
 msgstr "Параметр"
-
-#: ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30 ../utils/ysysinfo.sh:71
-msgid "Value"
-msgstr "Значение"
 
 #. Memory tab
 #: ../utils/ysysinfo.sh:29
