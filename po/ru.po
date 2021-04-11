@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-11 21:28+0300\n"
+"POT-Creation-Date: 2021-04-11 21:41+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -369,8 +369,20 @@ msgid "Menubar accelerator:"
 msgstr "Быстрый доступ к меню:"
 
 #: ../settings/mime.sh.in:18
+msgid "MIME editor"
+msgstr "Редактор MIME"
+
+#: ../settings/mime.sh.in:19
 msgid "MIME types editor"
 msgstr "Редактор типов MIME"
+
+#: ../settings/mime.sh.in:20
+msgid "Mime type"
+msgstr "Тип mime"
+
+#: ../settings/mime.sh.in:20
+msgid "Application"
+msgstr "Приложение"
 
 #: ../settings/panel.sh.in:21
 msgid "Add applet"

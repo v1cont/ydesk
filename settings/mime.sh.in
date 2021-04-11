@@ -2,7 +2,7 @@
 # -*- mode: sh -*-
 #
 # Mime type editor
-# Author: Victor Ananjevsky <ananasik@gmail.com>, 2020
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2020-2021
 #
 
 TEXTDOMAIN=@GETTEXT_PACKAGE@
@@ -15,8 +15,9 @@ trap "rm -f $pipe" EXIT
 mkfifo $pipe
 exec 3<> $pipe
 
-cat $pipe | yad --image=system-run --text=$"MIME types editor" \
-                --list --column=":img" --column="Mime type" --column="Application" &
+cat $pipe | yad --title=$"MIME editor" --width=750 --height=500 \
+                --image=application-x-executable  --text=$"MIME types editor" \
+                --list --column=":img" --column=$"Mime type" --column=$"Application" &
 PID=$!
 
 while read ln; do
