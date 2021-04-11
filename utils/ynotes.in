@@ -9,6 +9,7 @@ TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
 PIDFILE=/var/run/ynotes.pid
+touch $PIDFILE
 
 NOTES_FILE=${XDG_CACHE_HOME:-$HOME/.cache}/ydesk/notes
 NOTES_TITLE=$"Notes"
@@ -25,8 +26,9 @@ function show_note () {
 export -f show_note
 
 # check if we are already running
-if pkill -0 $(< $PIDFILE); then
-    kill -USR1 $(< $PIDFILE)
+NPID=$(< $PIDFILE)
+if pkill -0 -- ${NPID:--1}; then
+    kill -USR1 $NPID
     exit 0
 else
     echo $$ > $PIDFILE

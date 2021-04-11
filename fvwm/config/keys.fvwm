@@ -91,3 +91,4 @@ Key E       A     CM    Exec exec $[infostore.editor]
 Key B       A     CM    Exec exec $[infostore.browser]
 Key M       A     CM    Exec exec $[FVWM_LIBDIR]/mail.sh $[infostore.mailer]
 Key P       A     CM    Exec exec yps
+Key N       A     CM    Exec exec ynotes
