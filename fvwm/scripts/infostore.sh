@@ -9,4 +9,4 @@ for sch in ${SCHEMAS[@]}; do
         echo "InfoStoreAdd $key $val"
     done
 done
-
+echo "InfoStoreAdd p_height $(gsettings get ydesk.panel height)"

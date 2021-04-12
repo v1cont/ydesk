@@ -5,10 +5,11 @@ eval ENABLE=$(gsettings get ydesk.panel enable)
 [[ $ENABLE == false ]] && exit 0
 
 eval POS=$(gsettings get ydesk.panel pos)
+HEIGHT=$(gsettings get ydesk.panel height)
 if [[ $POS == bottom ]]; then
-    echo "EwmhBaseStruts 0 0 0 27"
+    echo "EwmhBaseStruts 0 0 0 $HEIGHT"
 else
-    echo "EwmhBaseStruts 0 0 27 0"
+    echo "EwmhBaseStruts 0 0 $HEIGHT 0"
 fi
 
 isize=$(gsettings get ydesk.panel isize)

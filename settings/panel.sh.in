@@ -43,6 +43,7 @@ eval pos=$(gsettings get ydesk.panel pos)
 yad --plug=$KEY --tabnum=1 --text=$"Panel main settings" --form \
     --field=$"Enable panel:CHK" $(gsettings get ydesk.panel enable) \
     --field=$"Panel position::CB" $PANEL_POS \
+    --field=$"Panel height::NUM" $(gsettings get ydesk.panel height) \
     --field=$"Panel icons size::NUM" $(gsettings get ydesk.panel isize) \
     --field=":LBL" --field=$"<i>You must restart FVWM for changes will take effect</i>:LBL" > $res1 &
 
@@ -63,7 +64,8 @@ if [[ $? -eq 0 ]]; then
 
     gsettings set ydesk.panel enable ${r[0]}
     gsettings set ydesk.panel pos ${r[1]}
-    gsettings set ydesk.panel isize ${r[2]}
+    gsettings set ydesk.panel height ${r[2]}
+    gsettings set ydesk.panel isize ${r[3]}
 
     gsettings set ydesk.panel applets "$(< $res2)"
 fi

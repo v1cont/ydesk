@@ -102,6 +102,10 @@
       <default>'top'</default>
       <summary>Ydesk panel position</summary>
     </key>
+    <key name="height" type="i">
+      <default>27</default>
+      <summary>Panel height</summary>
+    </key>
     <key name="isize" type="i">
       <default>16</default>
       <summary>Panel icons size</summary>

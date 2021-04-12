@@ -81,7 +81,7 @@ DestroyModuleConfig FvwmPanel: *
 *FvwmPanel: Frame 0
 *FvwmPanel: Rows 1
 *FvwmPanel: Columns $[vp.width]
-*FvwmPanel: Geometry $[vp.width]x27+0+0
+*FvwmPanel: Geometry $[vp.width]x$[infostore.p_height]+0+0
 
 *FvwmPanel: UseTips
 *FvwmPanel: TipsFont $[infostore.bfn]

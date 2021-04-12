@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-11 21:41+0300\n"
+"POT-Creation-Date: 2021-04-12 16:13+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -422,31 +422,35 @@ msgid "Panel position::CB"
 msgstr "Розташування панелі::CB"
 
 #: ../settings/panel.sh.in:46
+msgid "Panel height::NUM"
+msgstr "Висота панелі::NUM"
+
+#: ../settings/panel.sh.in:47
 msgid "Panel icons size::NUM"
 msgstr "Розмір іконок на панелі::NUM"
 
-#: ../settings/panel.sh.in:47
+#: ../settings/panel.sh.in:48
 msgid "<i>You must restart FVWM for changes will take effect</i>:LBL"
 msgstr "<i>Ви повинні перезапустити FVWM, щоб зміни набули силу</i>:LBL"
 
-#: ../settings/panel.sh.in:51
+#: ../settings/panel.sh.in:52
 msgid "Panel applets settings"
 msgstr "Налаштування аплетів панелі"
 
-#: ../settings/panel.sh.in:53
+#: ../settings/panel.sh.in:54
 msgid "Module"
 msgstr "Модуль"
 
 #. main dialog
-#: ../settings/panel.sh.in:56
+#: ../settings/panel.sh.in:57
 msgid "Panel settings"
 msgstr "Налаштування панелі"
 
-#: ../settings/panel.sh.in:56
+#: ../settings/panel.sh.in:57
 msgid "Ydesk panel settings"
 msgstr "Налаштування панелі Ydesk"
 
-#: ../settings/panel.sh.in:58
+#: ../settings/panel.sh.in:59
 msgid ""
 "\\n<b>Edit settings of Ydesk panel</b>\\n\\n<i>Changes will be applied on "
 "the next startup</i>\\n\\n"
@@ -455,11 +459,11 @@ msgstr ""
 "при наступному старті</i>\\n\\n"
 
 #. main dialog
-#: ../settings/panel.sh.in:59 ../settings/term.sh.in:104
+#: ../settings/panel.sh.in:60 ../settings/term.sh.in:104
 msgid "Main"
 msgstr "Головні"
 
-#: ../settings/panel.sh.in:59
+#: ../settings/panel.sh.in:60
 msgid "Applets"
 msgstr "Аплеты"
 
