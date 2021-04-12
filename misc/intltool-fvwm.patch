@@ -1,0 +1,58 @@
+diff -urNp intltool-0.51.0-orig/doc/intltool-extract.8 intltool-0.51.0/doc/intltool-extract.8
+--- intltool-0.51.0-orig/doc/intltool-extract.8	2015-03-09 03:39:54.000000000 +0200
++++ intltool-0.51.0/doc/intltool-extract.8	2016-12-30 07:53:53.464226270 +0200
+@@ -56,6 +56,8 @@ Specify the type of source file. Current
+ "gettext/xml" (Generic XML file)
+ .br
+ "gettext/qtdesigner" (Qt Designer .ui files)
++.br
++"gettext/fvwm" (FVWM config files)
+ .IP "\fB\-v\fR" 4
+ .PD 0
+ .IP "\fB\-\-version\fR" 4
+diff -urNp intltool-0.51.0-orig/intltool-extract.in intltool-0.51.0/intltool-extract.in
+--- intltool-0.51.0-orig/intltool-extract.in	2015-03-09 03:39:54.000000000 +0200
++++ intltool-0.51.0/intltool-extract.in	2016-12-30 07:48:22.537167142 +0200
+@@ -163,7 +163,7 @@ XML files. Read manpage (man ${PROGRAM})
+ 
+       --type=TYPE   Specify the file type of FILENAME. Currently supports:
+                     "gettext/glade", "gettext/ini", "gettext/keys"
+-                    "gettext/rfc822deb", "gettext/schemas",
++                    "gettext/rfc822deb", "gettext/schemas", "gettext/fvwm",
+                     "gettext/gsettings", "gettext/xml", "gettext/quoted",
+                     "gettext/quotedxml", "gettext/tlk", "gettext/qtdesigner"
+   -l, --local       Writes output into current working directory
+@@ -226,6 +226,7 @@ sub convert {
+     &type_quotedxml if $gettext_type eq "quotedxml";
+     &type_tlk if $gettext_type eq "tlk";
+     &type_qtdesigner if $gettext_type eq "qtdesigner";
++    &type_fvwm if $gettext_type eq "fvwm";
+ }
+ 
+ sub entity_decode_minimal
+@@ -290,6 +291,13 @@ sub type_keys {
+         add_message($1);
+     }
+ }
++
++sub type_fvwm {
++    ### For fvwm config files
++    while ($input =~ /\$\[gt\.(.+?)\]/sg) {
++        add_message($1);
++    }
++}
+ 
+ sub type_xml {
+     ### For generic translatable XML files ###
+diff -urNp intltool-0.51.0-orig/intltool-update.in intltool-0.51.0/intltool-update.in
+--- intltool-0.51.0-orig/intltool-update.in	2015-03-09 03:39:54.000000000 +0200
++++ intltool-0.51.0/intltool-update.in	2016-12-30 07:53:18.020721582 +0200
+@@ -88,7 +88,7 @@ my $tlk_support =
+ "tlk(?:\\.in)+";        # Bioware Aurora Talk Table Format
+ 
+ my $buildin_gettext_support =
+-"c|y|cs|cc|cpp|c\\+\\+|h|hh|gob|py|scm(?:\\.in)*";
++"c|y|cs|cc|cpp|c\\+\\+|h|hh|gob|py|fvwm|scm(?:\\.in)*";
+ 
+ ## Always flush buffer when printing
+ $| = 1;
