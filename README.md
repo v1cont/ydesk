@@ -10,6 +10,7 @@ External software needed by Ydesk:
 - *conky* - used in sysinfo applet
 - *GraphicsMagick* - used in screenshot applet
 - *jq* - used for parsing weather forecast
+- *xdotool* - for some window manipulations
 - *wpa_supplicant* - used in wifi applet
 - *mate-icon-theme* is strongly recommended
 
