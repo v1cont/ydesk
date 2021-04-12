@@ -5,7 +5,7 @@
 [[ $1 == -f ]] && rm -rf ${XDG_CACHE_HOME:-$HOME/.share}/ydesk/fvwm/icons
 
 declare -A common=([desk]=emblem-desktop [edit]=accessories-text-editor [media]=drive-removable-media
-    [info]=dialog-information [lock]=system-lock-screen [mixer]=multimedia-volume-control
+    [info]=dialog-information [lock]=system-lock-screen [mixer]=multimedia-volume-control [notes]=ynotes
     [prefs]=preferences-system [recent]=document-open-recent [restart]=view-refresh [run]=system-run
     [search]=system-search [shot]=applets-screenshooter [shutdown]=system-shutdown 
     [settings]=preferences-other [sysmon]=utilities-system-monitor [term]=utilities-terminal

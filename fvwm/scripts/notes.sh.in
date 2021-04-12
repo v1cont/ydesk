@@ -1,0 +1,28 @@
+#! /bin/bash
+# -*- mode: sh -*-
+#
+# Simple notes
+# Author: Victor Ananjevsky <ananasik@gmail.com>, 2010-2012
+#
+
+TEXTDOMAIN=@GETTEXT_PACKAGE@
+TEXTDOMAINDIR=@prefix@/share/locale
+
+res=$(mktemp --tmpdir=/tmp/ydesk notes.XXXXXXXX)
+trap "rm -f $res" EXIT
+
+NOTES_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/ydesk/notes"
+mkdir -p $(dirname $NOTES_FILE)
+touch $NOTES_FILE
+
+XID=(xdotool search --classname Ynotes | tail -n 1)
+
+if [[ -z $XID ]]; then
+    yad --sticky --name=Ynotes --width=400 --height=250 --posx=-2 --posy=-2 \
+        --window-icon="ynotes" --no-buttons --title=$"Notes" \
+        --text-info --show-uri --editable --always-print-result \
+        --lang="makrdown" --filename="$NOTES_FILE" > $res
+    [[ $? -eq 0 ]] && mv -f $res "$NOTES_FILE"
+else
+    xdotool windowfocus $XID
+fi

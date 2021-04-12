@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 16:13+0300\n"
+"POT-Creation-Date: 2021-04-12 16:54+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -63,6 +63,10 @@ msgstr "Сервер"
 #: ../fvwm/scripts/mail.sh.in:49
 msgid "User"
 msgstr "Пользователь"
+
+#: ../fvwm/scripts/notes.sh.in:22
+msgid "Notes"
+msgstr "Заметки"
 
 #: ../fvwm/scripts/shot.sh.in:15
 msgid "Save screenshot"
@@ -1073,14 +1077,6 @@ msgstr "Устройство"
 msgid "ALSA Mixer"
 msgstr "ALSA Миксер"
 
-#: ../utils/ynotes.sh:15
-msgid "Notes"
-msgstr "Заметки"
-
-#: ../utils/ynotes.sh:41
-msgid "Text notes"
-msgstr "Текстовые заметки"
-
 #: ../utils/ypass.sh:11
 msgid "Password authentication is required\\n$1\\n"
 msgstr "Требуется авторизация по паролю\\n$1\\n"
@@ -1428,14 +1424,6 @@ msgstr "Поиск файлов или каталогов на диске"
 msgid "Simple image viewer"
 msgstr "Просмотр изображений"
 
-#: ../data/utils/ynotes.desktop.in.h:1
-msgid "Quick Notes"
-msgstr "Заметки"
-
-#: ../data/utils/ynotes.desktop.in.h:2
-msgid "Keep small pieces of text"
-msgstr "Сохранение кусочков текста"
-
 #: ../data/utils/ysession.desktop.in.h:1
 msgid "Y desktop"
 msgstr "Y desktop"
@@ -1551,3 +1539,7 @@ msgstr "Громкость звука"
 #: ../fvwm/config/applets/media.fvwm.h:1
 msgid "Manage removable media"
 msgstr "Управление сменными носителями"
+
+#: ../fvwm/config/applets/notes.fvwm.h:1
+msgid "Sticky notes"
+msgstr "Заметки"

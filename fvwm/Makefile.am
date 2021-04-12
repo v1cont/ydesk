@@ -11,7 +11,8 @@ dist_applet_DATA = config/applets/bat.fvwm config/applets/clock.fvwm config/appl
                    config/applets/shot.fvwm config/applets/sysinfo.fvwm config/applets/tray.fvwm \
                    config/applets/taskbar.fvwm config/applets/media.fvwm config/applets/volume.fvwm \
                    config/applets/xeyes.fvwm config/applets/run.fvwm config/applets/mail.fvwm \
-                   config/applets/wact.fvwm config/applets/wifi.fvwm config/applets/weather.fvwm
+                   config/applets/wact.fvwm config/applets/wifi.fvwm config/applets/weather.fvwm \
+                   config/applets/notes.fvwm
 
 imagedir = $(fvwmdir)/images
 dist_image_DATA = images/min.png images/max.png images/check.png images/close.png images/side.png images/default.png
@@ -21,7 +22,7 @@ flib_files = scripts/ymenu.py scripts/panel.sh scripts/qlaunch.sh scripts/infost
 
 flibdir = $(libdir)/ydesk/fvwm
 flib_SCRIPTS = $(flib_files) scripts/clipman.sh scripts/shot.sh scripts/media.sh \
-			   scripts/weather.sh scripts/mail.sh
+			   scripts/weather.sh scripts/mail.sh scripts/notes.sh
 
 flib_PROGRAMS = ycpu
 

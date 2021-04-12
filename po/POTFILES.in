@@ -1,5 +1,6 @@
 fvwm/scripts/clipman.sh.in
 fvwm/scripts/mail.sh.in
+fvwm/scripts/notes.sh.in
 fvwm/scripts/shot.sh.in
 fvwm/scripts/weather.sh.in
 fvwm/cpu.c
@@ -29,7 +30,6 @@ utils/yimage.sh
 utils/ylogout.sh
 utils/ymedia.sh
 utils/ymixer.sh
-utils/ynotes.sh
 utils/ypass.sh
 utils/yps.sh
 utils/yrun.sh
@@ -58,7 +58,6 @@ data/settings/sound.desktop.in
 data/settings/term.desktop.in
 data/utils/yfind.desktop.in
 data/utils/yimage.desktop.in
-data/utils/ynotes.desktop.in
 data/utils/ysession.desktop.in
 data/utils/ysysinfo.desktop.in
 [type: gettext/fvwm] fvwm/config/menus.fvwm
@@ -66,3 +65,4 @@ data/utils/ysysinfo.desktop.in
 [type: gettext/fvwm] fvwm/config/applets/shot.fvwm
 [type: gettext/fvwm] fvwm/config/applets/volume.fvwm
 [type: gettext/fvwm] fvwm/config/applets/media.fvwm
+[type: gettext/fvwm] fvwm/config/applets/notes.fvwm

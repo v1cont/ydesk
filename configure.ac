@@ -66,7 +66,6 @@ utils/yimage.sh:utils/yimage.in
 utils/ylogout.sh:utils/ylogout.in
 utils/ymedia.sh:utils/ymedia.in
 utils/ymixer.sh:utils/ymixer.in
-utils/ynotes.sh:utils/ynotes.in
 utils/ypass.sh:utils/ypass.in
 utils/yps.sh:utils/yps.in
 utils/yrun.sh:utils/yrun.in
@@ -82,6 +81,7 @@ fvwm/Makefile
 fvwm/scripts/clipman.sh
 fvwm/scripts/mail.sh
 fvwm/scripts/media.sh
+fvwm/scripts/notes.sh
 fvwm/scripts/shot.sh
 fvwm/scripts/weather.sh
 fdo/Makefile
@@ -114,7 +114,6 @@ utils/yimage
 utils/ylogout
 utils/ymedia
 utils/ymixer
-utils/ynotes
 utils/ynotify
 utils/ypass
 utils/yps

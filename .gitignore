@@ -31,6 +31,7 @@ fvwm/ycpu
 fvwm/scripts/clipman.sh
 fvwm/scripts/mail.sh
 fvwm/scripts/media.sh
+fvwm/scripts/notes.sh
 fvwm/scripts/shot.sh
 fvwm/scripts/weather.sh
 settings/*.sh

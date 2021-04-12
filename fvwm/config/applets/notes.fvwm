@@ -1,0 +1,1 @@
+*FvwmPanel: (Id volume, 25x1, TipsLabel "$[gt.Sticky notes]", Icon "notes.png", Action (Mouse 1) Exec exec $[FVWM_LIBDIR]/notes.sh)
