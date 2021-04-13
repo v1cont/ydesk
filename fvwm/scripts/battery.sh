@@ -1,6 +1,8 @@
 #! /bin/bash
 # Battery applet engine
 
+set -x
+
 [[ -d /sys/class/power_supply ]] || exit 1
 
 eval BAT=$(gsettings get ydesk.applets bat_dev)
@@ -12,7 +14,7 @@ BAT_FULL=$(< /sys/class/power_supply/$BAT/energy_full)
 BAT_NOW=$(< /sys/class/power_supply/$BAT/energy_now)
 BAT_STATE=$(< /sys/class/power_supply/$BAT/status)
 
-BAT_PERCENT=$(echo $BAT_NOW.0 / $BAT_FULL.0 \* 100 | bc -l)
+printf -v BAT_PERCENT "%.f" $(echo $BAT_NOW.0 / $BAT_FULL.0 \* 100 | bc -l)
 
 case $BAT_STATE in
     Discharging)
