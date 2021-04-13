@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 16:54+0300\n"
+"POT-Creation-Date: 2021-04-13 10:27+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -80,7 +80,7 @@ msgstr "Снимок экрана"
 msgid "Clipboard!yad-paste:bash -c copy_file"
 msgstr "Буфер обмена!yad-paste:bash -c copy_file"
 
-#: ../fvwm/scripts/weather.sh.in:80
+#: ../fvwm/scripts/weather.sh.in:81
 #, sh-format
 msgid ""
 "Weather in <b>$city</b>\\n\\n$temp (<i>feels like</i> $fl_temp), $state\\n"
@@ -89,9 +89,13 @@ msgstr ""
 "Погода в <b>$city</b>\\n\\n$temp (<i>ощущается как</i> $fl_temp), $state\\n"
 "\\nВетер: $wspeed м/с ($wdir $warrow)"
 
-#: ../fvwm/scripts/weather.sh.in:82
+#: ../fvwm/scripts/weather.sh.in:83
 msgid "Weather"
 msgstr "Погода"
+
+#: ../fvwm/scripts/weather.sh.in:85
+msgid "Forecast!web-browser:bash -c wthr_forecast"
+msgstr "Прогноз!web-browser:bash -c wthr_forecast"
 
 #: ../fvwm/cpu.c:137
 #, c-format

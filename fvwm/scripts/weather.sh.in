@@ -82,7 +82,7 @@ function wthr_show {
 
     yad --title=$"Weather" --window-icon=sunny --width=300 --height=150 \
         --posx=-100 --posy=50 --borders=10 --image=${icons[$i]} --text="$TEXT" \
-        --button="Forecast!web-browser:bash -c wthr_forecast" --button=yad-close
+        --button=$"Forecast!web-browser:bash -c wthr_forecast" --button=yad-close
 }
 
 case $1 in
