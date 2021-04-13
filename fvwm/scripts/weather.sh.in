@@ -47,6 +47,7 @@ function wthr_show {
     printf -v temp "%.f°C" "$(jq '.main.temp' $wfile)"
     printf -v fl_temp "%.f°C" "$(jq '.main.feels_like' $wfile)"
     eval i=$(jq '.weather[0].icon' $wfile)
+    eval state=$(jq '.weather[0].description' $wfile)
     eval city=$(jq '.name' $wfile)
     eval wspeed=$(jq '.wind.speed' $wfile)
     eval wdeg=$(jq '.wind.deg' $wfile)
