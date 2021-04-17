@@ -26,7 +26,7 @@ function ql_edit {
     esac
     eval flds=($(yad --title=$"Quicklaunch item" --text=$"Quicklaunch item editor" \
                      --width=300 --quoted-output --separator=" " --form \
-                     --field=$"Icon:" "$ICON" \
+                     --field=$"Icon:ICON" "$ICON" \
                      --field=$"Name:" "$NAME" \
                      --field=$"Description:" "$DESCR" \
                      --field=$"Command:" "$CMD"))
