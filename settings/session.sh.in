@@ -36,16 +36,14 @@ export -f as_edit
 KEY=$RANDOM
 
 # first tab
-eval BG=$(gsettings get ydesk.session bg)
-eval WP=$(gsettings get ydesk.session wallpaper)
-yad --plug=$KEY --tabnum=1 --bool-fmt=t --form --scroll \
+yad --plug=$KEY --tabnum=1 --bool-fmt=t --form --scroll --quoted-output --separator=" " \
     --field=$"<b><i>Base Configuration</i></b>:LBL" "" \
     --field=$"Update XDG users directories at startup:CHK" $(gsettings get ydesk.session userdirs) \
     --field=$"Run URXVT server at startup:CHK" $(gsettings get ydesk.session run-rxvt) \
     --field=$"Run EMACS server at startup:CHK" $(gsettings get ydesk.session run-emacs) \
     --field=$"<b><i>Background settings</i></b>:LBL" "" \
-    --field=$"Background::CLR" "$(eval echo $(gsettings get ydesk.session bg))" "$BG" \
-    --field=$"Wallpaper::MFL" "$(eval echo $(gsettings get ydesk.session wallpaper))" "$WP" \
+    --field=$"Background::CLR" "$(eval echo $(gsettings get ydesk.session bg))" \
+    --field=$"Wallpaper::MFL" "$(eval echo $(gsettings get ydesk.session wallpaper))" \
     --field=$"<b><i>Other settings</i></b>:LBL" "" \
     --field=$"Enable compositing:CHK" $(gsettings get ydesk.session compose) > $res1 &
 
@@ -65,7 +63,7 @@ touch $HOME/.pam_environment
 awk -F= '/^[A-Za-z]+/ {gsub("^[\"'']|[\"'']$", "", $2); printf "%s\n%s\n", $1, $2}' $HOME/.pam_environment | \
     yad --plug=$KEY --tabnum=3 --editable --print-all \
         --text=$"Add/remove user environment variables" \
-        --list --expand-column=2 --column=$"Name" --column=$"Value" > $res &
+        --list --expand-column=2 --column=$"Name" --column=$"Value" > $res3 &
 
 # main dialog
 yad --title=$"Session settings" --window-icon=system-run --image=system-run \
