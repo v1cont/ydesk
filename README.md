@@ -5,6 +5,7 @@ External software needed by Ydesk:
 - *Bash* and *YAD* - almost all scripts needs this
 - *Pyhton3* and *pygobject* - needed for menu generator and notification daemon
 - *curl* - needed for mail and weather panel applets
+- *libsecret* and *secret-tool* - used as a credential storage for mail applet
 - *stalonetray* - used in system tra panel applet
 - *xxkb* - used as keyboard indicator and switcher
 - *conky* - used in sysinfo applet
