@@ -70,8 +70,8 @@ DestroyModuleConfig FvwmIconMan: *
 *FvwmIconMan: TipsColorset 6
 
 *FvwmIconMan: Action Mouse 1 N sendcommand "RaiseFocus"
-*FvwmIconMan: Action Mouse 2 N sendcommand "Iconify"
-*FvwmIconMan: Action Mouse 3 N sendcommand "Popup WindowOptionsMenu"
+*FvwmIconMan: Action Mouse 2 N sendcommand "Popup WindowOptionsMenu"
+*FvwmIconMan: Action Mouse 3 N sendcommand "Iconify"
 
 ### Panel
 DestroyModuleConfig FvwmPanel: *
