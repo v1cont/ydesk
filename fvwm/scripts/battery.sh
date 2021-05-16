@@ -1,8 +1,6 @@
 #! /bin/bash
 # Battery applet engine
 
-set -x
-
 [[ -d /sys/class/power_supply ]] || exit 1
 
 eval BAT=$(gsettings get ydesk.applets bat_dev)
