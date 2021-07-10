@@ -8,5 +8,5 @@ Icon=image
 Terminal=false
 Type=Application
 NoDisplay=true
-MimeType=image/png;image/gif;image/jpeg;image/tiff
+MimeType=image/png;image/gif;image/jpeg;image/tiff;image/webp
 
