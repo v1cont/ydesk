@@ -26,8 +26,8 @@ DestroyFunc MaximizeNoTitle
 AddToFunc MaximizeNoTitle
 + I WindowStyle !Title
 + I UpdateStyles
-+ I Maximize screen c 100 100
-+ I Move screen c 50-50w 50-50w
++ I Maximize c 100 100
++ I Move c 50-50w 50-50w
 
 DestroyFunc RestoreWithTitle
 AddToFunc RestoreWithTitle
