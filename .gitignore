@@ -28,6 +28,7 @@ stamp-h1
 *.directory
 *.gschema.valid
 fvwm/ycpu
+fvwm/config/main.fvwm
 fvwm/scripts/clipman.sh
 fvwm/scripts/mail.sh
 fvwm/scripts/media.sh
