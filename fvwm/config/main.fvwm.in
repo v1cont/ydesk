@@ -1,5 +1,5 @@
 ImagePath +:$[FVWM_CACHEDIR]/icons:$[FVWM_DATADIR]/images:$[XDG_DATA_HOME]/ydesk/images:/usr/share/pixmaps
-LocalePath ;ydesk:+
+LocalePath @prefix@/share/locale;ydesk:+
 
 PipeRead $[FVWM_LIBDIR]/infostore.sh
 

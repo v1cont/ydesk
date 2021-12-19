@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([ydesk],[0.91],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
+AC_INIT([ydesk],[0.92],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
 AC_CONFIG_AUX_DIR([build])
 
 AM_INIT_AUTOMAKE(1.11 foreign subdir-objects dist-xz no-dist-gzip)
@@ -78,6 +78,7 @@ utils/ywifi.sh:utils/ywifi.in
 AC_CONFIG_FILES([
 Makefile
 fvwm/Makefile
+fvwm/config/main.fvwm
 fvwm/scripts/clipman.sh
 fvwm/scripts/mail.sh
 fvwm/scripts/media.sh
