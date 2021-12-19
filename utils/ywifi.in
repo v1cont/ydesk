@@ -8,3 +8,6 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
+wpa_cli -i wlan0 status | tr = '\n' |\
+     yad --text=$"Current connection" \
+         --list --column=$"Param" --column=$"Value"
