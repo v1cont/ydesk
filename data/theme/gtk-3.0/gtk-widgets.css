@@ -75,6 +75,11 @@
     font: initial; 
 }
 
+printdialog .vertical {
+    color: @fg_color;
+    background-color: @bg_color;
+}
+
 .view,
 iconview,
 .view text,
