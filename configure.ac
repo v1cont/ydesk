@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([ydesk],[0.92],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
+AC_INIT([ydesk],[0.93],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
 AC_CONFIG_AUX_DIR([build])
 
 AM_INIT_AUTOMAKE(1.11 foreign subdir-objects dist-xz no-dist-gzip)
