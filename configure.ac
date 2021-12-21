@@ -29,6 +29,9 @@ dnl ---------------------------------------------------
 dnl Utilities
 dnl ---------------------------------------------------
 
+AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources], [/bin/false])
+AC_SUBST(GLIB_COMPILE_RESOURCES)
+
 AC_PATH_PROG([BASH], [bash])
 AC_PATH_PROG([YAD], [yad])
 

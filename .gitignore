@@ -27,6 +27,7 @@ stamp-h1
 *.desktop
 *.directory
 *.gschema.valid
+*.gresource
 fvwm/ycpu
 fvwm/config/main.fvwm
 fvwm/scripts/clipman.sh

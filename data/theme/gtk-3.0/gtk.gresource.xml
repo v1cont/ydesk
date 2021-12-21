@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gresources>
+	<gresource prefix='/ixdesk/gtk/theme/Y'>
+		<file>gtk-main.css</file>
+		<file>gtk-colors.css</file>
+		<file>gtk-widgets.css</file>
+		<file>gtk-apps.css</file>
+	</gresource>
+</gresources>
