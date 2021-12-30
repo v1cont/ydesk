@@ -79,7 +79,7 @@ Key H       A     CM    Menu ClipboardMenu Root c c
 Key D       A     CM    Exec exec $[FVWM_LIBDIR]/clipman.sh trans
 Key L       A     CM    Exec exec $[infostore.lock]
 
-Key Delete  A     CM    Menu ExitMenu Root c c
+Key Delete  A     CM    Exec exec ylogout
 Key Escape  A     CM    Exec exec xkill
 
 Key F2      A     M     Exec exec xdotool search --classname YRun windowfocus
