@@ -73,7 +73,7 @@ Key XF86AudioMute          A   A   Exec exec $[FVWM_LIBDIR]/volume.sh mute
  
 Key Print                  A   A   Exec exec $[FVWM_LIBDIR]/shot.sh root
 
-Key Super_L A     A     Menu MainMenu Root c c
+Key Super_L A     A     Menu Applications Root c c
 Key H       A     CM    Menu ClipboardMenu Root c c
 
 Key D       A     CM    Exec exec $[FVWM_LIBDIR]/clipman.sh trans
