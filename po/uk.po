@@ -1,13 +1,13 @@
 # Ukrainian translation for Ydesk
-# Copyright (C) 2010-2021 Victor Ananjevsky
+# Copyright (C) 2010-2022 Victor Ananjevsky
 # This file is distributed under the same license as the Ydesk package.
-# Victor Ananjevsky <victor@sanana.kiev.ua>, 2010-2021
+# Victor Ananjevsky <victor@sanana.kiev.ua>, 2010-2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-13 10:27+0300\n"
+"POT-Creation-Date: 2022-03-28 08:04+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -83,11 +83,11 @@ msgstr "Буфер обміну!yad-paste:bash -c copy_file"
 #: ../fvwm/scripts/weather.sh.in:81
 #, sh-format
 msgid ""
-"Weather in <b>$city</b>\\n\\n$temp (<i>feels like</i> $fl_temp), $state\\n"
-"\\nWind: $wspeed m/s ($wdir $warrow)"
+"Weather in <b>$city</b>\\n\\n$temp (<i>feels like</i> $fl_temp), "
+"$state\\n\\nWind: $wspeed m/s ($wdir $warrow)"
 msgstr ""
-"Погода у <b>$city</b>\\n\\n$temp (<i>відчувається як</i> $fl_temp), $state\\n"
-"\\nВітер: $wspeed м/с ($wdir $warrow)"
+"Погода у <b>$city</b>\\n\\n$temp (<i>відчувається як</i> $fl_temp), "
+"$state\\n\\nВітер: $wspeed м/с ($wdir $warrow)"
 
 #: ../fvwm/scripts/weather.sh.in:83
 msgid "Weather"
@@ -150,8 +150,8 @@ msgid ""
 "<span size='x-large' weight='bold'>Ydesktop settings manager</span>\\nSelect "
 "applet for configure corresponding settings\\n\\n"
 msgstr ""
-"<span size='x-large' weight='bold'>Менеджер налаштувань Ydesk</span>"
-"\\nОберіть відповідний аплет для запуску діалога налаштувань\\n\\n"
+"<span size='x-large' weight='bold'>Менеджер налаштувань Ydesk</"
+"span>\\nОберіть відповідний аплет для запуску діалога налаштувань\\n\\n"
 
 #: ../settings/ysettings.sh:21
 msgid "Ydesktop settings"
@@ -166,8 +166,8 @@ msgid "Quicklaunch item editor"
 msgstr "Редактор елементу швидкого доступу"
 
 #: ../settings/desktop.sh.in:29
-msgid "Icon:"
-msgstr "Іконка:"
+msgid "Icon:ICON"
+msgstr "Іконка:ICON"
 
 #: ../settings/desktop.sh.in:30 ../settings/session.sh.in:30
 msgid "Name:"
@@ -252,17 +252,17 @@ msgstr "Команда блокування екрану:"
 msgid "Add/remove quicklaunch items"
 msgstr "Додавання/видалення елементів швидкого доступу"
 
-#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:61
-#: ../settings/session.sh.in:68 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:59
+#: ../settings/session.sh.in:66 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
 #: ../utils/yfind.sh:60 ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Ім'я"
 
-#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:61
+#: ../settings/desktop.sh.in:74 ../settings/session.sh.in:59
 msgid "Description:TIP"
 msgstr "Опис:TIP"
 
-#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:61
+#: ../settings/desktop.sh.in:75 ../settings/session.sh.in:59
 msgid "Command"
 msgstr "Команда"
 
@@ -279,7 +279,7 @@ msgstr ""
 "\\n<b>Редагування налаштувань робочого столу Ydesk</b>\\n<i>Зміни будуть "
 "залучені при наступному старті</i>\\n\\n"
 
-#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:74
+#: ../settings/desktop.sh.in:81 ../settings/session.sh.in:72
 msgid "Common"
 msgstr "Загальні"
 
@@ -496,43 +496,44 @@ msgstr "Автостарт"
 msgid "Autostart item editor"
 msgstr "Редактор елементу автостарту"
 
-#: ../settings/session.sh.in:42
+#. first tab
+#: ../settings/session.sh.in:40
 msgid "<b><i>Base Configuration</i></b>:LBL"
 msgstr "<b><i>Базова конфігурація</i></b>:LBL"
 
-#: ../settings/session.sh.in:43
+#: ../settings/session.sh.in:41
 msgid "Update XDG users directories at startup:CHK"
 msgstr "Створювати/відновляти каталоги XDG при старті:CHK"
 
-#: ../settings/session.sh.in:44
+#: ../settings/session.sh.in:42
 msgid "Run URXVT server at startup:CHK"
 msgstr "Запускати сервер URXVT при старті:CHK"
 
-#: ../settings/session.sh.in:45
+#: ../settings/session.sh.in:43
 msgid "Run EMACS server at startup:CHK"
 msgstr "Запускати сервер EMACS при старті:CHK"
 
-#: ../settings/session.sh.in:46
+#: ../settings/session.sh.in:44
 msgid "<b><i>Background settings</i></b>:LBL"
 msgstr "<b><i>Налаштування фону</i></b>:LBL"
 
-#: ../settings/session.sh.in:47
+#: ../settings/session.sh.in:45
 msgid "Background::CLR"
 msgstr "Колір фону::CLR"
 
-#: ../settings/session.sh.in:48
+#: ../settings/session.sh.in:46
 msgid "Wallpaper::MFL"
 msgstr "Шпалери::MFL"
 
-#: ../settings/session.sh.in:49
+#: ../settings/session.sh.in:47
 msgid "<b><i>Other settings</i></b>:LBL"
 msgstr "<b><i>Інші налашатування</i></b>:LBL"
 
-#: ../settings/session.sh.in:50
+#: ../settings/session.sh.in:48
 msgid "Enable compositing:CHK"
 msgstr "Дозволити композітінг:CHK"
 
-#: ../settings/session.sh.in:60
+#: ../settings/session.sh.in:58
 msgid ""
 "Add/remove autostart items\\n(<i>only users autostart directory proceeded</"
 "i>)"
@@ -540,21 +541,21 @@ msgstr ""
 "Команди що стартують автоматично\\n(<i>Оброблюються тільки задані "
 "користувачєм</i>)"
 
-#: ../settings/session.sh.in:67
+#: ../settings/session.sh.in:65
 msgid "Add/remove user environment variables"
 msgstr "Додавання/видалення змінних середовища"
 
-#: ../settings/session.sh.in:68 ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
-#: ../utils/ysysinfo.sh:71
+#: ../settings/session.sh.in:66 ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
+#: ../utils/ysysinfo.sh:71 ../utils/ywifi.sh:13
 msgid "Value"
 msgstr "Значення"
 
 #. main dialog
-#: ../settings/session.sh.in:71 ../data/settings/session.desktop.in.h:1
+#: ../settings/session.sh.in:69 ../data/settings/session.desktop.in.h:1
 msgid "Session settings"
 msgstr "Налаштування сесії"
 
-#: ../settings/session.sh.in:73
+#: ../settings/session.sh.in:71
 msgid ""
 "\\n<b>Edit settings of Ydesk session</b>\\n<i>Changes will be applied on the "
 "next startup</i>\\n\\n"
@@ -562,11 +563,11 @@ msgstr ""
 "\\n<b>Редагування налаштувань сесії Ydesk</b>\\n<i>Зміни будуть застосовані "
 "при наступному старті</i>\\n\\n"
 
-#: ../settings/session.sh.in:74
+#: ../settings/session.sh.in:72
 msgid "Autostart"
 msgstr "Автостарт"
 
-#: ../settings/session.sh.in:74
+#: ../settings/session.sh.in:72
 msgid "Environment"
 msgstr "Середовище"
 
@@ -1008,11 +1009,11 @@ msgstr "Данні"
 
 #: ../utils/yimage.sh:32
 msgid ""
-"\\t<b>File</b>: <i>%f</i>\\n\\t<b>Size</b>: %b\\n\\t<b>Geometry</b>: %G\\n"
-"\\t<b>Type</b>: %m\\n\\t%c"
+"\\t<b>File</b>: <i>%f</i>\\n\\t<b>Size</b>: %b\\n\\t<b>Geometry</b>: "
+"%G\\n\\t<b>Type</b>: %m\\n\\t%c"
 msgstr ""
-"\\t<b>Файл</b>: <i>%f</i>\\n\\t<b>Розмір</b>: %b\\n\\t<b>Геометрія</b>: %G\\n"
-"\\t<b>Тип</b>: %m\\n\\t%c"
+"\\t<b>Файл</b>: <i>%f</i>\\n\\t<b>Розмір</b>: %b\\n\\t<b>Геометрія</b>: "
+"%G\\n\\t<b>Тип</b>: %m\\n\\t%c"
 
 #: ../utils/yimage.sh:36 ../data/utils/yimage.desktop.in.h:1
 msgid "Image viewer"
@@ -1055,8 +1056,8 @@ msgid "$mp\\n${vendor:-Unknown} $model ($dev)"
 msgstr "$mp\\n${vendor:-Невідомо} $model ($dev)"
 
 #: ../utils/ymedia.sh:34
-msgid "<b>Error</b>\\nUnable to unplug $2"
-msgstr "<b>Помилка</b>\\nНеможливо відключити $2"
+msgid "<b>Error</b>\\n\\nUnable to unplug $2\\n$msg"
+msgstr "<b>Помилка</b>\\n\\nНеможливо відключити $2\\n$msg"
 
 #: ../utils/ymedia.sh:42
 msgid "Removable media"
@@ -1267,7 +1268,15 @@ msgstr "Завантаження $url"
 #: ../utils/ywget.sh:24
 #, sh-format
 msgid "URI '$url' is not supported"
-msgstr "Адрес '$url' не подтримується"
+msgstr "Адреса '$url' не подтримується"
+
+#: ../utils/ywifi.sh:12
+msgid "Current connection"
+msgstr "Діюче з'єднання"
+
+#: ../utils/ywifi.sh:13
+msgid "Param"
+msgstr "Параметр"
 
 #: ../data/menu/desktop-directories/AudioVideo.directory.in.h:1
 msgid "Sound & Video"
