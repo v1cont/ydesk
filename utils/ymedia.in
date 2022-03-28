@@ -28,10 +28,10 @@ function update_list {
 export -f update_list
 
 function unplug_dev {
-    eject "$1" &> /dev/null
+    msg=$(eject "$1" 2>&1)
     if [[ $? -ne 0 ]]; then
         yad --image=dialog-error --title=$"Error" --button=yad-close \
-            --text=$"<b>Error</b>\nUnable to unplug $2"
+            --text=$"<b>Error</b>\n\nUnable to unplug $2\n$msg"
     fi
     update_list
 }
