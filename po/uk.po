@@ -1537,7 +1537,7 @@ msgstr "Налаштування"
 
 #: ../fvwm/config/applets/menu.fvwm.h:2
 msgid "Actions"
-msgstr "Дії"
+msgstr "Функції"
 
 #: ../fvwm/config/applets/shot.fvwm.h:1
 msgid "Make a screenshot"
