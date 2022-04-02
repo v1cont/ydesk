@@ -37,6 +37,6 @@ function wifi_upd {
 }
 
 case $1 in
-    ctrl|control) ywifi ;;
+    ctrl|control) ywifi $iface ;;
     *) wifi_upd ;;
 esac
