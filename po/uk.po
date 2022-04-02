@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 08:04+0300\n"
+"POT-Creation-Date: 2022-04-02 20:16+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -546,7 +546,7 @@ msgid "Add/remove user environment variables"
 msgstr "Додавання/видалення змінних середовища"
 
 #: ../settings/session.sh.in:66 ../utils/ysysinfo.sh:25 ../utils/ysysinfo.sh:30
-#: ../utils/ysysinfo.sh:71 ../utils/ywifi.sh:13
+#: ../utils/ysysinfo.sh:71
 msgid "Value"
 msgstr "Значення"
 
@@ -1270,13 +1270,76 @@ msgstr "Завантаження $url"
 msgid "URI '$url' is not supported"
 msgstr "Адреса '$url' не подтримується"
 
-#: ../utils/ywifi.sh:12
-msgid "Current connection"
-msgstr "Діюче з'єднання"
+#: ../utils/ywifi.sh:31
+#, sh-format
+msgid "Status:\\t\\t\\t$wpa_state\\n"
+msgstr "Статус:\\t\\t\\t$wpa_state\\n"
 
-#: ../utils/ywifi.sh:13
-msgid "Param"
-msgstr "Параметр"
+#: ../utils/ywifi.sh:34
+#, sh-format
+msgid "IP address:\\t\\t$ip_address\\n"
+msgstr "IP адреса:\\t\\t$ip_address\\n"
+
+#: ../utils/ywifi.sh:35
+#, sh-format
+msgid "Authentication:\\t\\t$key_mgmt\\n"
+msgstr "Аутентифікація:\\t\\t$key_mgmt\\n"
+
+#: ../utils/ywifi.sh:36
+#, sh-format
+msgid "Encryption:\\t\\t$pairwise_cipher"
+msgstr "Шифрування:\\t\\t$pairwise_cipher"
+
+#: ../utils/ywifi.sh:54
+msgid "WiFi Password"
+msgstr "Пароль WiFi"
+
+#: ../utils/ywifi.sh:76
+msgid "IP info"
+msgstr "Інформація про IP"
+
+#: ../utils/ywifi.sh:77
+#, sh-format
+msgid "IP address: $addr\\nCountry: $country\\nCity: $city\\n"
+msgstr "IP адреса: $addr\\nКраїна: $country\\nМісто: $city"
+
+#. second tab (available networks)
+#: ../utils/ywifi.sh:87
+msgid "Network"
+msgstr "Мережа"
+
+#: ../utils/ywifi.sh:87
+msgid "Level:num"
+msgstr "Рівень:num"
+
+#: ../utils/ywifi.sh:88
+msgid "Frequiency:num"
+msgstr "Частота:num"
+
+#: ../utils/ywifi.sh:88
+msgid "Flags"
+msgstr "Позначки"
+
+#. main window
+#: ../utils/ywifi.sh:91
+msgid "WiFi manager"
+msgstr "Менеджер WiFi"
+
+#: ../utils/ywifi.sh:92
+msgid "Ydesk WiFi connections manager"
+msgstr "Менеджер WiFi з'єднань для оболонки Ydesk"
+
+#: ../utils/ywifi.sh:93
+msgid "IP info!gtk-dialog-info:show_geoip"
+msgstr "Дані про IP!gtk-dialog-info:show_geoip"
+
+#: ../utils/ywifi.sh:94
+msgid "Current"
+msgstr "Поточне"
+
+#: ../utils/ywifi.sh:94
+msgid "Networks"
+msgstr "Мережі"
 
 #: ../data/menu/desktop-directories/AudioVideo.directory.in.h:1
 msgid "Sound & Video"
@@ -1554,3 +1617,9 @@ msgstr "Керування змінними носіями"
 #: ../fvwm/config/applets/notes.fvwm.h:1
 msgid "Sticky notes"
 msgstr "Нотатки"
+
+#~ msgid "Current connection"
+#~ msgstr "Діюче з'єднання"
+
+#~ msgid "Param"
+#~ msgstr "Параметр"

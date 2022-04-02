@@ -1,13 +1,105 @@
 #! @BASH@
 # -*- mode: sh -*-
 #
-# Manage wireless networks
-# Author: Victor Ananjevsky <ananasik@gmail.com>, 2015-2021
+# Manage wireless networks (simple wpa_supplicant frontend)
+# Author: Victor Ananjevsky <victor@sanana.kiev.ua>, 2022
 #
 
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-wpa_cli -i wlan0 status | tr = '\n' |\
-     yad --text=$"Current connection" \
-         --list --column=$"Param" --column=$"Value"
+KEY=$RANDOM
+
+SCAN_PERIOD=5
+UPD_PERIOD=300
+
+export iface=${1:-wlan0}
+
+export tdir=$(mktemp -d --tmpdir ywifi.XXXXXXX)
+
+mkfifo $tdir/first
+mkfifo $tdir/second
+
+trap "rm -rf $tdir" EXIT
+
+exec 3<> $tdir/first
+exec 4<> $tdir/second
+
+function upd_current {
+    eval $(wpa_cli -i $iface status)
+    echo -e '\f\n' >> $tdir/first
+    echo -e $"Status:\t\t\t$wpa_state\n" >> $tdir/first
+    echo -e "SSID:\t\t\t<b>$ssid</b>\n" >> $tdir/first
+    echo -e "BSSID:\t\t\t$bssid\n" >> $tdir/first
+    echo -e $"IP address:\t\t$ip_address\n" >> $tdir/first
+    echo -e $"Authentication:\t\t$key_mgmt\n" >> $tdir/first
+    echo -e $"Encryption:\t\t$pairwise_cipher" >> $tdir/first
+}
+export -f upd_current
+
+function upd_networks {
+    wpa_cli -i $iface scan > /dev/null
+    sleep $SCAN_PERIOD
+    echo -e '\f'  >> $tdir/second
+    IFS='\t' wpa_cli -i $iface scan_result | \
+        tail -n +2 | while read bssid freq level flags ssid; do
+        echo -e "$ssid\n$bssid\n$level\n$freq\n$flags"
+    done >> $tdir/second
+}
+export -f upd_networks
+
+function wifi_connect {
+    nn=$(wpa_cli -i $iface list_networks | grep "$1" | cut -f1)
+    if [[ -z $nn ]]; then
+        psk=$(yad --title=$"WiFi Password" --entry --text="Enter password for network <b>$1</b>:")
+        nn=$(wpc_cli -i $iface add_network)
+        wpa_cli -i $iface set_network $nn ssid "$1"
+        if [[ -n $psk ]]; then
+            wpa_cli -i $iface set_network $nn psk "$psk"
+        else
+            wpa_cli -i $iface set_network $nn key_mgmt NONE
+        fi
+        wpa_cli -i $iface enable_network $nn > /dev/null
+        wpa_cli -i $iface save_config > /dev/null
+    fi
+    wpa_cli -i $iface select_network $nn > /dev/null
+    sleep $SCAN_PERIOD
+    upd_current
+}
+export -f wifi_connect
+
+function show_geoip {
+    curl -s -k -H "Accept-Language:${LANG:0:2}" https://freegeoip.app/json/ > $tdir/geoip.json
+    addr="$(jq -r .ip $tdir/geoip.json)"
+    country="$(jq -r .country_name $tdir/geoip.json)"
+    city="$(jq -r .city $tdir/geoip.json)"
+    yad --title=$"IP info" --image="gtk-dialog-info" --button="yad-close" \
+        --text=$"IP address: $addr\nCountry: $country\nCity: $city\n"
+}
+export -f show_geoip
+
+# first tab (current connection)
+yad --plug=$KEY --tabnum=1 --text-info --formatted --margins=10 <&3 &
+
+# second tab (available networks)
+yad --plug=$KEY --tabnum=2 --use-interp \
+    --list --dclick-action="wifi_connect" \
+    --column=$"Network" --column="BSSID" --column=$"Level:num" \
+    --column=$"Frequiency:num" --column=$"Flags" <&4 &
+
+# main window
+yad --notebook --width=600 --height=450 --title=$"WiFi manager" \
+    --image=network-wireless --text=$"Ydesk WiFi connections manager" \
+    --button=$"IP info!gtk-dialog-info:show_geoip" --button="yad-close:1" \
+    --key=$KEY --use-interp --tab=$"Current" --tab=$"Networks" --active-tab=${1:-1} &
+YPID=$!
+
+# main loop
+while : ; do
+    upd_current &
+    upd_networks &
+    for i in $(seq $UPD_PERIOD); do
+        test -d /proc/$YPID || exit 0
+        sleep 1
+    done
+done
