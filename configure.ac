@@ -150,7 +150,7 @@ data/icons/48x48/categories/Makefile
 data/icons/48x48/devices/Makefile
 data/icons/48x48/status/Makefile
 data/fdo/Makefile
-data/fdo/notification.service
+data/fdo/ydesk.notification.service
 data/menu/Makefile
 data/menu/desktop-directories/Makefile
 data/misc/Makefile

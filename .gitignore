@@ -57,5 +57,5 @@ utils/yterm
 utils/ywget
 utils/ywifi
 data/theme/icons/index.theme
-data/fdo/notification.service
+data/fdo/*.service
 *.tar.*
