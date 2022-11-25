@@ -1,0 +1,28 @@
+/*
+# name: Y
+# author: Victor Ananjevsky <victor@sanana.kiev.ua>
+# description: key bindings for Y gtk theme
+*/
+
+@binding-set alt-move
+{
+  bind "<Alt>Left" { "move-cursor" (words, -1, 0) };
+  bind "<Alt>Right" { "move-cursor" (words, 1, 0) };
+}                                                                                                       
+
+@binding-set notebook-tabs
+{
+  bind "<Ctrl>Tab" { "change-current-page" (1) };
+  bind "<Ctrl><Shft>Tab" { "change-current-page" (-1) };
+}
+
+entry,
+textview
+{
+  -gtk-key-bindings: alt-move;
+}
+
+notebook
+{
+  -gtk-key-bindings: notebook-tabs;
+}

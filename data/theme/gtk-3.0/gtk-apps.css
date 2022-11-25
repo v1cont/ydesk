@@ -9,3 +9,11 @@
     color: @selected_fg_color;
     background-color: @selected_bg_color;
 }
+
+.ynotify #yad-dialog-window
+{
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom,
+                                      shade (@bg_color, 0.8),
+                                      shade (@bg_color, 0.6));
+}
