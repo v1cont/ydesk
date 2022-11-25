@@ -10,7 +10,7 @@ import dbus
 import os
 import sys
 
-os.environ["YAD_OPTIONS"] = "--sticky --fixed --on-top --skip-taskbar --undecorated --no-focus --no-buttons --borders=15 --width=250 --name=Popup --image-on-top --posx=-15 --posy=-15"
+os.environ["YAD_OPTIONS"] = "--name=ynotify --sticky --on-top --skip-taskbar --undecorated --no-focus --no-buttons --borders=15 --width=350 --posx=-15 --posy=-15"
 
 class Notifications(dbus.service.Object):
     def __init__(self, bus_name: str, object_path: str):
@@ -24,7 +24,7 @@ class Notifications(dbus.service.Object):
     def Notify(self, app_name: str, replaces_id: int, app_icon: str, summary: str, body: str, actions: List[str], hints: Dict[str, Any], expire_timeout: int) -> int:
         txt = '<span size="large" weight="bold">%s</span>\n%s' % (summary, body)
         timeout = expire_timeout / 100
-        if timeout == 0: timeout = 300
+        if timeout == 0: timeout = 60
         cmd = "yad --text='%s' --image='%s' --timeout=%d" % (txt, app_icon, timeout)
         GLib.spawn_command_line_async(cmd)
         return replaces_id
