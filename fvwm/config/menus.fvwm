@@ -58,7 +58,7 @@ AddToMenu ActionMenu
 + "$[gt.Recent]%recent.png%"	     Popup RecentMenu
 + "$[gt.Media]%media.png%"	         Popup MediaMenu
 + ""                                 Nop
-+ "$[gt.Process viewer]%sysmon.png%" Exec exec $[FVWM_LIBDIR]/ps.sh
++ "$[gt.Process viewer]%sysmon.png%" Exec exec yps
 + ""                                 Nop
 + "$[gt.Screenshot]%shot.png%"       Popup ShotMenu
 + ""					             Nop
