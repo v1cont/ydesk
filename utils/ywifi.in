@@ -69,12 +69,13 @@ function wifi_connect {
 export -f wifi_connect
 
 function show_geoip {
-    curl -s -k -H "Accept-Language:${LANG:0:2}" https://freegeoip.app/json/ > $tdir/geoip.json
-    addr="$(jq -r .ip $tdir/geoip.json)"
-    country="$(jq -r .country_name $tdir/geoip.json)"
+    curl -s -k "http://ip-api.com/json/?lang=${LANG:0:2}" > $tdir/geoip.json
+    addr="$(jq -r .query $tdir/geoip.json)"
+    country="$(jq -r .country $tdir/geoip.json)"
     city="$(jq -r .city $tdir/geoip.json)"
+    isp="$(jq -r .isp $tdir/geoip.json)"
     yad --title=$"IP info" --image="gtk-dialog-info" --button="yad-close" \
-        --text=$"IP address: $addr\nCountry: $country\nCity: $city\n"
+        --text=$"IP address: $addr\n\nCountry: $country\n\nCity: $city\n\nProvider: $isp"
 }
 export -f show_geoip
 
