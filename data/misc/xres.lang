@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="xres" _name="X11 resource file" version="2.0" _section="Other">
+  <metadata>
+    <property name="globs">Xresources;Xdefaults;.Xresources;.Xdesfaults</property>
+  </metadata>
+
+  <styles>
+    <style id="comment" name="Comment" map-to="def:comment"/>
+    <style id="string" name="String" map-to="def:string"/>
+    <style id="preprocessor" name="Preprocessor" map-to="def:preprocessor"/>
+    <style id="included-file" name="Included File" map-to="def:string"/>
+    <style id="keyword" name="Keyword" map-to="def:keyword"/>
+    <style id="constant" name="Constant" map-to="def:constant"/>
+    <style id="type" name="Data Type" map-to="def:type"/>
+  </styles>
+
+  <definitions>
+    <context id="xres">
+      <include>
+      
+        <context id="comment" style-ref="comment">
+          <start>;</start>
+          <end>$</end>
+        </context>
+
+        <context id="string" end-at-line-end="true" style-ref="string">
+          <start>"</start>
+          <end>"</end>
+        </context>
+
+        <context id="constant" style-ref="constant">
+          <keyword>(true)?</keyword>
+          <keyword>(false)?</keyword>
+        </context>
+
+        <context id="type" style-ref="type">
+            <match>:</match>
+        </context>
+
+        <context id="keywork" style-ref="keyword">
+          <match>^[^.]+(\.)([^:]*)(:)</match>
+          <include>
+            <context id="attr" sub-pattern="1" style-ref="constant"/>
+            <context id="attr" sub-pattern="2" style-ref="type"/>
+            <context id="attr" sub-pattern="3" style-ref="constant"/>
+          </include>
+        </context>
+        
+        <context id="preprocessor" style-ref="preprocessor">
+          <prefix>^#</prefix>
+          <keyword>define</keyword>
+          <keyword>undef</keyword>
+          <keyword>if(n?def)?</keyword>
+          <keyword>else</keyword>
+          <keyword>elif</keyword>
+          <keyword>endif</keyword>
+        </context>
+
+        <context id="include" style-ref="preprocessor">
+          <match>^#include (".*"|&amp;lt;.*&amp;gt;)</match>
+          <include>
+            <context id="included-file"
+                     sub-pattern="1"
+                     style-ref="included-file"/>
+          </include>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>
