@@ -41,7 +41,7 @@ DestroyModuleConfig FvwmPager: *
 DestroyModuleConfig FvwmIconMan: *
 
 *FvwmIconMan: DrawIcons always
-*FvwmIconMan: ManagerGeometry 0x1
+*FvwmIconMan: ManagerGeometry 1x1
 *FvwmIconMan: ButtonGeometry 150x23
 *FvwmIconMan: Font $[infostore.fn]
 *FvwmIconMan: Format "%i"
