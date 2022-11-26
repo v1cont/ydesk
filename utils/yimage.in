@@ -8,7 +8,12 @@ if [[ -n $(command -v geeqie) ]]; then
     exec geeqie -t $@
 fi
 
-if [[ -z "$1" ]]; then
+if [[ $1 == "-r" ]]; then
+    # register as default and exit
+    mimes="image/jpeg image/png image/tiff image/gif image/webp image/svg image/svg+xml image/bmp"
+    xdg-mime default yimage.desktop $mimes
+    exit 0
+elif [[ -z "$1" ]]; then
     filename=$(yad --file --title=$"Select image" --width=600 --height=400 --image-filter=$"Images")
 else
     filename="$1"
