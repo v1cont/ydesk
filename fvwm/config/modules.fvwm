@@ -42,6 +42,7 @@ DestroyModuleConfig FvwmIconMan: *
 
 *FvwmIconMan: DrawIcons always
 *FvwmIconMan: ManagerGeometry 1x1
+*FvwmIconMan: MaxButtonWidth 145
 *FvwmIconMan: ButtonGeometry 150x23
 *FvwmIconMan: Font $[infostore.fn]
 *FvwmIconMan: Format "%i"
