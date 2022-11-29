@@ -1,46 +1,46 @@
-#! /bin/bash
+#! @BASH@
+# -*- mode: sh -*-
+#
+# Image viewer
+# Author: Victor Ananjevsky <victor@sanana.kiev.ua>, 2016-2022
+#
 
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-# try geeqie first
-if [[ -n $(command -v geeqie) ]]; then
-    exec geeqie -t $@
-fi
+fn=$(mktemp --tmpdir yimage-XXXXXXXX)
+
+trap "rm -f $fn" EXIT
 
 if [[ $1 == "-r" ]]; then
     # register as default and exit
     mimes="image/jpeg image/png image/tiff image/gif image/webp image/svg image/svg+xml image/bmp"
     xdg-mime default yimage.desktop $mimes
     exit 0
-elif [[ -z "$1" ]]; then
-    filename=$(yad --file --title=$"Select image" --width=600 --height=400 --image-filter=$"Images")
-else
-    filename="$1"
-fi
-
-if [[ ! -e "$filename" ]]; then
-    echo $"No such file - $filename" > /dev/stderr
-    exit 1
 fi
 
 function show_info {
-    fn=$1
-    exiv2 -q "$fn" | sed "s/:/\n/" | sed -r "s/^\s*(.*)\s*$/\1/" |\
-        yad --title=$"Exif data" --window-icon=gtk-index --image="image" --button="yad-close:0" \
-            --width=450 --height=500 --text=$"Show EXIF data for file:\n<b>$fn</b>" \
-            --list --column=$"Field" --column=$"Data"
-    unset fn
+    filename=$(< $fn)
+
+    FMT=$"\t<b>File</b>: <i>%f</i>\n\t<b>Size</b>: %b\n\t<b>Geometry</b>: %G\n\t<b>Type</b>: %m\n\t%c"
+    descr=$(gm identify -format "$FMT" "$filename" 2> /dev/null)
+
+    exiv2 -q "$filename" 2> /dev/null | sed "s/:/\n/" | sed -r "s/^\s*(.*)\s*$/\1/" |\
+        yad --title=$"Exif data" --window-icon=gtk-index --image="info" --button="yad-close:0" \
+            --width=450 --height=500 --text="$descr" --list --column=$"Field" --column=$"Data"
+    unset filename
 }
 export -f show_info
 
-FMT=$"\t<b>File</b>: <i>%f</i>\n\t<b>Size</b>: %b\n\t<b>Geometry</b>: %G\n\t<b>Type</b>: %m\n\t%c"
+function set_file {
+    echo $1 > $fn
+}
+export -f set_file
 
-descr=$(gm identify -format "$FMT" "$filename" 2> /dev/null)
-
-yad --picture --title=$"Image viewer" --text="$descr" \
-    --button=$"EXIF Info!info:bash -c 'show_info \"$filename\"'" \
-    --button="yad-close:0" --width=800 --height=600 --filename="$filename" --size=fit
+ELBL=$"EXIF info!gtk-index"
+yad --picture --title=$"Image viewer" --window-icon=image-x-generic --text=$"Simple image viewer" \
+    --use-interp --button="$ELBL:show_info" --button="yad-close:0" \
+    --width=800 --height=600 --size=fit --file-op --image-changed="set_file" "$@"
 
 # always return 0, doesn't matter how yad was closed
 exit 0
