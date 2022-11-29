@@ -8,7 +8,7 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-fn=$(mktemp --tmpdir yimage-XXXXXXXX)
+export fn=$(mktemp --tmpdir yimage-XXXXXXXX)
 
 trap "rm -f $fn" EXIT
 
