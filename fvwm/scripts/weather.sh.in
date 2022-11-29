@@ -34,11 +34,7 @@ function wthr_update {
     i="$(jq -r '.weather[0].icon' $wfile)"
 
     isize=$(gsettings get ydesk.panel isize)
-    if [[ $1 == -f ]]; then
-        FvwmCommand "SendToModule FvwmPanel Silent ChangeButton wthr Title '$temp', Icon '$(yad-tools --icon --size=$isize ${icons[$i]})'"
-    else
-        echo "SendToModule FvwmPanel Silent ChangeButton wthr Title '$temp', Icon '$(yad-tools --icon --size=$isize ${icons[$i]})'"
-    fi
+    FvwmCommand "SendToModule FvwmPanel Silent ChangeButton wthr Title '$temp', Icon '$(yad-tools --icon --size=$isize ${icons[$i]})'"
 }
 
 function wthr_show {
@@ -86,7 +82,6 @@ function wthr_show {
 }
 
 case $1 in
-    update|upd) ( wthr_update ) & ;;
-    force) wthr_update -f ;;
+    update|upd) wthr_update ;;
     show) wthr_show ;;
 esac
