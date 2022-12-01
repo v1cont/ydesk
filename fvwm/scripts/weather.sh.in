@@ -10,6 +10,7 @@ declare -A icons=([01d]=weather-clear [01n]=weather-clear-night [02d]=weather-fe
                   [03d]=weather-overcast [03n]=weather-overcast [04d]=weather-severe-alert [04n]=weather-severe-alert
                   [09d]=weather-showers [09n]=weather-showers [10d]=weather-showers-scattered [10n]=weather-showers-scattered
                   [11d]=weather-storm [11n]=weather-storm [13d]=weather-snow [13n]=weather-snow [50d]=weather-fog [50n]=weather-fog)
+export icons
 
 function wthr_forecast {
     xdg-open "https://openweathermap.org/"
@@ -42,7 +43,7 @@ function wthr_show {
 
     printf -v temp "%.f°C" "$(jq -r '.main.temp' $wfile)"
     printf -v fl_temp "%.f°C" "$(jq -r '.main.feels_like' $wfile)"
-    i="$(jq '.weather[0].icon' $wfile)"
+    i="$(jq -r '.weather[0].icon' $wfile)"
     state="$(jq -r '.weather[0].description' $wfile)"
     city="$(jq -r '.name' $wfile)"
     wspeed="$(jq -r '.wind.speed' $wfile)"
