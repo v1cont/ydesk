@@ -1,5 +1,5 @@
 
-bin_SCRIPTS = ysession ynotify yterm yps yrun ylogout yfind yimage ymixer ysysinfo ywifi
+bin_SCRIPTS = ysession ynotify yterm yps yrun ylogout yfind yimage yman ymixer ysysinfo ywifi
 
 miscdir = $(libdir)/ydesk/misc
 misc_SCRIPTS = ydentry ymedia ywget ypass

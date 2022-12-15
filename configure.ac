@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([ydesk],[0.96],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
+AC_INIT([ydesk],[0.98],[victor@sanana.kiev.ua],[ydesk],[http://sanana.kiev.ua/ydesk/])
 AC_CONFIG_AUX_DIR([build])
 
 AM_INIT_AUTOMAKE(1.11 foreign subdir-objects dist-xz no-dist-gzip)
@@ -67,6 +67,7 @@ utils/ydentry.sh:utils/ydentry.in
 utils/yfind.sh:utils/yfind.in
 utils/yimage.sh:utils/yimage.in
 utils/ylogout.sh:utils/ylogout.in
+utils/yman.sh:utils/yman.in
 utils/ymedia.sh:utils/ymedia.in
 utils/ymixer.sh:utils/ymixer.in
 utils/ypass.sh:utils/ypass.in
@@ -116,6 +117,7 @@ utils/ydentry
 utils/yfind
 utils/yimage
 utils/ylogout
+utils/yman
 utils/ymedia
 utils/ymixer
 utils/ynotify
