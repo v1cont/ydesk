@@ -24,6 +24,10 @@ case $1 in
 esac
 
 vol=$(amixer sget $SCTRL | tail -n 1 | sed -r 's/.*\[([0-9]+)\%\].*/\1/')
+if [[ $1 == inc || $1 == dec ]]; then
+    # show on-screen volume meter
+    osd_cat -b percentage -p middle -A center -P $vol -d 1 -c darkgreen
+fi
 if [[ $vol -ge 75 ]]; then
     icon="audio-volume-high"
 elif [[ $vol -ge 35 ]]; then
