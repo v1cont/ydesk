@@ -1,7 +1,7 @@
 
 desktopdir = $(datadir)/applications
 desktop_in_files = yps.desktop.in yfind.desktop.in ysysinfo.desktop.in \
-				   yimage.desktop.in ywifi.desktop.in
+				   yimage.desktop.in yman.desktop.in ywifi.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 xsessiondir = $(datadir)/xsessions

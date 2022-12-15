@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 17:39+0200\n"
+"POT-Creation-Date: 2022-12-15 17:48+0200\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -1077,7 +1077,7 @@ msgstr "Перегляд сторінок допомоги"
 msgid "s%s\\nSection %s\\n%s\\nintro{%s)\\nBold\\n"
 msgstr "s%s\\nРозділ %s\\n%s\\nintro{%s)\\nBold\\n"
 
-#: ../utils/yman.sh:44
+#: ../utils/yman.sh:44 ../data/utils/yman.desktop.in.h:1
 msgid "Man pages browser"
 msgstr "Переглядач сторинок допомоги"
 
@@ -1525,6 +1525,10 @@ msgstr "Пошук файлів"
 #: ../data/utils/yfind.desktop.in.h:2
 msgid "Search for Files or Folders on disk"
 msgstr "Пошук файлів або каталогів на диску"
+
+#: ../data/utils/yman.desktop.in.h:2
+msgid "Browse and view manual pages"
+msgstr "Дослідження та перегляд сторінок допомоги"
 
 #: ../data/utils/ysession.desktop.in.h:1
 msgid "Y desktop"
