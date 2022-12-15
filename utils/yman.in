@@ -39,7 +39,7 @@ export -f on_dclick
 
 function show_browser {
     for s in {1..8}; do
-        printf "s%s\nSection %s\n%s\nintro{%s)\nBold\n" $s $s "${SECTIONS[$s]}" $s
+        printf $"s%s\nSection %s\n%s\nintro{%s)\nBold\n" $s $s "${SECTIONS[$s]}" $s
         man -k -s $s . | sort | awk -v s="$s" '{printf("%s:s%s\n%s\n",NR,s,$1); for (i=4;i<=NF;i++) printf("%s ",$i); printf("\n%s%s\n\n",$1,$2)}'
     done | yad --width=600 --height=850 --button=yad-close:1 --title=$"Man pages browser" --window-icon=help-browser \
                --no-markup --use-interp --dclick-action="on_dclick" \

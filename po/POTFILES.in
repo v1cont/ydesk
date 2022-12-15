@@ -28,6 +28,7 @@ utils/ydentry.sh
 utils/yfind.sh
 utils/yimage.sh
 utils/ylogout.sh
+utils/yman.sh
 utils/ymedia.sh
 utils/ymixer.sh
 utils/ypass.sh

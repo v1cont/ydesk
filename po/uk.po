@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-02 20:16+0300\n"
+"POT-Creation-Date: 2022-12-15 17:39+0200\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -80,7 +80,7 @@ msgstr "Знимок экрану"
 msgid "Clipboard!yad-paste:bash -c copy_file"
 msgstr "Буфер обміну!yad-paste:bash -c copy_file"
 
-#: ../fvwm/scripts/weather.sh.in:81
+#: ../fvwm/scripts/weather.sh.in:78
 #, sh-format
 msgid ""
 "Weather in <b>$city</b>\\n\\n$temp (<i>feels like</i> $fl_temp), "
@@ -89,11 +89,11 @@ msgstr ""
 "Погода у <b>$city</b>\\n\\n$temp (<i>відчувається як</i> $fl_temp), "
 "$state\\n\\nВітер: $wspeed м/с ($wdir $warrow)"
 
-#: ../fvwm/scripts/weather.sh.in:83
+#: ../fvwm/scripts/weather.sh.in:80
 msgid "Weather"
 msgstr "Погода"
 
-#: ../fvwm/scripts/weather.sh.in:85
+#: ../fvwm/scripts/weather.sh.in:82
 msgid "Forecast!web-browser:bash -c wthr_forecast"
 msgstr "Прогноз!web-browser:bash -c wthr_forecast"
 
@@ -254,7 +254,7 @@ msgstr "Додавання/видалення елементів швидког�
 
 #: ../settings/desktop.sh.in:74 ../settings/session.sh.in:59
 #: ../settings/session.sh.in:66 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
-#: ../utils/yfind.sh:60 ../utils/ysysinfo.sh:49
+#: ../utils/yfind.sh:60 ../utils/yman.sh:46 ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Ім'я"
 
@@ -977,37 +977,7 @@ msgstr "Володар"
 msgid "Find files"
 msgstr "Знайти файли"
 
-#: ../utils/yimage.sh:12
-msgid "Select image"
-msgstr "Обрати зображення"
-
-#: ../utils/yimage.sh:12
-msgid "Images"
-msgstr "Зображення"
-
-#: ../utils/yimage.sh:18
-#, sh-format
-msgid "No such file - $filename"
-msgstr "Немає такого файлу - $filename"
-
 #: ../utils/yimage.sh:25
-msgid "Exif data"
-msgstr "Данні Exif"
-
-#: ../utils/yimage.sh:26
-#, sh-format
-msgid "Show EXIF data for file:\\n<b>$fn</b>"
-msgstr "Відображення даних EXIF для файлу:\\n<b>$fn</b>"
-
-#: ../utils/yimage.sh:27
-msgid "Field"
-msgstr "Поле"
-
-#: ../utils/yimage.sh:27
-msgid "Data"
-msgstr "Данні"
-
-#: ../utils/yimage.sh:32
 msgid ""
 "\\t<b>File</b>: <i>%f</i>\\n\\t<b>Size</b>: %b\\n\\t<b>Geometry</b>: "
 "%G\\n\\t<b>Type</b>: %m\\n\\t%c"
@@ -1015,13 +985,29 @@ msgstr ""
 "\\t<b>Файл</b>: <i>%f</i>\\n\\t<b>Розмір</b>: %b\\n\\t<b>Геометрія</b>: "
 "%G\\n\\t<b>Тип</b>: %m\\n\\t%c"
 
-#: ../utils/yimage.sh:36 ../data/utils/yimage.desktop.in.h:1
+#: ../utils/yimage.sh:29
+msgid "Exif data"
+msgstr "Данні Exif"
+
+#: ../utils/yimage.sh:30
+msgid "Field"
+msgstr "Поле"
+
+#: ../utils/yimage.sh:30
+msgid "Data"
+msgstr "Дані"
+
+#: ../utils/yimage.sh:40
+msgid "EXIF info!gtk-index"
+msgstr "Дані EXIF!gtk-index"
+
+#: ../utils/yimage.sh:41 ../data/utils/yimage.desktop.in.h:1
 msgid "Image viewer"
 msgstr "Перегляд зображень"
 
-#: ../utils/yimage.sh:37
-msgid "EXIF Info!info:bash -c 'show_info \\"
-msgstr "Данні EXIF!info:bash -c 'show_info \\"
+#: ../utils/yimage.sh:41 ../data/utils/yimage.desktop.in.h:2
+msgid "Simple image viewer"
+msgstr "Перегляд зображень"
 
 #: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:14
 msgid "Power Off"
@@ -1041,7 +1027,7 @@ msgstr "Вихід"
 
 #: ../utils/ylogout.sh:26
 msgid "\\nChoose logout action:\\n"
-msgstr "\\nОберіть дію:\\n"
+msgstr "\\nОберіть дію для виходу:\\n"
 
 #: ../utils/ylogout.sh:27
 msgid "Action:cb"
@@ -1050,6 +1036,54 @@ msgstr "Дія:cb"
 #: ../utils/ylogout.sh:27
 msgid "Save last choise:chk"
 msgstr "Зберегти обрану дію:chk"
+
+#: ../utils/yman.sh:10
+msgid "User commands"
+msgstr "Команди користувача"
+
+#: ../utils/yman.sh:11
+msgid "System calls"
+msgstr "Системні визови"
+
+#: ../utils/yman.sh:12
+msgid "Library functions"
+msgstr "Бібліотечні функції"
+
+#: ../utils/yman.sh:13
+msgid "Special files"
+msgstr "Спеціальні файли"
+
+#: ../utils/yman.sh:14
+msgid "File formats and filesystems"
+msgstr "Файрмати файлів та файлові системи"
+
+#: ../utils/yman.sh:15 ../data/menu/desktop-directories/Game.directory.in.h:1
+msgid "Games"
+msgstr "Ігри"
+
+#: ../utils/yman.sh:16
+msgid "Overview and miscellany section"
+msgstr "Обзори та різноманітні описи"
+
+#: ../utils/yman.sh:17
+msgid "Administration and privileged commands"
+msgstr "Команди адміністратора"
+
+#: ../utils/yman.sh:30
+msgid "Manual page viewer"
+msgstr "Перегляд сторінок допомоги"
+
+#: ../utils/yman.sh:42
+msgid "s%s\\nSection %s\\n%s\\nintro{%s)\\nBold\\n"
+msgstr "s%s\\nРозділ %s\\n%s\\nintro{%s)\\nBold\\n"
+
+#: ../utils/yman.sh:44
+msgid "Man pages browser"
+msgstr "Переглядач сторинок допомоги"
+
+#: ../utils/yman.sh:46
+msgid "Description"
+msgstr "Опис сторінки"
 
 #: ../utils/ymedia.sh:24
 msgid "$mp\\n${vendor:-Unknown} $model ($dev)"
@@ -1248,11 +1282,11 @@ msgstr "Батарея"
 msgid "Sensors"
 msgstr "Сенсори"
 
-#: ../utils/yterm.sh:20
+#: ../utils/yterm.sh:23
 msgid "Yterm error"
 msgstr "Помилка Yterm"
 
-#: ../utils/yterm.sh:21
+#: ../utils/yterm.sh:24
 msgid "No suitable terminal emulator found"
 msgstr "Не знайден відповідний емулятор терміналу"
 
@@ -1294,50 +1328,52 @@ msgstr "Шифрування:\\t\\t$pairwise_cipher"
 msgid "WiFi Password"
 msgstr "Пароль WiFi"
 
-#: ../utils/ywifi.sh:76
+#: ../utils/ywifi.sh:77
 msgid "IP info"
 msgstr "Інформація про IP"
 
-#: ../utils/ywifi.sh:77
+#: ../utils/ywifi.sh:78
 #, sh-format
-msgid "IP address: $addr\\nCountry: $country\\nCity: $city\\n"
-msgstr "IP адреса: $addr\\nКраїна: $country\\nМісто: $city"
+msgid ""
+"IP address: $addr\\n\\nCountry: $country\\n\\nCity: $city\\n\\nProvider: $isp"
+msgstr ""
+"IP адреса: $addr\\nКраїна: $country\\nМісто: $city\\n\\nПровайдер: $isp"
 
 #. second tab (available networks)
-#: ../utils/ywifi.sh:87
+#: ../utils/ywifi.sh:88
 msgid "Network"
 msgstr "Мережа"
 
-#: ../utils/ywifi.sh:87
+#: ../utils/ywifi.sh:88
 msgid "Level:num"
 msgstr "Рівень:num"
 
-#: ../utils/ywifi.sh:88
+#: ../utils/ywifi.sh:89
 msgid "Frequiency:num"
 msgstr "Частота:num"
 
-#: ../utils/ywifi.sh:88
+#: ../utils/ywifi.sh:89
 msgid "Flags"
 msgstr "Позначки"
 
 #. main window
-#: ../utils/ywifi.sh:91
+#: ../utils/ywifi.sh:92
 msgid "WiFi manager"
 msgstr "Менеджер WiFi"
 
-#: ../utils/ywifi.sh:92
+#: ../utils/ywifi.sh:93
 msgid "Ydesk WiFi connections manager"
 msgstr "Менеджер WiFi з'єднань для оболонки Ydesk"
 
-#: ../utils/ywifi.sh:93
+#: ../utils/ywifi.sh:94
 msgid "IP info!gtk-dialog-info:show_geoip"
 msgstr "Дані про IP!gtk-dialog-info:show_geoip"
 
-#: ../utils/ywifi.sh:94
+#: ../utils/ywifi.sh:95
 msgid "Current"
 msgstr "Поточне"
 
-#: ../utils/ywifi.sh:94
+#: ../utils/ywifi.sh:95
 msgid "Networks"
 msgstr "Мережі"
 
@@ -1360,10 +1396,6 @@ msgstr "Засоби розробки"
 #: ../data/menu/desktop-directories/Education.directory.in.h:1
 msgid "Education"
 msgstr "Освіта"
-
-#: ../data/menu/desktop-directories/Game.directory.in.h:1
-msgid "Games"
-msgstr "Ігри"
 
 #: ../data/menu/desktop-directories/Game.directory.in.h:2
 msgid "Games and amusements"
@@ -1494,10 +1526,6 @@ msgstr "Пошук файлів"
 msgid "Search for Files or Folders on disk"
 msgstr "Пошук файлів або каталогів на диску"
 
-#: ../data/utils/yimage.desktop.in.h:2
-msgid "Simple image viewer"
-msgstr "Перегляд зображень"
-
 #: ../data/utils/ysession.desktop.in.h:1
 msgid "Y desktop"
 msgstr "Y desktop"
@@ -1617,9 +1645,3 @@ msgstr "Керування змінними носіями"
 #: ../fvwm/config/applets/notes.fvwm.h:1
 msgid "Sticky notes"
 msgstr "Нотатки"
-
-#~ msgid "Current connection"
-#~ msgstr "Діюче з'єднання"
-
-#~ msgid "Param"
-#~ msgstr "Параметр"
