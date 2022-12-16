@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 17:48+0200\n"
+"POT-Creation-Date: 2022-12-16 13:01+0200\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -254,7 +254,7 @@ msgstr "Додавання/видалення елементів швидког�
 
 #: ../settings/desktop.sh.in:74 ../settings/session.sh.in:59
 #: ../settings/session.sh.in:66 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
-#: ../utils/yfind.sh:60 ../utils/yman.sh:46 ../utils/ysysinfo.sh:49
+#: ../utils/yfind.sh:60 ../utils/yman.sh:53 ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Ім'я"
 
@@ -1069,21 +1069,14 @@ msgstr "Обзори та різноманітні описи"
 msgid "Administration and privileged commands"
 msgstr "Команди адміністратора"
 
-#: ../utils/yman.sh:30
-msgid "Manual page viewer"
-msgstr "Перегляд сторінок допомоги"
+#. main window
+#: ../utils/yman.sh:59
+msgid "Manual pages"
+msgstr "Сторінки допомоги"
 
-#: ../utils/yman.sh:42
-msgid "s%s\\nSection %s\\n%s\\nintro{%s)\\nBold\\n"
-msgstr "s%s\\nРозділ %s\\n%s\\nintro{%s)\\nBold\\n"
-
-#: ../utils/yman.sh:44 ../data/utils/yman.desktop.in.h:1
-msgid "Man pages browser"
-msgstr "Переглядач сторинок допомоги"
-
-#: ../utils/yman.sh:46
-msgid "Description"
-msgstr "Опис сторінки"
+#: ../utils/yman.sh:60
+msgid "<b>Manual Pages browser and viewer</b>"
+msgstr "<b>Переглядач сторінок допомоги</b>"
 
 #: ../utils/ymedia.sh:24
 msgid "$mp\\n${vendor:-Unknown} $model ($dev)"
@@ -1526,9 +1519,21 @@ msgstr "Пошук файлів"
 msgid "Search for Files or Folders on disk"
 msgstr "Пошук файлів або каталогів на диску"
 
+#: ../data/utils/yman.desktop.in.h:1
+msgid "Man pages browser"
+msgstr "Переглядач сторинок допомоги"
+
 #: ../data/utils/yman.desktop.in.h:2
 msgid "Browse and view manual pages"
 msgstr "Дослідження та перегляд сторінок допомоги"
+
+#: ../data/utils/yps.desktop.in.h:1
+msgid "Processes viewer"
+msgstr "Список процесів"
+
+#: ../data/utils/yps.desktop.in.h:2
+msgid "Show running processes"
+msgstr "Відобразити список процесів"
 
 #: ../data/utils/ysession.desktop.in.h:1
 msgid "Y desktop"
@@ -1649,3 +1654,9 @@ msgstr "Керування змінними носіями"
 #: ../fvwm/config/applets/notes.fvwm.h:1
 msgid "Sticky notes"
 msgstr "Нотатки"
+
+#~ msgid "s%s\\nSection %s\\n%s\\nintro{%s)\\nBold\\n"
+#~ msgstr "s%s\\nРозділ %s\\n%s\\nintro{%s)\\nBold\\n"
+
+#~ msgid "Description"
+#~ msgstr "Опис сторінки"

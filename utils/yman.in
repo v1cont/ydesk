@@ -7,14 +7,14 @@ TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
 declare -a SECTIONS
-SECTIONS[1]="User commands"
-SECTIONS[2]="System calls"
-SECTIONS[3]="Library functions"
-SECTIONS[4]="Special files"
-SECTIONS[5]="File formats and filesystems"
-SECTIONS[6]="Games"
-SECTIONS[7]="Overview and miscellany section"
-SECTIONS[8]="Administration and privileged commands"
+SECTIONS[1]=$"User commands"
+SECTIONS[2]=$"System calls"
+SECTIONS[3]=$"Library functions"
+SECTIONS[4]=$"Special files"
+SECTIONS[5]=$"File formats and filesystems"
+SECTIONS[6]=$"Games"
+SECTIONS[7]=$"Overview and miscellany section"
+SECTIONS[8]=$"Administration and privileged commands"
 
 KEY=$RANDOM
 
