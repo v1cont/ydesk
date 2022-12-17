@@ -6,6 +6,8 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
+CSS=@prefix@/share/ydesk/yman.css
+
 declare -a SECTIONS
 SECTIONS[1]=$"User commands"
 SECTIONS[2]=$"System calls"
@@ -19,15 +21,6 @@ SECTIONS[8]=$"Administration and privileged commands"
 KEY=$RANDOM
 
 TDIR=$(mktemp -d --tmpdir yman-XXXXXXXX)
-
-export CSS=$TDIR/man.css
-cat > $CSS <<EOF
-body{color:#f0f0f0;background-color:#4B4B4B}
-h1{color:#33915C;}
-h2{color:#A7BC10;}
-b{color:#C27F98;}
-i{color:#87889C;}
-EOF
 
 export FIFO=$TDIR/fifo
 mkfifo $FIFO
@@ -53,7 +46,7 @@ done | yad --plug=$KEY --tabnum=1 --no-markup --use-interp --dclick-action="show
            --list --tree --column=$"Name" --column="tip:hd" --column="sec:hd" --column=@font@ --tooltip-column=2 &
 
 # current man page
-yad --plug=$KEY --tabnum=2 --html --user-style=$CSS <&3 &
+yad --plug=$KEY --tabnum=2 --html --user-style="$CSS" <&3 &
 
 # main window
 yad --window-icon=help-browser --title=$"Manual pages" --width=1200 --height=950 --button=yad-close:1 \
