@@ -39,7 +39,7 @@ function wthr_update {
 }
 
 function wthr_show {
-    wthr_update -f
+    wthr_update
 
     printf -v temp "%.f°C" "$(jq -r '.main.temp' $wfile)"
     printf -v fl_temp "%.f°C" "$(jq -r '.main.feels_like' $wfile)"

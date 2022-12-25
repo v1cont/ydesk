@@ -12,13 +12,13 @@ eval res=($(yad --title=$"Weather applet" --window-icon="application-x-addon" \
                 --field=$"City name:" $(eval echo $(gsettings get ydesk.weather city)) \
                 --field=$"Country code:" $(eval echo $(gsettings get ydesk.weather country)) \
                 --field=$"Measure units:" $(eval echo $(gsettings get ydesk.weather units)) \
-                --field=$"APi key:" "$(< $apikey)" \
+                --field=$"APi key:" "$apikey" \
                 --field=$"Update interval::NUM" $(gsettings get ydesk.applets wthr_time)))
 
 if [[ -n $res ]]; then
     gsettings set ydesk.weather city "${res[0]}"
     gsettings set ydesk.weather country "${res[1]}"
     gsettings set ydesk.weather measure "${res[2]}"
-    gsettings set ydesk.applets cpu_sz "${res[4]}"
+    gsettings set ydesk.applets wthr_time "${res[4]}"
     echo "${res[3]}" > $apikey
 fi
