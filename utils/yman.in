@@ -27,6 +27,9 @@ mkfifo $FIFO
 
 trap "rm -rf $TDIR" EXIT
 
+# suppress webkit warning (30 - SIGPWR)
+export JSC_SIGNAL_FOR_GC=30
+
 function show_man {
     echo -e "\f" >> $FIFO
     [[ $3 -eq 0 ]] && return
