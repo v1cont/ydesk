@@ -1952,14 +1952,16 @@ stacksidebar row.needs-attention > label {
 /*********
  * Paned *
  *********/
-paned > separator {
+paned > separator,
+paned > separator.wide {
     -gtk-icon-source: none;
-    background-color: @bg_color;
+    background-color: shade(@bg_color, 0.8);
     min-width: 5px;
     min-height: 5px;
 }
 
-paned > separator:hover {
+paned > separator:hover,
+paned > separator.wide:hover {
     background-color: shade(@bg_color, 1.3);
 }
 
