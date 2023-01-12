@@ -22,7 +22,7 @@ trap "rm -f $fpipe" EXIT
 KEY=$RANDOM
 
 function run_find {
-    echo "6:@disable@"
+    echo "6:@disabled@"
     if [[ $2 != TRUE ]]; then
         ARGS="-name '$1'"
     else
