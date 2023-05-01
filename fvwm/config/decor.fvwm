@@ -20,8 +20,7 @@ Style SimpleStyle \
     UseDecor SimpleDecor, \
     BorderWidth 4, HandleWidth 4, BorderUnderTitle, \
     Font $[infostore.wfn], \
-    ForeColor "#f0f0f0", BackColor "#707070", \
-    HilightFore "#f0f0f0", HilightBack "#90a96a"
+    Colorset 13, HilightColorset 14
 
 Style * UseStyle SimpleStyle
 

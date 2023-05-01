@@ -23,3 +23,7 @@ Colorset 11 fg #dbdbdb, bg #07536d
 
 # Clock applet colorset
 Colorset 12 fg $[infostore.clock_fg], VGradient 128 1 #44484a 50 #303030
+
+# Window borders
+Colorset 13 fg "#f0f0f0", bg "#707070"
+Colorset 14 fg "#f0f0f0", bg "#90a96a"
