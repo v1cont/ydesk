@@ -14,7 +14,7 @@ trap "rm -f $fn" EXIT
 
 if [[ $1 == "-r" ]]; then
     # register as default and exit
-    mimes="image/jpeg image/png image/tiff image/gif image/webp image/svg image/svg+xml image/bmp"
+    mimes="image/jpeg image/png image/tiff image/gif image/webp image/svg image/svg+xml image/svg+xml-compressed image/bmp image/x-xpixmap"
     xdg-mime default yimage.desktop $mimes
     exit 0
 fi
