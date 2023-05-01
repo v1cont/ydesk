@@ -1,43 +1,62 @@
-#! /bin/bash
+#! @BASH@
 # -*- mode: sh -*-
 #
 # Logout script
-# Author: Victor Ananjevsky <ananasik@gmail.com>, 2009-2014
+# Author: Victor Ananjevsky <victor@sanana.kiev.ua>, 2009-2023
 #
 
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-acts=("" $"Power Off" $"Reboot" $"Suspend" $"Logout")
+function yl_poff
+{
+    /sbin/poweroff &
+    kill -USR1 $YAD_PID
+}
+export -f yl_poff
 
-histdir=${XDG_CACHE_HOME:-$HOME/.cache}/ixdesktop
-histfile=$histdir/logout
-[[ -e $histfile ]] && LASTACT=$(< $histfile)
+function yl_rbut
+{
+    /sbin/reboot &
+    kill -USR1 $YAD_PID
+}
+export -f yl_rbut
 
-ACTIONS=${acts[1]}
-for (( i=2 ; i<5; i++ )); do
-    ACTIONS+="!"
-    [[ $i -eq ${LASTACT:-0} ]] && ACTIONS+="^"
-    ACTIONS+="${acts[$i]}"
-done
+function yl_loff
+{
+    FvwmCommand Quit &
+    kill -USR1 $YAD_PID
+}
+export -f yl_loff
 
-eval $(yad --width=350 --center --sticky --on-top --class="${0##*/}" \
-        --window-icon="system-log-out" --image="system-log-out" --num-output \
-        --title=$"Logout" --text=$"\nChoose logout action:\n" \
-        --form --field=$"Action:cb" "$ACTIONS" --field=$"Save last choise:chk" FALSE |\
-              awk -F'|' '{printf "act=%s\nsave=%s\n", $1, $2}')
-[[ -z $act ]] && exit 0
+function yl_susp
+{
+    /sbin/hibernate mem &
+    kill -USR1 $YAD_PID
+}
+export -f yl_susp
 
-if [[ $save == "TRUE" ]]; then
-    mkdir -p $histdir
-    echo "$act" > $histfile
-fi
+function yl_hib
+{
+    /sbin/hibernate disk &
+    kill -USR1 $YAD_PID
+}
+export -f yl_hib
 
-case $act in
-    1) cmd="/sbin/poweroff" ;;
-    2) cmd="/sbin/reboot" ;;
-    3) cmd="/sbin/hibernate disk" ;;
-    4) cmd="FvwmCommand Quit" ;;
-esac
+function yl_lock
+{
+    xtrlock -c /usr/share/ydesk/lock.xcursor &
+    kill -USR1 $YAD_PID
+}
+export -f yl_lock
 
-eval exec $cmd
+yad --center --sticky --on-top --class="${0##*/}" --use-interp \
+    --window-icon="system-log-out" --no-buttons \
+    --title=$"Logout" --text=$"\nChoose logout action:\n" \
+    --form --width=300 --align-buttons=left \
+    --field=$"Power off!ydesk-shutdown!":fbtn yl_poff \
+    --field=$"Reboot!ydesk-reboot!":fbtn yl_rbut \
+    --field=$"Logout!ydesk-logout!":fbtn  yl_loff \
+    --field=$"Suspend!ydesk-suspend!":fbtn yl_susp \
+    --field=$"Hibernate!ydesk-hibernate!":fbtn yl_hib \
+    --field=$"Lock screen!ydesk-lock!":fbtn yl_lock
