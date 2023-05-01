@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-16 13:01+0200\n"
+"POT-Creation-Date: 2023-05-02 01:03+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -254,7 +254,7 @@ msgstr "Додавання/видалення елементів швидког�
 
 #: ../settings/desktop.sh.in:74 ../settings/session.sh.in:59
 #: ../settings/session.sh.in:66 ../utils/ydentry.sh:13 ../utils/yfind.sh:55
-#: ../utils/yfind.sh:60 ../utils/yman.sh:53 ../utils/ysysinfo.sh:49
+#: ../utils/yfind.sh:60 ../utils/yman.sh:49 ../utils/ysysinfo.sh:49
 msgid "Name"
 msgstr "Ім'я"
 
@@ -1009,72 +1009,76 @@ msgstr "Перегляд зображень"
 msgid "Simple image viewer"
 msgstr "Перегляд зображень"
 
-#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:14
-msgid "Power Off"
-msgstr "Вимкнути"
-
-#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:15
-msgid "Reboot"
-msgstr "Перезавантажити"
-
-#: ../utils/ylogout.sh:11 ../fvwm/config/menus.fvwm.h:16
-msgid "Suspend"
-msgstr "Сплячий режим"
-
-#: ../utils/ylogout.sh:11 ../utils/ylogout.sh:26 ../fvwm/config/menus.fvwm.h:17
+#: ../utils/ylogout.sh:55 ../fvwm/config/menus.fvwm.h:17
 msgid "Logout"
 msgstr "Вихід"
 
-#: ../utils/ylogout.sh:26
+#: ../utils/ylogout.sh:55
 msgid "\\nChoose logout action:\\n"
 msgstr "\\nОберіть дію для виходу:\\n"
 
-#: ../utils/ylogout.sh:27
-msgid "Action:cb"
-msgstr "Дія:cb"
+#: ../utils/ylogout.sh:57
+msgid "Power off!ydesk-shutdown!"
+msgstr "Вимкнути!ydesk-shutdown!"
 
-#: ../utils/ylogout.sh:27
-msgid "Save last choise:chk"
-msgstr "Зберегти обрану дію:chk"
+#: ../utils/ylogout.sh:58
+msgid "Reboot!ydesk-reboot!"
+msgstr "Перезавантажити!ydesk-reboot!"
 
-#: ../utils/yman.sh:10
+#: ../utils/ylogout.sh:59
+msgid "Logout!ydesk-logout!"
+msgstr "Вийти з сессії!ydesk-logout!"
+
+#: ../utils/ylogout.sh:60
+msgid "Suspend!ydesk-suspend!"
+msgstr "Призупинити!ydesk-suspend!"
+
+#: ../utils/ylogout.sh:61
+msgid "Hibernate!ydesk-hibernate!"
+msgstr "Режим сну!ydesk-hibernate!"
+
+#: ../utils/ylogout.sh:62
+msgid "Lock screen!ydesk-lock!"
+msgstr "Заблокувати екран!ydesk-lock!"
+
+#: ../utils/yman.sh:12
 msgid "User commands"
 msgstr "Команди користувача"
 
-#: ../utils/yman.sh:11
+#: ../utils/yman.sh:13
 msgid "System calls"
 msgstr "Системні визови"
 
-#: ../utils/yman.sh:12
+#: ../utils/yman.sh:14
 msgid "Library functions"
 msgstr "Бібліотечні функції"
 
-#: ../utils/yman.sh:13
+#: ../utils/yman.sh:15
 msgid "Special files"
 msgstr "Спеціальні файли"
 
-#: ../utils/yman.sh:14
+#: ../utils/yman.sh:16
 msgid "File formats and filesystems"
 msgstr "Файрмати файлів та файлові системи"
 
-#: ../utils/yman.sh:15 ../data/menu/desktop-directories/Game.directory.in.h:1
+#: ../utils/yman.sh:17 ../data/menu/desktop-directories/Game.directory.in.h:1
 msgid "Games"
 msgstr "Ігри"
 
-#: ../utils/yman.sh:16
+#: ../utils/yman.sh:18
 msgid "Overview and miscellany section"
 msgstr "Обзори та різноманітні описи"
 
-#: ../utils/yman.sh:17
+#: ../utils/yman.sh:19
 msgid "Administration and privileged commands"
 msgstr "Команди адміністратора"
 
 #. main window
-#: ../utils/yman.sh:59
+#: ../utils/yman.sh:55
 msgid "Manual pages"
 msgstr "Сторінки допомоги"
 
-#: ../utils/yman.sh:60
+#: ../utils/yman.sh:56
 msgid "<b>Manual Pages browser and viewer</b>"
 msgstr "<b>Переглядач сторінок допомоги</b>"
 
@@ -1599,6 +1603,18 @@ msgstr "Запустити"
 msgid "Shutdown"
 msgstr "Остановити"
 
+#: ../fvwm/config/menus.fvwm.h:14
+msgid "Power Off"
+msgstr "Вимкнути"
+
+#: ../fvwm/config/menus.fvwm.h:15
+msgid "Reboot"
+msgstr "Перезавантажити"
+
+#: ../fvwm/config/menus.fvwm.h:16
+msgid "Suspend"
+msgstr "Сплячий режим"
+
 #: ../fvwm/config/menus.fvwm.h:19
 msgid "Media"
 msgstr "Зовнешні носії"
@@ -1654,9 +1670,3 @@ msgstr "Керування змінними носіями"
 #: ../fvwm/config/applets/notes.fvwm.h:1
 msgid "Sticky notes"
 msgstr "Нотатки"
-
-#~ msgid "s%s\\nSection %s\\n%s\\nintro{%s)\\nBold\\n"
-#~ msgstr "s%s\\nРозділ %s\\n%s\\nintro{%s)\\nBold\\n"
-
-#~ msgid "Description"
-#~ msgstr "Опис сторінки"
