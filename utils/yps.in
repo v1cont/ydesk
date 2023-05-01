@@ -8,6 +8,8 @@ TITLE=$"Process viewer"
 # FIXME: add more process managers
 if [[ -x $(command -v lxtask) ]]; then
     exec lxtask
+elif [[ -x $(command -v btop) ]]; then
+    exec ${XTERM:-xterm} -T "$TITLE" -name YPs +sb -e btop
 elif [[ -x $(command -v htop) ]]; then
     exec ${XTERM:-xterm} -T "$TITLE" -name YPs +sb -e htop
 else
