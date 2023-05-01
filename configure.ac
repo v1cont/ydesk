@@ -132,11 +132,13 @@ utils/ywifi
 data/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile
+data/icons/16x16/actions/Makefile
 data/icons/16x16/apps/Makefile
 data/icons/16x16/categories/Makefile
 data/icons/16x16/devices/Makefile
 data/icons/16x16/status/Makefile
 data/icons/24x24/Makefile
+data/icons/24x24/actions/Makefile
 data/icons/24x24/apps/Makefile
 data/icons/24x24/categories/Makefile
 data/icons/24x24/devices/Makefile
@@ -147,6 +149,7 @@ data/icons/32x32/categories/Makefile
 data/icons/32x32/devices/Makefile
 data/icons/32x32/status/Makefile
 data/icons/48x48/Makefile
+data/icons/48x48/actions/Makefile
 data/icons/48x48/apps/Makefile
 data/icons/48x48/categories/Makefile
 data/icons/48x48/devices/Makefile
