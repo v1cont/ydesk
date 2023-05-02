@@ -48,6 +48,10 @@ function wthr_show {
     city="$(jq -r '.name' $wfile)"
     wspeed="$(jq -r '.wind.speed' $wfile)"
     wdeg="$(jq -r '.wind.deg' $wfile)"
+    hum="$(jq -r '.main.humidity' $wfile)"
+    press="$(jq -r '.main.pressure' $wfile)"
+    sr="$(jq -r '.sys.sunrise' $wfile)"
+    ss="$(jq -r '.sys.sunset' $wfile)"
 
     if [[ $wdeg -ge 349 || $wdeg -le 11 ]]; then
         wdir="N"
@@ -75,9 +79,15 @@ function wthr_show {
         warrow='↘'
     fi
 
-    TEXT=$"Weather in <b>$city</b>\n\n$temp (<i>feels like</i> $fl_temp), $state\n\nWind: $wspeed m/s ($wdir $warrow)"
+    fsr=$(date -d @$sr +'%H:%M:%S')
+    fss=$(date -d @$ss +'%H:%M:%S')
 
-    yad --title=$"Weather" --window-icon=sunny --width=300 --height=150 \
+    TEXT=$"Weather in <b>$city</b>\n\n"
+    TEXT+=$"$temp (<i>feels like</i> $fl_temp), $state\n\n"
+    TEXT+=$"Wind: $wspeed m/s ($wdir $warrow)\nHumidity: ${hum}%\nPressure: $press hPa\n\n"
+    TEXT+=$"Sunrise: $fsr\nSunset: $fss"
+
+    yad --title=$"Weather" --window-icon=sunny --width=420 --height=150 \
         --posx=-100 --posy=50 --borders=10 --image=${icons[$i]} --text="$TEXT" \
         --button=$"Forecast!web-browser:bash -c wthr_forecast" --button=yad-close
 }
