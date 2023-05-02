@@ -7,8 +7,8 @@ TEXTDOMAINDIR=@prefix@/share/locale
 eval res=($(yad --title=$"Taskbar applet" --window-icon="application-x-addon" \
                 --width=300 --image=window-new --quoted-output --separator=" " \
                 --text=$"<b>Taskbar applet configuration</b>" --form \
-                --field=$"Taskbar width::NUN" "$(gsettings get ydesk.applets tb_sz)"))
+                --field=$"Taskbar width::NUN" "$(gsettings get ydesk.panel.applets tb_sz)"))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets tb_sz ${res[0]}
+    gsettings set ydesk.panel.applets tb_sz ${res[0]}
 fi

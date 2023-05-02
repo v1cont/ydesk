@@ -7,8 +7,8 @@ TEXTDOMAINDIR=@prefix@/share/locale
 eval res=($(yad --title=$"Menubar applet" --window-icon="application-x-addon" \
                 --width=300 --image=preferences-desktop-default-applications \
                 --text=$"<b>Menubar applet configuration</b>" --quoted-output --separator=" " --form \
-                --field=$"Menubar font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.applets mb_fn))"))
+                --field=$"Menubar font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.panel.applets mb_fn))"))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets mb_fn $(yad-tools -f -x "${res[0]}")
+    gsettings set ydesk.panel.applets mb_fn $(yad-tools -f -x "${res[0]}")
 fi

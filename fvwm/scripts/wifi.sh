@@ -1,7 +1,7 @@
 #! /bin/bash
 # Wifi applet engine
 
-eval iface=$(gsettings get ydesk.applets wifi_iface)
+eval iface=$(gsettings get ydesk.panel.applets wifi_iface)
 
 function wifi_upd {
     eval $(wpa_cli -i ${iface:-wlan0} signal_poll | grep "^RSSI")

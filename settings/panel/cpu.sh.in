@@ -11,12 +11,12 @@ eval res=($(yad --title=$"CPU applet" --window-icon="application-x-addon" \
                 --field=$"Indicator backgroung color::CLR" $(eval echo $(gsettings get ydesk.cpu fg)) \
                 --field=$"Show memory usage:CHK" $(gsettings get ydesk.cpu mem) \
                 --field=$"Update interval::NUM" $(gsettings get ydesk.cpu period) \
-                --field=$"Indicator width::NUM" $(gsettings get ydesk.applets cpu_sz)))
+                --field=$"Indicator width::NUM" $(gsettings get ydesk.panel.applets cpu_sz)))
 
 if [[ -n $res ]]; then
     gsettings set ydesk.cpu fg "${res[0]}"
     gsettings set ydesk.cpu bg "${res[1]}"
     gsettings set ydesk.cpu mem "${res[2]}"
     gsettings set ydesk.cpu period "${res[3]}"
-    gsettings set ydesk.applets cpu_sz "${res[4]}"
+    gsettings set ydesk.panel.applets cpu_sz "${res[4]}"
 fi

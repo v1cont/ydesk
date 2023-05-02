@@ -1,4 +1,4 @@
-*FvwmPanel: (Id wifi, 25x1, Padding 2 2, Icon "$[infostore.p_wifi]", Action (Mouse 1) "Exec exec $[FVWM_LIBDIR]/wifi.sh ctrl")
+*FvwmPanel: (Id wifi, 25x1, Padding 2 2, Icon "$[infostore.p_wifi]", Action (Mouse 1) Exec exec $[FVWM_LIBDIR]/wifi.sh ctrl)
 
 Schedule Periodic 60000 PipeRead "$[FVWM_LIBDIR]/wifi.sh upd"
 PipeRead "$[FVWM_LIBDIR]/wifi.sh upd"

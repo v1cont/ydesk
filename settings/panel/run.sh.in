@@ -7,14 +7,14 @@ TEXTDOMAINDIR=@prefix@/share/locale
 eval res=($(yad --title=$"Run applet" --window-icon="application-x-addon" \
                 --width=300 --quoted-output --separator=" " --image=system-run \
                 --text=$"<b>Run applet configuration</b>" --form \
-                --field=$"Foreground color::CLR" $(eval echo $(gsettings get ydesk.applets run_fg)) \
-                --field=$"Background color::CLR" $(eval echo $(gsettings get ydesk.applets run_bg)) \
-                --field=$"Run applet font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.applets run_fn))" \
-                --field=$"Run applet width::NUM" $(gsettings get ydesk.applets run_sz)))
+                --field=$"Foreground color::CLR" $(eval echo $(gsettings get ydesk.panel.applets run_fg)) \
+                --field=$"Background color::CLR" $(eval echo $(gsettings get ydesk.panel.applets run_bg)) \
+                --field=$"Run applet font::FN" "$(eval yad-tools -f -p $(gsettings get ydesk.panel.applets run_fn))" \
+                --field=$"Run applet width::NUM" $(gsettings get ydesk.panel.applets run_sz)))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets run_fg ${res[0]}
-    gsettings set ydesk.applets run_bg ${res[1]}
-    gsettings set ydesk.applets run_fn $(yad-tools -f -x "${res[2]}")
-    gsettings set ydesk.applets run_sz ${res[3]}
+    gsettings set ydesk.panel.applets run_fg ${res[0]}
+    gsettings set ydesk.panel.applets run_bg ${res[1]}
+    gsettings set ydesk.panel.applets run_fn $(yad-tools -f -x "${res[2]}")
+    gsettings set ydesk.panel.applets run_sz ${res[3]}
 fi

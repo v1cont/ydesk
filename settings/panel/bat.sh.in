@@ -7,10 +7,10 @@ TEXTDOMAINDIR=@prefix@/share/locale
 eval res=($(yad --title=$"Battery applet" --window-icon="application-x-addon" --width=300 \
                 --image=battery --quoted-output --separator=" " \
                 --text=$"<b>Battery applet configuration</b>" --form \
-                --field=$"Battery name:" $(eval echo $(gsettings get ydesk.applets bat_dev)) \
-                --field=$"AC adapter name:" $(eval echo $(gsettings get ydesk.applets bat_ac))))
+                --field=$"Battery name:" $(eval echo $(gsettings get ydesk.panel.applets bat_dev)) \
+                --field=$"AC adapter name:" $(eval echo $(gsettings get ydesk.panel.applets bat_ac))))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets bat_dev "${res[0]}"
-    gsettings set ydesk.applets bat_ac "${res[1]}"
+    gsettings set ydesk.panel.applets bat_dev "${res[0]}"
+    gsettings set ydesk.panel.applets bat_ac "${res[1]}"
 fi

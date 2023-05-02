@@ -3,8 +3,8 @@
 
 [[ -d /sys/class/power_supply ]] || exit 1
 
-eval BAT=$(gsettings get ydesk.applets bat_dev)
-eval AC=$(gsettings get ydesk.applets bat_ac)
+eval BAT=$(gsettings get ydesk.panel.applets bat_dev)
+eval AC=$(gsettings get ydesk.panel.applets bat_ac)
 
 AC_STATE=$(< /sys/class/power_supply/$AC/online)
 

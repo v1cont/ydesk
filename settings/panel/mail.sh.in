@@ -7,8 +7,8 @@ TEXTDOMAINDIR=@prefix@/share/locale
 eval res=($(yad --title=$"Mail applet" --window-icon="application-x-addon" --width=300 \
                 --image=mail-send --quoted-output --separator=" " \
                 --text=$"<b>Mail applet configuration</b>"  --form \
-                --field=$"Mail check time::NUM" $(gsettings get ydesk.applets mail_time)))
+                --field=$"Mail check time::NUM" $(gsettings get ydesk.panel.applets mail_time)))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets mail_tine ${res[0]}
+    gsettings set ydesk.panel.applets mail_tine ${res[0]}
 fi

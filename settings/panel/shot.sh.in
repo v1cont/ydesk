@@ -4,7 +4,7 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-eval act=$(gsettings get ydesk.applets shot_act)
+eval act=$(gsettings get ydesk.panel.applets shot_act)
 [[ $act == root ]] && ACTS="^root!reg" || ACTS="root!^reg"
 
 eval res=($(yad --title=$"Screenshot applet" --window-icon="application-x-addon" \
@@ -13,5 +13,5 @@ eval res=($(yad --title=$"Screenshot applet" --window-icon="application-x-addon"
                 --field=$"Default action::CB" "$act"))
 
 if [[ -n $res ]]; then
-    gsettings set ydesk.applets shot_act ${res[0]}
+    gsettings set ydesk.panel.applets shot_act ${res[0]}
 fi

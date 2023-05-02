@@ -10,7 +10,7 @@ function slider {
      done
 }
 
-eval SCTRL=$(gsettings get ydesk.applets vol_ctl)
+eval SCTRL=$(gsettings get ydesk.panel.applets vol_ctl)
 export SCTRL
 
 upd=0

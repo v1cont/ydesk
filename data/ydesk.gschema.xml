@@ -116,7 +116,7 @@
     </key>  
   </schema>
 
-  <schema id="ydesk.applets" path="/ydesk/applets/">
+  <schema id="ydesk.panel.applets" path="/ydesk/panel/applets/">
     <key name="mb_fn" type="s">
       <default>'xft:Sans:Bold:pixelsize=12'</default>
       <summary>Font for panel menubar</summary>
