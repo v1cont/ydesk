@@ -1,7 +1,7 @@
-diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
---- fvwm3-1.0.2-orig/fvwm/menuitem.c	2020-08-29 20:53:34.000000000 +0300
-+++ fvwm3-1.0.2/fvwm/menuitem.c	2021-03-13 11:14:23.923621952 +0200
-@@ -81,10 +81,14 @@ static void clear_menu_item_background(
+diff -urNp fvwm3-1.0.6a-orig/fvwm/menuitem.c fvwm3-1.0.6a/fvwm/menuitem.c
+--- fvwm3-1.0.6a-orig/fvwm/menuitem.c	2022-12-31 21:21:13.000000000 +0200
++++ fvwm3-1.0.6a/fvwm/menuitem.c	2023-04-29 04:19:39.973315818 +0300
+@@ -58,10 +58,14 @@
   *
   */
  static void draw_separator(
@@ -18,7 +18,7 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  
  	return;
  }
-@@ -378,6 +382,7 @@ void menuitem_paint(
+@@ -355,6 +359,7 @@ void menuitem_paint(
  	/*Pixel fg, fgsh;*/
  	int relief_thickness = ST_RELIEF_THICKNESS(ms);
  	Bool is_item_selected;
@@ -26,7 +26,7 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  	Bool item_cleared = False;
  	Bool xft_clear = False;
  	Bool empty_inter = False;
-@@ -596,6 +601,8 @@ void menuitem_paint(
+@@ -570,6 +575,8 @@ void menuitem_paint(
  	 * Draw the item itself.
  	 */
  
@@ -35,7 +35,7 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  	/* Calculate the separator offsets. */
  	if (ST_HAS_LONG_SEPARATORS(ms))
  	{
-@@ -616,9 +623,9 @@ void menuitem_paint(
+@@ -590,9 +597,9 @@ void menuitem_paint(
  		{
  			/* It's a separator. */
  			draw_separator(
@@ -48,7 +48,7 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  			/* Nothing else to do. */
  		}
  		return;
-@@ -658,8 +665,8 @@ void menuitem_paint(
+@@ -632,8 +639,8 @@ void menuitem_paint(
  			if (sx1 < sx2)
  			{
  				draw_separator(
@@ -59,7 +59,7 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  			}
  		}
  		/* Underline the title. */
-@@ -672,8 +679,8 @@ void menuitem_paint(
+@@ -646,8 +653,8 @@ void menuitem_paint(
  			{
  				y = y_offset + y_height - MENU_SEPARATOR_HEIGHT;
  				draw_separator(
@@ -70,10 +70,10 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menuitem.c fvwm3-1.0.2/fvwm/menuitem.c
  			}
  			break;
  		default:
-diff -urNp fvwm3-1.0.2-orig/fvwm/menus.c fvwm3-1.0.2/fvwm/menus.c
---- fvwm3-1.0.2-orig/fvwm/menus.c	2020-12-12 02:37:08.000000000 +0200
-+++ fvwm3-1.0.2/fvwm/menus.c	2021-03-13 11:14:23.924621952 +0200
-@@ -1625,6 +1625,10 @@ static Bool size_menu_vertically(MenuSiz
+diff -urNp fvwm3-1.0.6a-orig/fvwm/menus.c fvwm3-1.0.6a/fvwm/menus.c
+--- fvwm3-1.0.6a-orig/fvwm/menus.c	2022-12-31 21:21:13.000000000 +0200
++++ fvwm3-1.0.6a/fvwm/menus.c	2023-04-29 04:19:39.975315827 +0300
+@@ -1641,6 +1641,10 @@ static Bool size_menu_vertically(MenuSiz
  		separator_height = (last_item_has_relief) ?
  			MENU_SEPARATOR_HEIGHT + relief_thickness :
  			MENU_SEPARATOR_TOTAL_HEIGHT;
@@ -84,39 +84,38 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menus.c fvwm3-1.0.2/fvwm/menus.c
  		MI_Y_OFFSET(mi) = y;
  		if (MI_IS_TITLE(mi))
  		{
-diff -urNp fvwm3-1.0.2-orig/fvwm/menustyle.c fvwm3-1.0.2/fvwm/menustyle.c
---- fvwm3-1.0.2-orig/fvwm/menustyle.c	2020-12-12 02:37:08.000000000 +0200
-+++ fvwm3-1.0.2/fvwm/menustyle.c	2021-03-13 11:14:23.925621952 +0200
-@@ -425,7 +425,7 @@ static int menustyle_get_styleopt_index(
- 		"TrianglesUseFore",
- 		"TitleColorset", "HilightTitleBack",
+diff -urNp fvwm3-1.0.6a-orig/fvwm/menustyle.c fvwm3-1.0.6a/fvwm/menustyle.c
+--- fvwm3-1.0.6a-orig/fvwm/menustyle.c	2022-12-31 21:21:13.000000000 +0200
++++ fvwm3-1.0.6a/fvwm/menustyle.c	2023-04-29 04:25:08.932759911 +0300
+@@ -134,7 +134,7 @@ static int menustyle_get_styleopt_index(
  		"TitleFont",
--		"VerticalMargins",
-+		"VerticalMargins", "FlatSeparators",
+ 		"VerticalMargins",
  		"UniqueHotkeyActivatesImmediate",
+-		"Translucent",
++		"Translucent", "FlatSeparators",
  		NULL
  	};
-@@ -895,6 +895,7 @@ MenuStyle *menustyle_parse_style(F_CMD_A
- 			ST_SCROLL_OFF_PAGE(tmpms) = 1;
+ 
+@@ -489,6 +489,7 @@ MenuStyle *menustyle_parse_style(F_CMD_A
  			ST_DO_HILIGHT_TITLE_BACK(tmpms) = 0;
  			ST_USING_DEFAULT_TITLEFONT(tmpms) = True;
-+			ST_DO_FLAT_SEPARATOR(tmpms) = 0;
+ 			ST_TRANSLUCENT_PERCENT(tmpms) = 100;
++            ST_DO_FLAT_SEPARATOR(tmpms) = 0;
  			has_gc_changed = True;
  			option = "fvwm";
  		}
-@@ -1596,7 +1597,10 @@ MenuStyle *menustyle_parse_style(F_CMD_A
- 				&ST_VERTICAL_MARGIN_BOTTOM(tmpms),
- 				0, 0);
- 			break;
--		case 63: /* UniqueHotKeyActivatesImmediate */
-+		case 63: /* FlatSeparators */
-+			ST_DO_FLAT_SEPARATOR(tmpms) = on;
-+			break;
-+		case 64: /* UniqueHotKeyActivatesImmediate */
- 			ST_HOTKEY_ACTIVATES_IMMEDIATE(tmpms) = on;
+@@ -1086,6 +1087,10 @@ MenuStyle *menustyle_parse_style(F_CMD_A
+ 			}
  			break;
  
-@@ -1857,6 +1861,8 @@ void menustyle_copy(MenuStyle *origms, M
++        case 56: /* FlatSeparators */
++            ST_DO_FLAT_SEPARATOR(tmpms) = on;
++            break;
++
+ #if 0
+ 		case 99: /* PositionHints */
+ 			/* to be implemented */
+@@ -1306,6 +1311,8 @@ void menustyle_copy(MenuStyle *origms, M
  	ST_TRIANGLES_USE_FORE(destms) = ST_TRIANGLES_USE_FORE(origms);
  	/* Title */
  	ST_DO_HILIGHT_TITLE_BACK(destms) = ST_DO_HILIGHT_TITLE_BACK(origms);
@@ -125,11 +124,11 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menustyle.c fvwm3-1.0.2/fvwm/menustyle.c
  
  	menustyle_update(destms);
  
-diff -urNp fvwm3-1.0.2-orig/fvwm/menustyle.h fvwm3-1.0.2/fvwm/menustyle.h
---- fvwm3-1.0.2-orig/fvwm/menustyle.h	2020-12-12 02:37:08.000000000 +0200
-+++ fvwm3-1.0.2/fvwm/menustyle.h	2021-03-13 11:14:23.925621952 +0200
-@@ -24,6 +24,8 @@
- #define MST_FACE(m)                   ((m)->s->ms->look.face)
+diff -urNp fvwm3-1.0.6a-orig/fvwm/menustyle.h fvwm3-1.0.6a/fvwm/menustyle.h
+--- fvwm3-1.0.6a-orig/fvwm/menustyle.h	2022-12-31 21:21:13.000000000 +0200
++++ fvwm3-1.0.6a/fvwm/menustyle.h	2023-04-29 04:19:39.976315831 +0300
+@@ -22,6 +22,8 @@
+ /* look */
  #define ST_DO_HILIGHT_BACK(s)         ((s)->look.flags.do_hilight_back)
  #define MST_DO_HILIGHT_BACK(m)        ((m)->s->ms->look.flags.do_hilight_back)
 +#define ST_DO_FLAT_SEPARATOR(s)       ((s)->look.flags.do_flat_separator)
@@ -137,8 +136,8 @@ diff -urNp fvwm3-1.0.2-orig/fvwm/menustyle.h fvwm3-1.0.2/fvwm/menustyle.h
  #define ST_DO_HILIGHT_FORE(s)         ((s)->look.flags.do_hilight_fore)
  #define MST_DO_HILIGHT_FORE(m)        ((m)->s->ms->look.flags.do_hilight_fore)
  #define ST_DO_HILIGHT_TITLE_BACK(s)   ((s)->look.flags.do_hilight_title_back)
-@@ -283,6 +285,7 @@ typedef struct MenuLook
- 		unsigned has_title_cset : 1;
+@@ -240,6 +242,7 @@ typedef struct MenuLook
+ 		unsigned triangles_use_fore : 1;
  		unsigned do_hilight_title_back : 1;
  		unsigned using_default_titlefont : 1;
 +		unsigned do_flat_separator : 1;
