@@ -6,7 +6,11 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-${XTERM:-xterm} -T $"ALSA Mixer" +sb -e alsamixer
+# single window
+XID=(xdotool search --classname ymixer | tail -n 1)
+[[ -n $XID ]] && exec xdotool windowfocus $XID
+
+${XTERM:-xterm} -name ymixer -T $"ALSA Mixer" +sb -e alsamixer
 
 # update panel applet
 exec $FVWM_LIBDIR/volume.sh

@@ -5,6 +5,10 @@ TEXTDOMAINDIR=@prefix@/share/locale
 
 TITLE=$"Process viewer"
 
+# single window
+XID=(xdotool search --classname YPs | tail -n 1)
+[[ -n $XID ]] && exec xdotool windowfocus $XID
+
 # FIXME: add more process managers
 if [[ -x $(command -v lxtask) ]]; then
     exec lxtask
