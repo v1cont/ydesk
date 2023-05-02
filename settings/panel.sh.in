@@ -50,8 +50,8 @@ yad --plug=$KEY --tabnum=1 --text=$"Panel main settings" --form \
 eval APPLETS=($(gsettings get ydesk.panel applets | sed "s/,/ /g"))
 echo ${APPLETS[@]}
 for a in ${APPLETS[@]}; do echo $a; done | yad --plug=$KEY --tabnum=2 --text=$"Panel applets settings" \
-    --image="application-x-addon" --separator="," --use-interp --list --editable --row-action="set_mod" \
-    --column=$"Module" > $res2 &
+    --image="application-x-addon" --separator="," --use-interp --print-all \
+    --list --editable --row-action="set_mod" --column=$"Module" > $res2 &
 
 # main dialog
 yad --title=$"Panel settings" --window-icon=system-run --text=$"Ydesk panel settings" \
@@ -61,11 +61,15 @@ yad --title=$"Panel settings" --window-icon=system-run --text=$"Ydesk panel sett
 
 if [[ $? -eq 0 ]]; then
     eval r1=($(< $res1))
-
+       
     gsettings set ydesk.panel enable ${r[0]}
     gsettings set ydesk.panel pos ${r[1]}
     gsettings set ydesk.panel height ${r[2]}
     gsettings set ydesk.panel isize ${r[3]}
 
-    gsettings set ydesk.panel applets "$(< $res2)"
+    r2=
+    for l in $(< $res2); do
+       r2+="$l,"
+    done
+    gsettings set ydesk.panel applets "${r2%%,}"
 fi
