@@ -70,6 +70,11 @@ Key XF86MonBrightnessDown  A   A   Exec exec xbacklight -10
 Key XF86AudioLowerVolume   A   A   Exec exec $[FVWM_LIBDIR]/volume.sh dec
 Key XF86AudioRaiseVolume   A   A   Exec exec $[FVWM_LIBDIR]/volume.sh inc
 Key XF86AudioMute          A   A   Exec exec $[FVWM_LIBDIR]/volume.sh mute
+
+Keys XF86AudioPlay         A   A   Exec exec $[FVWM_LIBDIR]/mpris2.sh play
+Keys XF86AudioStop         A   A   Exec exec $[FVWM_LIBDIR]/mpris2.sh stop
+Keys XF86AudioPrev         A   A   Exec exec $[FVWM_LIBDIR]/mpris2.sh prev
+Keys XF86AudioNext         A   A   Exec exec $[FVWM_LIBDIR]/mpris2.sh next
  
 Key Print                  A   A   Exec exec $[FVWM_LIBDIR]/shot.sh root
 

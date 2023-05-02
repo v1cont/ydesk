@@ -91,6 +91,10 @@
       <default>'xtrlock'</default>
       <summary>Lock screen command</summary>
     </key>
+    <key name="player" type="s">
+      <default>'audacious'</default>
+      <summary>Media player with MPRIS@ support</summary>
+    </key>
   </schema>
 
   <schema id="ydesk.panel" path="/ydesk/panel/">

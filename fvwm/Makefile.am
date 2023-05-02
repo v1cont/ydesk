@@ -22,7 +22,7 @@ flib_files = scripts/ymenu.py scripts/panel.sh scripts/qlaunch.sh scripts/infost
 
 flibdir = $(libdir)/ydesk/fvwm
 flib_SCRIPTS = $(flib_files) scripts/clipman.sh scripts/shot.sh scripts/media.sh \
-			   scripts/weather.sh scripts/mail.sh scripts/notes.sh
+			   scripts/weather.sh scripts/mail.sh scripts/notes.sh scripts/mpris2.sh
 
 flib_PROGRAMS = ycpu
 
