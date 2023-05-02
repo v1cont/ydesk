@@ -18,7 +18,8 @@ imagedir = $(fvwmdir)/images
 dist_image_DATA = images/min.png images/max.png images/check.png images/close.png images/side.png images/default.png
 
 flib_files = scripts/ymenu.py scripts/panel.sh scripts/qlaunch.sh scripts/infostore.sh scripts/icons.sh \
-             scripts/clock.sh scripts/volume.sh scripts/battery.sh scripts/prun.sh scripts/wifi.sh
+             scripts/clock.sh scripts/volume.sh scripts/mpris2.sh scripts/battery.sh scripts/prun.sh \
+             scripts/wifi.sh
 
 flibdir = $(libdir)/ydesk/fvwm
 flib_SCRIPTS = $(flib_files) scripts/clipman.sh scripts/shot.sh scripts/media.sh \
