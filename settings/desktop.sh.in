@@ -59,7 +59,8 @@ yad --plug=$KEY --tabnum=3 --quoted-output --text=$"Application settings" \
     --field=$"Editor command:" "$(eval echo $(gsettings get ydesk.apps editor))" \
     --field=$"Web browser command:" "$(eval echo $(gsettings get ydesk.apps browser))" \
     --field=$"E-mail client command:" "$(eval echo $(gsettings get ydesk.apps mailer))" \
-    --field=$"Lock screen command:" "$(eval echo $(gsettings get ydesk.apps lock))" > $res3 &
+    --field=$"Lock screen command:" "$(eval echo $(gsettings get ydesk.apps lock))" \
+    --field=$"MPRIS2 music player:" "$(eval echo $(gsettings get ydesk.apps player))" > $res3 &
 
 # fourth tab (quick launch)
 qldir="${XDG_DATA_HOME:-$HOME/.share}/ydesk/qlaunch"
@@ -102,6 +103,7 @@ if [[ $? -eq 0 ]]; then
     gsettings set ydesk.apps browser "${r3[3]}"
     gsettings set ydesk.apps mailer "${r3[4]}"
     gsettings set ydesk.apps lock "${r3[5]}"
+    gsettings set ydesk.apps player "${r3[6]}"
 
     # create qlaunch items
     rm -f $qldir/*.desktop
