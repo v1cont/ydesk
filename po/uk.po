@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ydesk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-02 07:06+0300\n"
+"POT-Creation-Date: 2023-05-02 12:26+0300\n"
 "PO-Revision-Date: 2009-09-01 17:42+0300\n"
 "Last-Translator: Victor Ananjevsky <victor@sanana.kiev.ua>\n"
 "Language-Team: \n"
@@ -72,7 +72,7 @@ msgstr "Нотатки"
 msgid "Save screenshot"
 msgstr "Зберегти знімок"
 
-#: ../fvwm/scripts/shot.sh.in:34 ../fvwm/config/menus.fvwm.h:21
+#: ../fvwm/scripts/shot.sh.in:34 ../fvwm/config/menus.fvwm.h:17
 msgid "Screenshot"
 msgstr "Знимок экрану"
 
@@ -1024,7 +1024,7 @@ msgstr "Перегляд зображень"
 msgid "Simple image viewer"
 msgstr "Перегляд зображень"
 
-#: ../utils/ylogout.sh:55 ../fvwm/config/menus.fvwm.h:17
+#: ../utils/ylogout.sh:55
 msgid "Logout"
 msgstr "Вихід"
 
@@ -1122,7 +1122,7 @@ msgstr "Змонтовано"
 msgid "Device"
 msgstr "Пристрій"
 
-#: ../utils/ymixer.sh:9
+#: ../utils/ymixer.sh:13
 msgid "ALSA Mixer"
 msgstr "ALSA Міксер"
 
@@ -1134,7 +1134,7 @@ msgstr "Потрібна авторизація за паролем\\n$1\\n"
 msgid "Password prompt"
 msgstr "Запит паролю"
 
-#: ../utils/yps.sh:6 ../fvwm/config/menus.fvwm.h:20
+#: ../utils/yps.sh:6 ../fvwm/config/menus.fvwm.h:16
 msgid "Process viewer"
 msgstr "Список процесів"
 
@@ -1438,7 +1438,7 @@ msgid "Office Applications"
 msgstr "Офісні додатки"
 
 #: ../data/menu/desktop-directories/Settings.directory.in.h:1
-#: ../fvwm/config/menus.fvwm.h:18
+#: ../fvwm/config/menus.fvwm.h:14
 msgid "Settings"
 msgstr "Налаштування"
 
@@ -1616,53 +1616,41 @@ msgstr "Запустити"
 
 #: ../fvwm/config/menus.fvwm.h:13
 msgid "Shutdown"
-msgstr "Остановити"
-
-#: ../fvwm/config/menus.fvwm.h:14
-msgid "Power Off"
 msgstr "Вимкнути"
 
 #: ../fvwm/config/menus.fvwm.h:15
-msgid "Reboot"
-msgstr "Перезавантажити"
-
-#: ../fvwm/config/menus.fvwm.h:16
-msgid "Suspend"
-msgstr "Сплячий режим"
-
-#: ../fvwm/config/menus.fvwm.h:19
 msgid "Media"
 msgstr "Зовнешні носії"
 
-#: ../fvwm/config/menus.fvwm.h:22
+#: ../fvwm/config/menus.fvwm.h:18
 msgid "FVWM console"
 msgstr "Консоль FVWM"
 
-#: ../fvwm/config/menus.fvwm.h:23
+#: ../fvwm/config/menus.fvwm.h:19
 msgid "Update icons"
 msgstr "Оновити іконки"
 
-#: ../fvwm/config/menus.fvwm.h:24
+#: ../fvwm/config/menus.fvwm.h:20
 msgid "Lock screen"
 msgstr "Заблокувати екран"
 
-#: ../fvwm/config/menus.fvwm.h:25
+#: ../fvwm/config/menus.fvwm.h:21
 msgid "Restart FVWM"
 msgstr "Перезапустити FVWM"
 
-#: ../fvwm/config/menus.fvwm.h:26
+#: ../fvwm/config/menus.fvwm.h:22
 msgid "Whole screen"
 msgstr "Увесь екран"
 
-#: ../fvwm/config/menus.fvwm.h:27
+#: ../fvwm/config/menus.fvwm.h:23
 msgid "Window/Region"
 msgstr "Вікно/Область"
 
-#: ../fvwm/config/menus.fvwm.h:28
+#: ../fvwm/config/menus.fvwm.h:24
 msgid "Check mail"
 msgstr "Перевірка пошти"
 
-#: ../fvwm/config/menus.fvwm.h:29
+#: ../fvwm/config/menus.fvwm.h:25
 msgid "Configuration"
 msgstr "Налаштування"
 

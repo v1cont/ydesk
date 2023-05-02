@@ -43,14 +43,7 @@ PipeRead "$[FVWM_LIBDIR]/ymenu.py -t applications"
 + "$[gt.Search]...%search.png%"		 Exec exec yfind
 + "$[gt.Run]...%run.png%"			 Exec exec yrun
 + ""						         Nop	
-+ "$[gt.Shutdown]...%shutdown.png%"	 Popup ExitMenu
-
-DestroyMenu ExitMenu
-AddToMenu ExitMenu
-+ "$[gt.Power Off]"       Exec exec /sbin/poweroff
-+ "$[gt.Reboot]"          Exec exec /sbin/reboot
-+ "$[gt.Suspend]"         Exec exec /sbin/hibernate disk
-+ "$[gt.Logout]"          Quit
++ "$[gt.Shutdown]...%shutdown.png%"	 Exec exec ylogout
 
 DestroyMenu ActionMenu
 AddToMenu ActionMenu
