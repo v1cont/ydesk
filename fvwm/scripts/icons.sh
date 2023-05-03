@@ -9,7 +9,8 @@ declare -A common=([desk]=emblem-desktop [edit]=accessories-text-editor [media]=
     [prefs]=preferences-system [recent]=document-open-recent [restart]=view-refresh [run]=system-run
     [search]=system-search [shot]=applets-screenshooter [shutdown]=system-shutdown 
     [settings]=preferences-other [sysmon]=utilities-system-monitor [term]=utilities-terminal
-    [web]=web-browser [winclose]=window-close [y]=ydesk)
+    [web]=web-browser [winclose]=window-close [y]=ydesk
+    [play]=player_play [pause]=player_pause [prev]=player_start [next]=player_end [stop]=player_stop)
 
 imagedir="${XDG_DATA_HOME:-$HOME/.share}/ydesk/images"
 mkdir -p $imagedir
