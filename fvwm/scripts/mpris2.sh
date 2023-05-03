@@ -17,10 +17,10 @@ case $1 in
         dbus-send --print-reply --type=method_call --dest=org.mpris.MediaPlayer2.$player /org/mpris/MediaPlayer2 \
                   org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' |\
             awk '/string/ {print $3}' > /tmp/ydesk-mpris2.state
-        if [[ $(< /tmp/ydesk-mpris2.state) == "Playing" ]]; then
-            icon="pause"
+        if [[ $(< /tmp/ydesk-mpris2.state) == \"Playing\" ]]; then
+            icon="pause.png"
         else
-            icon="play"
+            icon="play.png"
         fi
         FvwmCommand "SendToModule FvwmPanel Silent ChangeButton mpris_play Icon $icon"
         ;;
