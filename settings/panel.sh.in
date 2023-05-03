@@ -69,7 +69,7 @@ if [[ $? -eq 0 ]]; then
 
     r2=
     for l in $(< $res2); do
-       r2+="$l,"
+       r2+="$l"
     done
     gsettings set ydesk.panel applets "${r2%%,}"
 fi
