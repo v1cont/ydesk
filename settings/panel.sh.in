@@ -14,7 +14,7 @@ trap "rm -f $res1 $res2" EXIT
 function set_mod {
     case $1 in
         add)
-            LIST=
+            LIST="sep "
             for a in $FVWM_DATADIR/applets/*.fvwm; do
                 LIST+="$(basename $a .fvwm) "
             done
