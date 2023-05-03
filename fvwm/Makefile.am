@@ -12,7 +12,7 @@ dist_applet_DATA = config/applets/bat.fvwm config/applets/clock.fvwm config/appl
                    config/applets/taskbar.fvwm config/applets/media.fvwm config/applets/volume.fvwm \
                    config/applets/xeyes.fvwm config/applets/run.fvwm config/applets/mail.fvwm \
                    config/applets/wact.fvwm config/applets/wifi.fvwm config/applets/weather.fvwm \
-                   config/applets/notes.fvwm
+                   config/applets/notes.fvwm config/applets/mpris.fvwm
 
 imagedir = $(fvwmdir)/images
 dist_image_DATA = images/min.png images/max.png images/check.png images/close.png images/side.png images/default.png
