@@ -22,7 +22,7 @@ class Notifications(dbus.service.Object):
 
     @dbus.service.method(dbus_interface='org.freedesktop.Notifications', in_signature='susssasa{sv}i', out_signature='u')
     def Notify(self, app_name: str, replaces_id: int, app_icon: str, summary: str, body: str, actions: List[str], hints: Dict[str, Any], expire_timeout: int) -> int:
-        txt = '<span size="large" weight="bold">%s</span>\n%s' % (summary, body)
+        txt = '<span size="large" weight="bold">%s</span>\n\n%s' % (summary, body)
         timeout = expire_timeout / 100
         if timeout == 0: timeout = 60
         cmd = "yad --text='%s' --image='%s' --timeout=%d" % (txt, app_icon, timeout)
