@@ -15,7 +15,8 @@ dist_applet_DATA = config/applets/bat.fvwm config/applets/clock.fvwm config/appl
                    config/applets/notes.fvwm config/applets/mpris.fvwm
 
 imagedir = $(fvwmdir)/images
-dist_image_DATA = images/min.png images/max.png images/check.png images/close.png images/side.png images/default.png images/desk.png
+dist_image_DATA = images/min.png images/max.png images/check.png images/close.png images/side.png \
+				  images/default.png images/desk.png
 
 flib_files = scripts/ymenu.py scripts/panel.sh scripts/qlaunch.sh scripts/infostore.sh scripts/icons.sh \
              scripts/clock.sh scripts/volume.sh scripts/mpris2.sh scripts/battery.sh scripts/prun.sh \

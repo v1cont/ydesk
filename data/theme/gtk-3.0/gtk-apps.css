@@ -17,3 +17,10 @@
                                       shade (@bg_color, 0.8),
                                       shade (@bg_color, 0.6));
 }
+
+.emacs scrollbar.vertical slider,
+.emacs scrollbar.vertical .slider,
+.emacs scrollbar.horizontal slider,
+.emacs scrollbar.horizontal .slider {
+    background-color: @scrollbar_slider;
+}

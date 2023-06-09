@@ -49,19 +49,19 @@
 
   <schema id="ydesk.fonts" path="/ydesk/fonts/">
     <key name="fn" type="s">
-      <default>'xft:Sans:pixelsize=12'</default>
+      <default>'xft:Sans:pixelsize=14'</default>
       <summary>Default font</summary>
     </key>
     <key name="tfn" type="s">
-      <default>'xft:Sans:Bold:Italic:pixelsize=13'</default>
+      <default>'xft:Sans:Bold:Italic:pixelsize=16'</default>
       <summary>Menu title font</summary>
     </key>
     <key name="bfn" type="s">
-      <default>'xft:Sans:pixelsize=12'</default>
+      <default>'xft:Sans:pixelsize=14'</default>
       <summary>Popup tips font</summary>
     </key>
     <key name="wfn" type="s">
-      <default>'xft:Sans:pixelsize=11'</default>
+      <default>'xft:Sans:pixelsize=12'</default>
       <summary>Window title font</summary>
     </key>
   </schema>
@@ -122,7 +122,7 @@
 
   <schema id="ydesk.panel.applets" path="/ydesk/panel/applets/">
     <key name="mb_fn" type="s">
-      <default>'xft:Sans:Bold:pixelsize=12'</default>
+      <default>'xft:Sans:Bold:pixelsize=14'</default>
       <summary>Font for panel menubar</summary>
     </key>
     <key name="shot_act" enum="ydesk.shot.act">
@@ -138,7 +138,7 @@
       <summary>Size of panel clock</summary>
     </key>
     <key name="clock_fn" type="s">
-      <default>'xft:Monospace:Bold:pixelsize=13'</default>
+      <default>'xft:Monospace:pixelsize=14'</default>
       <summary>Font for panel clock</summary>
     </key>
     <key name="clock_fg" type="s">
@@ -162,7 +162,7 @@
       <summary>Background color for panel run applet</summary>
     </key>
     <key name="run_fn" type="s">
-      <default>'xft:Monospace:pixelsize=12'</default>
+      <default>'xft:Monospace:pixelsize=14'</default>
       <summary>Font for panel run applet</summary>
     </key>
     <key name="cpu_sz" type="i">

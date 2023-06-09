@@ -2,7 +2,7 @@
 # Update icons used by fvwm
 
 # remove icon cache cache
-[[ $1 == -f ]] && rm -rf ${XDG_CACHE_HOME:-$HOME/.share}/ydesk/fvwm/icons
+[[ $1 == -f ]] && rm -rf ${XDG_DATA_HOME:-$HOME/.share}/ydesk/fvwm/icons
 
 declare -A common=([edit]=accessories-text-editor [media]=drive-removable-media
     [info]=dialog-information [lock]=system-lock-screen [mixer]=multimedia-volume-control [notes]=ynotes
