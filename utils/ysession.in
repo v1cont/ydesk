@@ -53,7 +53,7 @@ eval ENABLE_COMPOSE=$(gsettings get ydesk.session compose)
 
 # set root window background
 if [[ -e $WALLPAPER ]]; then
-    fvwm-root $WALLPAPER
+    fvwm-root -r $WALLPAPER
 else
     xsetroot -solid ${BACKGROUND:-#071a30}
 fi
