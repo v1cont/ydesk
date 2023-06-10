@@ -61,7 +61,7 @@
       <summary>Popup tips font</summary>
     </key>
     <key name="wfn" type="s">
-      <default>'xft:Sans:pixelsize=12'</default>
+      <default>'xft:Sans:pixelsize=13'</default>
       <summary>Window title font</summary>
     </key>
   </schema>
