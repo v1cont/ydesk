@@ -59,7 +59,7 @@ else
 fi
 
 # compositing
-[[ $ENABLE_COMPOSE == true && $(command -v xcompmgr) ]] && xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+[[ $ENABLE_COMPOSE == true && $(command -v xcompmgr) ]] && xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &> /dev/null &
 
 # set fvwm variables
 FVWM_LIBDIR="$libdir/fvwm"
