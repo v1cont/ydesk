@@ -1,1 +1,1 @@
-*FvwmPanel: (Id desk, 25x1, Padding 2 2, Icon "winclose.png", ActionOnPress, Action (Mouse 1) Current Close, Action (Mouse 3) `Menu WindowOptionsMenu rectangle 1x1+$left+$bottom +0 +0`)
+*FvwmPanel: (Id wact, 25x1, Padding 2 2, Icon "winclose.png", ActionOnPress, Action (Mouse 1) Current Close, Action (Mouse 3) `Menu WindowOptionsMenu rectangle 1x1+$left+$bottom +0 +0`)
