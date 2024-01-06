@@ -63,7 +63,7 @@ AddToMenu ActionMenu
 + ""					             Nop	
 + "$[gt.Lock screen]%lock.png%"      Exec exec $[infostore.lock]
 + "$[gt.Restart FVWM]%restart.png%"  Restart
-+ "$[gt.Shutdown]%shutdown.png%"	 Exec exec ylogout
++ "$[gt.Shutdown]...%shutdown.png%"	 Exec exec ylogout
 
 AddToMenu RecentMenu DynamicPopupAction PipeRead "$[FVWM_LIBDIR]/ymenu.py recent"
 
