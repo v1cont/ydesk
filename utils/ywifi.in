@@ -51,7 +51,7 @@ export -f upd_networks
 function wifi_connect {
     nn=$(wpa_cli -i $iface list_networks | grep "$1" | cut -f1)
     if [[ -z $nn ]]; then
-        psk=$(yad --title=$"WiFi Password" --entry --text="Enter password for network <b>$1</b>:")
+        psk=$(yad --title=$"WiFi Password" --entry --hide-text --text="Enter password for network <b>$1</b>:")
         nn=$(wpc_cli -i $iface add_network)
         wpa_cli -i $iface set_network $nn ssid "\"$1\"" > /dev/null
         if [[ -n $psk ]]; then
