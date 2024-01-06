@@ -8,8 +8,8 @@ eval AC=$(gsettings get ydesk.panel.applets bat_ac)
 
 AC_STATE=$(< /sys/class/power_supply/$AC/online)
 
-BAT_FULL=$(< /sys/class/power_supply/$BAT/energy_full)
-BAT_NOW=$(< /sys/class/power_supply/$BAT/energy_now)
+BAT_FULL=$(< /sys/class/power_supply/$BAT/charge_full)
+BAT_NOW=$(< /sys/class/power_supply/$BAT/charge_now)
 BAT_STATE=$(< /sys/class/power_supply/$BAT/status)
 
 printf -v BAT_PERCENT "%.f" $(echo $BAT_NOW.0 / $BAT_FULL.0 \* 100 | bc -l)
