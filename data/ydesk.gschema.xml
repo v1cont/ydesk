@@ -88,7 +88,7 @@
       <summary>Mail client command</summary>
     </key>
     <key name="lock" type="s">
-      <default>'xtrlock'</default>
+      <default>'xtrlock -c /usr/share/ydesk/lock.xcursor'</default>
       <summary>Lock screen command</summary>
     </key>
     <key name="player" type="s">
