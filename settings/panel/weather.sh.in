@@ -4,7 +4,7 @@
 TEXTDOMAIN=@GETTEXT_PACKAGE@
 TEXTDOMAINDIR=@prefix@/share/locale
 
-apikey=$(< ${XDG_DATA_HOME:-$HOME/.share}/ydesk/weather.key)
+apikey=${XDG_DATA_HOME:-$HOME/.share}/ydesk/weather.key
 
 eval res=($(yad --title=$"Weather applet" --window-icon="application-x-addon" \
                 --width=300 --separator=" " --quoted-output --image=weather-clear --bool-fmt=t \
@@ -12,7 +12,7 @@ eval res=($(yad --title=$"Weather applet" --window-icon="application-x-addon" \
                 --field=$"City name:" $(eval echo $(gsettings get ydesk.weather city)) \
                 --field=$"Country code:" $(eval echo $(gsettings get ydesk.weather country)) \
                 --field=$"Measure units:" $(eval echo $(gsettings get ydesk.weather units)) \
-                --field=$"APi key:" "$apikey" \
+                --field=$"APi key:" "$(< $apikey)" \
                 --field=$"Update interval::NUM" $(gsettings get ydesk.panel.applets wthr_time)))
 
 if [[ -n $res ]]; then
