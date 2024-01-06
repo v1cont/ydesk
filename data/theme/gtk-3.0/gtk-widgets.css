@@ -75,11 +75,6 @@
     font: initial; 
 }
 
-printdialog .vertical {
-    color: @fg_color;
-    background-color: @bg_color;
-}
-
 .view,
 iconview,
 .view text,
@@ -87,6 +82,11 @@ iconview text,
 textview text {
     color: @text_color;
     background-color: @base_color;
+}
+
+printdialog .vertical {
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 .rubberband,
@@ -238,6 +238,11 @@ button:disabled {
 	border-color: darker(@bg_color);
     box-shadow: inset 1px 0 shade(@shadow_color, 0.91),
                 inset 0 1px shade(@shadow_color, 0.91);
+}
+
+.inline-toolbar {
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 .inline-toolbar toolbutton > button {
@@ -466,16 +471,23 @@ button.color {
 }
 
 button:link,
-button:visited {
+button:visited,
+button:link > label, 
+button:visited > label { 
     color: @link_color;
     font-weight: bold;
     text-shadow: none;
+    text-decoration-line: underline; 
 }
 
 button:link:hover,
 button:link:active,
 button:visited:hover,
-button:visited:active {
+button:visited:active,
+button:link:hover > label,
+button:link:active > label,
+button:visited:hover > label,
+button:visited:active > label {
     color: @visited_link_color;
     text-shadow: none;
 }
@@ -1183,14 +1195,6 @@ treeview ~ scrollbar.vertical {
     margin-top: -1px;
 }
 
-/* Remove dotted lines from GTK 3 applications */
-undershoot.top, 
-undershoot.right, 
-undershoot.bottom, 
-undershoot.left { 
-    background-image: none; 
-}
-
 /**********
  * Switch *
  **********/
@@ -1689,7 +1693,6 @@ row.activatable:selected,
 .sidebar:selected {
     color: @selected_fg_color;
     background-color: @selected_bg_color;
-    background-image: -gtk-gradient(linear, left top, left bottom, from (@selected_color_s), to (@selected_color_e) );
 }
 
 /**********
@@ -1727,11 +1730,18 @@ actionbar > revealer > box {
 
 separator,
 .sidebar separator {
-    background: @text_color;
     min-width: 1px;
     min-height: 1px;
     padding: 0px;
     margin: 2px;
+}
+
+separator {
+    background: shade(@fg_color, 0.85);
+}
+
+.sidebar separator {
+    background: @text_color;
 }
 
 /*********
@@ -1952,16 +1962,14 @@ stacksidebar row.needs-attention > label {
 /*********
  * Paned *
  *********/
-paned > separator,
-paned > separator.wide {
+paned > separator {
     -gtk-icon-source: none;
-    background-color: shade(@bg_color, 0.8);
+    background-color: @bg_color;
     min-width: 5px;
     min-height: 5px;
 }
 
-paned > separator:hover,
-paned > separator.wide:hover {
+paned > separator:hover {
     background-color: shade(@bg_color, 1.3);
 }
 
