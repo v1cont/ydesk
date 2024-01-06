@@ -53,11 +53,11 @@ function wifi_connect {
     if [[ -z $nn ]]; then
         psk=$(yad --title=$"WiFi Password" --entry --text="Enter password for network <b>$1</b>:")
         nn=$(wpc_cli -i $iface add_network)
-        wpa_cli -i $iface set_network $nn ssid "$1"
+        wpa_cli -i $iface set_network $nn ssid "\"$1\"" > /dev/null
         if [[ -n $psk ]]; then
-            wpa_cli -i $iface set_network $nn psk "$psk"
+            wpa_cli -i $iface set_network $nn psk "\"$psk\"" > /dev/null
         else
-            wpa_cli -i $iface set_network $nn key_mgmt NONE
+            wpa_cli -i $iface set_network $nn key_mgmt "NONE" > /dev/null
         fi
         wpa_cli -i $iface enable_network $nn > /dev/null
         wpa_cli -i $iface save_config > /dev/null
