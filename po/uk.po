@@ -488,7 +488,7 @@ msgstr "Головні"
 
 #: ../settings/panel.sh.in:60
 msgid "Applets"
-msgstr "Аплеты"
+msgstr "Аплети"
 
 #: ../settings/printer.sh.in:18 ../utils/ymedia.sh:33
 msgid "Error"
@@ -682,7 +682,7 @@ msgstr "Світло-зелений::clr"
 
 #: ../settings/term.sh.in:93
 msgid "Yellow::clr"
-msgstr "Жовтый::clr"
+msgstr "Жовтий::clr"
 
 #: ../settings/term.sh.in:94
 msgid "Light blue::clr"
@@ -1411,7 +1411,7 @@ msgstr "Освіта"
 
 #: ../data/menu/desktop-directories/Game.directory.in.h:2
 msgid "Games and amusements"
-msgstr "Ігры та розваги"
+msgstr "Ігри та розваги"
 
 #: ../data/menu/desktop-directories/Graphics.directory.in.h:1
 msgid "Graphics"
