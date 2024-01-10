@@ -13,7 +13,20 @@ KEY=$RANDOM
 SCAN_PERIOD=5
 UPD_PERIOD=300
 
-export iface=${1:-wlan0}
+iface="wlan0"
+atab=1
+
+# parse command line
+OPTIND=1
+while getopts a:i:t: opt ; do
+    case "$opt" in
+        i) iface=$OPTARG ;;
+        t) atab=$OPTARG ;;
+    esac
+done
+shift $(($OPTIND - 1))
+[[ "$1" == '--' ]] && shift
+export iface
 
 export tdir=$(mktemp -d --tmpdir ywifi.XXXXXXX)
 
@@ -92,7 +105,7 @@ yad --plug=$KEY --tabnum=2 --use-interp \
 yad --notebook --width=600 --height=450 --title=$"WiFi manager" \
     --image=network-wireless --text=$"Ydesk WiFi connections manager" \
     --button=$"IP info!gtk-dialog-info:show_geoip" --button="yad-close:1" \
-    --key=$KEY --use-interp --tab=$"Current" --tab=$"Networks" --active-tab=${1:-1} &
+    --key=$KEY --use-interp --tab=$"Current" --tab=$"Networks" --active-tab=$atab &
 YPID=$!
 
 # main loop
